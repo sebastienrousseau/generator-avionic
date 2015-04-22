@@ -19,13 +19,17 @@
 
         // Have Yeoman greet the user.
         this.log(yosay(
-          'Ladies and gentlemen, on behalf of the flight crew, this is your captain, welcoming you aboard to the ' + chalk.red('Avionic') + ' Installer. At this time, we request your full attention as the flight attendants will guide you through the safety features of this aircraft.'
+          'Ladies and gentlemen, this is your captain, welcoming you aboard to the ' + chalk.red('Avionic ✈ Installer') + ''
         ));
+
+        this.log(
+          'At this time, we request your full attention \nas the flight attendants will guide you through \nthe safety features of this aircraft.\n'
+        );
 
         var prompts = [{
           type: 'input',
           name: 'appName',
-          message: 'Please enter a name for your app:',
+          message: 'Please enter a name for your Avionic ✈ app:',
           default : this.appname // Default to current folder name
         },
         {
