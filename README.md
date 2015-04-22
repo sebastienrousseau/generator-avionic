@@ -1,4 +1,4 @@
-![ScreenShot](Icon.png) # Avionic ✈
+# ![ScreenShot](Icon.png) Avionic ✈
 
 ## A [Yeoman](http://yeoman.io) generator for Ionic Projects with Gulp
 
