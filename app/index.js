@@ -19,25 +19,25 @@
 
         // Have Yeoman greet the user.
         this.log(yosay(
-          'Welcome to the ' + chalk.red('ionic-gulp') + ' generator. Let\'s build an ionic app, shall we?'
+          'Ladies and gentlemen, on behalf of the flight crew, this is your captain, welcoming you aboard to the ' + chalk.red('Avionic') + ' Installer. At this time, we request your full attention as the flight attendants will guide you through the safety features of this aircraft.'
         ));
 
         var prompts = [{
           type: 'input',
           name: 'appName',
-          message: 'What\'s the app name?',
+          message: 'Please enter a name for your app:',
           default : this.appname // Default to current folder name
         },
         {
           type: 'input',
           name: 'userName',
-          message: 'The author\'s name? (for config files)',
-          default : 'Joe Dirt'
+          message: 'Please enter your name:',
+          default : 'Charles Lindbergh'
         },
         {
           type: 'input',
           name: 'userMail',
-          message: 'Author email? (for config files)',
+          message: 'Please enter your email address:',
           default : 'email@example.com'
 
         }];
@@ -149,6 +149,13 @@
               );
 
               // controllers
+              this.fs.copyTpl(
+                this.templatePath('scripts/controllers/translateController.js'),
+                this.destinationPath('app/scripts/controllers/translateController.js'),
+                { ngModulName: this._.classify(this.appName) }
+              );
+
+
               this.fs.copyTpl(
                 this.templatePath('scripts/controllers/homeController.js'),
                 this.destinationPath('app/scripts/controllers/homeController.js'),

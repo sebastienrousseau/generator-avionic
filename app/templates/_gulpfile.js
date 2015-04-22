@@ -198,6 +198,15 @@ gulp.task('vendor', function() {
     .on('error', errorHandler);
 });
 
+// languages sources
+gulp.task('languages', function() {
+  return gulp.src('app/languages/*.*')
+    .pipe(gulp.dest(path.join(targetDir, 'languages')))
+    .pipe(plugins.if(build, plugins.uglify()))
+    .pipe(plugins.if(build, plugins.rev()))
+
+    .on('error', errorHandler);
+});
 
 // inject the files in index.html
 gulp.task('index', ['jsHint', 'scripts'], function() {
@@ -297,6 +306,7 @@ gulp.task('watchers', function() {
   gulp.watch('app/images/**', ['images']);
   gulp.watch('app/scripts/**/*.js', ['index']);
   gulp.watch('./vendor.json', ['vendor']);
+  gulp.watch('app/languages/*.json', ['languages']);
   gulp.watch('app/templates/**/*.html', ['index']);
   gulp.watch('app/index.html', ['index']);
   gulp.watch(targetDir + '/**')
@@ -317,7 +327,8 @@ gulp.task('default', function(done) {
       'templates',
       'styles',
       'images',
-      'vendor'
+      'vendor',
+      'languages'
     ],
     'index',
     build ? 'noop' : 'watchers',
