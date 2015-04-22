@@ -1,12 +1,18 @@
 # ![ScreenShot](Icon.png) Avionic ✈
 
 ##  What is it?
-Avionic ✈ helps you to kickstart Ionic projects.
+Avionic ✈ helps you to kickstart highly sophisticated Ionic projects.
 
-To do so, we provide a generator that can be run with the `yo` command to scaffold a complete Avionic ✈ project.  
+To do so, we provide a generator that scaffold a complete frictionless HTML5 Mobile Framework for building amazing, cross-platform hybrid native apps with HTML, JavaScript, and CSS.
 
 ### Our approach
-We are obsess about great design, best practices and performance to help you stay productive.pre-configured tools and 
+We believe perfection must consider everything. So we designed Avionic ✈.
+
+We take our passion for perfection beyond the code and into our daily practices.
+
+We are obsessed about helping you create beautiful applications.
+
+As firm believers in the highest levels of best practice and well thought out build processes Avionic ✈ takes care of providing everything needed to get started.
 
 A [Yeoman](http://yeoman.io) generator for Ionic Projects with Gulp
 
