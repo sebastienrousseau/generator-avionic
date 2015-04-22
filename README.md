@@ -1,6 +1,13 @@
 # ![ScreenShot](Icon.png) Avionic ✈
 
 ##  What is it?
+Avionic ✈ helps you to kickstart Ionic projects.
+
+To do so, we provide a generator that can be run with the `yo` command to scaffold a complete Avionic ✈ project.  
+
+### Our approach
+We are obsess about great design, best practices and performance to help you stay productive.pre-configured tools and 
+
 A [Yeoman](http://yeoman.io) generator for Ionic Projects with Gulp
 
 ### Features
