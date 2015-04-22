@@ -1,4 +1,4 @@
-![ScreenShot](app/templates/icon.png) 
+![ScreenShot](Icon.png) 
 # Avionic ✈ A [Yeoman](http://yeoman.io) generator for Ionic Projects with Gulp
 
 This is a yeoman generator for my [Ionic Gulp Seed](https://github.com/tmaximini/ionic-gulp-seed), a minimal Ionic app template. It sets up everything to get you started with [Gulp](http://gulpjs.com/) and [Ionic](http://ionicframework.com/) in no time.
