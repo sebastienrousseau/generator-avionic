@@ -1,0 +1,19 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-positive">
+    <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+        <h1 class="title"><%= title %></h1>
+    </ion-header-bar>
+
+    <ion-content>
+        <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="fetchRandomText()">
+        </ion-refresher>
+        <div class="loader" ng-if="!myHTML">
+            <ion-spinner></ion-spinner>
+        </div>
+        <div class="content" ng-bind-html="myHTML">
+        </div>
+    </ion-content>
+
+</ion-view>

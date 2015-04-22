@@ -1,0 +1,37 @@
+{
+  "name": "generator-avionic",
+  "version": "1.1.2",
+  "description": "Build hybrid mobile apps using Avionic: a Yeoman generator for Ionic Framework Projects with Gulp",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "reedia/generator-avionic",
+  "author": {
+    "name": "Reedia Limited",
+    "email": "hello@reedia.com",
+    "url": "https://github.com/reedia"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "ionic",
+    "gulp",
+    "ionic framework"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.18.0",
+    "chalk": "^0.5.0",
+    "yosay": "^0.3.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "yo": ">=1.0.0"
+  }
+}

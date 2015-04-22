@@ -1,0 +1,41 @@
+@charset 'UTF-8';
+
+$golden-ratio: 1.618033988749 !default; // Golden ratio
+
+// Default configuration settings
+$base-font-size	:17px;
+$line-height	:26px;
+$line-height-ratio  : 1.75 !default;
+
+$h1-size:$base-font-size;
+$h2-size:$base-font-size * $golden-ratio;
+$h3-size:$h2-size * $golden-ratio;
+$h4-size:$h3-size * $golden-ratio;
+$h5-size:$h4-size * $golden-ratio;
+$h6-size:$h5-size * $golden-ratio;
+
+
+// font stacks
+$font-stack-regular:'Open Sans';
+
+// color stacks
+$colorblack:#212121;
+$colorgray:#666;
+$colorwhite:#fff;
+$colorred:#f44336;
+$colordarkred:#d32f2f;
+$colorpink:#ff4081;
+$colororange:#ff9800;
+$coloryellow:#fdd835;
+$colorblue:#0d47a1;
+$colorgreen:#4caf50;
+$colorpurple:#9c27b0;
+$colorlightgreen:#42c5a5;
+
+// spacings
+$tiny-value				     : 5px; // tiny value for margins / paddings
+$small-value			     : 10px; // small value for margins / paddings
+$medium-value			     : 20px; // medium value for margins / paddings
+$large-value			     : 40px; // large value for margins / paddings
+$extra-large-value		 : 80px; // extra large value for margins / paddings
+$ultra-large-value		 : 160px; // ultra large value for margins / paddings

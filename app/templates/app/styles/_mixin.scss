@@ -1,0 +1,326 @@
+@charset "UTF-8";
+
+/// Creates a baseline grid based off your $line-height-ratio to help visualize your vertical rhythm grid. You can offset the grid by negative or positive pixels to line it up perfectly with the bottom of your text.
+///
+/// @param {color} $color [black] - A color to be lightened and used as the color for the grid.
+/// @param {number} $px-offset [false] - A positive or negative number of pixels to offset the grid by. Useful for lining the bottom of the gridlines up with your text.
+///
+/// @example
+///   @include grid-overlay(blue, 2);
+
+@mixin grid-overlay($color: black, $px-offset: false) {
+  body {
+    background: linear-gradient(to top, rgba($color, .1) 5%, white 5%) !important;
+    background-size: 100% ($line-height-ratio) + em !important;
+    @if($px-offset) {
+      background-position: 0 $px-offset + px !important;
+    }
+  }
+}
+
+@mixin font($OpenSansPath, $OpenSansVersion, $FontType:"Regular") {
+  src:  url('#{$OpenSansPath}/OpenSans-#{$FontType}-webfont.eot?v=#{$OpenSansVersion}');
+  src:  url('#{$OpenSansPath}/OpenSans-#{$FontType}-webfont.eot?#iefix&v=#{$OpenSansVersion}') format('embedded-opentype'),
+        url('#{$OpenSansPath}/OpenSans-#{$FontType}-webfont.woff?v=#{$OpenSansVersion}') format('woff'),
+        url('#{$OpenSansPath}/OpenSans-#{$FontType}-webfont.ttf?v=#{$OpenSansVersion}') format('truetype'),
+        url('#{$OpenSansPath}/OpenSans-#{$FontType}-webfont.svg?v=#{$OpenSansVersion}##{$FontType}') format('svg');
+}
+
+@mixin filter($filter-type,$filter-amount) {
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+// Sass mixins : don't touch or you'll be banned ;)
+// px to em/rem
+
+@mixin rem($size) {
+	@if unitless($size) {
+	 	font-size: ($size * 1rem) / 1rem * $base-font-size;
+	 	font-size: $size * 1rem;
+	}
+	@else {
+	  @warn "Please make sure `$size` is unitless."
+	}
+}
+@mixin em($size) {
+	@if unitless($size) {
+		$bf: $base-font-size / 1px;
+	 	font-size: $size / $bf * 1em;
+	}
+	@else {
+	  @warn "Please make sure `$size` is unitless."
+	}
+}
+@mixin px($size) {
+	@if unitless($size) {
+		$bf: $base-font-size / 1px;
+	 	font-size: $size * $bf * 1px;
+	}
+	@else {
+	  @warn "Please make sure `$size` is unitless."
+	}
+}
+
+@mixin clearfix {
+  display: inline-block;
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  * html & { height: 1px }
+}
+
+// Mixin for box-sizing
+// --------------------
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model;
+     -moz-box-sizing: $box-model;
+          box-sizing: $box-model;
+}
+
+@mixin box-emboss($opacity, $opacity2){
+    box-shadow:white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
+}
+
+
+//
+// .box{
+//     @include box-emboss(0.8, 0.05);
+// }
+
+
+/* Usage
+  *,
+  *:after,
+  *:before {
+  @include box-sizing(border-box);
+  }
+*/
+
+// Mixin for border-radius
+// -----------------------
+@mixin border-radius($radius) {
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+/* Usage
+  .button {
+    @include border-radius(5px);
+  }
+*/
+
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+// Mixin for box-shadow
+// --------------------
+@mixin box-shadow($x, $y, $blur, $color) {
+  -webkit-box-shadow: $x $y $blur $color;
+     -moz-box-shadow: $x $y $blur $color;
+          box-shadow: $x $y $blur $color;
+}
+
+/* Usage
+  .button {
+    @include box-shadow(5px, 10px, 5px, rgba(0,0,0,.5));
+  }
+*/
+
+$prefix:'-moz-', '-webkit-', '-o-', '-ms-', '';
+// ********************
+// fadeIn
+// ********************
+@mixin keyframe-fadeIn {
+  0%   { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes fadeIn {
+  @include keyframe-fadeIn;
+}
+@-webkit-keyframes fadeIn {
+  @include keyframe-fadeIn;
+}
+@-o-keyframes fadeIn {
+  @include keyframe-fadeIn;
+}
+@-ms-keyframes fadeIn {
+  @include keyframe-fadeIn;
+}
+@keyframes fadeIn {
+  @include keyframe-fadeIn;
+}
+@mixin fadeIn( $arg ) {
+  $keyframe-name:fadeIn;
+  $duration:$arg;
+  @each $p in $prefix {
+    #{$p}animation:$keyframe-name $duration;
+  }
+}
+
+
+// Mixin for gradients
+// -------------------
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+/* Usage
+  .button {
+    @include linear-gradient(#e4e4e4, #c0c0c0);
+  }
+*/
+
+// Mixin for opacity
+// -----------------
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie);
+}
+
+/* Usage
+  .header {
+    @include opacity(0.8);
+  }
+*/
+
+
+/* Mixins */
+@mixin transition($speed: .25s){
+  -webkit-transition: all $speed ease-in-out;
+  -moz-transition: all $speed ease-in-out;
+  transition: all $speed ease-in-out;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@mixin transform($scale, $origin1,$origin2){
+  -webkit-transform: scale($scale) rotate(0.1deg);
+  -moz-transform: scale($scale) rotate(0.1deg);
+  transform: scale($scale) rotate(0.1deg);
+	transform-origin: $origin1 $origin2;
+}
+@mixin blur($blur: 2px){
+  -webkit-filter: blur($blur);
+  -moz-filter: blur($blur);
+  filter: blur($blur);
+}
+
+@mixin legibility {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin theme-colors($opacity) {
+  &.black       {color:rgba($colorblack,$opacity);}
+  &.gray        {color:rgba($colorgray,$opacity); }
+  &.white       {color:rgba($colorwhite,$opacity);}
+  &.red         {color:rgba($colorred,$opacity); }
+  &.pink        {color:rgba($colorpink,$opacity);}
+  &.orange      {color:rgba($colororange,$opacity);}
+  &.yellow      {color:rgba($coloryellow,$opacity);}
+  &.blue        {color:rgba($colorblue,$opacity);}
+  &.green       {color:rgba($colorgreen,$opacity);}
+  &.lightgreen  {color:rgba($colorlightgreen,$opacity);}
+  &.purple      {color:rgba($colorpurple,$opacity);}
+}
+
+@mixin theme-background-colors($opacity) {
+  &.black       {background-color:rgba($colorblack,$opacity);}
+  &.gray        {background-color:rgba($colorgray,$opacity); }
+  &.white       {background-color:rgba($colorwhite,$opacity);}
+  &.red         {background-color:rgba($colorred,$opacity); }
+  &.pink        {background-color:rgba($colorpink,$opacity);}
+  &.orange      {background-color:rgba($colororange,$opacity);}
+  &.yellow      {background-color:rgba($coloryellow,$opacity);}
+  &.blue        {background-color:rgba($colorblue,$opacity);}
+  &.green       {background-color:rgba($colorgreen,$opacity);}
+  &.lightgreen  {background-color:rgba($colorlightgreen,$opacity);}
+  &.purple      {background-color:rgba($colorpurple,$opacity);}
+}
+
+@mixin theme-workouts-header($opacity) {
+  &.header-1    {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo1.jpeg');}
+  &.header-2    {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo2.jpeg');}
+  &.header-3    {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo3.jpeg');}
+  &.header-4    {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo4.jpeg');}
+  &.header-5    {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo5.jpeg');}
+  &.header-6    {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo6.jpeg');}
+  &.header-7    {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo7.jpeg');}
+  &.header-8    {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo8.jpeg');}
+  &.header-9    {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo9.jpeg');}
+  &.header-10   {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo10.jpeg');}
+  &.header-11   {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo11.jpeg');}
+  &.header-12   {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo12.jpeg');}
+  &.header-13   {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo13.jpeg');}
+  &.header-14   {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo14.jpeg');}
+  &.header-15   {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo15.jpeg');}
+  &.header-16   {background-image:url('http://api-boxercise.appspot.com/img/gallery/classes/photo16.jpeg');}
+  opacity:$opacity;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 15%;
+  height:150px;
+}
+// -----------------------------------------
+// TRANSFORMATION RULES
+// -----------------------------------------
+@mixin rotate($rotate: 0) {
+  -webkit-transform: rotate($rotate +deg);
+  -moz-transform:    rotate($rotate +deg);
+  -ms-transform:     rotate($rotate +deg);
+  -o-transform:      rotate($rotate +deg);
+  transform:         rotate($rotate +deg);
+}
+@mixin scale($scale: 1) {
+  -webkit-transform: scale($scale);
+  -moz-transform:    scale($scale);
+  -ms-transform:     scale($scale);
+  -o-transform:      scale($scale);
+  transform:         scale($scale);
+}
+@mixin skew($skew: 0) {
+  -webkit-transform: skew($skew +deg);
+  -moz-transform:    skew($skew +deg);
+  -ms-transform:     skew($skew +deg);
+  -o-transform:      skew($skew +deg);
+  transform:         skew($skew +deg);
+}
+@mixin translate($left: 0, $top: 0) {
+  -webkit-transform: translate($left +px, $top +px);
+  -moz-transform:    translate($left +px, $top +px);
+  -ms-transform:     translate($left +px, $top +px);
+  -o-transform:      translate($left +px, $top +px);
+  transform:         translate($left +px, $top +px);
+}
+// @include rotate(15);          rotates object 15 degrees
+// @include scale(1.5);          scales object 50% up
+// @include skew(12);            skews object 12 degrees
+// @include translate(10, -20);  moves object 10px left, -20px top
+
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
