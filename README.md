@@ -1,18 +1,7 @@
 # ![ScreenShot](Icon.png) Avionic ✈
 
-## A [Yeoman](http://yeoman.io) generator for Ionic Projects with Gulp
-
-This is a yeoman generator for my [Ionic Gulp Seed](https://github.com/tmaximini/ionic-gulp-seed), a minimal Ionic app template. It sets up everything to get you started with [Gulp](http://gulpjs.com/) and [Ionic](http://ionicframework.com/) in no time.
-
-
-## Team
-
-Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/yeoman/yeoman/graphs/contributors)
-
-
-[![Sebastien Rousseau](http://gravatar.com/avatar/69e6a8caab075ec18b7f406518b78a11?s=117)](http://sebastienrousseau.com) |
-:---:|
-
+##  What is it?
+A [Yeoman](http://yeoman.io) generator for Ionic Projects with Gulp
 
 ### Features
 
@@ -25,6 +14,10 @@ Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contr
 * generate icon font from svg files
 * Blazing fast
 
+
+## Project setup, installation, and configuration
+
+This is a yeoman generator for my [Ionic Gulp Seed](https://github.com/tmaximini/ionic-gulp-seed), a minimal Ionic app template. It sets up everything to get you started with [Gulp](http://gulpjs.com/) and [Ionic](http://ionicframework.com/) in no time.
 
 ### Installation
 
@@ -115,7 +108,20 @@ By running `gulp -r <platform>`, we can run our app on a connected device
 
 Replace `splash.png` and `icon.png` inside `/resources`. Then run `ionic resources`. If you only want to regenerate icons or splashs, you can run `gulp icon` or `gulp splash` shorthand.
 
+## Team
 
-## License
+Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/yeoman/yeoman/graphs/contributors)
 
-MIT
+[![Sebastien Rousseau](http://gravatar.com/avatar/69e6a8caab075ec18b7f406518b78a11?s=117)](http://sebastienrousseau.com) |
+:---:|
+
+
+
+## Contributing changes
+
+* See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+
+## Licensing
+
+* See [LICENSE](LICENSE)
