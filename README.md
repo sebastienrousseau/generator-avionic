@@ -1,6 +1,16 @@
-# A [Yeoman](http://yeoman.io) generator for Ionic Projects with Gulp
+![ScreenShot](app/templates/icon.png) 
+# Avionic ✈ A [Yeoman](http://yeoman.io) generator for Ionic Projects with Gulp
 
 This is a yeoman generator for my [Ionic Gulp Seed](https://github.com/tmaximini/ionic-gulp-seed), a minimal Ionic app template. It sets up everything to get you started with [Gulp](http://gulpjs.com/) and [Ionic](http://ionicframework.com/) in no time.
+
+
+## Team
+
+Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/yeoman/yeoman/graphs/contributors)
+
+
+[![Sebastien Rousseau](http://gravatar.com/avatar/69e6a8caab075ec18b7f406518b78a11?s=117)](http://sebastienrousseau.com) |
+:---:|
 
 
 ### Features
@@ -37,7 +47,7 @@ Finally, initiate the generator:
 yo ionic-gulp
 ```
 
-after installation, just run: 
+after installation, just run:
 ```bash
 gulp
 ```
@@ -69,7 +79,7 @@ By running just `gulp --build` or short `gulp -b`, we start gulp in build mode
 
 - concat all `.js` sources into single `app.js` file
 - version `main.css` and `app.js`
-- build everything into `www` 
+- build everything into `www`
 - remove debugs messages such as `console.log` or `alert` with passing `--release`
 
 
