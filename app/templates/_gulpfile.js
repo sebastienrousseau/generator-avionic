@@ -75,7 +75,7 @@ gulp.task('styles', function() {
       .pipe(plugins.autoprefixer('last 1 Chrome version', 'last 3 iOS versions', 'last 3 Android versions'));
 
   var cssStream = gulp
-    .src(['bower_components/ionic/css/ionic.min.css','bower_components/ionic-material/ionic.material.min.css']);
+    .src(['bower_components/ionic/css/ionic.css','bower_components/ionic-material/ionic.material.min.css']);
 
   return streamqueue({ objectMode: true }, cssStream, sassStream)
     .pipe(plugins.concat('main.css'))
@@ -202,9 +202,8 @@ gulp.task('vendor', function() {
 gulp.task('languages', function() {
   return gulp.src('app/languages/*.*')
     .pipe(gulp.dest(path.join(targetDir, 'languages')))
-    .pipe(plugins.if(build, plugins.uglify()))
-    .pipe(plugins.if(build, plugins.rev()))
-
+    // .pipe(plugins.if(build, plugins.uglify()))
+    // .pipe(plugins.if(build, plugins.rev()))
     .on('error', errorHandler);
 });
 
