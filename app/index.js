@@ -82,6 +82,13 @@
               userName: this.userName,
               userEmail: this.userMail }
             );
+
+            this.fs.copyTpl(
+              this.templatePath('_en.json'),
+              this.destinationPath('app/languages/en.json'),
+              { ngModulName: this._.classify(this.appName) }
+            );
+
             this.fs.copyTpl(
               this.templatePath('_config.xml'),
               this.destinationPath('config.xml'),
