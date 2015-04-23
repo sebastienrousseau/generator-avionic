@@ -193,10 +193,18 @@
 
               // config
               this.fs.copyTpl(
-                this.templatePath('scripts/config/apiEndpoint.js'),
-                this.destinationPath('app/scripts/config/apiEndpoint.js'),
+                this.templatePath('scripts/config/app.config.js'),
+                this.destinationPath('app/scripts/config/'+ this._.classify(this.appname).toLowerCase() +'.config.js'),
                 { ngModulName: this._.classify(this.appName) }
               );
+
+              // routes
+              this.fs.copyTpl(
+                this.templatePath('scripts/routes/app.routes.js'),
+                this.destinationPath('app/scripts/routes/'+ this._.classify(this.appname).toLowerCase() +'.routes.js'),
+                { ngModulName: this._.classify(this.appName) }
+              );
+
 
               // utils
               this.fs.copyTpl(

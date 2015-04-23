@@ -10,21 +10,17 @@
  * Main module of the application.
  */
 
-angular.module('<%= ngModulName %>', [
-  /*
-   * Order is not important. Angular makes a
-   * pass to register all of the modules listed
-   * and then when app.dashboard tries to use app.data,
-   * it's components are available.
-   */
-   'ionic',
-   'ngCordova',
-   'ngResource',
-   'ngCookies',
-   'pascalprecht.translate'
-])
+ var <%= ngModulName %> = angular.module('<%= ngModulName %>', [
 
-  .run(function($ionicPlatform, $translate) {
+   // Preloaded Avionic ✈ Angular modules <%= ngModulName %>
+   'ionic',                   // ionic framework
+   'ngCordova',               // AngularJS Cordova wrappers for common Cordova plugins.
+   'ngResource',              // ngResource module provides interaction support with RESTful services via the $resource service.
+   'ngCookies',               // ngCookies module provides a convenient wrapper for reading and writing browser cookies.
+   'pascalprecht.translate'   // angular-translate module for i18n and l10n lazy loading and pluralization
+]);
+
+<%= ngModulName %>.run(function($ionicPlatform, $translate) {
 
     $ionicPlatform.ready(function() {
       // save to use plugins here
@@ -39,31 +35,31 @@ angular.module('<%= ngModulName %>', [
 
     // add possible global event handlers here
 
-  })
+  });
 
   /**
    * Making the app localization ready
    */
-  .config(function ($translateProvider) {
+   <%= ngModulName %>.config(function ($translateProvider) {
     // Service in module pascalprecht.translate which handles i18n and l10n
     $translateProvider.useStaticFilesLoader({
       prefix: 'languages/',
       suffix: '.json'
-    })
+    });
 
     // Registering a Default language
-    $translateProvider.preferredLanguage('en')
+    $translateProvider.preferredLanguage('en');
 
     // Registering a fallback language
-    $translateProvider.fallbackLanguage('en')
+    $translateProvider.fallbackLanguage('en');
 
     /**
      * A set of utility variables that can be used to retrieve language informations.
      */
-    var navigatorLang = navigator.language
+    var navigatorLang = navigator.language;
     // console.log(navigatorLang);
 
-    var isoCode = navigatorLang.substring(0, 2).toLowerCase()
+    var isoCode = navigatorLang.substring(0, 2).toLowerCase();
     // console.log(isoCode);
 
     /**
@@ -71,74 +67,28 @@ angular.module('<%= ngModulName %>', [
      */
     // localStorage is empty
     if (window.localStorage.NG_TRANSLATE_LANG_KEY === undefined || !window.localStorage.NG_TRANSLATE_LANG_KEY) {
-      isoCode = navigatorLang.substring(0, 2).toLowerCase()
-      $translateProvider.preferredLanguage(isoCode)
-      $translateProvider.fallbackLanguage(isoCode)
-      $translateProvider.useLocalStorage()
+      isoCode = navigatorLang.substring(0, 2).toLowerCase();
+      $translateProvider.preferredLanguage(isoCode);
+      $translateProvider.fallbackLanguage(isoCode);
+      $translateProvider.useLocalStorage();
       // console.log ('Language that will be used is: ' + isoCode);
       // alert (66677Language that will be used is: " + isoCode);
     } else if (window.localStorage.NG_TRANSLATE_LANG_KEY !== isoCode) {
       // localStorage is different from the isoCode
       // console.log ("Language has changed: " + isoCode);
       // alert ("Language has changed: " + navigatorLang);
-      window.localStorage.removeItem('NG_TRANSLATE_LANG_KEY')
-      isoCode = navigatorLang.substring(0, 2).toLowerCase()
-      $translateProvider.preferredLanguage(isoCode)
-      $translateProvider.fallbackLanguage(isoCode)
-      $translateProvider.useLocalStorage()
+      window.localStorage.removeItem('NG_TRANSLATE_LANG_KEY');
+      isoCode = navigatorLang.substring(0, 2).toLowerCase();
+      $translateProvider.preferredLanguage(isoCode);
+      $translateProvider.fallbackLanguage(isoCode);
+      $translateProvider.useLocalStorage();
     } else {
-      navigatorLang = window.localStorage.NG_TRANSLATE_LANG_KEY
-      $translateProvider.preferredLanguage(navigatorLang)
-      $translateProvider.fallbackLanguage(navigatorLang)
-      $translateProvider.useLocalStorage()
-      console.log('Current language used is: ' + navigatorLang)
+      navigatorLang = window.localStorage.NG_TRANSLATE_LANG_KEY;
+      $translateProvider.preferredLanguage(navigatorLang);
+      $translateProvider.fallbackLanguage(navigatorLang);
+      $translateProvider.useLocalStorage();
+      console.log('Current language used is: ' + navigatorLang);
       // alert ("Current language used is: " + navigatorLang);
     }
-  })
-
-  .config(function($httpProvider, $stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-    // register $http interceptors, if any. e.g.
-    // $httpProvider.interceptors.push('interceptor-name');
-
-    // Turn off caching
-    // $ionicConfigProvider.views.maxCache(0);
-
-    /*
-    // Turn off back button text
-    $ionicConfigProvider.backButton.previousTitleText(false);
-    */
-
-    // Application routing
-    $stateProvider
-      .state('app', {
-        url: '/app',
-        abstract: true,
-        templateUrl: 'templates/main.html',
-        controller: 'MainController'
-      })
-      .state('app.home', {
-        url: '/home',
-        cache: true,
-        views: {
-          'viewContent': {
-            templateUrl: 'templates/views/home.html',
-            controller: 'HomeController'
-          }
-        }
-      })
-      .state('app.settings', {
-        url: '/settings',
-        cache: true,
-        views: {
-          'viewContent': {
-            templateUrl: 'templates/views/settings.html',
-            controller: 'SettingsController'
-          }
-        }
-      });
-
-
-    // redirects to default route for undefined routes
-    $urlRouterProvider.otherwise('/app/home');
   });
 })();

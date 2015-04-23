@@ -1,23 +1,24 @@
-<!doctype html>
-<html class="no-js">
-<head>
+<!DOCTYPE html>
+<html>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title><%= title %></title>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <meta name="format-detection" content="telephone=no">
 
+    <title><%= title %></title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    
     <!-- inject:app-styles:css --><!-- endinject -->
-</head>
-<body ng-app="<%= ngModulName %>">
 
-<ion-nav-view></ion-nav-view>
+  </head>
 
-<!-- inject:vendor:js --><!-- endinject -->
-<!-- inject:app:js --><!-- endinject -->
+  <body ng-app="<%= ngModulName %>">
+    <ion-nav-view></ion-nav-view>
 
-<script src="cordova.js"></script>
+    <!-- inject:vendor:js --><!-- endinject -->
+    <!-- inject:app:js --><!-- endinject -->
 
-</body>
+    <script src="cordova.js"></script>
+
+  </body>
 </html>

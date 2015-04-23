@@ -6,7 +6,7 @@
  * @description
  * # ApiService
  * Retrieves correct api to make requests against.
- * Uses settings from API_ENDPOINT defined in /config/apiEndpoint.js
+ * Uses settings from CONFIG defined in /config/<%= ngModulName %>.config.js
  *
  * Usage example: $http({
  *                      url: ApiService.getEndPoint() + '/things',
@@ -15,9 +15,9 @@
  *
  */
 angular.module('<%= ngModulName %>')
-  .factory('ApiService', function($window, $http, API_ENDPOINT) {
+  .factory('ApiService', function($window, $http, CONFIG) {
 
-    var _api = API_ENDPOINT;
+    var _api = CONFIG;
     var endpoint = _api.port ? (_api.host + ':' + _api.port + _api.path) : (_api.host + _api.path);
 
     // activate for basic auth
@@ -31,4 +31,3 @@ angular.module('<%= ngModulName %>')
     };
 
   });
-
