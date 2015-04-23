@@ -1,27 +1,28 @@
 'use strict';
 
 /**
- * @ngdoc function
- * @name <%= ngModulName %>.controller:HomeController
- * @description
- * # HomeController
- */
-angular.module('<%= ngModulName %>')
-  .controller('HomeController', function($scope, ExampleService) {
+* @ngdoc function
+* @name <%= ngModulName %>.controller:HomeController
+* @description
+* # HomeController
+*/
+var <%= ngModulName %> = angular.module('<%= ngModulName %>');
 
-    $scope.myHTML = null;
+  <%= ngModulName %>.controller('HomeController', function($scope, ExampleService) {
 
-    // just an example...
-    $scope.fetchRandomText = function() {
-      ExampleService.doSomethingAsync()
-        .then(ExampleService.fetchSomethingFromServer)
-        .then(function(response) {
-            $scope.myHTML = response.data.text;
-            // close pull to refresh loader
-            $scope.$broadcast('scroll.refreshComplete');
-        });
-    };
+  $scope.myHTML = null;
 
-    $scope.fetchRandomText();
+  // just an example...
+  $scope.fetchRandomText = function() {
+    ExampleService.doSomethingAsync()
+    .then(ExampleService.fetchSomethingFromServer)
+    .then(function(response) {
+      $scope.myHTML = response.data.text;
+      // close pull to refresh loader
+      $scope.$broadcast('scroll.refreshComplete');
+    });
+  };
 
-  });
+  $scope.fetchRandomText();
+
+});

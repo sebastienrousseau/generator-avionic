@@ -6,8 +6,9 @@
  * @description
  * # MainController
  */
-angular.module('<%= ngModulName %>')
-  .controller('MainController', function($scope) {
+ var <%= ngModulName %> = angular.module('<%= ngModulName %>');
+
+ <%= ngModulName %>.controller('MainController', function($scope) {
 
     // do something with $scope
 

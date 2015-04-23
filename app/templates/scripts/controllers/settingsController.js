@@ -6,8 +6,9 @@
  * @description
  * # SettingsController
  */
-angular.module('<%= ngModulName %>')
-  .controller('SettingsController', function($scope) {
+ var <%= ngModulName %> = angular.module('<%= ngModulName %>');
+
+ <%= ngModulName %>.controller('SettingsController', function($scope) {
 
     // do something with $scope
 
