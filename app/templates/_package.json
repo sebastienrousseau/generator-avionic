@@ -1,13 +1,13 @@
 {
   "name": "<%= appName %>",
   "version": "1.0.0",
-  "repository": "tmaximini/generator-ionic-gulp",
+  "repository": "reedia/generator-avionic",
   "author": {
     "name": "<%= userName %>",
     "email": "<%= userEmail %>",
-    "url": "https://github.com/tmaximini"
+    "url": "https://github.com/reedia"
   },
-  "description": "A Yeoman generator for Ionic projects with gulp",
+  "description": "Build cross-platform hybrid native apps with HTML, JavaScript and CSS using Avionic ✈. A Yeoman generator that helps you kickstart highly sophisticated Ionic projects using Gulp to propel your development.",
   "dependencies": {},
   "devDependencies": {
     "beepbeep": "^1.2.0",

@@ -1,7 +1,7 @@
 {
   "name": "generator-avionic",
   "version": "1.1.2",
-  "description": "Build hybrid mobile apps using Avionic: a Yeoman generator for Ionic Framework Projects with Gulp",
+  "description": "Build cross-platform hybrid native apps with HTML, JavaScript and CSS using Avionic ✈. A Yeoman generator that helps you kickstart highly sophisticated Ionic projects using Gulp to propel your development.",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "reedia/generator-avionic",
