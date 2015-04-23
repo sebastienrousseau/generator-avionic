@@ -198,6 +198,14 @@
                 { ngModulName: this._.classify(this.appName) }
               );
 
+              // translate
+              this.fs.copyTpl(
+                this.templatePath('scripts/translate/app.translate.js'),
+                this.destinationPath('app/scripts/translate/'+ this._.classify(this.appname).toLowerCase() +'.translate.js'),
+                { ngModulName: this._.classify(this.appName) }
+              );
+
+
               // routes
               this.fs.copyTpl(
                 this.templatePath('scripts/routes/app.routes.js'),
