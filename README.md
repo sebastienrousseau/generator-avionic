@@ -1,16 +1,17 @@
 # ![ScreenShot](Icon.png) Avionic ✈
 ###### Propelling cross-platform hybrid native apps with HTML, JavaScript and CSS.
 
-##  What is it?
- A [Yeoman](http://yeoman.io) generator that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects using [Gulp](http://gulpjs.com/) to propel your development.
+##  WHAT IS IT?
+ A [Yeoman](http://yeoman.io) generator that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects using [Gulp](http://gulpjs.com/) to propel your development to the next level and push new boundaries.
 
-### Our approach
-* We believe perfection must consider everything.
-* We take our passion for perfection beyond the code and into our daily practices.
-* We are obsessed about helping you create beautiful applications.
-* So we designed Avionic ✈.
+### OUR STORY
+1. We believe perfection must consider everything.
+2. We take our passion beyond the code into our daily practices.
+3. We are obsessed about creating and delivering innovative and beautiful applications.
 
-### Features
+### DISCOVER AVIONIC ✈
+
+### FEATURES
 As firm believers in the highest levels of best practice and well thought out build processes Avionic ✈ takes care of providing everything needed to get started.
 
 * Gulp jobs for development, building, emulating and running your app
