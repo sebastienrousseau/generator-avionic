@@ -1,22 +1,16 @@
 # ![ScreenShot](Icon.png) Avionic ✈
 
 ##  What is it?
-Avionic ✈ helps you to kickstart highly sophisticated Ionic projects.
-
-To do so, we provide a generator that scaffold a complete frictionless HTML5 Mobile Framework for building amazing, cross-platform hybrid native apps with HTML, JavaScript, and CSS.
+Build cross-platform hybrid native apps with HTML, JavaScript and CSS using Avionic ✈. A [Yeoman](http://yeoman.io) generator that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects using [Gulp](http://gulpjs.com/) to propel your development.
 
 ### Our approach
-We believe perfection must consider everything. So we designed Avionic ✈.
-
-We take our passion for perfection beyond the code and into our daily practices.
-
-We are obsessed about helping you create beautiful applications.
-
-As firm believers in the highest levels of best practice and well thought out build processes Avionic ✈ takes care of providing everything needed to get started.
-
-A [Yeoman](http://yeoman.io) generator for Ionic Projects with Gulp
+* We believe perfection must consider everything.
+* We take our passion for perfection beyond the code and into our daily practices.
+* We are obsessed about helping you create beautiful applications.
+* So we designed Avionic ✈.
 
 ### Features
+As firm believers in the highest levels of best practice and well thought out build processes Avionic ✈ takes care of providing everything needed to get started.
 
 * Gulp jobs for development, building, emulating and running your app
 * Compiles and concatenates your Sass
@@ -29,7 +23,6 @@ A [Yeoman](http://yeoman.io) generator for Ionic Projects with Gulp
 
 
 ## Project setup, installation, and configuration
-
 This is a yeoman generator for my [Ionic Gulp Seed](https://github.com/tmaximini/ionic-gulp-seed), a minimal Ionic app template. It sets up everything to get you started with [Gulp](http://gulpjs.com/) and [Ionic](http://ionicframework.com/) in no time.
 
 ### Installation
