@@ -29,7 +29,7 @@ This is a yeoman generator for my [Ionic Gulp Seed](https://github.com/tmaximini
 
 ### Installation
 
-[![NPM](https://nodei.co/npm/generator-ionic-gulp.png?downloads=true)](https://nodei.co/npm/generator-ionic-gulp/)
+Export the repo to yur local computer
 
 You should have Yeoman installed globally
 
@@ -37,16 +37,24 @@ You should have Yeoman installed globally
 npm install -g yo
 ```
 
-To install generator-ionic-gulp from npm, run:
+To install generator-avionic from npm, run:
 
 ```bash
-npm install -g generator-ionic-gulp
+npm link
+```
+
+
+NOT WORKING AT THE MOMENT FOR LIVE 
+To install generator-avionic from npm, run:
+
+```bash
+npm install -g generator-avionic
 ```
 
 Finally, initiate the generator:
 
 ```bash
-yo ionic-gulp
+yo avionic
 ```
 
 after installation, just run:
