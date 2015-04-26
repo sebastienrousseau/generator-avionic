@@ -12,8 +12,21 @@
         <div class="loader" ng-if="!myHTML">
             <ion-spinner></ion-spinner>
         </div>
-        <div class="content" ng-bind-html="myHTML">
+        <div class="content">
+            <div class="list animate-fade-slide-in-right" ng-animate="'animate'"
+             ng-repeat="results in myHTML |
+            orderBy: results.id |
+            limitTo: 50
+            track by results.id">
+                <a href="" class="buggyitem item-avatar item-icon-left">
+                    <img src="images/icon.png">
+                    <h2>{{results.name}}</h2>
+                    <p>Product ID is :{{results.id}}</p>
+                </a>
+            </div>
         </div>
+        <!-- <div class="content" ng-bind-html="myHTML">
+        </div> -->
     </ion-content>
 
 </ion-view>
