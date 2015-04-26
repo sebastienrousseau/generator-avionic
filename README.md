@@ -128,7 +128,10 @@ Replace `splash.png` and `icon.png` inside `/resources`. Then run `ionic resourc
 Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/reedia/generator-avionic/graphs/contributors)
 
 [![Sebastien Rousseau](http://gravatar.com/avatar/69e6a8caab075ec18b7f406518b78a11?s=117)](http://sebastienrousseau.com) | [![David Tuplin](http://www.davetuplin.co.uk/images/dave_yahoo_messenger.jpg)](http://www.davetuplin.co.uk)
-|:---:|:---:|
+|:---:|:---:
+[Sebastien Rousseau](https://github.com/wwdseb) | [David Tuplin](https://github.com/tuplind)
+
+
 
 
 
