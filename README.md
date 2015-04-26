@@ -25,7 +25,6 @@ As firm believers in the highest levels of best practice and well thought out bu
 
 
 ## Project setup, installation, and configuration
-This is a yeoman generator for my [Ionic Gulp Seed](https://github.com/tmaximini/ionic-gulp-seed), a minimal Ionic app template. It sets up everything to get you started with [Gulp](http://gulpjs.com/) and [Ionic](http://ionicframework.com/) in no time.
 
 ### Installation
 
