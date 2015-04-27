@@ -61,12 +61,12 @@
            }
          })
 
-         .state('app.product.new',{
-             url:'/product/new',
+         .state('app.new-product',{
+             url:'/new',
              views: {
                'viewContent': {
-                 controller:'ProductCreationController',
-                 templateUrl:'templates/views/new-product.html'
+                 templateUrl:'templates/views/new-product.html',
+                 controller:'NewProductController'
                }
              }
            })

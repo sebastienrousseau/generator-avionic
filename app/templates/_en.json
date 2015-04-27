@@ -1,4 +1,5 @@
 {
   "APP_NAME": "<%= ngModulName %>",
-  "APP_CATALOGUE": "Catalogue"
+  "APP_CATALOGUE": "Catalogue",
+  "APP_CATALOGUE_NEW": "New"
 }

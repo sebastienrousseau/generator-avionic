@@ -172,6 +172,12 @@
               );
 
               this.fs.copyTpl(
+                this.templatePath('scripts/controllers/newProductController.js'),
+                this.destinationPath('app/scripts/controllers/newProductController.js'),
+                { ngModulName: this._.classify(this.appName) }
+              );
+
+              this.fs.copyTpl(
                 this.templatePath('scripts/controllers/mainController.js'),
                 this.destinationPath('app/scripts/controllers/mainController.js'),
                 { ngModulName: this._.classify(this.appName) }
