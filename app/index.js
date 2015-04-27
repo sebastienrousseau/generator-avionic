@@ -159,10 +159,15 @@
                 { ngModulName: this._.classify(this.appName) }
               );
 
-
               this.fs.copyTpl(
                 this.templatePath('scripts/controllers/homeController.js'),
                 this.destinationPath('app/scripts/controllers/homeController.js'),
+                { ngModulName: this._.classify(this.appName) }
+              );
+
+              this.fs.copyTpl(
+                this.templatePath('scripts/controllers/productsController.js'),
+                this.destinationPath('app/scripts/controllers/productsController.js'),
                 { ngModulName: this._.classify(this.appName) }
               );
 

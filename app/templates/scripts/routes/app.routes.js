@@ -39,6 +39,47 @@
              }
            }
          })
+         .state('app.products',{
+            url:'/products',
+            cache: true,
+            views: {
+              'viewContent': {
+                templateUrl:'templates/views/products.html',
+                controller:'ProductsController'
+             }
+           }
+         })
+
+         .state('app.product',{
+            url:'/product/:id',
+            cache: true,
+            views: {
+              'viewContent': {
+                controller:'ProductController',
+                templateUrl:'templates/views/product.html'
+             }
+           }
+         })
+
+         .state('app.product.new',{
+             url:'/product/new',
+             views: {
+               'viewContent': {
+                 controller:'ProductCreationController',
+                 templateUrl:'templates/views/new-product.html'
+               }
+             }
+           })
+
+         .state('app.product.edit',{
+             url:'/product/edit/:id',
+             views: {
+               'viewContent': {
+                   controller:'ProductEditController',
+                   templateUrl:'templates/views/edit-product.html'
+                 }
+               }
+             })
          .state('app.settings', {
            url: '/settings',
            cache: true,
