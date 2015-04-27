@@ -8,26 +8,24 @@
   */
   var <%= ngModulName %> = angular.module('<%= ngModulName %>');
 
-  <%= ngModulName %>.controller('HomeController', function($scope, ExampleService) {
+  <%= ngModulName %>.controller('HomeController', function($scope, $timeout, ExampleService) {
 
-    ExampleService.getAll().success(function(data){
-        $scope.myHTML = data.results;
-        });
+       $scope.doRefresh = function() {
+         ExampleService.getAll().success(function(data){
+           $scope.items=data.results;
+           console.log(data.results);
 
-    // $scope.myHTML = null;
-    //
-    // // just an example...
-    // $scope.fetchRandomText = function() {
-    //   ExampleService.doSomethingAsync()
-    //   .then(ExampleService.fetchSomethingFromServer)
-    //   .then(function(response) {
-    //     $scope.myHTML = response.data.text;
-    //     // close pull to refresh loader
-    //     $scope.$broadcast('scroll.refreshComplete');
-    //   });
-    // };
-    //
-    // $scope.fetchRandomText();
+           // close pull to refresh loader
+           $scope.$broadcast('scroll.refreshComplete');
+         });
 
+       };
+
+       $scope.doRefresh();
+
+    $scope.onItemDelete=function(item){
+      ExampleService.delete(item.objectId);
+      $scope.items.splice($scope.items.indexOf(item),1);
+    };
   });
 })();

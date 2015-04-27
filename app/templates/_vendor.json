@@ -12,7 +12,6 @@
     "bower_components/ionic/js/ionic.js",
     "bower_components/ionic-material/ionic.material.min.js",
     "bower_components/ionic/js/ionic-angular.js",
-    "bower_components/restangular/dist/restangular.min.js",
     "bower_components/lodash/lodash.js",
     "bower_components/ngCordova/dist/ng-cordova.js"
 ]

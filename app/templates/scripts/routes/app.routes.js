@@ -12,16 +12,14 @@
    var <%= ngModulName %> = angular.module('<%= ngModulName %>');
 
    <%= ngModulName %>.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
-       // register $http interceptors, if any. e.g.
-       // $httpProvider.interceptors.push('interceptor-name');
 
-       // Turn off caching (Please add $ionicConfigProvider to the app.config options)
-       // $ionicConfigProvider.views.maxCache(0);
+      // Turn off caching (Please add $ionicConfigProvider to the app.config options)
+      // $ionicConfigProvider.views.maxCache(0);
 
-       /*
-       // Turn off back button text (Please add $ionicConfigProvider to the app.config options)
-       $ionicConfigProvider.backButton.previousTitleText(false);
-       */
+      /*
+      // Turn off back button text (Please add $ionicConfigProvider to the app.config options)
+      $ionicConfigProvider.backButton.previousTitleText(false);
+      */
 
        // Application routing
        $stateProvider
