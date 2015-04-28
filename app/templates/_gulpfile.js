@@ -28,7 +28,7 @@
   var plugins = require('gulp-load-plugins')();
 
 
-  // var gutil = require('gulp-util');
+  var gutil = require('gulp-util');
   // var clean = require('gulp-clean');
   var sass = require('gulp-sass');
   // var uglify = require('gulp-uglify');
@@ -211,16 +211,21 @@
     .on('error', errorHandler);
   });
 
+  // copy favicon
+  gulp.task('favicon', function() {
+    return gulp.src('app/favicon.ico')
+    .pipe(gulp.dest(path.join(targetDir)))
+    .on('error', errorHandler);
+  });
 
   // lint js sources based on .jshintrc ruleset
-  gulp.task('jsHint', function(done) {
+  gulp.task('jsHint', function() {
     return gulp
     .src('app/scripts/**/*.js')
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter(stylish))
 
     .on('error', errorHandler);
-    done();
   });
 
   // concatenate and minify vendor sources
@@ -297,6 +302,9 @@
     .use(express.static(targetDir))
     .listen(port);
     open('http://localhost:' + port + '/');
+    gutil.log(gutil.colors.yellow('== <%= ngModulName %> is cleared to takeoff! =='));
+    gutil.log(gutil.colors.yellow('== Please, make sure your seat belts are fastened. =='));
+    gutil.log(gutil.colors.yellow('== We would like to thank you for flying with Avionic ✈. =='));
   });
 
   // ionic emulate wrapper
@@ -348,6 +356,7 @@
     gulp.watch('app/fonts/**', ['fonts']);
     gulp.watch('app/icons/**', ['iconfont']);
     gulp.watch('app/images/**', ['images']);
+    gulp.watch('app/favicon.ico', ['favicon']);
     gulp.watch('app/scripts/**/*.js', ['index']);
     gulp.watch('./vendor.json', ['vendor']);
     gulp.watch('app/languages/*.json', ['languages']);
@@ -363,6 +372,7 @@
 
   // our main sequence, with some conditional jobs depending on params
   gulp.task('default', function(done) {
+    gutil.log(gutil.colors.white('== Roger, initializing Gulp sequence =='));
     runSequence(
       'clean',
       'iconfont',
@@ -370,6 +380,7 @@
         'fonts',
         'templates',
         'styles',
+        'favicon',
         'images',
         'vendor',
         'languages'
@@ -381,4 +392,5 @@
       run ? 'ionic:run' : 'noop',
       done);
     });
+    gutil.log(gutil.colors.yellow('== Avionic ✈ Flight <%= ngModulName %> is ready for takeoff =='));
   })();

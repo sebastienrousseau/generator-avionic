@@ -1,7 +1,15 @@
-<ion-side-menus>
+<ion-side-menus enable-menu-with-back-views="false">
     <!-- Center content -->
     <ion-side-menu-content>
-
+      <ion-nav-bar align-title="center">
+        <ion-nav-back-button class="button button-icon icon ion-android-arrow-back flat"></ion-nav-back-button>
+        <ion-nav-buttons side="left">
+          <button menu-toggle="left" class="button button-icon icon ion-android-menu flat"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+          <button menu-toggle="right" class="button button-icon icon ion-android-more-vertical flat"></button>
+        </ion-nav-buttons>
+      </ion-nav-bar>
         <ion-nav-view name="viewContent">
 
         </ion-nav-view>
@@ -20,6 +28,10 @@
                     <i class="icon ion-home"></i>
                     Home
                 </a>
+                <a menu-close class="item item-icon-left" ui-sref-active="active" ui-sref="app.products">
+                    <i class="icon ion-android-cart"></i>
+                    Products
+                </a>
                 <a menu-close class="item item-icon-left" ui-sref-active="active" ui-sref="app.settings">
                     <i class="icon ion-settings"></i>
                     Settings
@@ -27,4 +39,26 @@
             </div>
         </ion-content>
     </ion-side-menu>
+
+    <!-- Right menu -->
+    <ion-side-menu side="right" class="side-menu">
+
+        <ion-header-bar align-title="center" class="bar-positive">
+            <h1 class="title">Side Menu</h1>
+        </ion-header-bar>
+
+        <ion-content class="has-header">
+            <div class="list">
+                <a menu-close class="item item-icon-left" ui-sref-active="active" ui-sref="app.home">
+                    <i class="icon ion-home"></i>
+                    Home
+                </a>
+                <a menu-close class="item item-icon-left" ui-sref-active="active" ui-sref="app.settings">
+                    <i class="icon ion-settings"></i>
+                    Settings
+                </a>
+            </div>
+        </ion-content>
+    </ion-side-menu>
+
 </ion-side-menus>

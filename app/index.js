@@ -246,6 +246,11 @@
               );
 
               this.fs.copy(
+                this.templatePath('favicon.ico'),
+                this.destinationPath('app/favicon.ico')
+              );
+
+              this.fs.copy(
                 this.templatePath('splash.png'),
                 this.destinationPath('resources/splash.png')
               );

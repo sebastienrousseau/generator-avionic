@@ -1,26 +1,26 @@
-<ion-view>
-    <ion-header-bar align-title="center" class="bar-positive">
-    <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
-        <h1 class="title">{{ 'APP_CATALOGUE' | translate }}</h1>
-    </ion-header-bar>
+<ion-view hide-back-button="true" title="{{ 'APP_CATALOGUE' | translate }}">
+  <ion-header-bar align-title="center" class="bar bar-header bar-positive">
+    <button class="button button-icon icon ion-android-more-vertical flat" menu-toggle="right"></button>
+    <!-- <button class="button button-fab button-fab-top-left button-assertive icon ion-android-add waves-effect waves-button waves-light ion-minus" ng-click="data.showDelete = !data.showDelete;"></button> -->
+  </ion-header-bar>
 
-    <ion-content>
-      <ion-refresher
-          pulling-text="Pull to refresh..."
-          on-refresh="doRefresh()">
-      </ion-refresher>
-      <div class="loader" ng-if="!items">
-          <ion-spinner></ion-spinner>
-      </div>
-
-      <ion-list show-delete="data.showDelete">
-        <ion-item class="item item-avatar item-icon-right" ng-repeat="item in items | orderBy: 'title'" item="item" href="#/products/edit/{{item.objectId}}/{{item.title}}">
-          <img src="images/icon.png" />
-          <h2>{{item.title}}</h2>
-          <p>Product ID is #{{item.title}}</p>
-          <p>Description of the product with the identifier of  #{{item.title}}</p>
-          <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)"></ion-delete-button>
-        </ion-item>
-      </ion-list>
-    </ion-content>
+  <ion-content class="content has-header">
+    <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+  <div class="loader" ng-if="!items">
+    <ion-spinner></ion-spinner>
+  </div>
+  <button ng-click="create()" class="button button-fab button-fab-bottom-right button-assertive icon ion-android-add waves-effect waves-button waves-light"></button>
+  <ion-list show-delete="data.showDelete" can-swipe="listCanSwipe">
+    <ion-item class="item item-thumbnail-left" ng-repeat="item in items | orderBy: 'title'" item="item" href="#/products/edit/{{item.objectId}}/{{item.title}}">
+      <img src="images/icon.png" />
+      <h2>{{item.title}}</h2>
+      <p>Product ID is #{{item.title}}</p>
+      <p>Description of the product with the identifier of  #{{item.title}}</p>
+      <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)"></ion-delete-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
 </ion-view>
