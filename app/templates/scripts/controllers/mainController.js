@@ -8,7 +8,7 @@
   */
   var <%= ngModulName %> = angular.module('<%= ngModulName %>');
 
-  <%= ngModulName %>.controller('MainController', function($scope) {
+  <%= ngModulName %>.controller('MainController', function() {
 
     // do something with $scope
 

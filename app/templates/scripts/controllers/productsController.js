@@ -24,13 +24,13 @@
 
     $scope.doRefresh();
 
- $scope.onItemDelete=function(item){
-   ExampleService.delete(item.objectId);
-   $scope.items.splice($scope.items.indexOf(item),1);
- };
+    $scope.onItemDelete=function(item){
+      ExampleService.delete(item.objectId);
+      $scope.items.splice($scope.items.indexOf(item),1);
+    };
 
- $scope.create=function(){
-   $state.go("app.new");
- };
-});
+    $scope.create=function(){
+      $state.go('app.new');
+    };
+  });
 })();

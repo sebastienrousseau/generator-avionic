@@ -13,7 +13,7 @@
     $scope.item={};
 
     $scope.create=function(){
-      ExampleService.create({title:$scope.item.title}).success(function(data){
+      ExampleService.create({title:$scope.item.title}).success(function(){
             $state.go('app.products');
         });
     };
