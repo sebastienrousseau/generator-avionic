@@ -136,6 +136,7 @@
               this.directory('app', 'app');
               this.directory('hooks', 'hooks');
 
+              this.mkdir('server');
               this.mkdir('app/icons');
               this.mkdir('app/images');
               this.mkdir('resources');
@@ -250,6 +251,11 @@
                 this.templatePath('scripts/app.js'),
                 this.destinationPath('app/scripts/app.js'),
                 { ngModulName: this._.classify(this.appName) }
+              );
+
+              this.fs.copy(
+                this.templatePath('server'),
+                this.destinationPath('server')
               );
 
               this.fs.copy(
