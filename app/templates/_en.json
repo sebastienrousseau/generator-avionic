@@ -2,5 +2,7 @@
   "APP_NAME": "<%= ngModulName %>",
   "APP_CATALOGUE": "Catalogue",
   "APP_CATALOGUE_NEW": "New",
-  "APP_SETTINGS": "Settings"
+  "APP_CATALOGUE_EDIT": "Edit",
+  "APP_SETTINGS": "Settings",
+  "APP_REFRESH_TEXT": "Pull to refresh..."
 }

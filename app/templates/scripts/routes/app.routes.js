@@ -39,7 +39,7 @@
     })
     .state('app.products',{
       url:'/products',
-      cache: true,
+      cache: false,
       views: {
         'viewContent': {
           templateUrl:'templates/views/products.html',
@@ -50,11 +50,11 @@
 
     .state('app.product',{
       url:'/product/:id',
-      cache: true,
+      cache: false,
       views: {
         'viewContent': {
-          controller:'ProductController',
-          templateUrl:'templates/views/product.html'
+          templateUrl:'templates/views/product.html',
+          controller:'ProductController'
         }
       }
     })
@@ -69,12 +69,12 @@
       }
     })
 
-    .state('app.product.edit',{
+    .state('app.edit',{
       url:'/product/edit/:id',
       views: {
         'viewContent': {
-          controller:'ProductEditController',
-          templateUrl:'templates/views/edit-product.html'
+          templateUrl:'templates/views/edit-product.html',
+          controller:'EditProductController'
         }
       }
     })

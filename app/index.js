@@ -172,8 +172,20 @@
               );
 
               this.fs.copyTpl(
+                this.templatePath('scripts/controllers/productController.js'),
+                this.destinationPath('app/scripts/controllers/productController.js'),
+                { ngModulName: this._.classify(this.appName) }
+              );
+
+              this.fs.copyTpl(
                 this.templatePath('scripts/controllers/newProductController.js'),
                 this.destinationPath('app/scripts/controllers/newProductController.js'),
+                { ngModulName: this._.classify(this.appName) }
+              );
+
+              this.fs.copyTpl(
+                this.templatePath('scripts/controllers/editProductController.js'),
+                this.destinationPath('app/scripts/controllers/editProductController.js'),
                 { ngModulName: this._.classify(this.appName) }
               );
 

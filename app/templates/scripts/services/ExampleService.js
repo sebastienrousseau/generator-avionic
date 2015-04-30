@@ -31,7 +31,7 @@
             });
         },
         get:function(id){
-            return $http.get(apiUrl+id,{
+            return $http.get(apiUrl+'/'+id,{
                 headers:{
                   'X-Parse-Application-Id': API_CREDENTIALS.APP_ID,
                   'X-Parse-REST-API-Key': API_CREDENTIALS.REST_API_KEY
@@ -48,7 +48,7 @@
             });
         },
         edit:function(id,data){
-            return $http.put(apiUrl+id,data,{
+          return $http.put(apiUrl+'/'+id,data,{
                 headers:{
                   'X-Parse-Application-Id': API_CREDENTIALS.APP_ID,
                   'X-Parse-REST-API-Key': API_CREDENTIALS.REST_API_KEY,
@@ -57,7 +57,7 @@
             });
         },
         delete:function(id){
-            return $http.delete(apiUrl+id,{
+            return $http.delete(apiUrl+'/'+id,{
                 headers:{
                   'X-Parse-Application-Id': API_CREDENTIALS.APP_ID,
                   'X-Parse-REST-API-Key': API_CREDENTIALS.REST_API_KEY,

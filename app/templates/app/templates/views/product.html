@@ -1,0 +1,13 @@
+<ion-view title="{{ 'APP_CATALOGUE' | translate }}">
+  <ion-content class="content has-header">
+    <div class="card in done">
+      <div class="item item-avatar item-text-wrap stable-bg waves-effect waves-block waves-dark" ng-repeat="item in items | filter:id">
+        <span class="avatar" style="background-image: url('images/icon.png');"></span>
+        <h2><a href="#/app/product/edit/{{item.objectId}}">{{item.title}}</a></h2>
+        <p>Product ID is #{{item.objectId}}</p>
+        <p>Description of the product with the identifier of #{{item.objectId}}</p>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

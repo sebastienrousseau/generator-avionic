@@ -43,7 +43,7 @@ npm link
 ```
 
 
-NOT WORKING AT THE MOMENT FOR LIVE 
+NOT WORKING AT THE MOMENT FOR LIVE
 To install generator-avionic from npm, run:
 
 ```bash
@@ -143,3 +143,5 @@ Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contr
 ## Licensing
 
 * See [LICENSE](LICENSE)
+* No warranty expressed or implied.  Software is as is.
+* Brought to you by [Reedia](http:/reedia.com) London
