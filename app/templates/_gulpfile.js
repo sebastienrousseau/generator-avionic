@@ -1,5 +1,5 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
   /*!
    * Copyright 2015 Reedia Limited.
@@ -19,67 +19,52 @@
    *
    */
 
-  var appName = '<%= ngModulName %>';
+    var appName = '<%= ngModulName %>';
+    var gulp = require('gulp');
+    var wiredep = require('wiredep').stream;
+    var plugins = require('gulp-load-plugins')();
+    var gutil = require('gulp-util');
+    // var clean = require('gulp-clean');
+    var sass = require('gulp-sass');
+    // var uglify = require('gulp-uglify');
+    var minifyHTML = require('gulp-minify-html');
+    var rename = require('gulp-rename');
+    var filesize = require('gulp-filesize');
+    var sourcemaps = require('gulp-sourcemaps');
+    var del = require('del');
+    var beep = require('beepbeep');
+    var express = require('express');
+    var path = require('path');
+    var open = require('open');
+    var stylish = require('jshint-stylish');
+    var connectLr = require('connect-livereload');
+    var streamqueue = require('streamqueue');
+    var runSequence = require('run-sequence');
+    var merge = require('merge-stream');
+    var ripple = require('ripple-emulator');
+    var minifyCss = require('gulp-minify-css');
+    var replace = require('gulp-replace');
 
-  var gulp = require('gulp');
-  var wiredep = require('wiredep').stream;
+/**
+ * Parse arguments
+ */
+    var args = require('yargs')
+            .alias('e', 'emulate')
+            .alias('b', 'build')
+            .alias('r', 'run')
+            // remove all debug messages (console.logs, alerts etc) from release build
+            .alias('release', 'strip-debug')
+            .default('build', false)
+            .default('port', 9000)
+            .default('strip-debug', false)
+            .argv;
 
-  // Load plugins
-  var plugins = require('gulp-load-plugins')();
-
-
-  var gutil = require('gulp-util');
-  // var clean = require('gulp-clean');
-  var sass = require('gulp-sass');
-  // var uglify = require('gulp-uglify');
-
-  var minifyHTML = require('gulp-minify-html');
-  var rename = require('gulp-rename');
-  var filesize = require('gulp-filesize');
-  var sourcemaps = require('gulp-sourcemaps');
-
-
-
-
-
-
-
-  var del = require('del');
-  var beep = require('beepbeep');
-  var express = require('express');
-  var path = require('path');
-  var open = require('open');
-  var stylish = require('jshint-stylish');
-  var connectLr = require('connect-livereload');
-  var streamqueue = require('streamqueue');
-  var runSequence = require('run-sequence');
-  var merge = require('merge-stream');
-  var ripple = require('ripple-emulator');
-  var minifyCss = require('gulp-minify-css');
-  var replace = require('gulp-replace');
-
-
-
-  /**
-  * Parse arguments
-  */
-  var args = require('yargs')
-  .alias('e', 'emulate')
-  .alias('b', 'build')
-  .alias('r', 'run')
-  // remove all debug messages (console.logs, alerts etc) from release build
-  .alias('release', 'strip-debug')
-  .default('build', false)
-  .default('port', 9000)
-  .default('strip-debug', false)
-  .argv;
-
-  var build = !!(args.build || args.emulate || args.run);
-  var emulate = args.emulate;
-  var run = args.run;
-  var port = args.port;
-  var stripDebug = !!args.stripDebug;
-  var targetDir = path.resolve(build ? 'www' : '.tmp');
+    var build = !!(args.build || args.emulate || args.run);
+    var emulate = args.emulate;
+    var run = args.run;
+    var port = args.port;
+    var stripDebug = !!args.stripDebug;
+    var targetDir = path.resolve(build ? 'www' : '.tmp');
 
   // if we just use emualate or run without specifying platform, we assume iOS
   // in this case the value returned from yargs would just be true
