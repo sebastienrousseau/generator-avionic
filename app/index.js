@@ -7,8 +7,8 @@
     var yeoman = require('yeoman-generator');
     var chalk = require('chalk');
     var yosay = require('yosay');
-//    var path = require('path');
-//    var appPath = path.join(process.cwd(), 'app');
+    //    var path = require('path');
+    //    var appPath = path.join(process.cwd(), 'app');
 
     module.exports = yeoman.generators.Base.extend({
         initializing: function () {
@@ -35,6 +35,18 @@
                     },
                         {
                             type: 'input',
+                            name: 'appDescription',
+                            message: 'Please enter a description for your Avionic ✈ app:',
+                            default: 'A world-class app powered by Avionic ✈.'
+                        },
+                        {
+                            type: 'input',
+                            name: 'appKeywords',
+                            message: 'Please enter keywords separated by commas for your Avionic ✈ app:',
+                            default: 'avionic,ionic,yeoman, gulp, html, js, css, ios, android'
+                        },
+                        {
+                            type: 'input',
                             name: 'userName',
                             message: 'Please enter your name:',
                             default: 'Charles Lindbergh'
@@ -49,6 +61,8 @@
 
                 this.prompt(prompts, function (props) {
                     this.appName = props.appName;
+                    this.appDescription = props.appDescription;
+                    this.appKeywords = props.appKeywords;
                     this.userName = props.userName;
                     this.userMail = props.userMail;
                     done();
@@ -78,6 +92,8 @@
                     this.destinationPath('package.json'),
                     {
                         appName: this._.underscored(this.appName),
+                        appDescription: this._.underscored(this.appDescription),
+                        appKeywords: this._.underscored(this.appKeywords),
                         userName: this.userName,
                         userEmail: this.userMail
                     }
@@ -87,6 +103,8 @@
                     this.destinationPath('bower.json'),
                     {
                         appName: this._.classify(this.appName),
+                        appDescription: this._.classify(this.appDescription),
+                        appKeywords: this._.classify(this.appKeywords),
                         userName: this.userName,
                         userEmail: this.userMail
                     }
@@ -105,6 +123,8 @@
                     this.destinationPath('config.xml'),
                     {
                         appName: this.appName,
+                        appDescription: this.appDescription,
+                        appKeywords: this.appKeywords,
                         userName: this.userName,
                         userEmail: this.userMail,
                         widgetId: this.appId
@@ -157,7 +177,13 @@
                     this.destinationPath('app/index.html'),
                     {
                         title: this.appName,
-                        ngModulName: this._.classify(this.appName)
+                        description: this.appDescription,
+                        keywords: this.appKeywords,
+                        author: this.userName,
+                        ngModulName: this._.classify(this.appName),
+                        ngModulDescription: this._.classify(this.appDescription),
+                        ngModulKeywords: this._.classify(this.appKeywords),
+                        ngModulAuthor: this._.classify(this.userName)
                     }
                 );
 
