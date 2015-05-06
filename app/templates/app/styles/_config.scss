@@ -23,6 +23,16 @@ $colorblue:#0d47a1;
 $colorgreen:#4caf50;
 $colorpurple:#9c27b0;
 $colorlightgreen:#42c5a5;
+$colorIcons: #CFCFCF;
+
+.coloroured {
+  color:$colorIcons;
+}
+
+.active .coloroured {
+  color:#00D5FF;
+}
+
 
 // spacings
 $tiny-value				     : 5px; // tiny value for margins / paddings
