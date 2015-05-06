@@ -43,7 +43,14 @@ $step-size-heading: 0.33333;
 #{headings(1,2)}, #{headings(1,2)} a {
   text-transform: uppercase;
   text-decoration:none;
+  font-weight:light;
+  @include heading-size(21px);
+}
 
+#{headings(3)}, #{headings(3)} a {
+  text-decoration:none;
+  font-size:14px;
+  font-style:italic;
 }
 
 
@@ -51,25 +58,8 @@ $step-size-heading: 0.33333;
   color: #000;
 }
 
-
-h1 {
-    @include heading-size(4);
-}
-h2 {
-    @include heading-size(3.5);
-    text-transform: uppercase;
-}
-h3 {
-    @include heading-size(3);
-}
-h4 {
-    @include heading-size(2.5);
-}
-h5 {
-    @include heading-size(2);
-}
-h6 {
-    @include heading-size(1.5);
+#{headings(1,6)} {
+  @include heading-size(17px);
 }
 
 @mixin font($FontPath, $FontVersion, $FontType:"light") {
