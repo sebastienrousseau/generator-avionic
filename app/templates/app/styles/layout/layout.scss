@@ -170,7 +170,8 @@ span,.button,.item{
 
 .item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content, .item .item-content.active, .item .item-content.activated
 {
-  background-color:$colorgray !important;
+  background-color:#4E5C6D !important;
+  color:$colorwhite !important;
 }
 
 .button.button-positive.button-clear {
