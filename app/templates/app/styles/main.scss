@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
 // Include custom elements
+@import 'ionic/ionic';
 @import '_config';
 @import '_mixin';
 @import '_fonts';
@@ -25,3 +26,75 @@
  */
 
 @import "views/home";
+
+
+
+/* Button : FAB
+==================================*/
+.background {
+  @include full-bg('background');
+}
+
+.button.button-fab,
+.bar .button.button-fab {
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    z-index: 9999;
+    width: 56px;
+    height: 56px;
+    max-height: initial;
+    max-width: initial;
+    border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: 0.3s fade-in-out;
+    transition: 0.3s fade-in-out;
+    -webkit-transition-property: -webkit-transform, box-shadow;
+    transition-property: transform, box-shadow;
+}
+
+.button.button-fab.button-fab-bottom-right,
+.bar .button.button-fab.button-fab-bottom-right {
+    top: auto;
+    right: 16px;
+    bottom: 16px;
+    left: auto;
+    position: absolute;
+}
+
+.button.button-fab.button-fab-bottom-left,
+.bar .button.button-fab.button-fab-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 16px;
+    left: 16px;
+    position: absolute;
+}
+
+.button.button-fab.button-fab-top-right,
+.bar .button.button-fab.button-fab-top-right {
+    top: 32px;
+    right: 16px;
+    bottom: auto;
+    left: auto;
+    position: absolute;
+}
+
+.button.button-fab.button-fab-top-left,
+.bar .button.button-fab.button-fab-top-left {
+    top: 32px;
+    right: auto;
+    bottom: auto;
+    left: 16px;
+    position: absolute;
+}
+.button.button-fab.button-fab-top-left.expanded,
+.button.button-fab.button-fab-top-right.expanded,
+.bar .button.button-fab.button-fab-top-left.expanded,
+.bar .button.button-fab.button-fab-top-right.expanded {
+    top: 48px;
+}

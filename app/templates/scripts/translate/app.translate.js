@@ -14,6 +14,10 @@
   * Making the app localization ready
   */
   <%= ngModulName %>.config(function ($translateProvider) {
+
+    // Escaping of variable content (XSS security)
+    $translateProvider.useSanitizeValueStrategy('escaped');
+
     // Service in module pascalprecht.translate which handles i18n and l10n
     $translateProvider.useStaticFilesLoader({
       prefix: 'languages/',

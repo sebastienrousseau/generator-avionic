@@ -78,6 +78,17 @@
         }
       }
     })
+
+    .state('app.login',{
+      url:'/login',
+      views: {
+        'viewContent': {
+          templateUrl:'templates/views/login.html',
+          controller:'LoginController'
+        }
+      }
+    })
+
     .state('app.settings', {
       url: '/settings',
       cache: true,

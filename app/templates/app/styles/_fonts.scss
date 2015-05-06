@@ -1,88 +1,26 @@
 @charset 'UTF-8';
 
-$OpenSansPath: "../fonts" !default;
-$OpenSansVersion: "1.1.0" !default;
+$FontPath: "../fonts" !default;
+$FontName: "aleo" !default;
+$FontVersion: "1.2.2" !default;
 
 /* Regular */
 @font-face {
-    font-family: 'Open Sans';
-    @include font($OpenSansPath, $OpenSansVersion, "Regular");
-    font-weight: normal;
+    font-family: $FontName;
+    @include font($FontPath, $FontVersion, "regular");
     font-weight: 400;
-    font-style: normal;
-}
-
-/* Italic */
-@font-face {
-    font-family: 'Open Sans';
-    @include font($OpenSansPath, $OpenSansVersion, "Italic");
-    font-weight: normal;
-    font-weight: 400;
-    font-style: italic;
 }
 
 /* Light */
 @font-face {
-    font-family: 'Open Sans';
-    @include font($OpenSansPath, $OpenSansVersion, "Light");
+    font-family: $FontName;
+    @include font($FontPath, $FontVersion, "light");
     font-weight: 200;
-    font-style: normal;
-}
-
-/* Light Italic */
-@font-face {
-    font-family: 'Open Sans';
-    @include font($OpenSansPath, $OpenSansVersion, "LightItalic");
-    font-weight: 200;
-    font-style: italic;
-}
-
-/* Semibold */
-@font-face {
-    font-family: 'Open Sans';
-    @include font($OpenSansPath, $OpenSansVersion, "SemiBold");
-    font-weight: 500;
-    font-style: normal;
-}
-
-/* Semibold Italic */
-@font-face {
-    font-family: 'Open Sans';
-    @include font($OpenSansPath, $OpenSansVersion, "SemiboldItalic");
-    font-weight: 500;
-    font-style: italic;
 }
 
 /* Bold */
 @font-face {
-    font-family: 'Open Sans';
-    @include font($OpenSansPath, $OpenSansVersion, "Bold");
-    font-weight: bold;
+    font-family: $FontName;
+    @include font($FontPath, $FontVersion, "bold");
     font-weight: 700;
-    font-style: normal;
-}
-
-/* Bold Italic */
-@font-face {
-    font-family: 'Open Sans';
-    @include font($OpenSansPath, $OpenSansVersion, "BoldItalic");
-    font-weight: bold;
-    font-weight: 700;
-    font-style: italic;
-}
-
-/* Extra Bold */
-@font-face {
-    font-family: 'Open Sans';
-    @include font($OpenSansPath, $OpenSansVersion, "ExtraBold");
-    font-weight: 900;
-    font-style: normal;
-}
-
-/* Extra Bold Italic */
-@font-face {
-    font-family: 'Open Sans';
-    @include font($OpenSansPath, $OpenSansVersion, "ExtraBoldItalic");
-    font-weight: 900;
-    font-style: italic;
 }

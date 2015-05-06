@@ -188,6 +188,14 @@
                 );
 
                 this.fs.copyTpl(
+                    this.templatePath('login.html'),
+                    this.destinationPath('app/templates/views/login.html'),
+                    {
+                        title: this.appName
+                    }
+                );
+
+                this.fs.copyTpl(
                     this.templatePath('home.html'),
                     this.destinationPath('app/templates/views/home.html'),
                     {

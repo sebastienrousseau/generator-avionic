@@ -40,7 +40,7 @@
     var path = require('path');
     var open = require('open');
     var stylish = require('jshint-stylish');
-    var connectLr = require('connect-livereload');
+    var livereload = require('connect-livereload');
     var streamqueue = require('streamqueue');
     var runSequence = require('run-sequence');
     var merge = require('merge-stream');
@@ -99,16 +99,21 @@
         var options = build ? { style: 'compressed' } : { style: 'expanded' };
         var sassStream = plugins.rubySass('app/styles/main.scss', options)
                 .pipe(plugins.autoprefixer('last 1 Chrome version', 'last 3 iOS versions', 'last 3 Android versions'));
-        var cssStream = gulp
-                .src(['bower_components/ionic/css/ionic.css', 'bower_components/ionic-material/ionic.material.min.css']);
-        return streamqueue({ objectMode: true }, cssStream, sassStream)
+
+
+        // Not used
+        //var cssStream = gulp
+          //             .src(['bower_components/ionic/css/ionic.css', 'bower_components/ionic-material/ionic.material.min.css']);
+
+        return streamqueue({ objectMode: true }, sassStream)
             .pipe(plugins.concat('main.css'))
             .pipe(replace('/*!', '/*'))
             .pipe(plugins.if(build, plugins.stripCssComments()))
             .pipe(plugins.if(build, minifyCss()))
             .pipe(plugins.if(build && !emulate, plugins.rev()))
             .pipe(gulp.dest(path.join(targetDir, 'styles')))
-            .on('error', errorHandler);
+            .on('error', errorHandler)
+
     });
 
 
@@ -205,93 +210,86 @@
     });
 
   // concatenate and minify vendor sources
-  gulp.task('vendor', function () {
-    var vendorFiles = require('./vendor.json');
+    gulp.task('vendor', function () {
+        var vendorFiles = require('./vendor.json');
+        return gulp.src(vendorFiles)
+            .pipe(plugins.concat('vendor.js'))
+            .pipe(plugins.if(build, plugins.uglify()))
+            .pipe(plugins.if(build, plugins.rev()))
+            .pipe(gulp.dest(targetDir))
+            .on('error', errorHandler);
+    });
 
-    return gulp.src(vendorFiles)
-    .pipe(plugins.concat('vendor.js'))
-    .pipe(plugins.if(build, plugins.uglify()))
-    .pipe(plugins.if(build, plugins.rev()))
+    // languages sources
+    gulp.task('languages', function () {
+        return gulp.src('app/languages/*.*')
+            .pipe(gulp.dest(path.join(targetDir, 'languages')))
+            // .pipe(plugins.if(build, plugins.uglify()))
+            // .pipe(plugins.if(build, plugins.rev()))
+            .on('error', errorHandler);
+    });
 
-    .pipe(gulp.dest(targetDir))
 
-    .on('error', errorHandler);
-  });
+    // inject the files in index.html
+    gulp.task('index', ['jsHint', 'scripts'], function () {
+        // build has a '-versionnumber' suffix
+        var cssNaming = 'styles/main*';
+        // injects 'src' into index.html at position 'tag'
+        var _inject = function (src, tag) {
+            return plugins.inject(src, {
+                starttag: '<!-- inject:' + tag + ':{{ext}} -->',
+                read: false,
+                addRootSlash: false
+            });
+        };
 
-  // languages sources
-  gulp.task('languages', function () {
-    return gulp.src('app/languages/*.*')
-    .pipe(gulp.dest(path.join(targetDir, 'languages')))
-    // .pipe(plugins.if(build, plugins.uglify()))
-    // .pipe(plugins.if(build, plugins.rev()))
-    .on('error', errorHandler);
-  });
+        // get all our javascript sources
+        // in development mode, it's better to add each file seperately.
+        // it makes debugging easier.
+        var _getAllScriptSources = function () {
+                var scriptStream = gulp.src(['scripts/app.js', 'scripts/**/*.js'], { cwd: targetDir });
+                return streamqueue({ objectMode: true }, scriptStream);
+            };
 
-  // inject the files in index.html
-  gulp.task('index', ['jsHint', 'scripts'], function () {
+        return gulp.src('app/index.html')
+            // inject css
+            .pipe(_inject(gulp.src(cssNaming, { cwd: targetDir }), 'app-styles'))
+            // inject vendor.js
+            .pipe(_inject(gulp.src('vendor*.js', { cwd: targetDir }), 'vendor'))
+            // inject app.js (build) or all js files indivually (dev)
+            .pipe(plugins.if(build,
+                _inject(gulp.src('scripts/app*.js', { cwd: targetDir }), 'app'),
+                _inject(_getAllScriptSources(), 'app')
+                ))
+            // Minifying html at build
+            .pipe(plugins.if(build, minifyHTML()))
+            // Print html filesize
+            .pipe(filesize())
+            .pipe(gulp.dest(targetDir))
+            .on('error', errorHandler);
+    });
 
-    // build has a '-versionnumber' suffix
-    var cssNaming = 'styles/main*';
+    // start local express server
+    gulp.task('serve', function () {
+        express()
+            .use(!build ? livereload() : function () {})
+            .use(express.static(targetDir))
+            .listen(port);
+        open('http://localhost:' + port + '/');
+        gutil.log(gutil.colors.yellow('== <%= ngModulName %> is cleared to takeoff! =='));
+        gutil.log(gutil.colors.yellow('== Please, make sure your seat belts are fastened. =='));
+        gutil.log(gutil.colors.yellow('== We would like to thank you for flying with Avionic ✈. =='));
+    });
 
-    // injects 'src' into index.html at position 'tag'
-    var _inject = function(src, tag) {
-      return plugins.inject(src, {
-        starttag: '<!-- inject:' + tag + ':{{ext}} -->',
-        read: false,
-        addRootSlash: false
-      });
-    };
+    // ionic emulate wrapper
+    gulp.task('ionic:emulate', plugins.shell.task([
+        'ionic emulate ' + emulate + ' --livereload --consolelogs'
+    ]));
 
-    // get all our javascript sources
-    // in development mode, it's better to add each file seperately.
-    // it makes debugging easier.
-    var _getAllScriptSources = function () {
-      var scriptStream = gulp.src(['scripts/app.js', 'scripts/**/*.js'], { cwd: targetDir });
-      return streamqueue({ objectMode: true }, scriptStream);
-    };
-
-    return gulp.src('app/index.html')
-    // inject css
-    .pipe(_inject(gulp.src(cssNaming, { cwd: targetDir }), 'app-styles'))
-    // inject vendor.js
-    .pipe(_inject(gulp.src('vendor*.js', { cwd: targetDir }), 'vendor'))
-    // inject app.js (build) or all js files indivually (dev)
-    .pipe(plugins.if(build,
-      _inject(gulp.src('scripts/app*.js', { cwd: targetDir }), 'app'),
-      _inject(_getAllScriptSources(), 'app')
-    ))
-
-    // Minifying html at build
-    .pipe(plugins.if(build, minifyHTML()))
-
-    // Print html filesize
-    .pipe(filesize())
-
-    .pipe(gulp.dest(targetDir))
-    .on('error', errorHandler);
-  });
-
-  // start local express server
-  gulp.task('serve', function () {
-    express()
-    .use(!build ? connectLr() : function (){})
-    .use(express.static(targetDir))
-    .listen(port);
-    open('http://localhost:' + port + '/');
-    gutil.log(gutil.colors.yellow('== <%= ngModulName %> is cleared to takeoff! =='));
-    gutil.log(gutil.colors.yellow('== Please, make sure your seat belts are fastened. =='));
-    gutil.log(gutil.colors.yellow('== We would like to thank you for flying with Avionic ✈. =='));
-  });
-
-  // ionic emulate wrapper
-  gulp.task('ionic:emulate', plugins.shell.task([
-    'ionic emulate ' + emulate + ' --livereload --consolelogs'
-  ]));
-
-  // ionic run wrapper
-  gulp.task('ionic:run', plugins.shell.task([
-    'ionic run ' + run
-  ]));
+    // ionic run wrapper
+    gulp.task('ionic:run', plugins.shell.task([
+        'ionic run ' + run
+    ]));
 
   // ionic resources wrapper
   gulp.task('icon', plugins.shell.task([
