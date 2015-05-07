@@ -81,20 +81,24 @@ By running just `gulp`, we start our development build process, consisting of:
 - start local development server and serve from `.tmp`
 - start watchers to automatically lint javascript source files, compile scss and reload browser on changes
 
+
 ## What has been generated?
+
+The folder includes an AVIONIC ✈ basic application and backend server as a starting point.
+
 ```
-Avionic/
+AVIONIC/
 ├── app/
     └── index.html
     └── favicon.ico
     └── README.md
-│   ├── fonts/
-│   ├── icons/
-│   ├── images/
-│   ├── languages/
-│   ├── scripts/
-│   ├── styles/
-│   ├── templates/
+    ├── fonts/
+    ├── icons/
+    ├── images/
+    ├── languages/
+    ├── scripts/
+    ├── styles/
+    ├── templates/
 ├── bower_components/
 ├── helpers/
 ├── hooks/
@@ -107,8 +111,8 @@ Avionic/
 ├── package.json
 ├── vendor.json
 ├── config.xml
-```
 
+```
 
 
 #### Build mode
