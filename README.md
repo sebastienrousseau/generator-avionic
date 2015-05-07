@@ -166,7 +166,7 @@ Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contr
 
 ### How to become a contributor?
 
-* Please fill out either the individual or corporate. [Contributor License Agreement (CLA)](CONTRIBUTING.md)
+* Please fill out either the individual or corporate [Contributor License Agreement (CLA)](CONTRIBUTING.md)
 
 
 ## History
