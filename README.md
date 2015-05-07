@@ -1,4 +1,4 @@
-# ![ScreenShot](Icon.png) Avionic ✈
+# ![ScreenShot](Masthead.png)
 ###### Propelling world-class cross-platform hybrid applications with HTML, JavaScript and CSS.
 
 ##  WHAT IS IT?
