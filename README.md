@@ -1,5 +1,5 @@
 # ![ScreenShot](Masthead.png)
-###### Propelling world-class cross-platform hybrid applications with HTML, JavaScript and CSS.
+###### PROPELLING WORLD-CLASS CROSS-PLATFORM HYBRID APPLICATIONS ✈.
 
 ##  WHAT IS IT?
  A [Yeoman](http://yeoman.io) generator that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects using [Gulp](http://gulpjs.com/) to evolve and upgrade every aspect of your development to the next level.
