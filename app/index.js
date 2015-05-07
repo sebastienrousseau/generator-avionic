@@ -11,16 +11,16 @@
     // Avionic ✈ ASCII Text Logo
     var logo =
       "\n" +
-      chalk.red("\n    ___ _    __________  _   ____________") +
-      chalk.red("\n   /   | |  / /  _/ __ \\/ | / /  _/ ____/") +
-      chalk.red("\n  / /| | | / // // / / /  |/ // // /     ") +
-      chalk.red("\n / ___ | |/ // // /_/ / /|  // // /___   ") +
-      chalk.red("\n/_/  |_|___/___/\\____/_/ |_/___/\\____/  ✈") +
+      chalk.cyan("\n    ___ _    __________  _   ____________") +
+      chalk.cyan("\n   /   | |  / /  _/ __ \\/ | / /  _/ ____/") +
+      chalk.cyan("\n  / /| | | / // // / / /  |/ // // /     ") +
+      chalk.cyan("\n / ___ | |/ // // /_/ / /|  // // /___   ") +
+      chalk.cyan("\n/_/  |_|___/___/\\____/_/ |_/___/\\____/ ") +
       "\n"+
-      chalk.yellow("\nPropelling world-class cross-platform hybrid applications") +
+      chalk.cyan("\nPROPELLING WORLD-CLASS CROSS-PLATFORM HYBRID APPLICATIONS ✈") +
       "\n";
 
-    module.exports = yeoman.generators.Base.extend({
+      var AvionicGenerator = module.exports = yeoman.generators.Base.extend({
         initializing: function () {
             this.pkg = require('../package.json');
         },
@@ -33,37 +33,37 @@
                 console.log(logo);
 
                 // Have Yeoman greet the user.
-                this.log('Ladies and gentlemen, this is your captain, welcoming you aboard to the “Avionic ✈ Installer”.');
-                this.log(yosay('At this time, we request your full attention as the flight attendants will guide you through the safety features of this aircraft.\n'));
+                this.log(chalk.yellow('Ladies and gentlemen, this is your captain, welcoming you aboard to the “Avionic ✈ Installer”.'));
+                this.log(yosay(chalk.yellow('At this time, we request your full attention as the flight attendants will guide you through the safety features of this aircraft.\n')));
 
                 var prompts = [{
                         type: 'input',
                         name: 'appName',
-                        message: 'Please enter a name for your Avionic ✈ app:',
+                        message: '▶︎ OK, so this one is important for all you Pilots out there. Please enter a name for your app',
                         default: this.appname // Default to current folder name
                     },
                         {
                             type: 'input',
                             name: 'appDescription',
-                            message: 'Please enter a description for your Avionic ✈ app:',
+                            message: '▶︎ Enter a description:',
                             default: 'A world-class app powered by Avionic ✈.'
                         },
                         {
                             type: 'input',
                             name: 'appKeywords',
-                            message: 'Please enter keywords separated by commas for your Avionic ✈ app:',
+                            message: '▶︎ Enter some keywords separated by commas:',
                             default: 'avionic,ionic,yeoman, gulp, html, js, css, ios, android'
                         },
                         {
                             type: 'input',
                             name: 'userName',
-                            message: 'Please enter your name:',
+                            message: '▶︎ Enter your name:',
                             default: 'Charles Lindbergh'
                         },
                         {
                             type: 'input',
                             name: 'userMail',
-                            message: 'Please enter your email address:',
+                            message: '▶︎ Enter your email address:',
                             default: 'email@example.com'
 
                         }];
@@ -83,7 +83,7 @@
                 this.prompt([{
                     type: 'input',
                     name: 'appId',
-                    message: 'The app id?',
+                    message: '▶︎ Please enter the app id you\'d lile to use',
                     default: 'com.' + this._.classify(this.userName).toLowerCase() + '.' + this._.classify(this.appName).toLowerCase()
                 }], function (props) {
                     this.appId = props.appId;
