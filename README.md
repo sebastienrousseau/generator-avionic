@@ -81,6 +81,35 @@ By running just `gulp`, we start our development build process, consisting of:
 - start local development server and serve from `.tmp`
 - start watchers to automatically lint javascript source files, compile scss and reload browser on changes
 
+## What has been generated?
+```
+Avionic/
+├── app/
+    └── index.html
+    └── favicon.ico
+    └── README.md
+│   ├── fonts/
+│   ├── icons/
+│   ├── images/
+│   ├── languages/
+│   ├── scripts/
+│   ├── styles/
+│   ├── templates/
+├── bower_components/
+├── helpers/
+├── hooks/
+├── node_modules/
+├── resources/
+├── server/
+├── www
+├── gulpfile.js
+├── bower.json
+├── package.json
+├── vendor.json
+├── config.xml
+```
+
+
 
 #### Build mode
 
