@@ -165,7 +165,9 @@ Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contr
 [Sebastien Rousseau](https://github.com/sebastienrousseau) | [David Tuplin](https://github.com/tuplind)
 
 
+## History
 
+* See [Release](https://github.com/reedia/generator-avionic/releases) list.
 
 
 ## Contributing changes
