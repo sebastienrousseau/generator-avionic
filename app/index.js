@@ -10,6 +10,18 @@
     //    var path = require('path');
     //    var appPath = path.join(process.cwd(), 'app');
 
+    // Avionic ✈ ASCII Text Logo
+    var logo =
+      "\n" +
+      chalk.red("\n    ___ _    __________  _   ____________") +
+      chalk.red("\n   /   | |  / /  _/ __ \\/ | / /  _/ ____/") +
+      chalk.red("\n  / /| | | / // // / / /  |/ // // /     ") +
+      chalk.red("\n / ___ | |/ // // /_/ / /|  // // /___   ") +
+      chalk.red("\n/_/  |_|___/___/\\____/_/ |_/___/\\____/  ✈") +
+      "\n"+
+      chalk.yellow("\nPropelling world-class cross-platform hybrid applications") +
+      "\n";
+
     module.exports = yeoman.generators.Base.extend({
         initializing: function () {
             this.pkg = require('../package.json');
@@ -20,12 +32,11 @@
             askForNames: function askForNames() {
                 var done = this.async();
 
-                // Have Yeoman greet the user.
-                this.log(yosay('Ladies and gentlemen, this is your captain, welcoming you aboard to the ' + chalk.red('Avionic ✈ Installer')));
+                console.log(logo);
 
-                this.log(
-                    'At this time, we request your full attention \nas the flight attendants will guide you through \nthe safety features of this aircraft.\n'
-                );
+                // Have Yeoman greet the user.
+                this.log('Ladies and gentlemen, this is your captain, welcoming you aboard to the “Avionic ✈ Installer”.');
+                this.log(yosay('At this time, we request your full attention as the flight attendants will guide you through the safety features of this aircraft.\n'));
 
                 var prompts = [{
                         type: 'input',
