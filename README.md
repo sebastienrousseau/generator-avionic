@@ -156,7 +156,7 @@ By running `gulp -r <platform>`, we can run our app on a connected device
 
 Replace `splash.png` and `icon.png` inside `/resources`. Then run `ionic resources`. If you only want to regenerate icons or splashs, you can run `gulp icon` or `gulp splash` shorthand.
 
-## Team
+## Our fleet
 
 Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/reedia/generator-avionic/graphs/contributors)
 

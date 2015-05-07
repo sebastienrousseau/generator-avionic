@@ -7,8 +7,6 @@
     var yeoman = require('yeoman-generator');
     var chalk = require('chalk');
     var yosay = require('yosay');
-    //    var path = require('path');
-    //    var appPath = path.join(process.cwd(), 'app');
 
     // Avionic ✈ ASCII Text Logo
     var logo =

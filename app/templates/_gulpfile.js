@@ -276,9 +276,10 @@
             .use(express.static(targetDir))
             .listen(port);
         open('http://localhost:' + port + '/');
-        gutil.log(gutil.colors.yellow('== <%= ngModulName %> is cleared to takeoff! =='));
-        gutil.log(gutil.colors.yellow('== Please, make sure your seat belts are fastened. =='));
-        gutil.log(gutil.colors.yellow('== We would like to thank you for flying with Avionic ✈. =='));
+        gutil.log(gutil.colors.white('== <%= ngModulName %> is cleared to takeoff! =='));
+        gutil.log(gutil.colors.yellow('== All right, it\'s time for final cabin check. =='));
+        gutil.log(gutil.colors.yellow('== Make sure your seat belts are fastened, if you have any questions please don\'t hesitate to ask. =='));
+        gutil.log(gutil.colors.yellow('== Now, enjoy your flight, and as always thank you for flying Avionic ✈ =='));
     });
 
     // ionic emulate wrapper

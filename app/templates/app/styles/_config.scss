@@ -15,7 +15,7 @@ $colorblack:#212121;
 $colorgray:#666;
 $colorwhite:#fff;
 $colorred:#f44336;
-$colordarkred:#d32f2f;
+$colordarkred:#28294e;
 $colorpink:#ff4081;
 $colororange:#ff9800;
 $coloryellow:#fdd835;
@@ -23,14 +23,16 @@ $colorblue:#0d47a1;
 $colorgreen:#4caf50;
 $colorpurple:#9c27b0;
 $colorlightgreen:#42c5a5;
-$colorIcons: #CFCFCF;
+$colorIcons: #000006;
+
+
 
 .coloroured {
   color:$colorIcons;
 }
 
 .active .coloroured {
-  color:#00D5FF;
+  color:#acadf0;
 }
 
 
