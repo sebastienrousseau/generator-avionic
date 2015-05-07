@@ -173,8 +173,6 @@ Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contr
 * See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 
-## Licensing
+## License
 
-* See [LICENSE](LICENSE)
-* No warranty expressed or implied.  Software is as is.
-* Brought to you by [Reedia](http:/reedia.com) London
+* [MIT License](http://reedia.mit-license.org/) Copyright © Reedia Limited 2015. All rights reserved.
