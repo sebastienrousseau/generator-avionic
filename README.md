@@ -164,15 +164,16 @@ Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contr
 |:---:|:---:
 [Sebastien Rousseau](https://github.com/sebastienrousseau) | [David Tuplin](https://github.com/tuplind)
 
+### How to become a contributor?
+
+* Please fill out either the individual or corporate. [Contributor License Agreement (CLA)](CONTRIBUTING.md)
+
 
 ## History
 
-* See [Release](https://github.com/reedia/generator-avionic/releases) list.
+* See [Avionic ✈ Release](https://github.com/reedia/generator-avionic/releases) list.
 
 
-## Contributing changes
-
-* See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 
 ## License
