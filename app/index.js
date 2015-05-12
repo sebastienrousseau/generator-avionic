@@ -18,6 +18,7 @@
   chalk.cyan("\n/_/  |_|___/___/\\____/_/ |_/___/\\____/ ") +
   "\n"+
   chalk.cyan("\nPROPELLING WORLD-CLASS CROSS-PLATFORM HYBRID APPLICATIONS ✈") +
+  chalk.cyan("\nA Yeoman generator using AngularJS, Express, ngCordova, Gulp and Bower that helps you kickstart highly sophisticated Ionic projects using Gulp to evolve and upgrade every aspect of your development to the next moonshot.") +  
   "\n";
 
   var AvionicGenerator = module.exports = yeoman.generators.Base.extend({
@@ -220,6 +221,15 @@
             ngModulName: this._.classify(this.appName)
           }
         );
+
+        this.fs.copyTpl(
+          this.templatePath('scripts/controllers/loginController.js'),
+          this.destinationPath('app/scripts/controllers/loginController.js'),
+          {
+            ngModulName: this._.classify(this.appName)
+          }
+        );
+
 
         this.fs.copyTpl(
           this.templatePath('scripts/controllers/homeController.js'),

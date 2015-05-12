@@ -7,7 +7,7 @@
   "dependencies": {
     "ngCordova": "^0.1.15-alpha",
     "angular-resource": "^1.4.0-rc.1",
-    "lodash": "^3.8.0",
+    "lodash": "latest",
     "angular-cookies":"latest",
     "angular-translate":"latest",
     "angular-translate-loader-static-files":"latest",

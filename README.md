@@ -1,8 +1,8 @@
 # ![ScreenShot](Masthead.png)
 ###### PROPELLING WORLD-CLASS CROSS-PLATFORM HYBRID APPLICATIONS ✈.
 
-##  WHAT IS IT?
- A [Yeoman](http://yeoman.io) generator that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects using [AngularJS](https://angularjs.org/), [Express](http://expressjs.com/), [ngCordova](http://ngcordova.com/), [Gulp](http://gulpjs.com/), [Bower](http://bower.io/) to evolve and upgrade every aspect of your development to the next level.
+##  ELEVATOR PITCH
+A [Yeoman](http://yeoman.io) generator using [AngularJS](https://angularjs.org/), [Express](http://expressjs.com/), [ngCordova](http://ngcordova.com/), [Gulp](http://gulpjs.com/) and [Bower](http://bower.io/) that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects to evolve and upgrade every aspect of your development to the next moonshot.
 
 ## OUR VALUES
 1. We believe perfection must consider everything.
