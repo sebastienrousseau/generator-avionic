@@ -4,6 +4,9 @@
 ##  ELEVATOR PITCH
 A [Yeoman](http://yeoman.io) generator using [AngularJS](https://angularjs.org/), [Express](http://expressjs.com/), [ngCordova](http://ngcordova.com/), [Gulp](http://gulpjs.com/) and [Bower](http://bower.io/) that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects to evolve and upgrade every aspect of your development to the next moonshot.
 
+## SAY WHAAAT?
+[AVIONIC ✈](http://avionic.io) is a mobile app creation tool for Android and iOS, and publish it to Google Play or iTunes.
+
 ## OUR VALUES
 1. We believe perfection must consider everything.
 2. We take our passion beyond Code into our daily practices.
@@ -12,7 +15,7 @@ A [Yeoman](http://yeoman.io) generator using [AngularJS](https://angularjs.org/)
 ## DISCOVER AVIONIC ✈
 
 ### FEATURES
-As firm believers in the highest levels of best practice and well thought out build processes Avionic ✈ takes care of providing everything needed to get started.
+As firm believers in the highest levels of best practice and well thought out build processes [AVIONIC ✈](http://avionic.io) takes care of providing everything needed to get started.
 
 * Gulp jobs for development, building, emulating and running your app
 * Compiles and concatenates your Sass
@@ -84,7 +87,7 @@ By running just `gulp`, we start our development build process, consisting of:
 
 ## What has been generated?
 
-The folder includes an AVIONIC ✈ basic application and backend server as a starting point.
+The folder includes an [AVIONIC ✈](http://avionic.io) basic application and backend server as a starting point.
 
 ```
 AVIONIC/
@@ -158,7 +161,7 @@ Replace `splash.png` and `icon.png` inside `/resources`. Then run `ionic resourc
 
 ## Our fleet
 
-Avionic ✈ is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/reedia/generator-avionic/graphs/contributors)
+[AVIONIC ✈](http://avionic.io) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/reedia/generator-avionic/graphs/contributors)
 
 [![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](http://sebastienrousseau.com) | [![David Tuplin](http://www.davetuplin.co.uk/images/dave_yahoo_messenger.jpg)](http://www.davetuplin.co.uk)
 |:---:|:---:
