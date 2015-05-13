@@ -18,7 +18,7 @@
   chalk.cyan("\n/_/  |_|___/___/\\____/_/ |_/___/\\____/ ") +
   "\n"+
   chalk.cyan("\nPROPELLING WORLD-CLASS CROSS-PLATFORM HYBRID APPLICATIONS ✈") +
-  chalk.cyan("\nA Yeoman generator using AngularJS, Express, ngCordova, Gulp and Bower that helps you kickstart highly sophisticated Ionic projects using Gulp to evolve and upgrade every aspect of your development to the next moonshot.") +  
+  chalk.cyan("\nA Yeoman generator using AngularJS, Express, ngCordova, Gulp and Bower that helps you kickstart highly sophisticated Ionic projects to evolve and upgrade every aspect of your development to the next moonshot.") +
   "\n";
 
   var AvionicGenerator = module.exports = yeoman.generators.Base.extend({
@@ -213,6 +213,39 @@
           }
         );
 
+        // services
+        this.fs.copyTpl(
+          this.templatePath('scripts/services/example.service.js'),
+          this.destinationPath('app/scripts/services/example.service.js'),
+          {
+            ngModulName: this._.classify(this.appName)
+          }
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('scripts/services/api.service.js'),
+          this.destinationPath('app/scripts/services/api.service.js'),
+          {
+            ngModulName: this._.classify(this.appName)
+          }
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('scripts/services/localstorage.service.js'),
+          this.destinationPath('app/scripts/services/localstorage.service.js'),
+          {
+            ngModulName: this._.classify(this.appName)
+          }
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('scripts/services/auth.service.js'),
+          this.destinationPath('app/scripts/services/auth.service.js'),
+          {
+            ngModulName: this._.classify(this.appName)
+          }
+        );
+
         // controllers
         this.fs.copyTpl(
           this.templatePath('scripts/controllers/translateController.js'),
@@ -287,22 +320,6 @@
           }
         );
 
-        // services
-        this.fs.copyTpl(
-          this.templatePath('scripts/services/ExampleService.js'),
-          this.destinationPath('app/scripts/services/ExampleService.js'),
-          {
-            ngModulName: this._.classify(this.appName)
-          }
-        );
-
-        this.fs.copyTpl(
-          this.templatePath('scripts/services/ApiService.js'),
-          this.destinationPath('app/scripts/services/ApiService.js'),
-          {
-            ngModulName: this._.classify(this.appName)
-          }
-        );
 
         // config
         this.fs.copyTpl(

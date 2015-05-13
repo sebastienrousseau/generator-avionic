@@ -6,7 +6,7 @@
    * @description
    * # CONFIG
    * Defines the API endpoint where our resources will make requests against.
-   * Is used inside /services/ApiService.js to generate correct endpoint dynamically
+   * Is used inside /services/api.service.js to generate correct endpoint dynamically
    */
 
    var <%= ngModulName %> = angular.module('<%= ngModulName %>');

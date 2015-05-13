@@ -5,13 +5,13 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/reedia/generator-avionic.git"
-  },  
+  },
   "author": {
     "name": "<%= userName %>",
     "email": "<%= userEmail %>",
     "url": "https://github.com/reedia"
   },
-  "description": "Build cross-platform hybrid native apps with HTML, JavaScript and CSS using Avionic ✈. A Yeoman generator that helps you kickstart highly sophisticated Ionic projects using Gulp to propel your development.",
+  "description": "PROPELLING WORLD-CLASS CROSS-PLATFORM HYBRID APPLICATIONS ✈\nA Yeoman generator using AngularJS, Express, ngCordova, Gulp and Bower that helps you kickstart highly sophisticated Ionic projects to evolve and upgrade every aspect of your development to the next moonshot.",
   "dependencies": {},
   "devDependencies": {
     "beepbeep": "^1.2.0",
