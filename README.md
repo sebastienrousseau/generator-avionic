@@ -1,20 +1,33 @@
 # ![ScreenShot](Masthead.png)
 ###### PROPELLING WORLD-CLASS CROSS-PLATFORM HYBRID APPLICATIONS ✈.
 
-##  ELEVATOR PITCH
+## Table of Contents
+
+* [Elevator Pitch](#elevator-pitch)
+* [Say Whaaat](#say-whaaat)
+* [Our Values](#our-values)
+* [Getting Started](#getting-started)
+* [Project setup, installation, and configuration](#project-setup)
+* [Setting up Avionic](#setting-up-avionic)
+* [App Configuration](#app-configuration)
+* [Run tests](#run-tests)
+* [Running the server](#running-the-server)
+* [Running on device](#running-on-device)
+
+##  Elevator Pitch
 A [Yeoman](http://yeoman.io) generator using [AngularJS](https://angularjs.org/), [Express](http://expressjs.com/), [ngCordova](http://ngcordova.com/), [Gulp](http://gulpjs.com/) and [Bower](http://bower.io/) that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects to evolve and upgrade every aspect of your development to the next moonshot.
 
-## SAY WHAAAT?
+## Say Whaaat
 [AVIONIC ✈](http://avionic.io) is a mobile app creation tool for Android and iOS.
 
-## OUR VALUES
+## Our Values
 1. We believe perfection must consider everything.
 2. We take our passion beyond Code into our daily practices.
 3. We are just obsessed about creating and delivering exceptional solutions.
 
-## DISCOVER AVIONIC ✈
+## Getting Started
 
-### FEATURES
+### Features
 As firm believers in the highest levels of best practice and well thought out build processes [AVIONIC ✈](http://avionic.io) takes care of providing everything needed to get started.
 
 * Gulp jobs for development, building, emulating and running your app
