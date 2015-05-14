@@ -79,6 +79,16 @@
       }
     })
 
+    .state('app.signup',{
+      url:'/signup',
+      views: {
+        'viewContent': {
+          templateUrl:'templates/views/signup.html',
+          controller:'SignUpController'
+        }
+      }
+    })
+
     .state('app.login',{
       url:'/login',
       views: {

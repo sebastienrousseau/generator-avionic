@@ -59,4 +59,14 @@
   "scripts": {
     "gulp": "./node_modules/.bin/gulp"
   }
+  ,
+  "plugins": [
+      "org.apache.cordova.splashscreen",
+      "org.apache.cordova.inappbrowser",
+      "org.apache.cordova.camera",
+      "org.apache.cordova.statusbar",
+      "org.apache.cordova.console",
+      "org.apache.cordova.device",
+      "com.ionic.keyboard"
+    ]
 }

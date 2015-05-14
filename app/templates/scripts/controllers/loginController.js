@@ -17,9 +17,19 @@
           $scope.user = {};
 
           if(AuthService.isLogged()) {
-            event.preventDefault();
-            $location.path('/home');
+            $location.path('/app/home');
           }
+
+          $scope.loginUser = function() {
+            AuthService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
+              $state.go('app.home');
+            }).error(function(data) {
+              var alertPopup = $ionicPopup.alert({
+               title: 'Login failed!',
+               template: 'Please check your credentials!'
+           });
+       });
+          };
 
           $scope.loginFacebook = function() {
             AuthService.loginFacebook();

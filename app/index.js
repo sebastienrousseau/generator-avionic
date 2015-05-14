@@ -197,23 +197,15 @@
           }
         );
 
-        this.fs.copyTpl(
-          this.templatePath('login.html'),
-          this.destinationPath('app/templates/views/login.html'),
-          {
-            title: this.appName
-          }
-        );
-
-        this.fs.copyTpl(
-          this.templatePath('home.html'),
-          this.destinationPath('app/templates/views/home.html'),
-          {
-            title: this.appName
-          }
-        );
-
         // services
+        this.fs.copyTpl(
+          this.templatePath('scripts/services/user.service.js'),
+          this.destinationPath('app/scripts/services/user.service.js'),
+          {
+            ngModulName: this._.classify(this.appName)
+          }
+        );
+
         this.fs.copyTpl(
           this.templatePath('scripts/services/example.service.js'),
           this.destinationPath('app/scripts/services/example.service.js'),
@@ -258,6 +250,14 @@
         this.fs.copyTpl(
           this.templatePath('scripts/controllers/loginController.js'),
           this.destinationPath('app/scripts/controllers/loginController.js'),
+          {
+            ngModulName: this._.classify(this.appName)
+          }
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('scripts/controllers/signupController.js'),
+          this.destinationPath('app/scripts/controllers/signupController.js'),
           {
             ngModulName: this._.classify(this.appName)
           }
@@ -377,6 +377,11 @@
         this.fs.copy(
           this.templatePath('_vendor.json'),
           this.destinationPath('vendor.json')
+        );
+
+        this.fs.copy(
+          this.templatePath('_plugins.json'),
+          this.destinationPath('plugins.json')
         );
 
         this.fs.copy(

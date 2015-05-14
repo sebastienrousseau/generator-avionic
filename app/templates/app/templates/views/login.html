@@ -1,0 +1,35 @@
+<ion-view hide-back-button="true" title="{{ 'APP_NAME' | translate }}">
+  <ion-content scroll="false" class="background content has-header">
+    <div class="padding">
+      <label class="item item-input">
+        <span class="input-label">Username</span>
+        <input type="text" placeholder="" ng-model="creds.username">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="" ng-model="creds.password">
+      </label>
+    </div>
+    <div class="padding">
+      <button class="button button-block" ng-click="loginUser()">Login</button>
+    </div>
+    <div class="padding">
+      <a class="item item-icon-left" ui-sref-active="active" ng-click="loginFacebook()">
+        <i class="icon ion-social-facebook coloroured"></i>
+        Facebook
+      </a>
+    </div>
+    <div class="padding">
+      <a class="item item-icon-left" ui-sref-active="active" ng-click="loginGoogle()">
+        <i class="icon ion-social-googleplus coloroured"></i>
+        Google+
+      </a>
+      <div class="padding">
+    </div>
+      <a class="item item-icon-left" ui-sref-active="active" ng-click="loginTwitter()">
+        <i class="icon ion-social-twitter coloroured"></i>
+        Twitter
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

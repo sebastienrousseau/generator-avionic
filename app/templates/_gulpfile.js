@@ -29,7 +29,6 @@
     var gutil = require('gulp-util');
     // var clean = require('gulp-clean');
     var sass = require('gulp-sass');
-    // var uglify = require('gulp-uglify');
     var minifyHTML = require('gulp-minify-html');
     var rename = require('gulp-rename');
     var filesize = require('gulp-filesize');
@@ -47,6 +46,8 @@
     var ripple = require('ripple-emulator');
     var minifyCss = require('gulp-minify-css');
     var replace = require('gulp-replace');
+    var exec = require('child_process').exec;
+
 
     /**
      * Parse arguments
@@ -220,6 +221,14 @@
             .on('error', errorHandler);
     });
 
+    gulp.task('cordova-plugin-install', function() {
+      require('./plugins.json').forEach(function(plugin) {
+        exec('cordova plugin add ' + plugin, {async: false}, function(code, output) {
+          console.log(output);
+        });
+      });
+    });
+
     // languages sources
     gulp.task('languages', function () {
         return gulp.src('app/languages/*.*')
@@ -358,7 +367,8 @@
         'favicon',
         'images',
         'vendor',
-        'languages'
+        'languages',
+        'cordova-plugin-install'
       ],
       'index',
       build ? 'noop' : 'watchers',
