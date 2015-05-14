@@ -181,6 +181,9 @@ Replace `splash.png` and `icon.png` inside `/resources`. Then run `ionic resourc
 |:---:|:---:
 [Sebastien Rousseau](https://github.com/sebastienrousseau) | [David Tuplin](https://github.com/tuplind)
 
+Credit also to [Thomas Maximini](http://thomasmaximini.com) for the work and inspiration surrounding the [generator-ionic-gulp](https://github.com/tmaximini/generator-ionic-gulp).
+
+
 ### How to become a contributor?
 
 * Please fill out either the individual or corporate [Contributor License Agreement (CLA)](CONTRIBUTING.md)
