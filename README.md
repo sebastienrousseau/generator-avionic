@@ -7,23 +7,24 @@
 * [Say Whaaat](#say-whaaat)
 * [Our Values](#our-values)
 * [Getting Started](#getting-started)
-* [Project setup, installation, and configuration](#project-setup)
+* [Project setup](#project-setup)
+* [Workflow](#workflow)
+* [What has been generated?](#what-has-been-generated?)
 * [Setting up Avionic](#setting-up-avionic)
 * [App Configuration](#app-configuration)
 * [Run tests](#run-tests)
 * [Running the server](#running-the-server)
 * [Running on device](#running-on-device)
+* [Our fleet](#our-fleet)
+* [Our Values](#our-values)
+* [History](#history)
+* [License](#license)
 
 ##  Elevator Pitch
 A [Yeoman](http://yeoman.io) generator using [AngularJS](https://angularjs.org/), [Express](http://expressjs.com/), [ngCordova](http://ngcordova.com/), [Gulp](http://gulpjs.com/) and [Bower](http://bower.io/) that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects to evolve and upgrade every aspect of your development to the next moonshot.
 
 ## Say Whaaat
 [AVIONIC ✈](http://avionic.io) is a mobile app creation tool for Android and iOS.
-
-## Our Values
-1. We believe perfection must consider everything.
-2. We take our passion beyond Code into our daily practices.
-3. We are just obsessed about creating and delivering exceptional solutions.
 
 ## Getting Started
 
@@ -184,13 +185,14 @@ Replace `splash.png` and `icon.png` inside `/resources`. Then run `ionic resourc
 
 * Please fill out either the individual or corporate [Contributor License Agreement (CLA)](CONTRIBUTING.md)
 
+## Our Values
+1. We believe perfection must consider everything.
+2. We take our passion beyond Code into our daily practices.
+3. We are just obsessed about creating and delivering exceptional solutions.
 
 ## History
 
 * See [Avionic ✈ Release](https://github.com/reedia/generator-avionic/releases) list.
-
-
-
 
 ## License
 
