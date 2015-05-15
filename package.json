@@ -9,12 +9,12 @@
     "email": "hello@reedia.com",
     "url": "https://github.com/reedia"
   },
-	"license": [
-		{
-			"type": "MIT",
-			"url": "http://reedia.mit-license.org/"
-		}
-	],
+  "license": [
+    {
+      "type": "MIT",
+      "url": "http://reedia.mit-license.org/"
+    }
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
@@ -31,12 +31,16 @@
     "ionic framework"
   ],
   "dependencies": {
-    "yeoman-generator": "latest",
-    "chalk": "latest",
-    "yosay": "latest"
+    "yeoman-generator": "^0.18.0",
+    "chalk": "^0.5.0",
+    "yosay": "^0.3.0"
   },
   "devDependencies": {
+    "chalk": "^0.5.0",
+    "lodash": "^3.8.0",
     "mocha": "*",
-    "yo": "latest"
+    "yeoman-generator": "^0.18.0",
+    "yo": ">=1.0.0",
+    "yosay": "^0.3.0"
   }
 }

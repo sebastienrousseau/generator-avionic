@@ -6,7 +6,7 @@
   /*global require,process,module*/
   var yeoman = require('yeoman-generator');
   var chalk = require('chalk');
-  var yosay = require('yosay');
+  var yosay = require('yosay');  
 
   // Avionic ✈ ASCII Text Logo
   var logo =
@@ -24,6 +24,7 @@
   var AvionicGenerator = module.exports = yeoman.generators.Base.extend({
     initializing: function () {
       this.pkg = require('../package.json');
+      this.currentYear = (new Date()).getFullYear();
     },
 
     prompting: {
