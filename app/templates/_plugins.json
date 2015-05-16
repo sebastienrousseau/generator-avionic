@@ -1,9 +1,9 @@
 [
-  "org.apache.cordova.splashscreen",
-  "org.apache.cordova.inappbrowser",
-  "org.apache.cordova.camera",
-  "org.apache.cordova.statusbar",
-  "org.apache.cordova.console",
-  "org.apache.cordova.device",
+  "cordova-plugin-splashscreen",
+  "cordova-plugin-inappbrowser",
+  "cordova-plugin-camera",
+  "cordova-plugin-statusbar",
+  "cordova-plugin-console",
+  "cordova-plugin-device",
   "com.ionic.keyboard"
 ]

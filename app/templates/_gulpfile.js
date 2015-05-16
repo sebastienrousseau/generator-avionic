@@ -144,10 +144,10 @@
             .src(['templates.js', 'app.js', '**/*.js'], { cwd: 'app/scripts' })
             .pipe(plugins.if(!build, plugins.changed(dest)));
         return streamqueue({ objectMode: true }, scriptStream, templateStream)
-            .pipe(plugins.if(build, plugins.ngAnnotate()))
+            .pipe(plugins.if(build, plugins.ngAnnotate({add: true, single_quotes: true})))
             .pipe(plugins.if(stripDebug, plugins.stripDebug()))
             .pipe(plugins.if(build, plugins.concat('app.js')))
-            .pipe(plugins.if(build, plugins.uglify()))
+            .pipe(plugins.if(build, plugins.uglify({mangle: true, compress: true})))
             .pipe(plugins.if(build && !emulate, plugins.rev()))
             .pipe(gulp.dest(dest))
             .on('error', errorHandler);
