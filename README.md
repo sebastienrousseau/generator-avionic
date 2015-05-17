@@ -115,7 +115,7 @@ AVIONIC/
     ├── languages/
     ├── scripts/
     ├── styles/
-    ├── templates/
+    ├── templates/           # This contains the app template
 ├── bower_components/
 ├── helpers/
 ├── hooks/

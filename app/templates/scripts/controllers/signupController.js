@@ -8,23 +8,25 @@
   */
   var <%= ngModulName %> = angular.module('<%= ngModulName %>');
 
-  <%= ngModulName %>.controller('SignUpController', [
-        '$state', '$scope', 'UserService',
-        function ($state, $scope, UserService) {
+  <%= ngModulName %>.controller('SignUpController', SignUpController);
 
-            $scope.creds = {};
-            /**
-             *
-             */
-            $scope.signUpUser = function () {
-                UserService.init();
-                UserService.createUser($scope.creds).then(function (_data) {
-                    $scope.user = _data;
-                    alert("Success Creating User Account ");
-                    $state.go('tab.list', {});
-                }, function (_error) {
-                    alert("Error Creating User Account " + _error.debug);
-                });
-            };
-        }]);
+  SignUpController.$inject = ['$ionicPlatform', '$scope', '$location', '$cordovaOauth', '$localstorage', 'AuthService'];
+
+  function SignUpController($ionicPlatform, $scope, $location, $cordovaOauth, $localstorage, AuthService) {
+
+    $scope.user = {
+      username: '',
+      password: ''
+    };
+
+    $scope.signupUser = function(){
+      console.log('signing up user ' + $scope.user.username);
+      AuthService.signupUser($scope.user)
+      .success(function(data){
+        console.log($scope.user.username + 'has been created! session id is ' + data.sessionToken);
+        // console.log('/session/'+ data.sessionToken);
+        // $location.path('/session/'+ data.sessionToken);
+      });
+    };
+  }
 })();

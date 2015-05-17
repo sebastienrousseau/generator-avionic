@@ -9,31 +9,48 @@
   */
   angular
   .module('<%= ngModulName %>')
+  .value('API_CREDENTIALS',{
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers':'Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With',
+    APP_ID: 'yqd4SRU8wu8a2fgaLEl3pZklSXlPtLMyHWxyjCUM',
+    REST_API_KEY:'vF5EUcOIdkr8c9P7dSqOvhWcexJ1d11Mv0HNz4DV'
+  })
   .factory('AuthService', AuthService);
+
+  var apiUrl = 'https://api.parse.com/1/users';
+  var loginUrl = 'https://api.parse.com/1/login';
 
   AuthService.$inject = ['$localstorage', '$cordovaOauth', '$location', '$http'];
 
-  function AuthService($localstorage, $cordovaOauth, $location, $http) {
+  function AuthService($localstorage, $cordovaOauth, $location, $http, API_CREDENTIALS) {
     return {
 
-      loginUser: function(name, pw) {
-        var deferred = $q.defer();
-        var promise = deferred.promise;
+      //Signup user to Parse api
+      signupUser:function(user){
+        return $http.post(apiUrl,user,{
+          headers:{
+            'X-Parse-Application-Id': 'yqd4SRU8wu8a2fgaLEl3pZklSXlPtLMyHWxyjCUM',
+            'X-Parse-REST-API-Key': 'vF5EUcOIdkr8c9P7dSqOvhWcexJ1d11Mv0HNz4DV',
+            'Content-Type':'application/json'
+          },
+          data: user
+        });
+      },
 
-        if (name == 'user' && pw == 'secret') {
-          deferred.resolve('Welcome ' + name + '!');
-        } else {
-          deferred.reject('Wrong credentials.');
-        }
-        promise.success = function(fn) {
-          promise.then(fn);
-          return promise;
-        };
-        promise.error = function(fn) {
-          promise.then(null, fn);
-          return promise;
-        };
-        return promise;
+      //Logs in user
+      loginUser: function(user){
+        return $http.get(loginUrl,{
+          headers: {
+            'X-Parse-Application-Id': 'yqd4SRU8wu8a2fgaLEl3pZklSXlPtLMyHWxyjCUM',
+            'X-Parse-REST-API-Key': 'vF5EUcOIdkr8c9P7dSqOvhWcexJ1d11Mv0HNz4DV',
+            'Content-Type':'application/json'
+          },
+          params:{
+            'username': user.username,
+            'password': user.password
+          }
+        });
       },
 
       loginFacebook: function() {
@@ -119,6 +136,6 @@
           delete $localstorage.authToken;
           delete $localstorage.userEmail;
         }
-      }
+      };
     }
   })();

@@ -48,6 +48,9 @@
     var replace = require('gulp-replace');
     var exec = require('child_process').exec;
 
+    var imagemin = require('gulp-imagemin');
+    var pngquant = require('imagemin-pngquant');
+
 
     /**
      * Parse arguments
@@ -113,7 +116,7 @@
             .pipe(plugins.if(build, minifyCss()))
             .pipe(plugins.if(build && !emulate, plugins.rev()))
             .pipe(gulp.dest(path.join(targetDir, 'styles')))
-            .on('error', errorHandler)
+            .on('error', errorHandler);
 
     });
 
@@ -190,6 +193,11 @@
     // copy images
     gulp.task('images', function () {
         return gulp.src('app/images/**/*.*')
+            .pipe(imagemin({
+              progressive: true,
+              svgoPlugins: [{removeViewBox: false}],
+              use: [pngquant()]
+            }))
             .pipe(gulp.dest(path.join(targetDir, 'images')))
             .on('error', errorHandler);
     });

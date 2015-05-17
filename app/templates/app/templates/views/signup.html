@@ -1,27 +1,19 @@
 <ion-view hide-back-button="true" title="{{ 'APP_NAME' | translate }}">
   <ion-content scroll="false" class="background content has-header">
     <div class="padding">
-      <form>
+      <form role="form">
         <ion-list>
           <label class="item item-input">
-            <span class="input-label">First Name</span>
-            <input type="text" placeholder="First Name"  ng-model="creds.first_name">
+            <label for="username">Username:</label>
+            <input id="username" type="text" class="form-control" placeholder="username" ng-model="user.username">
           </label>
           <label class="item item-input">
-            <span class="input-label">Last Name</span>
-            <input type="text" placeholder="Last Name" ng-model="creds.last_name">
-          </label>
-          <label class="item item-input">
-            <span class="input-label">Username</span>
-            <input type="text" placeholder="email address" ng-model="creds.email">
-          </label>
-          <label class="item item-input">
-            <span class="input-label">Password</span>
-            <input type="password"  ng-model="creds.password">
+            <label for="password">Password:</label>
+            <input id="password" type="password" class="form-control" placeholder="password" ng-model="user.password">
           </label>
         </ion-list>
-        <button class="button button-stable button-block"
-        ng-click="signUpUser()">Sign up</button>
+        <button class="btn btn-large btn-primary" ng-click="loginUser()">Login</button>
+        <button class="btn btn-large btn-primary" ng-click="signupUser()">Sign Up!</button>
       </form>
     </div>
   </ion-content>
