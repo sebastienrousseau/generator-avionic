@@ -3,7 +3,7 @@
   <name><%= appName %></name>
   <description><%= appDescription %></description>
   <keywords><%= appKeywords %></keywords>
-  <author email="<%= userEmail %>"><%= userName %></author>
+  <author email="<%= appUserEmail %>"><%= appUserName %></author>
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>

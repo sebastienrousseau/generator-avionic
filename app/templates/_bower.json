@@ -1,6 +1,11 @@
 {
   "name": "<%= appName %>",
-  "author": "<%= userName %> <<%= userEmail %>>",
+  "version": "1.0.0",
+  "author": [
+    "<%= appUserName %> <<%= appUserEmail %>>"
+  ],
+  "description": "<%= appDescription %>",
+  "license": "MIT",
   "private": "true",
   "devDependencies": {"ionic": "driftyco/ionic-bower#v1.0.0"},
   "resolutions": {"angular": "1.3.15"},

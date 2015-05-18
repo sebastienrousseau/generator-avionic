@@ -1,5 +1,9 @@
 {
-  "APP_NAME": "<%= ngModulName %>",
+  "APP_NAME": "<%= appName %>",
+  "APP_DESCRIPTION": "<%= appDescription %>",
+  "APP_KEYWORDS": "<%= appKeywords %>",
+  "APP_USER_NAME": "<%= appUserName %>",
+  "APP_USER_EMAIL": "<%= appUserEmail %>",
   "APP_CATALOGUE": "Catalogue",
   "APP_CATALOGUE_NEW": "New",
   "APP_CATALOGUE_EDIT": "Edit",

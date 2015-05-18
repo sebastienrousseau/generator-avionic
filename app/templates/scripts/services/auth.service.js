@@ -1,3 +1,29 @@
+/**
+*
+*  AVIONIC
+*  Propelling World-class Cross-platform Hybrid Applications ✈.
+*
+*  Copyright 2015 Reedia Limited. All rights reserved.
+*
+*  Permission is hereby granted, free of charge, to any person obtaining a copy
+*  of this software and associated documentation files (the 'Software'), to deal
+*  in the Software without restriction, including without limitation the rights
+*  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+*  copies of the Software, and to permit persons to whom the Software is
+*  furnished to do so, subject to the following conditions:
+*
+*  The above copyright notice and this permission notice shall be included in
+*  all copies or substantial portions of the Software.
+
+*  THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+*  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+*  THE SOFTWARE.
+*
+*/
 (function () {
   'use strict';
 
@@ -57,10 +83,10 @@
         /*
         * First connects to facebook and get the token authentication
         */
-        $cordovaOauth.facebook('889753241083286', ["email", "read_stream", "user_website", "user_location", "user_relationships"]).then(function(result) {
+        $cordovaOauth.facebook('889753241083286', ['email', 'read_stream', 'user_website', 'user_location', 'user_relationships']).then(function(result) {
 
           $http.get('https://graph.facebook.com/v2.3/me', { params: { access_token: result.access_token, fields: 'id,name,first_name,last_name,email,locale,picture', format: 'json' }}).then(function(result) {
-            console.log("Response Object -> " + JSON.stringify(result));
+            console.log('Response Object -> ' + JSON.stringify(result));
             $localstorage.accessToken = result.access_token;
             $localstorage.set('fbAuthToken', result.access_token);
             $localstorage.set('fbUserId', result.data.id);
@@ -88,14 +114,14 @@
         /*
         * First connects to Google and get the token authentication
         */
-        $cordovaOauth.google('931284429036-cdc36fmdkk8qach6a86s5ag4llgcove9.apps.googleusercontent.com',  ["email"]).then(function(result) {
+        $cordovaOauth.google('931284429036-cdc36fmdkk8qach6a86s5ag4llgcove9.apps.googleusercontent.com',  ['email']).then(function(result) {
           $localstorage.set('googAccessToken', result.access_token);
-          $http.get("https://www.googleapis.com/oauth2/v1/userinfo", {
+          $http.get('https://www.googleapis.com/oauth2/v1/userinfo', {
             params: { access_token: result.access_token,
-              fields: "id,email,verified_email,name,given_name,family_name,picture,gender,locale",
-              format: "json"}
+              fields: 'id,email,verified_email,name,given_name,family_name,picture,gender,locale',
+              format: 'json'}
             }).then(function(result2) {
-              console.log("Response Object -> " + JSON.stringify(result2.data));
+              console.log('Response Object -> ' + JSON.stringify(result2.data));
               $localstorage.set('googUserId', result2.data.id);
               $localstorage.set('googUserFirstName', result2.data.given_name);
               $localstorage.set('googUserLastName', result2.data.family_name);

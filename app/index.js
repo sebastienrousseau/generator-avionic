@@ -1,4 +1,29 @@
+/**
+*
+*  AVIONIC
+*  Propelling World-class Cross-platform Hybrid Applications ✈.
+*
+*  Copyright 2015 Reedia Limited. All rights reserved.
+*
+*  Permission is hereby granted, free of charge, to any person obtaining a copy
+*  of this software and associated documentation files (the "Software"), to deal
+*  in the Software without restriction, including without limitation the rights
+*  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+*  copies of the Software, and to permit persons to whom the Software is
+*  furnished to do so, subject to the following conditions:
+*
+*  The above copyright notice and this permission notice shall be included in
+*  all copies or substantial portions of the Software.
 
+*  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+*  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+*  THE SOFTWARE.
+*
+*/
 (function () {
   'use strict';
   /*jslint nomen: true*/
@@ -6,20 +31,38 @@
   /*global require,process,module*/
   var yeoman = require('yeoman-generator');
   var chalk = require('chalk');
-  var yosay = require('yosay');  
+  var yosay = require('yosay');
 
   // Avionic ✈ ASCII Text Logo
   var logo =
   "\n" +
-  chalk.cyan("\n    ___ _    __________  _   ____________") +
-  chalk.cyan("\n   /   | |  / /  _/ __ \\/ | / /  _/ ____/") +
-  chalk.cyan("\n  / /| | | / // // / / /  |/ // // /     ") +
-  chalk.cyan("\n / ___ | |/ // // /_/ / /|  // // /___   ") +
-  chalk.cyan("\n/_/  |_|___/___/\\____/_/ |_/___/\\____/ ") +
+  chalk.cyan.bold("\n               ___ _    __________  _   ____________") +
+  chalk.cyan.bold("\n              /   | |  / /  _/ __ \\/ | / /  _/ ____/") +
+  chalk.cyan.bold("\n             / /| | | / // // / / /  |/ // // /     ") +
+  chalk.cyan.bold("\n            / ___ | |/ // // /_/ / /|  // // /___   ") +
+  chalk.cyan.bold("\n           /_/  |_|___/___/\\____/_/ |_/___/\\____/ ") +
   "\n"+
-  chalk.cyan("\nPROPELLING WORLD-CLASS CROSS-PLATFORM HYBRID APPLICATIONS ✈") +
-  chalk.cyan("\nA Yeoman generator using AngularJS, Express, ngCordova, Gulp and Bower that helps you kickstart highly sophisticated Ionic projects to evolve and upgrade every aspect of your development to the next moonshot.") +
-  "\n";
+  chalk.cyan.bold("\n-- ") + chalk.yellow.bold("PROPELLING WORLD-CLASS CROSS-PLATFORM HYBRID APPLICATIONS") + chalk.cyan.bold(" -- ✈");
+
+  var captain =
+  "\n" +
+  chalk.red.bold("                             .---. ") +
+  chalk.red.bold("\n                            /_ ") + chalk.cyan.bold("✈") + chalk.red.bold(" _\\") +
+  chalk.white.bold("\n                            ( '_' )") +
+  chalk.white.bold("\n                             \\_-_/") +
+  chalk.red.bold("\n                       >>>___  ~  ___<<<\n");
+
+  var crew =
+  "\n" +
+  chalk.yellow.bold("                             .-- ") + chalk.cyan.bold("✈") + chalk.yellow.bold("") +
+  chalk.yellow.bold("\n                            / /\"\\ \\") +
+  chalk.yellow.bold("\n                            )/") + chalk.white.bold("a a") + chalk.yellow.bold("\\(") +
+  chalk.yellow.bold("\n                           ( ") + chalk.white.bold("( - )") + chalk.yellow.bold(" )") +
+  chalk.yellow.bold("\n                            )") + chalk.gray.bold("_") + chalk.yellow.bold("") + chalk.white.bold(") (") + chalk.yellow.bold("") + chalk.gray.bold("_") + chalk.yellow.bold("(") +
+  chalk.gray.bold("\n                            '\\   /'") +
+  chalk.gray.bold("\n                          /,(_\\ /_),\\") +
+  chalk.gray.bold("\n                          \\\\ \\ ") + chalk.cyan.bold("✈") + chalk.gray.bold(" / //\n")
+  ;
 
   var AvionicGenerator = module.exports = yeoman.generators.Base.extend({
     initializing: function () {
@@ -33,39 +76,40 @@
         var done = this.async();
 
         console.log(logo);
+        console.log(captain);
 
-        // Have Yeoman greet the user.
-        this.log(chalk.yellow('Ladies and gentlemen, this is your captain, welcoming you aboard to the Avionic installer.'));
-        this.log(yosay(chalk.yellow('At this time, we request your full attention as the flight attendants will guide you through the safety features of this aircraft.\n')));
+        this.log(chalk.white.bold('This is your Captain, welcoming you aboard to Avionic. At this time,\nwe request your full attention as your inflight team will guide you\nthrough the safety features.\n'));
+        console.log(crew);
+        this.log(chalk.white.bold('All right, it\'s time for final cabin check. Please make sure to\nanswer the questions below. For additional safety information,\ncheck out Avionic.io.\n'));
 
         var prompts = [{
           type: 'input',
           name: 'appName',
-          message: '▶︎ OK, so this one is important for all you Pilots out there. Please enter a name for your app',
+          message: chalk.cyan('📝  Enter the name of your app as it will appear on the App Store:'),
           default: this.appname // Default to current folder name
         },
         {
           type: 'input',
           name: 'appDescription',
-          message: '▶︎ Enter a description:',
-          default: 'A world-class app powered by Avionic ✈.'
+          message:chalk.cyan('📝  Enter a description:'),
+          default: 'A world-class app powered by Avionic.'
         },
         {
           type: 'input',
           name: 'appKeywords',
-          message: '▶︎ Enter some keywords separated by commas:',
+          message:chalk.cyan('📝  Enter some keywords separated by commas:'),
           default: 'avionic,ionic,yeoman, gulp, html, js, css, ios, android'
         },
         {
           type: 'input',
-          name: 'userName',
-          message: '▶︎ Enter your name:',
+          name: 'appUserName',
+          message:chalk.cyan('📝  Enter your name:'),
           default: 'Charles Lindbergh'
         },
         {
           type: 'input',
-          name: 'userMail',
-          message: '▶︎ Enter your email address:',
+          name: 'appUserEmail',
+          message:chalk.cyan('📝  Enter your email address:'),
           default: 'email@example.com'
 
         }];
@@ -74,8 +118,8 @@
           this.appName = props.appName;
           this.appDescription = props.appDescription;
           this.appKeywords = props.appKeywords;
-          this.userName = props.userName;
-          this.userMail = props.userMail;
+          this.appUserName = props.appUserName;
+          this.appUserEmail = props.appUserEmail;
           done();
         }.bind(this));
       },
@@ -85,8 +129,8 @@
         this.prompt([{
           type: 'input',
           name: 'appId',
-          message: '▶︎ Please enter the app id you\'d lile to use',
-          default: 'com.' + this._.classify(this.userName).toLowerCase() + '.' + this._.classify(this.appName).toLowerCase()
+          message:chalk.cyan('📝  Enter the app id you\'d like to use'),
+          default: 'com.' + this._.classify(this.appUserName).toLowerCase() + '.' + this._.classify(this.appName).toLowerCase()
         }], function (props) {
           this.appId = props.appId;
           done();
@@ -105,8 +149,8 @@
             appName: this._.underscored(this.appName),
             appDescription: this._.underscored(this.appDescription),
             appKeywords: this._.underscored(this.appKeywords),
-            userName: this.userName,
-            userEmail: this.userMail
+            appUserName: this.appUserName,
+            appUserEmail: this.appUserEmail
           }
         );
         this.fs.copyTpl(
@@ -114,10 +158,10 @@
           this.destinationPath('bower.json'),
           {
             appName: this._.classify(this.appName),
-            appDescription: this._.classify(this.appDescription),
+            appDescription: this.appDescription,
             appKeywords: this._.classify(this.appKeywords),
-            userName: this.userName,
-            userEmail: this.userMail
+            appUserName: this.appUserName,
+            appUserEmail: this.appUserEmail
           }
         );
 
@@ -125,7 +169,11 @@
           this.templatePath('_en.json'),
           this.destinationPath('app/languages/en.json'),
           {
-            ngModulName: this._.classify(this.appName)
+            appName: this._.underscored(this.appName),
+            appDescription: this._.underscored(this.appDescription),
+            appKeywords: this._.underscored(this.appKeywords),
+            appUserName: this.appUserName,
+            appUserEmail: this.appUserEmail
           }
         );
 
@@ -136,8 +184,8 @@
             appName: this.appName,
             appDescription: this.appDescription,
             appKeywords: this.appKeywords,
-            userName: this.userName,
-            userEmail: this.userMail,
+            appUserName: this.appUserName,
+            appUserEmail: this.appUserEmail,
             widgetId: this.appId
           }
         );
@@ -149,6 +197,46 @@
             ngModulName: this._.classify(this.appName)
           }
         );
+
+        this.fs.copyTpl(
+          this.templatePath('./_README.md'),
+          this.destinationPath('app/README.md'),
+          {
+            appName: this.appName,
+            appDescription: this.appDescription,
+            appKeywords: this.appKeywords,
+            appUserName: this.appUserName,
+            appUserEmail: this.appUserEmail,
+            widgetId: this.appId
+          }
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('./_CONTRIBUTING.md'),
+          this.destinationPath('app/CONTRIBUTING.md'),
+          {
+            appName: this.appName,
+            appDescription: this.appDescription,
+            appKeywords: this.appKeywords,
+            appUserName: this.appUserName,
+            appUserEmail: this.appUserEmail,
+            widgetId: this.appId
+          }
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('./_LICENSE'),
+          this.destinationPath('app/LICENSE'),
+          {
+            appName: this.appName,
+            appDescription: this.appDescription,
+            appKeywords: this.appKeywords,
+            appUserName: this.appUserName,
+            appUserEmail: this.appUserEmail,
+            widgetId: this.appId
+          }
+        );
+
 
         this.fs.copy(
           this.templatePath('editorconfig'),
@@ -190,11 +278,11 @@
             title: this.appName,
             description: this.appDescription,
             keywords: this.appKeywords,
-            author: this.userName,
+            author: this.appUserName,
             ngModulName: this._.classify(this.appName),
             ngModulDescription: this._.classify(this.appDescription),
             ngModulKeywords: this._.classify(this.appKeywords),
-            ngModulAuthor: this._.classify(this.userName)
+            ngModulAuthor: this._.classify(this.appUserName)
           }
         );
 
@@ -361,7 +449,6 @@
         );
 
         // app
-
         this.fs.copyTpl(
           this.templatePath('scripts/app.js'),
           this.destinationPath('app/scripts/app.js'),
