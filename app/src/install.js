@@ -24,24 +24,25 @@
 *  THE SOFTWARE.
 *
 */
-(function() {
+(function () {
   'use strict';
-  /**
-  * @ngdoc function
-  * @name <%= ngModulName %>.controller:EditProductController
-  * @description
-  * # EditProductController
-  */
-  var <%= ngModulName %> = angular.module('<%= ngModulName %>');
+  /*jslint nomen: true*/
+  /*jslint vars: true*/
+  /*global require,process,module*/
+  var yeoman = require('yeoman-generator');
+  var chalk = require('chalk');
+  var yosay = require('yosay');
+  var path = require('path');
+  var options = require('../options.json');
 
-  <%= ngModulName %>.controller('EditProductController', function($scope, $state, $stateParams, ExampleService) {
-
-    console.log($stateParams);
-    $scope.items={id:$stateParams.id,title:$stateParams.title};
-    $scope.edit=function(){
-      ExampleService.edit($scope.items.id,{title:$scope.items.title}).success(function(){
-        $state.go('app.products');
+  module.exports = function(AvionicGenerator) {
+    /**
+    * Declares options in the generator (only used for the help messages)
+    */
+    AvionicGenerator.prototype.install = function install() {
+      this.installDependencies({
+        skipInstall: this.options['skip-install']
       });
     };
-  });
-})();
+  };
+}());

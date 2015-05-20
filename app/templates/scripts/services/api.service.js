@@ -1,7 +1,7 @@
 /**
 *
 *  AVIONIC
-*  Propelling World-class Cross-platform Hybrid Applications ✈.
+*  Propelling World-class Cross-platform Hybrid Applications ✈ ✈
 *
 *  Copyright 2015 Reedia Limited. All rights reserved.
 *

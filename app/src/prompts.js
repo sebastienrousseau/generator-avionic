@@ -24,24 +24,37 @@
 *  THE SOFTWARE.
 *
 */
-(function() {
+(function () {
   'use strict';
+  /*jslint nomen: true*/
+  /*jslint vars: true*/
+  /*global require,process,module*/
+  var yeoman = require('yeoman-generator');
+  var yosay = require('yosay');
+  var chalk = require('chalk');
+  var path = require('path');
+  var prompts = require('../prompts.json');
+
+
+module.exports = function(AvionicGenerator) {
+
   /**
-  * @ngdoc function
-  * @name <%= ngModulName %>.controller:EditProductController
-  * @description
-  * # EditProductController
-  */
-  var <%= ngModulName %> = angular.module('<%= ngModulName %>');
-
-  <%= ngModulName %>.controller('EditProductController', function($scope, $state, $stateParams, ExampleService) {
-
-    console.log($stateParams);
-    $scope.items={id:$stateParams.id,title:$stateParams.title};
-    $scope.edit=function(){
-      ExampleService.edit($scope.items.id,{title:$scope.items.title}).success(function(){
-        $state.go('app.products');
-      });
-    };
-  });
-})();
+   * Ask all questions from prompts.json
+   * Complete responses with templated answers
+   */
+  AvionicGenerator.prototype.askQuestions = function askQuestions() {
+    var done = this.async();
+    this.prompt(prompts, function (props) {
+      // this.appName = this.appName || path.basename(process.cwd());
+      // this.appName = this._.titleize(this.appName);
+      this.appName = props.appName;
+      this.appDescription = props.appDescription;
+      this.appKeywords = props.appKeywords;
+      this.appUserName = props.appUserName;
+      this.appUserEmail = props.appUserEmail;
+      this.appId = props.appId;
+      done();
+    }.bind(this));
+  };
+};
+}());

@@ -1,5 +1,10 @@
 # How to become a contributor and submit your own code
 
+<%= appName %>
+<%= appDescription %> <%= appVersion %>
+
+Copyright (c) <%= appYear %> <%= appUserName %> <<%= appUserEmail %>>
+
 ## <%= appName %>
 
 ### <%= appUserName %> (<%= appUserEmail %>)

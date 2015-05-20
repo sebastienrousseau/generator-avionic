@@ -1,6 +1,6 @@
 {
   "name": "<%= appName %>",
-  "version": "1.0.0",
+  "version": "<%= appVersion %>",
   "author": [
     "<%= appUserName %> <<%= appUserEmail %>>"
   ],

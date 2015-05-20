@@ -1,5 +1,5 @@
 # ![ScreenShot](Masthead.png)
-###### PROPELLING WORLD-CLASS CROSS-PLATFORM HYBRID APPLICATIONS ✈.
+###### Propelling World-class Cross-platform Hybrid Applications ✈ ✈
 
 ## Table of Contents
 

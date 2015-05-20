@@ -1,14 +1,7 @@
-The MIT License (MIT)
+<%= appName %> 
+<%= appDescription %> <%= appVersion %>
 
-## <%= appName %>
-
-### <%= appUserName %> (<%= appUserEmail %>)
-
-#### <%= appDescription %>
-
-#### <%= appKeywords %>
-
-Copyright (c) 2015 Reedia
+Copyright (c) <%= appYear %> <%= appUserName %> <<%= appUserEmail %>>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
