@@ -33,7 +33,7 @@
   var chalk = require('chalk');
   var yosay = require('yosay');
   var path = require('path');
-  var options = require('../options.json');
+  // var options = require('../options.json');
 
   module.exports = function(AvionicGenerator) {
     /**
