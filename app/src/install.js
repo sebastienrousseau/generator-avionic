@@ -33,6 +33,7 @@
   var chalk = require('chalk');
   var yosay = require('yosay');
   var path = require('path');
+  var cordova = require('cordova');
   // var options = require('../options.json');
 
   module.exports = function(AvionicGenerator) {
@@ -40,6 +41,24 @@
     * Declares options in the generator (only used for the help messages)
     */
     AvionicGenerator.prototype.install = function install() {
+
+      console.log(chalk.yellow('\nInstall plugins registered at plugins.cordova.io: ') + chalk.green('gulp plugin:add:org.apache.cordova.globalization'));
+      console.log(chalk.yellow('Or install plugins direct from source: ') + chalk.green('gulp plugin:add:https://github.com/apache/cordova-plugin-console.git\n'));
+      if (this.plugins.length > 0) {
+          console.log(chalk.yellow('Installing selected Cordova plugins, please wait.'));
+          // Turns out plugin() doesn't accept a callback so we try/catch instead
+          try {
+              // cordova.plugin('add', this.plugins);
+              cordova.plugin('add', this.plugins, { save: true });
+              // var appPlugins = this.plugins.join(', ');
+              this.log(chalk.green('Added plugins: ' + this.plugins));
+          } catch (e) {
+              console.log(e);
+              this.log.error(chalk.red('Please run `yo icnh-ionic` in an empty directory, or in that of an already existing cordova project.'));
+              process.exit(1);
+          }
+      }
+
       this.installDependencies({
         skipInstall: this.options['skip-install']
       });

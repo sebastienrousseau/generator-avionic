@@ -31,11 +31,13 @@
     "ionic framework"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.18.0",
     "chalk": "^0.5.0",
+    "cordova": "^5.0.0",
+    "yeoman-generator": "^0.18.0",
     "yosay": "^0.3.0"
   },
   "devDependencies": {
+    "cordova": "^5.0.0",
     "chalk": "^0.5.0",
     "lodash": "^3.8.0",
     "mocha": "*",

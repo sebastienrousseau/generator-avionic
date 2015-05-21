@@ -99,6 +99,7 @@
     }
   });
   require('./src/prompts')(AvionicGenerator);
+  require('./src/plugins')(AvionicGenerator);
   require('./src/write')(AvionicGenerator);
   require('./src/files')(AvionicGenerator);
   require('./src/install')(AvionicGenerator);

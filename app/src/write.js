@@ -53,6 +53,16 @@
         widgetId: this.appId.toLowerCase()
       };
 
+      var appPlugins = {
+        appPlugins: '\"'+this.plugins.sort().join('\",\n\"')+'\"'
+      };
+      
+      this.fs.copyTpl(
+        this.templatePath('_plugins.json'),
+        this.destinationPath('plugins.json'),
+        appPlugins
+      );
+
       this.fs.copyTpl(
         this.templatePath('_package.json'),
         this.destinationPath('package.json'),

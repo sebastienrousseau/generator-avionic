@@ -230,10 +230,10 @@
         this.destinationPath('vendor.json')
       );
 
-      this.fs.copy(
-        this.templatePath('_plugins.json'),
-        this.destinationPath('plugins.json')
-      );
+      // this.fs.copy(
+      //   this.templatePath('_plugins.json'),
+      //   this.destinationPath('plugins.json')
+      // );
 
       this.fs.copy(
         this.templatePath('favicon.ico'),

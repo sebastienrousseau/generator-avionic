@@ -5,7 +5,7 @@
   <keywords><%= appKeywords %></keywords>
   <author email="<%= appUserEmail %>"><%= appUserName %></author>
   <content src="index.html"/>
-  <access origin="*"/>
+  <access origin="*" />
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

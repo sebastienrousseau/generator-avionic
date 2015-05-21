@@ -34,7 +34,7 @@
   var chalk = require('chalk');
   var path = require('path');
   var prompts = require('../prompts.json');
-
+  var ionicUtils = require('../utils/');
 
 
 module.exports = function(AvionicGenerator) {
@@ -43,17 +43,10 @@ module.exports = function(AvionicGenerator) {
    * Ask all questions from prompts.json
    * Complete responses with templated answers
    */
-  AvionicGenerator.prototype.askQuestions = function askQuestions() {
+  AvionicGenerator.prototype.askForPlugins = function askForPlugins() {
     var done = this.async();
-    this.prompt(prompts, function (props) {
-      // this.appName = this.appName || path.basename(process.cwd());
-      // this.appName = this._.titleize(this.appName);
-      this.appName = props.appName;
-      this.appDescription = props.appDescription;
-      this.appKeywords = props.appKeywords;
-      this.appUserName = props.appUserName;
-      this.appUserEmail = props.appUserEmail;
-      this.appId = props.appId;
+    this.prompt(ionicUtils.plugins.prompts, function (props) {
+      this.plugins = props.plugins;
       done();
     }.bind(this));
   };
