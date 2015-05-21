@@ -30,14 +30,12 @@
   /*jslint vars: true*/
   /*global require,process,module*/
   var yeoman = require('yeoman-generator');
-  var yosay = require('yosay');
   var chalk = require('chalk');
 
   var prompts = require('./prompts.json');
 
   // Avionic ✈ ASCII Text Logo
   var logo =
-  "\n" +
   chalk.cyan.bold("\n               ___ _    __________  _   ____________") +
   chalk.cyan.bold("\n              /   | |  / /  _/ __ \\/ | / /  _/ ____/") +
   chalk.cyan.bold("\n             / /| | | / // // / / /  |/ // // /     ") +
@@ -48,33 +46,31 @@
 
   var captain =
   "\n" +
-  chalk.red.bold("                             .---. ") +
+  chalk.red.bold("\n                             .---. ") +
   chalk.red.bold("\n                            /_ ") + chalk.cyan.bold("✈") + chalk.red.bold(" _\\") +
   chalk.white.bold("\n                            ( '_' )") +
   chalk.white.bold("\n                             \\_-_/") +
-  chalk.red.bold("\n                       >>>___  ~  ___<<<\n");
+  chalk.red.bold("\n                       >>>___  ~  ___<<<");
 
   var crew =
-  "\n" +
-  chalk.yellow.bold("                             .-- ") + chalk.cyan.bold("✈") + chalk.yellow.bold("") +
+  chalk.yellow.bold("\n                             .-- ") + chalk.cyan.bold("✈") + chalk.yellow.bold("") +
   chalk.yellow.bold("\n                            / /\"\\ \\") +
-  chalk.yellow.bold("\n                            )/") + chalk.white.bold("a a") + chalk.yellow.bold("\\(") +
+  chalk.yellow.bold("\n                            )/") + chalk.cyan.bold("• •") + chalk.yellow.bold("\\(") +
   chalk.yellow.bold("\n                           ( ") + chalk.white.bold("( - )") + chalk.yellow.bold(" )") +
-  chalk.yellow.bold("\n                            )") + chalk.gray.bold("_") + chalk.yellow.bold("") + chalk.white.bold(") (") + chalk.yellow.bold("") + chalk.gray.bold("_") + chalk.yellow.bold("(") +
-  chalk.gray.bold("\n                            '\\   /'") +
-  chalk.gray.bold("\n                          /,(_\\ /_),\\") +
-  chalk.gray.bold("\n                          \\\\ \\ ") + chalk.cyan.bold("✈") + chalk.gray.bold(" / //\n")
+  chalk.yellow.bold("\n                            )") + chalk.red.bold("_") + chalk.yellow.bold("") + chalk.white.bold(") (") + chalk.yellow.bold("") + chalk.red.bold("_") + chalk.yellow.bold("(") +
+  chalk.white.bold("\n                           /'") + chalk.red.bold("\\") + chalk.red.bold("   /") + chalk.white.bold("'\\") +
+  chalk.white.bold("\n                          /,") + chalk.red.bold("(_\\ /_)") + chalk.white.bold(",\\") +
+  chalk.white.bold("\n                          \\\\ ") + chalk.red.bold("\\ ") + chalk.cyan.bold("✈") + chalk.red.bold(" /") + chalk.white.bold(" //")
   ;
 
   var plane =
-  "\n" +
-  chalk.red.bold("                         ___________") +
+  chalk.red.bold("\n                         ___________") +
   chalk.red.bold("\n                              |") +
   chalk.red.bold("\n                         _   _|_   _") +
   chalk.red.bold("\n                        (_)-/ ") + chalk.cyan.bold("✈") + chalk.red.bold(" \\-(_)") +
   chalk.red.bold("\n _                         /\\___/\\                         _") +
-  chalk.red.bold("\n(_)_______________________( ( ") + chalk.white.bold("X") + chalk.red.bold(" ) )_______________________(_)") +
-  chalk.red.bold("\n                           \\_____/") +
+  chalk.red.bold("\n(_)_______________________( ( ") + chalk.white.bold("•") + chalk.red.bold(" ) )_______________________(_)") +
+  chalk.red.bold("\n                           \\_____/\n") +
   "\n";
 
   // var AvionicGenerator = module.exports = yeoman.generators.Base.extend({
@@ -91,10 +87,9 @@
       if (!this.options['skip-welcome-message']) {
           console.log(logo);
           console.log(captain);
-          this.log(chalk.white.bold('This is your Captain, welcoming you aboard to Avionic. At this time,\nwe request your full attention as your inflight team will guide you\nthrough the safety features.\n'));
+          this.log(chalk.white.bold('\nThis is your Captain John Doe, welcoming you aboard to Avionic. \nAt this time, we request your full attention as your inflight \nteam will guide you through the safety features.\n'));
           console.log(crew);
-          this.log(chalk.white.bold('All right, it\'s time for final cabin check. Please make sure to\nanswer the questions below. For additional safety information,\ncheck out Avionic.io.\n'));
-          console.log(plane);
+          this.log(chalk.white.bold('\nLadies and gentlemen, this is Jane Smith and I’m your chief \nflight attendant. I\'d like to direct your attention to the \nterminal in front of you. We will be showing our safety \ndemonstration and would like the next few minutes of your \ncomplete attention.\n'));
       }
     }
   });

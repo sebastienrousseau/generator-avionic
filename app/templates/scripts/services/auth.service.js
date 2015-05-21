@@ -130,7 +130,6 @@
               $localstorage.set('googUserPicture', result2.data.picture);
 
             }, function(error) {
-              alert('There was a problem signing in!  See the console for logs');
               console.log(error);
               // $location.path('/login');
             });
@@ -156,7 +155,7 @@
           return ($localstorage.userId && $localstorage.authToken);
         },
 
-        logout: function(callback) {
+        logout: function() {
           delete $localstorage.userId;
           delete $localstorage.userName;
           delete $localstorage.authToken;

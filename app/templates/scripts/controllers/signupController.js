@@ -38,6 +38,7 @@
 
   SignUpController.$inject = ['$ionicPlatform', '$scope', '$location', '$cordovaOauth', '$localstorage', 'AuthService'];
 
+
   function SignUpController($ionicPlatform, $scope, $location, $cordovaOauth, $localstorage, AuthService) {
 
     $scope.user = {

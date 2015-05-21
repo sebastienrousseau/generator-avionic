@@ -2,7 +2,7 @@ module.exports = {
     prompts: [{
         type: 'checkbox',
         name: 'plugins',
-        message: 'Which Cordova plugins would you like to include?',
+        message: 'Enter the plugins you\'d like to use:\n\n',
         choices: [{
             value: 'cordova-plugin-console',
             name: 'cordova-plugin-console',

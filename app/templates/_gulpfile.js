@@ -31,6 +31,7 @@
   /*jslint vars: true*/
   /*global require,process,module*/
   var appName = '<%= ngModulName %>';
+  var chalk = require('chalk');
   var gulp = require('gulp');
   var wiredep = require('wiredep').stream;
   var plugins = require('gulp-load-plugins')();
@@ -59,6 +60,34 @@
   var imagemin = require('gulp-imagemin');
   var pngquant = require('imagemin-pngquant');
 
+  var captain =
+  "\n" +
+  chalk.red.bold("                             .---. ") +
+  chalk.red.bold("\n                            /_ ") + chalk.cyan.bold("✈") + chalk.red.bold(" _\\") +
+  chalk.white.bold("\n                            ( '_' )") +
+  chalk.white.bold("\n                             \\_-_/") +
+  chalk.red.bold("\n                       >>>___  ~  ___<<<\n");
+
+  var crew =
+  chalk.yellow.bold("\n                             .-- ") + chalk.cyan.bold("✈") + chalk.yellow.bold("") +
+  chalk.yellow.bold("\n                            / /\"\\ \\") +
+  chalk.yellow.bold("\n                            )/") + chalk.cyan.bold("• •") + chalk.yellow.bold("\\(") +
+  chalk.yellow.bold("\n                           ( ") + chalk.white.bold("( - )") + chalk.yellow.bold(" )") +
+  chalk.yellow.bold("\n                            )") + chalk.red.bold("_") + chalk.yellow.bold("") + chalk.white.bold(") (") + chalk.yellow.bold("") + chalk.red.bold("_") + chalk.yellow.bold("(") +
+  chalk.white.bold("\n                           /'") + chalk.red.bold("\\") + chalk.red.bold("   /") + chalk.white.bold("'\\") +
+  chalk.white.bold("\n                          /,") + chalk.red.bold("(_\\ /_)") + chalk.white.bold(",\\") +
+  chalk.white.bold("\n                          \\\\ ") + chalk.red.bold("\\ ") + chalk.cyan.bold("✈") + chalk.red.bold(" /") + chalk.white.bold(" //")
+  ;
+
+  var plane =
+  chalk.red.bold("\n                         ___________") +
+  chalk.red.bold("\n                              |") +
+  chalk.red.bold("\n                         _   _|_   _") +
+  chalk.red.bold("\n                        (_)-/ ") + chalk.cyan.bold("✈") + chalk.red.bold(" \\-(_)") +
+  chalk.red.bold("\n _                         /\\___/\\                         _") +
+  chalk.red.bold("\n(_)_______________________( ( ") + chalk.white.bold("•") + chalk.red.bold(" ) )_______________________(_)") +
+  chalk.red.bold("\n                           \\_____/") +
+  "\n";
 
   /**
   * Parse arguments
@@ -308,9 +337,9 @@
     .use(express.static(targetDir))
     .listen(port);
     open('http://localhost:' + port + '/');
-    gutil.log(gutil.colors.white.bold('== <%= ngModulName %> is cleared to takeoff! =='));
-    gutil.log(gutil.colors.white.bold('== Now, enjoy your flight, and as always thank you for flying Avionic =='));
-    gutil.log(gutil.colors.white.bold('== Goodbye. =='));
+    gutil.log(captain + gutil.colors.white.bold('<%= ngModulName %> is cleared to takeoff!\n'));
+    gutil.log(crew + gutil.colors.white.bold('\nAll right, it\’s time for final cabin check. For additional safety\ninformation, check out our website http://avionic.io.\nEnjoy your flight, and as always thank you for flying Avionic.\n'));
+    gutil.log(plane + gutil.colors.white.bold('Goodbye.'));
   });
 
   // ionic emulate wrapper
@@ -380,7 +409,7 @@
 
   // our main sequence, with some conditional jobs depending on params
   gulp.task('default', function(done) {
-    gutil.log(gutil.colors.white('== Roger, initializing Gulp sequence =='));
+    gutil.log(captain + gutil.colors.white('Cabin crew, doors on automatic, cross-check & report. Thank you. Initializing the Gulp sequence.'));
     runSequence(
       'clean',
       'iconfont',
@@ -402,5 +431,5 @@
       run ? 'ionic:run' : 'noop',
       done);
     });
-    gutil.log(gutil.colors.yellow('== Avionic ✈ Flight <%= ngModulName %> is ready for takeoff =='));
+    gutil.log(captain + gutil.colors.white('Flight \"<%= ngModulName %>\" is ready for takeoff.'));
   })();
