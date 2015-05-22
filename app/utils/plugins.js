@@ -8,6 +8,10 @@ module.exports = {
             name: 'cordova-plugin-console',
             checked: true
         }, {
+            value: 'cordova-plugin-whitelist',
+            name: 'cordova-plugin-whitelist',
+            checked: true
+        }, {
             value: 'org.apache.cordova.inappbrowser',
             name: 'org.apache.cordova.inappbrowser',
             checked: true

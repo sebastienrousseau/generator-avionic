@@ -34,7 +34,7 @@
   var chalk = require('chalk');
   var gulp = require('gulp');
   var wiredep = require('wiredep').stream;
-  var plugins = require('gulp-load-plugins')();
+  var plugins = require('gulp-load-plugins')({lazy: true});
   var gutil = require('gulp-util');
   // var clean = require('gulp-clean');
   var sass = require('gulp-sass');
@@ -75,7 +75,7 @@
   chalk.yellow.bold("\n                           ( ") + chalk.white.bold("( - )") + chalk.yellow.bold(" )") +
   chalk.yellow.bold("\n                            )") + chalk.red.bold("_") + chalk.yellow.bold("") + chalk.white.bold(") (") + chalk.yellow.bold("") + chalk.red.bold("_") + chalk.yellow.bold("(") +
   chalk.white.bold("\n                           /'") + chalk.red.bold("\\") + chalk.red.bold("   /") + chalk.white.bold("'\\") +
-  chalk.white.bold("\n                          /,") + chalk.red.bold("(_\\ /_)") + chalk.white.bold(",\\") +
+  chalk.white.bold("\n                          /,") + chalk.red.bold("(_\\_/_)") + chalk.white.bold(",\\") +
   chalk.white.bold("\n                          \\\\ ") + chalk.red.bold("\\ ") + chalk.cyan.bold("✈") + chalk.red.bold(" /") + chalk.white.bold(" //")
   ;
 
@@ -128,6 +128,12 @@
       plugins.util.log(error);
     }
   };
+
+  /**
+  * List the available gulp tasks
+  */
+  gulp.task('help', plugins.taskListing);
+  // gulp.task('default', ['help']);
 
 
   // clean target dir
@@ -409,7 +415,10 @@
 
   // our main sequence, with some conditional jobs depending on params
   gulp.task('default', function(done) {
-    gutil.log(captain + gutil.colors.white('Cabin crew, doors on automatic, cross-check & report. Thank you. Initializing the Gulp sequence.'));
+    gutil.log(captain + gutil.colors.white('\nCabin crew, doors on automatic, cross-check & report. Thank you.\n'));
+    gutil.log(crew + gutil.colors.white('\nIn a few moments, we will be passing around the cabin to\noffer you hot or cold drinks.\nPlease, sit back, relax, and enjoy the flight.\n'));
+    gutil.log(captain + gutil.colors.white('\nStarting initializing the Gulp sequence, local time is:\n'));
+
     runSequence(
       'clean',
       'iconfont',

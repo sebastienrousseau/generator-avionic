@@ -59,7 +59,7 @@
   chalk.yellow.bold("\n                           ( ") + chalk.white.bold("( - )") + chalk.yellow.bold(" )") +
   chalk.yellow.bold("\n                            )") + chalk.red.bold("_") + chalk.yellow.bold("") + chalk.white.bold(") (") + chalk.yellow.bold("") + chalk.red.bold("_") + chalk.yellow.bold("(") +
   chalk.white.bold("\n                           /'") + chalk.red.bold("\\") + chalk.red.bold("   /") + chalk.white.bold("'\\") +
-  chalk.white.bold("\n                          /,") + chalk.red.bold("(_\\ /_)") + chalk.white.bold(",\\") +
+  chalk.white.bold("\n                          /,") + chalk.red.bold("(_\\_/_)") + chalk.white.bold(",\\") +
   chalk.white.bold("\n                          \\\\ ") + chalk.red.bold("\\ ") + chalk.cyan.bold("✈") + chalk.red.bold(" /") + chalk.white.bold(" //")
   ;
 
