@@ -33,47 +33,6 @@
   var chalk = require('chalk');
 
   var prompts = require('./prompts.json');
-
-  // Avionic ✈ ASCII Text Logo
-  var logo =
-  chalk.cyan.bold("\n               ___ _    __________  _   ____________") +
-  chalk.cyan.bold("\n              /   | |  / /  _/ __ \\/ | / /  _/ ____/") +
-  chalk.cyan.bold("\n             / /| | | / // // / / /  |/ // // /     ") +
-  chalk.cyan.bold("\n            / ___ | |/ // // /_/ / /|  // // /___   ") +
-  chalk.cyan.bold("\n           /_/  |_|___/___/\\____/_/ |_/___/\\____/ ") +
-  "\n"+
-  chalk.cyan.bold("\n-- ") + chalk.yellow.bold("Propelling World-class Cross-platform Hybrid Applications") + chalk.cyan.bold(" -- ✈");
-
-  var captain =
-  "\n" +
-  chalk.red.bold("\n                             .---. ") +
-  chalk.red.bold("\n                            /_ ") + chalk.cyan.bold("✈") + chalk.red.bold(" _\\") +
-  chalk.white.bold("\n                            ( '_' )") +
-  chalk.white.bold("\n                             \\_-_/") +
-  chalk.red.bold("\n                       >>>___  ~  ___<<<");
-
-  var crew =
-  chalk.yellow.bold("\n                             .-- ") + chalk.cyan.bold("✈") + chalk.yellow.bold("") +
-  chalk.yellow.bold("\n                            / /\"\\ \\") +
-  chalk.yellow.bold("\n                            )/") + chalk.cyan.bold("• •") + chalk.yellow.bold("\\(") +
-  chalk.yellow.bold("\n                           ( ") + chalk.white.bold("( - )") + chalk.yellow.bold(" )") +
-  chalk.yellow.bold("\n                            )") + chalk.red.bold("_") + chalk.yellow.bold("") + chalk.white.bold(") (") + chalk.yellow.bold("") + chalk.red.bold("_") + chalk.yellow.bold("(") +
-  chalk.white.bold("\n                           /'") + chalk.red.bold("\\") + chalk.red.bold("   /") + chalk.white.bold("'\\") +
-  chalk.white.bold("\n                          /,") + chalk.red.bold("(_\\_/_)") + chalk.white.bold(",\\") +
-  chalk.white.bold("\n                          \\\\ ") + chalk.red.bold("\\ ") + chalk.cyan.bold("✈") + chalk.red.bold(" /") + chalk.white.bold(" //")
-  ;
-
-  var plane =
-  chalk.red.bold("\n                         ___________") +
-  chalk.red.bold("\n                              |") +
-  chalk.red.bold("\n                         _   _|_   _") +
-  chalk.red.bold("\n                        (_)-/ ") + chalk.cyan.bold("✈") + chalk.red.bold(" \\-(_)") +
-  chalk.red.bold("\n _                         /\\___/\\                         _") +
-  chalk.red.bold("\n(_)_______________________( ( ") + chalk.white.bold("•") + chalk.red.bold(" ) )_______________________(_)") +
-  chalk.red.bold("\n                           \\_____/\n") +
-  "\n";
-
-  // var AvionicGenerator = module.exports = yeoman.generators.Base.extend({
   var AvionicGenerator = yeoman.generators.Base.extend ({
     constructor: function () {
     yeoman.generators.Base.apply(this, arguments);
@@ -85,14 +44,15 @@
 
     info: function () {
       if (!this.options['skip-welcome-message']) {
-          console.log(logo);
-          console.log(captain);
-          this.log(chalk.white.bold('\nThis is your Captain John Doe, welcoming you aboard to Avionic. \nAt this time, we request your full attention as your inflight \nteam will guide you through the safety features.\n'));
-          console.log(crew);
-          this.log(chalk.white.bold('\nLadies and gentlemen, this is Jane Smith and I’m your chief \nflight attendant. I\'d like to direct your attention to the \nterminal in front of you. We will be showing our safety \ndemonstration and would like the next few minutes of your \ncomplete attention.\n'));
+        ascii.logo();
+        ascii.captain();
+        console.log(chalk.white.bold('\nThis is your Captain John Doe, welcoming you aboard to Avionic. \nAt this time, we request your full attention as your inflight \nteam will guide you through the safety features.\n'));
+        ascii.crew();
+        console.log(chalk.white.bold('\nLadies and gentlemen, this is Jane Smith and I’m your chief \nflight attendant. I\'d like to direct your attention to the \nterminal in front of you. We will be showing our safety \ndemonstration and would like the next few minutes of your \ncomplete attention.\n'));
       }
     }
   });
+  var ascii = require('./src/ascii.js');
   require('./src/prompts')(AvionicGenerator);
   require('./src/plugins')(AvionicGenerator);
   require('./src/write')(AvionicGenerator);

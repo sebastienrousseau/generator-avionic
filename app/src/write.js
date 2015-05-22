@@ -56,11 +56,16 @@
       var appPlugins = {
         appPlugins: '\"'+this.plugins.sort().join('\",\n\"')+'\"'
       };
-      
+
       this.fs.copyTpl(
         this.templatePath('_plugins.json'),
         this.destinationPath('plugins.json'),
         appPlugins
+      );
+
+      this.fs.copyTpl(
+        this.templatePath('../src/ascii.js'),
+        this.destinationPath('ascii.js')
       );
 
       this.fs.copyTpl(
