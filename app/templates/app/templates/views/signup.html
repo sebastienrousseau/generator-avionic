@@ -1,20 +1,35 @@
 <ion-view hide-back-button="true" title="{{ 'APP_NAME' | translate }}">
-  <ion-content scroll="false" class="background content has-header">
+<ion-content scroll="false" class="background content has-header">
+  <form role="form">
     <div class="padding">
-      <form role="form">
-        <ion-list>
-          <label class="item item-input">
-            <label for="username">Username:</label>
-            <input id="username" type="text" class="form-control" placeholder="username" ng-model="user.username">
-          </label>
-          <label class="item item-input">
-            <label for="password">Password:</label>
-            <input id="password" type="password" class="form-control" placeholder="password" ng-model="user.password">
-          </label>
-        </ion-list>
-        <button class="btn btn-large btn-primary" ng-click="loginUser()">Login</button>
-        <button class="btn btn-large btn-primary" ng-click="signupUser()">Sign Up!</button>
-      </form>
+      <label class="item item-input">
+        <span class="input-label">Username</span>
+        <input id="username" type="text" placeholder="username" ng-model="user.username">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input id="password" type="password" placeholder="password" ng-model="user.password">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Email</span>
+        <input id="password" type="email" placeholder="password" ng-model="user.email">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">First Name</span>
+        <input id="password" type="text" placeholder="password" ng-model="user.first_name">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Last Name</span>
+        <input id="password" type="text" placeholder="password" ng-model="user.last_name">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Phone Number</span>
+        <input id="password" type="text" placeholder="password" ng-model="user.phone_number">
+      </label>
     </div>
-  </ion-content>
+    <div class="padding">
+      <button class="button button-block" ng-click="signupUser()">Sign Up!</button>
+    </div>
+  </form>
+</ion-content>
 </ion-view>

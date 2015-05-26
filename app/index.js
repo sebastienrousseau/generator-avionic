@@ -57,6 +57,6 @@
   require('./src/plugins')(AvionicGenerator);
   require('./src/write')(AvionicGenerator);
   require('./src/files')(AvionicGenerator);
-  require('./src/install')(AvionicGenerator);
+  require('./src/install')(AvionicGenerator);  
   module.exports = AvionicGenerator;
 }());

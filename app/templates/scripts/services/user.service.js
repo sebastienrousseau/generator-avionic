@@ -33,16 +33,8 @@
   * @description
   * # UserService
   */
-  angular.module('<%= ngModulName %>')
-
-  .value('API_CREDENTIALS',{
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers':'Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With',
-    APP_ID: 'yqd4SRU8wu8a2fgaLEl3pZklSXlPtLMyHWxyjCUM',
-    REST_API_KEY:'vF5EUcOIdkr8c9P7dSqOvhWcexJ1d11Mv0HNz4DV'
-  })
-
+  angular
+  .module('<%= ngModulName %>')
   .factory('UserService',['$http','API_CREDENTIALS',function($http,API_CREDENTIALS) {
 
     var apiUrl = 'https://api.parse.com/1/users';

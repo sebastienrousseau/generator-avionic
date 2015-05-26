@@ -31,33 +31,26 @@
   * @ngdoc function
   * @name <%= ngModulName %>.service:AuthService
   * @description
-  * # AuthService
+  * # AuthService  - Basic authentication service. This class presents a basic authentication service, which offers authentication functionality.
   */
   angular
   .module('<%= ngModulName %>')
-  .value('API_CREDENTIALS',{
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers':'Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With',
-    APP_ID: 'yqd4SRU8wu8a2fgaLEl3pZklSXlPtLMyHWxyjCUM',
-    REST_API_KEY:'vF5EUcOIdkr8c9P7dSqOvhWcexJ1d11Mv0HNz4DV'
-  })
   .factory('AuthService', AuthService);
 
   var apiUrl = 'https://api.parse.com/1/users';
   var loginUrl = 'https://api.parse.com/1/login';
 
-  AuthService.$inject = ['$localstorage', '$cordovaOauth', '$location', '$http'];
+  AuthService.$inject = ['$localstorage', '$cordovaOauth', '$location', '$http','API_CREDENTIALS', 'facebookConfig', 'googleConfig', 'twitterConfig'];
 
-  function AuthService($localstorage, $cordovaOauth, $location, $http, API_CREDENTIALS) {
+  function AuthService($localstorage, $cordovaOauth, $location, $http, API_CREDENTIALS, facebookConfig, googleConfig, twitterConfig) {
     return {
 
       //Signup user to Parse api
       signupUser:function(user){
         return $http.post(apiUrl,user,{
           headers:{
-            'X-Parse-Application-Id': 'yqd4SRU8wu8a2fgaLEl3pZklSXlPtLMyHWxyjCUM',
-            'X-Parse-REST-API-Key': 'vF5EUcOIdkr8c9P7dSqOvhWcexJ1d11Mv0HNz4DV',
+            'X-Parse-Application-Id': API_CREDENTIALS.APP_ID,
+            'X-Parse-REST-API-Key': API_CREDENTIALS.REST_API_KEY,
             'Content-Type':'application/json'
           },
           data: user
@@ -68,14 +61,16 @@
       loginUser: function(user){
         return $http.get(loginUrl,{
           headers: {
-            'X-Parse-Application-Id': 'yqd4SRU8wu8a2fgaLEl3pZklSXlPtLMyHWxyjCUM',
-            'X-Parse-REST-API-Key': 'vF5EUcOIdkr8c9P7dSqOvhWcexJ1d11Mv0HNz4DV',
+            'X-Parse-Application-Id': API_CREDENTIALS.APP_ID,
+            'X-Parse-REST-API-Key': API_CREDENTIALS.REST_API_KEY,
             'Content-Type':'application/json'
           },
           params:{
             'username': user.username,
             'password': user.password
           }
+        }).then(function(result) {
+          console.log('Response Object -> ' + JSON.stringify(result));
         });
       },
 
@@ -83,7 +78,7 @@
         /*
         * First connects to facebook and get the token authentication
         */
-        $cordovaOauth.facebook('889753241083286', ['email', 'read_stream', 'user_website', 'user_location', 'user_relationships']).then(function(result) {
+        $cordovaOauth.facebook(facebookConfig.FACEBOOK_ID, ['email', 'read_stream', 'user_website', 'user_location', 'user_relationships']).then(function(result) {
 
           $http.get('https://graph.facebook.com/v2.3/me', { params: { access_token: result.access_token, fields: 'id,name,first_name,last_name,email,locale,picture', format: 'json' }}).then(function(result) {
             console.log('Response Object -> ' + JSON.stringify(result));
@@ -114,7 +109,7 @@
         /*
         * First connects to Google and get the token authentication
         */
-        $cordovaOauth.google('931284429036-cdc36fmdkk8qach6a86s5ag4llgcove9.apps.googleusercontent.com',  ['email']).then(function(result) {
+        $cordovaOauth.google(googleConfig.GOOGLE_ID,  ['email']).then(function(result) {
           $localstorage.set('googAccessToken', result.access_token);
           $http.get('https://www.googleapis.com/oauth2/v1/userinfo', {
             params: { access_token: result.access_token,
@@ -137,21 +132,22 @@
         },
 
         loginTwitter: function() {
-          /*
-          * Connects to Twitter and get the token authentication
-          */
-          // $cordovaOauth.twitter('NPdS21200O14f3K3VS3Zw6CFP', 'kAKBzcKw2T8Ekr7l8F1O1PWpUlOO6EuvK1ZlbKrzXSpByWFgv').then(function(result) {
-          //
-          //     $localstorage.set('authToken', result.access_token);
-          //
-          // }, function(error) {
-          //     // alert('There was a problem signing in!  See the console for logs');
-          //     console.log(error);
-          //     // $location.path('/login');
-          // });
+        /*
+        * Connects to Twitter and get the token authentication
+        */
+        $cordovaOauth.twitter(twitterConfig.TWITTER_ID, twitterConfig.TWITTER_SECRET).then(function(result) {
+
+            $localstorage.set('twitterAuthToken', result.access_token);
+
+        }, function(error) {
+            // alert('There was a problem signing in!  See the console for logs');
+            console.log(error);
+            // $location.path('/login');
+        });
         },
 
         isLogged: function() {
+          $location.path('/app/home');
           return ($localstorage.userId && $localstorage.authToken);
         },
 

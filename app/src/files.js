@@ -176,7 +176,7 @@
       // config
       this.fs.copyTpl(
         this.templatePath('scripts/config/app.config.js'),
-        this.destinationPath('app/scripts/config/' + this._.classify(this.appname).toLowerCase() + '.config.js'),
+        this.destinationPath('app/scripts/config/' + this._.classify(this.appName).toLowerCase() + '.config.js'),
         {
           ngModulName: this._.classify(this.appName)
         }
@@ -185,7 +185,7 @@
       // translate
       this.fs.copyTpl(
         this.templatePath('scripts/translate/app.translate.js'),
-        this.destinationPath('app/scripts/translate/' + this._.classify(this.appname).toLowerCase() + '.translate.js'),
+        this.destinationPath('app/scripts/translate/' + this._.classify(this.appName).toLowerCase() + '.translate.js'),
         {
           ngModulName: this._.classify(this.appName)
         }
@@ -195,7 +195,7 @@
       // routes
       this.fs.copyTpl(
         this.templatePath('scripts/routes/app.routes.js'),
-        this.destinationPath('app/scripts/routes/' + this._.classify(this.appname).toLowerCase() + '.routes.js'),
+        this.destinationPath('app/scripts/routes/' + this._.classify(this.appName).toLowerCase() + '.routes.js'),
         {
           ngModulName: this._.classify(this.appName)
         }
