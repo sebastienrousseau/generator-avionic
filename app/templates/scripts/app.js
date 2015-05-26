@@ -52,6 +52,9 @@
     $ionicPlatform.ready(function() {
 
       $cordovaSplashscreen.show();
+      setTimeout(function() {
+        $cordovaSplashscreen.hide();
+      }, 1000);
 
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
