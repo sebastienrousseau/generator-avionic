@@ -46,10 +46,12 @@
     'pascalprecht.translate'   // angular-translate module for i18n and l10n lazy loading and pluralization
   ]);
 
-  <%= ngModulName %>.run(function($rootScope, $ionicPlatform, $ionicLoading) {
+  <%= ngModulName %>.run(function($rootScope, $ionicPlatform, $ionicLoading, $cordovaSplashscreen) {
 
 
     $ionicPlatform.ready(function() {
+
+      $cordovaSplashscreen.show();
 
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
