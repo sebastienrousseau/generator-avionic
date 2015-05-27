@@ -32,6 +32,10 @@ module.exports = {
             name: 'cordova-plugin-statusbar',
             checked: true
         }, {
+            value: 'cordova-plugin-apple-watch',
+            name: 'cordova-plugin-apple-watch',
+            checked: false
+        }, {
             value: 'cordova-plugin-network-information',
             name: 'cordova-plugin-network-information',
             checked: false

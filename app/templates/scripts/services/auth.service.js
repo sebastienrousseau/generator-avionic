@@ -71,6 +71,12 @@
           }
         }).then(function(result) {
           console.log('Response Object -> ' + JSON.stringify(result));
+          console.log(result.data.first_name + ' is logged in. Session id is ' + result.data.sessionToken);
+          $localstorage.set('appSessionToken', result.data.sessionToken);
+          $localstorage.set('appFirst_name', result.data.first_name);
+          $localstorage.set('appLast_name', result.data.last_name);
+          $localstorage.set('appUsername', result.data.username);
+          $location.path('/app/home/');
         });
       },
 

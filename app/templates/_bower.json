@@ -14,6 +14,7 @@
     "angular-resource": "latest",
     "lodash": "latest",
     "angular-cookies":"latest",
+    "angular-messages":"latest",
     "angular-translate":"latest",
     "angular-translate-loader-static-files":"latest",
     "angular-translate-storage-cookie":"latest",

@@ -124,3 +124,19 @@
 .bar .button.button-fab.button-fab-top-right.expanded {
     top: 48px;
 }
+
+.info, .success, .warning, .error, .validation {
+font-size	:12px;
+}
+.info {
+color: #00529B;
+}
+.success {
+color: #4F8A10;
+}
+.warning {
+color: #9F6000;
+}
+.error {
+color: #D8000C;
+}

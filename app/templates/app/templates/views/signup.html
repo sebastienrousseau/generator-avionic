@@ -1,34 +1,43 @@
-<ion-view hide-back-button="true" title="{{ 'APP_NAME' | translate }}">
+<ion-view hide-back-button="true" title="{{ 'APP_SIGNUP_HEADER' | translate }}">
 <ion-content scroll="false" class="background content has-header">
-  <form role="form">
+  <form name="signupUserForm" novalidate="novalidate">
     <div class="padding">
       <label class="item item-input">
-        <span class="input-label">Username</span>
-        <input id="username" type="text" placeholder="username" ng-model="user.username">
+        <input id="text" type="email" name="email" placeholder="{{'APP_SIGNUP_EMAIL' | translate }}" ng-model="user.username" ng-minlength="5" ng-maxlength="64" required="required">
       </label>
+      <div ng-messages="signupUserForm.email.$error">
+        <div class="info" ng-message="required">Your email address will be your username.</div>
+        <div class="error" ng-message="minlength">Your email address is too short...</div>
+        <div class="error" ng-message="maxlength">Your email address is too long...</div>
+        <div class="error" ng-message="email">You did not enter your email address correctly...</div>
+      </div>
+
       <label class="item item-input">
-        <span class="input-label">Password</span>
-        <input id="password" type="password" placeholder="password" ng-model="user.password">
+          <input id="password" name="password" type="password" placeholder="{{ 'APP_SIGNUP_PASSWORD' | translate }}" ng-model="user.password" ng-minlength="5" ng-maxlength="30" required="required">
       </label>
+      <div ng-messages="signupUserForm.password.$error">
+        <div class="info"  ng-message="required">Please enter your password.</div>
+        <div class="error" ng-message="minlength">Your password is too short...</div>
+        <div class="error" ng-message="maxlength">Your password is too long...</div>
+        <div class="error" ng-message="password">You did not enter your password correctly...</div>
+      </div>
+
       <label class="item item-input">
-        <span class="input-label">Email</span>
-        <input id="password" type="email" placeholder="password" ng-model="user.email">
+        <input id="text" name="first_name"  type="text" placeholder="{{ 'APP_SIGNUP_FIRST_NAME' | translate }}" ng-model="user.first_name" required="required">
       </label>
+      <div ng-messages="signupUserForm.first_name.$error">
+        <div class="info"  ng-message="required">Please enter your first name.</div>
+      </div>
+
       <label class="item item-input">
-        <span class="input-label">First Name</span>
-        <input id="password" type="text" placeholder="password" ng-model="user.first_name">
+        <input id="text" name="last_name"  type="text" placeholder="{{ 'APP_SIGNUP_LAST_NAME' | translate }}" ng-model="user.last_name" required="required">
       </label>
-      <label class="item item-input">
-        <span class="input-label">Last Name</span>
-        <input id="password" type="text" placeholder="password" ng-model="user.last_name">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Phone Number</span>
-        <input id="password" type="text" placeholder="password" ng-model="user.phone_number">
-      </label>
+      <div ng-messages="signupUserForm.last_name.$error">
+        <div class="info"  ng-message="required">Please enter your last name.</div>
+      </div>
     </div>
     <div class="padding">
-      <button class="button button-block" ng-click="signupUser()">Sign Up!</button>
+      <button class="button button-block" ng-click="signupUser()">{{ 'APP_SIGNUP_CTA' | translate }}</button>
     </div>
   </form>
 </ion-content>

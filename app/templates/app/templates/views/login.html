@@ -1,15 +1,20 @@
 <ion-view hide-back-button="true" title="{{ 'APP_NAME' | translate }}">
   <ion-content scroll="false" class="background content has-header">
+    <form name="loginUserForm" novalidate="novalidate">
     <div class="padding">
       <label class="item item-input">
-        <span class="input-label">Username</span>
-        <input id="username" type="text" placeholder="username" ng-model="user.username">
+        <input id="username" name="username" type="email" placeholder="Email" ng-model="user.username" ng-minlength="5" ng-maxlength="64" required="required">
         <input type="text" placeholder="" ng-model="username">
       </label>
+      <div ng-messages="loginUserForm.username.$error">
+        <div class="info" ng-message="required">Your Email.</div>
+      </div>
       <label class="item item-input">
-        <span class="input-label">Password</span>
-        <input id="password" type="password" placeholder="password" ng-model="user.password">
+        <input id="password" name="password" type="password" placeholder="Password" ng-model="user.password" ng-minlength="5" ng-maxlength="30" required="required">
       </label>
+      <div ng-messages="loginUserForm.password.$error">
+        <div class="info" ng-message="required">Your Password.</div>
+      </div>
     </div>
     <div class="padding">
       <button class="button button-block" ng-click="loginUser()">Login</button>
@@ -32,5 +37,6 @@
         Twitter
       </a>
     </div>
+  </form>
   </ion-content>
 </ion-view>

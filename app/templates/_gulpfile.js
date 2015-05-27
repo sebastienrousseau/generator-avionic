@@ -408,8 +408,7 @@
         'favicon',
         'images',
         'vendor',
-        'languages',
-        'cordova-plugin-install'
+        'languages'
       ],
       'index',
       build ? 'noop' : 'watchers',

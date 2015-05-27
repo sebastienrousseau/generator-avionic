@@ -9,5 +9,11 @@
   "APP_CATALOGUE_EDIT": "Edit",
   "APP_SETTINGS": "Settings",
   "APP_SESSION": "Session",
-  "APP_REFRESH_TEXT": "Pull to refresh..."
+  "APP_REFRESH_TEXT": "Pull to refresh...",
+  "APP_SIGNUP_HEADER": "Create an Account",
+  "APP_SIGNUP_CTA": "Sign Up",
+  "APP_SIGNUP_FIRST_NAME": "First Name",
+  "APP_SIGNUP_LAST_NAME": "Last Name",
+  "APP_SIGNUP_EMAIL": "Email",
+  "APP_SIGNUP_PASSWORD": "Password"
 }

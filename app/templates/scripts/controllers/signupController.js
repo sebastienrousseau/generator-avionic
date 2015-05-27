@@ -52,7 +52,10 @@
       .success(function(data){
         console.log($scope.user.username + 'has been created! session id is ' + data.sessionToken);
         // console.log('/session/'+ data.sessionToken);
-        // $location.path('/session/'+ data.sessionToken);
+        $localstorage.set('sessionToken', data.sessionToken);
+        if(data.$valid) {
+          $location.path('/'+ data.sessionToken);
+        }
       });
     };
   }

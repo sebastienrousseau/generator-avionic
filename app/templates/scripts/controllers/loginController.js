@@ -47,11 +47,7 @@
     };
 
     $scope.loginUser = function(){
-      AuthService.loginUser($scope.user)
-      .success(function(data){
-        console.log(data.username + 'is logged in! session id is ' + data.sessionToken);
-        // $location.path('/session/' + data.sessionToken);
-      });
+      AuthService.loginUser($scope.user);
     };
 
     $scope.loginFacebook = function() {
