@@ -40,7 +40,6 @@
 
   function LoginController($ionicPlatform, $scope, $location, $cordovaOauth, $localstorage, AuthService) {
 
-    $scope.currentUser = {};
     $scope.user = {
       username: '',
       password: ''

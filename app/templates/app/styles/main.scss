@@ -61,6 +61,22 @@
   @include full-bg('background');
 }
 
+.glass:before {
+  content: "";
+  @include full-bg('background');
+  position:absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  opacity:.35;
+}
+
+.glass {
+  position: absolute;
+}
+
+
 .button.button-fab,
 .bar .button.button-fab {
     -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
