@@ -1,7 +1,7 @@
 /**
 *
 *  AVIONIC
-*  Propelling World-class Cross-platform Hybrid Applications ✈ ✈
+*  Propelling World-class Cross-platform Hybrid Applications ✈
 *
 *  Copyright 2015 Reedia Limited. All rights reserved.
 *
@@ -30,7 +30,7 @@
   /*jslint nomen: true*/
   /*jslint vars: true*/
   /*global require,process,module*/
-  var appName = '<%= ngModulName %>';
+  var appName = '<%= appName %>';
   var chalk = require('chalk');
   var gulp = require('gulp');
   var wiredep = require('wiredep').stream;
@@ -119,6 +119,8 @@
     var sassStream = plugins.rubySass('app/styles/main.scss', options)
     .pipe(plugins.autoprefixer('last 1 Chrome version', 'last 3 iOS versions', 'last 3 Android versions'));
 
+
+var colorCSS = '<%= appColor%>';
 
     // Not used
     //var cssStream = gulp
@@ -316,7 +318,7 @@
     .listen(port);
     open('http://localhost:' + port + '/');
     ascii.captain();
-    gutil.log(gutil.colors.white.bold('<%= ngModulName %> is cleared to takeoff!\n'));
+    gutil.log(gutil.colors.white.bold('<%= appName %> is cleared to takeoff!\n'));
     ascii.crew();
     gutil.log(gutil.colors.white.bold('\nAll right, it\’s time for final cabin check. For additional safety\ninformation, check out our website http://avionic.io.\nEnjoy your flight, and as always thank you for flying Avionic.\n'));
     ascii.plane();
@@ -418,5 +420,5 @@
       done);
     });
     ascii.plane();
-    gutil.log(gutil.colors.white('Flight \"<%= ngModulName %>\" is ready for takeoff.'));
+    gutil.log(gutil.colors.white('Flight \"<%= appName %>\" is ready for takeoff.'));
   })();

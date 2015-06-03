@@ -18,7 +18,7 @@
   <preference name="ShowSplashScreenSpinner" value="false" />
   <preference name="AutoHideSplashScreen" value="false" />
   <preference name="StatusBarOverlaysWebView" value="false"/>
-  <preference name="StatusBarBackgroundColor" value="#323232"/>
+  <preference name="StatusBarBackgroundColor" value="<%= appColor %>"/>
   <preference name="StatusBarStyle" value="blacktranslucent"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>

@@ -26,20 +26,29 @@
 */
 (function () {
   'use strict';
+  /*jslint nomen: true*/
+  /*jslint vars: true*/
+  /*global require,process,module*/
+  var yeoman = require('yeoman-generator');
+  var yosay = require('yosay');
+  var chalk = require('chalk');
+  var path = require('path');
+  var prompts = require('../prompts.json');
+  var color = require('../utils/color.js');
+
+
+module.exports = function(AvionicGenerator) {
 
   /**
-  * @ngdoc function
-  * @name <%= ngModulName %>.util:lodash
-  * @description
-  * # Lo-Dash
-  * Expose Lo-Dash through injectable factory, so we don't pollute / rely on global namespace
-  * just inject lodash as _
-  */
-
-  var <%= ngModulName %> = angular.module('<%= ngModulName %>');
-
-    <%= ngModulName %>.factory('_', function($window) {
-      return $window._;
-    });
-
-})();
+   * Ask all questions from prompts.json
+   * Complete responses with templated answers
+   */
+  AvionicGenerator.prototype.askForColor = function askForColor() {
+    var done = this.async();
+    this.prompt(color.prompts, function (props) {
+      this.appColor = props.color;
+      done();
+    }.bind(this));
+  };
+};
+}());

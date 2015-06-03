@@ -1,7 +1,7 @@
 /**
 *
 *  AVIONIC
-*  Propelling World-class Cross-platform Hybrid Applications ✈ ✈
+*  Propelling World-class Cross-platform Hybrid Applications ✈
 *
 *  Copyright 2015 Reedia Limited. All rights reserved.
 *
@@ -50,6 +50,7 @@
         appId: this.appId,
         appYear: this.appYear,
         appVersion: this.appVersion,
+        appColor: this.appColor,
         widgetId: this.appId.toLowerCase()
       };
 
@@ -91,9 +92,7 @@
       this.fs.copyTpl(
         this.templatePath('_gulpfile.js'),
         this.destinationPath('gulpfile.js'),
-        {
-          ngModulName: this._.classify(this.appName)
-        }
+        appArguments
       );
       this.fs.copyTpl(
         this.templatePath('./_README.md'),

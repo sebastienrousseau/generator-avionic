@@ -1,5 +1,5 @@
 # ![ScreenShot](Masthead.png)
-###### Propelling World-class Cross-platform Hybrid Applications ✈ ✈
+###### Propelling World-class Cross-platform Hybrid Applications ✈
 
 <%= appName %>
 <%= appDescription %> <%= appVersion %>

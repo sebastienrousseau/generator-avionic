@@ -1,7 +1,7 @@
 /**
 *
 *  AVIONIC
-*  Propelling World-class Cross-platform Hybrid Applications ✈ ✈
+*  Propelling World-class Cross-platform Hybrid Applications ✈
 *
 *  Copyright 2015 Reedia Limited. All rights reserved.
 *
@@ -54,9 +54,10 @@
   });
   var ascii = require('./src/ascii.js');
   require('./src/prompts')(AvionicGenerator);
+  require('./src/color')(AvionicGenerator);
   require('./src/plugins')(AvionicGenerator);
   require('./src/write')(AvionicGenerator);
   require('./src/files')(AvionicGenerator);
-  require('./src/install')(AvionicGenerator);  
+  require('./src/install')(AvionicGenerator);
   module.exports = AvionicGenerator;
 }());

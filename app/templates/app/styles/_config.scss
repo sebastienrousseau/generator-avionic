@@ -1,7 +1,7 @@
 /**
 *
 *  AVIONIC
-*  Propelling World-class Cross-platform Hybrid Applications ✈ ✈
+*  Propelling World-class Cross-platform Hybrid Applications ✈
 *
 *  Copyright 2015 Reedia Limited. All rights reserved.
 *
@@ -26,9 +26,11 @@
 */
 @charset 'UTF-8';
 
+
 $golden-ratio: 1.618033988749 !default; // Golden ratio
 
 // Default configuration settings
+$theme-color:<%=appColor %>;
 $base-font-size	:17px;
 $line-height	:26px;
 $line-height-ratio  : 1.75 !default;
@@ -36,12 +38,281 @@ $line-height-ratio  : 1.75 !default;
 // font stacks
 $font-stack-regular:'Aleo';
 
+
+// Color palette
+$colors: (
+  #D32F2F :  red ,
+  #C2185B :  pink ,
+  #7B1FA2 :  purple ,
+  #512DA8 :  deepPurple ,
+  #303F9F :  indigo ,
+  #1976D2 :  blue ,
+  #0288D1 :  lightBlue ,
+  #0097A7 :  cyan ,
+  #00796B :  teal ,
+  #388E3C :  green ,
+  #689F38 :  lightGreen ,
+  #AFB42B :  lime ,
+  #FBC02D :  yellow ,
+  #FFA000 :  amber ,
+  #F57C00 :  orange ,
+  #E64A19 :  deepOrange ,
+  #5D4037 :  brown ,
+  #616161 :  grey ,
+  #455A64 :  blueGrey 
+);
+
+
+@function color($theme-color) {
+  @if map-has-key($colors, $theme-color) {
+    @return map-get($colors, $theme-color);
+  }
+}
+
+$theme : color($theme-color) !default;
+
+
+
+$color-50: '';
+$color-100:  '';
+$color-200:  '';
+$color-300:  '';
+$color-400:  '';
+$color-500:  '';
+$color-600:  '';
+$color-700:  $theme-color;
+$color-800:  '';
+$color-900:  '';
+
+@if $theme == red {
+ $color-50: #FFEBEE;
+ $color-100: #FFCDD2;
+ $color-200: #EF9A9A;
+ $color-300: #E57373;
+ $color-400: #EF5350;
+ $color-500: #F44336;
+ $color-600: #E53935;
+ $color-700: #D32F2F;
+ $color-800: #C62828;
+ $color-900: #B71C1C;
+}
+@else if $theme == pink {
+  $color-50: #fce4ec;
+  $color-100: #f8bbd0;
+  $color-200: #f48fb1;
+  $color-300: #f06292;
+  $color-400: #ec407a;
+  $color-500: #e91e63;
+  $color-600: #d81b60;
+  $color-800: #ad1457;
+  $color-900: #880e4f;
+}
+@else if $theme == purple	   {
+  $color-50: #f3e5f5;
+  $color-100: #e1bee7;
+  $color-200: #ce93d8;
+  $color-300: #ba68c8;
+  $color-400: #ab47bc;
+  $color-500: #9c27b0;
+  $color-600: #8e24aa;
+  $color-800: #6a1b9a;
+  $color-900: #4a148c;
+}
+@else if $theme == deepPurple {
+  $color-50: #ede7f6;
+  $color-100: #d1c4e9;
+  $color-200: #b39ddb;
+  $color-300: #9575cd;
+  $color-400: #7e57c2;
+  $color-500: #673ab7;
+  $color-600: #5e35b1;
+  $color-800: #4527a0;
+  $color-900: #311b92;
+}
+@else if $theme == indigo	   {
+  $color-50: #e8eaf6;
+  $color-100: #c5cae9;
+  $color-200: #9fa8da;
+  $color-300: #7986cb;
+  $color-400: #5c6bc0;
+  $color-500: #3f51b5;
+  $color-600: #3949ab;
+  $color-800: #283593;
+  $color-900: #1a237e;
+}
+@else if $theme == blue	     {
+  $color-50: #e7e9fd;
+  $color-100: #d0d9ff;
+  $color-200: #afbfff;
+  $color-300: #91a7ff;
+  $color-400: #738ffe;
+  $color-500: #5677fc;
+  $color-600: #4e6cef;
+  $color-800: #3b50ce;
+  $color-900: #2a36b1;
+}
+@else if $theme == lightBlue	 {
+  $color-50: #e1f5fe;
+  $color-100: #b3e5fc;
+  $color-200: #81d4fa;
+  $color-300: #4fc3f7;
+  $color-400: #29b6f6;
+  $color-500: #03a9f4;
+  $color-600: #039be5;
+  $color-800: #0277bd;
+  $color-900: #01579b;
+}
+@else if $theme == cyan	     {
+  $color-50: #e0f7fa;
+  $color-100: #b2ebf2;
+  $color-200: #80deea;
+  $color-300: #4dd0e1;
+  $color-400: #26c6da;
+  $color-500: #00bcd4;
+  $color-600: #00acc1;
+  $color-800: #00838f;
+  $color-900: #006064;
+}
+@else if $theme == teal	     {
+  $color-50: #e0f2f1;
+  $color-100: #b2dfdb;
+  $color-200: #80cbc4;
+  $color-300: #4db6ac;
+  $color-400: #26a69a;
+  $color-500: #009688;
+  $color-600: #00897b;
+  $color-800: #00695c;
+  $color-900: #004d40;
+}
+@else if $theme == green	     {
+  $color-50: #d0f8ce;
+  $color-100: #a3e9a4;
+  $color-200: #72d572;
+  $color-300: #42bd41;
+  $color-400: #2baf2b;
+  $color-500: #259b24;
+  $color-600: #0a8f08;
+  $color-800: #056f00;
+  $color-900: #0d5302;
+}
+@else if $theme == lightGreen {
+  $color-50: #f1f8e9;
+  $color-100: #dcedc8;
+  $color-200: #c5e1a5;
+  $color-300: #aed581;
+  $color-400: #9ccc65;
+  $color-500: #8bc34a;
+  $color-600: #7cb342;
+  $color-800: #558b2f;
+  $color-900: #33691e;
+}
+@else if $theme == lime	     {
+  $color-50: #f9fbe7;
+  $color-100: #f0f4c3;
+  $color-200: #e6ee9c;
+  $color-300: #dce775;
+  $color-400: #d4e157;
+  $color-500: #cddc39;
+  $color-600: #c0ca33;
+  $color-800: #9e9d24;
+  $color-900: #827717;
+}
+@else if $theme == yellow	   {
+  $color-50: #fffde7;
+  $color-100: #fff9c4;
+  $color-200: #fff59d;
+  $color-300: #fff176;
+  $color-400: #ffee58;
+  $color-500: #ffeb3b;
+  $color-600: #fdd835;
+  $color-800: #f9a825;
+  $color-900: #f57f17;
+}
+@else if $theme == amber	     {
+  $color-50: #fff8e1;
+  $color-100: #ffecb3;
+  $color-200: #ffe082;
+  $color-300: #ffd54f;
+  $color-400: #ffca28;
+  $color-500: #ffc107;
+  $color-600: #ffb300;
+  $color-800: #ff8f00;
+  $color-900: #ff6f00;
+}
+@else if $theme == orange	   {
+  $color-50: #fff3e0;
+  $color-100: #ffe0b2;
+  $color-200: #ffcc80;
+  $color-300: #ffb74d;
+  $color-400: #ffa726;
+  $color-500: #ff9800;
+  $color-600: #fb8c00;
+  $color-800: #ef6c00;
+  $color-900: #e65100;
+}
+@else if $theme == deepOrange {
+  $color-50: #fbe9e7;
+  $color-100: #ffccbc;
+  $color-200: #ffab91;
+  $color-300: #ff8a65;
+  $color-400: #ff7043;
+  $color-500: #ff5722;
+  $color-600: #f4511e;
+  $color-800: #d84315;
+  $color-900: #bf360c;
+}
+@else if $theme == brown	     {
+  $color-50: #efebe9;
+  $color-100: #d7ccc8;
+  $color-200: #bcaaa4;
+  $color-300: #a1887f;
+  $color-400: #8d6e63;
+  $color-500: #795548;
+  $color-600: #6d4c41;
+  $color-800: #4e342e;
+  $color-900: #3e2723;
+}
+@else if $theme == grey	     {
+  $color-50: #fafafa;
+  $color-100: #f5f5f5;
+  $color-200: #eeeeee;
+  $color-300: #e0e0e0;
+  $color-400: #bdbdbd;
+  $color-500: #9e9e9e;
+  $color-600: #757575;
+  $color-800: #424242;
+  $color-900: #212121;
+}
+@else if $theme == blueGrey	 {
+  $color-50: #eceff1;
+  $color-100: #cfd8dc;
+  $color-200: #b0bec5;
+  $color-300: #90a4ae;
+  $color-400: #78909c;
+  $color-500: #607d8b;
+  $color-600: #546e7a;
+  $color-800: #37474f;
+  $color-900: #263238;
+}
+
+@else {
+  $color-50: #e1f5fe;
+  $color-100: #b3e5fc;
+  $color-200: #81d4fa;
+  $color-300: #4fc3f7;
+  $color-400: #29b6f6;
+  $color-500: #03a9f4;
+  $color-600: #039be5;
+  $color-800: #0277bd;
+  $color-900: #01579b;
+}
+
 // color stacks
-$colorblack:#212121;
+$colorblack:$color-500;
 $colorgray:#666;
 $colorwhite:#fff;
 $colorred:#f44336;
-$colordarkred:#323232;
+$colordarkred:$color-500;
 $colorpink:#ff4081;
 $colororange:#ff9800;
 $coloryellow:#fdd835;
@@ -51,14 +322,12 @@ $colorpurple:#9c27b0;
 $colorlightgreen:#42c5a5;
 $colorIcons: #000006;
 
-
-
 .coloroured {
-  color:$colorIcons;
+  color:$color-900;
 }
 
 .active .coloroured {
-  color:#d1ccf4;
+  color:$color-100;
 }
 
 
