@@ -26,7 +26,7 @@
 */
 @charset "UTF-8";
 
-/// Creates a baseline grid based off your $line-height-ratio to help visualize your vertical rhythm grid. You can offset the grid by negative or positive pixels to line it up perfectly with the bottom of your text.
+/// Creates a baseline grid based off your $golden-ratio to help visualize your vertical rhythm grid. You can offset the grid by negative or positive pixels to line it up perfectly with the bottom of your text.
 ///
 /// @param {color} $color [black] - A color to be lightened and used as the color for the grid.
 /// @param {number} $px-offset [false] - A positive or negative number of pixels to offset the grid by. Useful for lining the bottom of the gridlines up with your text.
@@ -53,7 +53,7 @@
 @mixin grid-overlay($color: black, $px-offset: false) {
   body {
     background: linear-gradient(to top, rgba($color, .1) 5%, white 5%) !important;
-    background-size: 100% ($line-height-ratio) + em !important;
+    background-size: 100% ($golden-ratio) + em !important;
     @if($px-offset) {
       background-position: 0 $px-offset + px !important;
     }
@@ -112,7 +112,7 @@ $step-size-heading: 0.33333;
 
 @mixin rem($size) {
 	@if unitless($size) {
-	 	font-size: ($size * 1rem) / 1rem * $base-font-size;
+	 	font-size: ($size * 1rem) / 1rem * $font-size-base;
 	 	font-size: $size * 1rem;
 	}
 	@else {
@@ -121,7 +121,7 @@ $step-size-heading: 0.33333;
 }
 @mixin em($size) {
 	@if unitless($size) {
-		$bf: $base-font-size / 1px;
+		$bf: $font-size-base / 1px;
 	 	font-size: $size / $bf * 1em;
 	}
 	@else {
@@ -130,7 +130,7 @@ $step-size-heading: 0.33333;
 }
 @mixin px($size) {
 	@if unitless($size) {
-		$bf: $base-font-size / 1px;
+		$bf: $font-size-base / 1px;
 	 	font-size: $size * $bf * 1px;
 	}
 	@else {

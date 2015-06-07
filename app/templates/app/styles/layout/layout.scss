@@ -32,7 +32,7 @@ ul.article li{background-color:transparent;text-align:center;}
 }
 
 .bar, .bar-header, .bar .title,.bar.bar-transparent .title {
-  // font-size:$base-font-size*1.25 !important;
+  // font-size:$font-size-base*1.25 !important;
   background-color: $colordarkred !important;
   color:$colorwhite !important;
   text-transform: uppercase !important;
@@ -48,11 +48,11 @@ body,.left,.pane, .view,
 .background .pane, .content, .left, .menu, .menu-left,
 .modal, .pane, .scroll,  .side-menu, .view
 {
-  font-family: $font-stack-regular;
+  font-family: $font-family-sans-serif;
   // font-style: normal !important;
   // font-weight: 400 !important;
-  font-size:$base-font-size;
-  line-height: $line-height;
+  font-size:$font-size-base;
+  line-height: $line-height-base;
   background: $colorwhite;
   color:$colorgray !important;
   border-color: $colorwhite;
@@ -80,7 +80,7 @@ body,.left,.pane, .view,
   color: $colorwhite !important;
 
   // color: $coloryellow !important;
-  font-size:  $base-font-size*1.25;
+  font-size:  $font-size-base*1.25;
   @include theme-colors(1);
   // text-shadow: transparent 0px 0px 0px, rgba(0,0,0, 0.25) 1px 2px 1px;
 
@@ -88,17 +88,17 @@ body,.left,.pane, .view,
 
 .icon_height {
   float:left;
-  font-size:$base-font-size*1.90;
-  line-height:$base-font-size*1.90;
-  height: $base-font-size*1.90;
+  font-size:$font-size-base*1.90;
+  line-height:$font-size-base*1.90;
+  height: $font-size-base*1.90;
   @include theme-colors(1);
 }
 .icon_padding {
   vertical-align: middle;
   float:left;
-  font-size:$base-font-size;
-  height: $base-font-size*1.90;
-  line-height: $base-font-size*1.90;
+  font-size:$font-size-base;
+  height: $font-size-base*1.90;
+  line-height: $font-size-base*1.90;
 
 }
 // ion-side-menu .heading-item {
@@ -108,20 +108,20 @@ body,.left,.pane, .view,
 
 .tabs-icon-left.tabs .tab-item .icon:before, .tabs-icon-left>.tabs .tab-item .icon:before, .tabs-icon-right.tabs .tab-item .icon:before, .tabs-icon-right>.tabs .tab-item .icon:before
 {
-  font-size:$base-font-size;
-  line-height:$line-height;
+  font-size:$font-size-base;
+  line-height:$line-height-base;
 }
 .tabs-icon-left.tabs .tab-item, .tabs-icon-left>.tabs .tab-item, .tabs-icon-right.tabs .tab-item, .tabs-icon-right>.tabs .tab-item
 {
-  font-size:$base-font-size;
-  line-height:$line-height;
+  font-size:$font-size-base;
+  line-height:$line-height-base;
   text-transform:none;
   text-wrap:nowrap;
 }
 
 
 span,.button,.item{
-  font-size:$base-font-size;
+  font-size:$font-size-base;
 }
 
 
@@ -134,11 +134,11 @@ span,.button,.item{
   text-align:center !important;
   position:absolute;
   left:0 !important;
-  padding:$base-font-size*.5 !important;
+  padding:$font-size-base*.5 !important;
   width:100%;
   bottom:0px !important;
-  font-size:$base-font-size*.75;
-  line-height:$line-height*.75;
+  font-size:$font-size-base*.75;
+  line-height:$line-height-base*.75;
   color:$colorwhite !important;
 
 }

@@ -27,6 +27,11 @@
 (function () {
   'use strict';
 
+  var requireDir = require('require-dir');
+
+  // Require all tasks in gulp/tasks, including subfolders
+  requireDir('./gulp/tasks', { recurse: true });
+
   /*jslint nomen: true*/
   /*jslint vars: true*/
   /*global require,process,module*/
@@ -81,7 +86,7 @@
   var stripDebug = !!args.stripDebug;
   var targetDir = path.resolve(build ? 'www' : '.tmp');
 
-  // if we just use emualate or run without specifying platform, we assume iOS
+  // if we just use emulate or run without specifying platform, we assume iOS
   // in this case the value returned from yargs would just be true
   if (emulate === true) {
     emulate = 'ios';
@@ -101,32 +106,17 @@
     }
   };
 
-  /**
-  * List the available gulp tasks
-  */
-  gulp.task('help', plugins.taskListing);
-  // gulp.task('default', ['help']);
-
-
-  // clean target dir
-  gulp.task('clean', function (done) {
-    del([targetDir], done);
-  });
 
   // precompile .scss and concat with ionic.css
   gulp.task('styles', function () {
+    var colorCSS = '<%= appColor%>';
     var options = build ? { style: 'compressed' } : { style: 'expanded' };
     var sassStream = plugins.rubySass('app/styles/main.scss', options)
     .pipe(plugins.autoprefixer('last 1 Chrome version', 'last 3 iOS versions', 'last 3 Android versions'));
 
-
-var colorCSS = '<%= appColor%>';
-
-    // Not used
-    //var cssStream = gulp
-    //             .src(['bower_components/ionic/css/ionic.css', 'bower_components/ionic-material/ionic.material.min.css']);
-
-    return streamqueue({ objectMode: true }, sassStream)
+    var cssStream = gulp.src(targetDir+'/styles/avionic.css');
+    // console.log(targetDir+'/styles/avionic.css');
+    return streamqueue({ objectMode: true }, cssStream, sassStream)
     .pipe(plugins.concat('main.css'))
     .pipe(replace('/*!', '/*'))
     .pipe(plugins.if(build, plugins.stripCssComments()))
@@ -134,85 +124,8 @@ var colorCSS = '<%= appColor%>';
     .pipe(plugins.if(build && !emulate, plugins.rev()))
     .pipe(gulp.dest(path.join(targetDir, 'styles')))
     .on('error', errorHandler);
-
   });
 
-
-  // build templatecache, copy scripts.
-  // if build: concat, minsafe, uglify and versionize
-  gulp.task('scripts', function () {
-    var dest = path.join(targetDir, 'scripts');
-
-    var minifyConfig = {
-      collapseWhitespace: true,
-      collapseBooleanAttributes: true,
-      removeAttributeQuotes: true,
-      removeComments: true
-    };
-
-    // prepare angular template cache from html templates
-    // (remember to change appName var to desired module name)
-    var templateStream = gulp
-    .src('**/*.html', { cwd: 'app/templates'})
-    .pipe(plugins.angularTemplatecache('templates.js', {
-      root: 'templates/',
-      module: appName,
-      htmlmin: build && minifyConfig
-    }));
-
-    var scriptStream = gulp
-    .src(['templates.js', 'app.js', '**/*.js'], { cwd: 'app/scripts' })
-    .pipe(plugins.if(!build, plugins.changed(dest)));
-    return streamqueue({ objectMode: true }, scriptStream, templateStream)
-    .pipe(plugins.if(build, plugins.ngAnnotate({add: true, single_quotes: true})))
-    .pipe(plugins.if(stripDebug, plugins.stripDebug()))
-    .pipe(plugins.if(build, plugins.concat('app.js')))
-    .pipe(plugins.if(build, plugins.uglify({mangle: true, compress: true})))
-    .pipe(plugins.if(build && !emulate, plugins.rev()))
-    .pipe(gulp.dest(dest))
-    .on('error', errorHandler);
-  });
-
-  // copy fonts
-  gulp.task('fonts', function () {
-    return gulp
-    .src(['app/fonts/**/*.*', 'bower_components/ionic/fonts/*.*'])
-    .pipe(gulp.dest(path.join(targetDir, 'fonts')))
-    .on('error', errorHandler);
-  });
-
-  // copy licenses
-  gulp.task('licenses', function () {
-    return gulp
-    .src(['app/LICENSE', 'app/README.md','app/CONTRIBUTING.md'])
-    .pipe(gulp.dest(path.join(targetDir)))
-    .on('error', errorHandler);
-  });
-
-  // copy templates
-  gulp.task('templates', function () {
-    return gulp.src('app/templates/**/*.*')
-    .pipe(gulp.dest(path.join(targetDir, 'templates')))
-    .on('error', errorHandler);
-  });
-
-  // generate iconfont
-  gulp.task('iconfont', function () {
-    return gulp.src('app/icons/*.svg', {
-      buffer: false
-    })
-    .pipe(plugins.iconfontCss({
-      fontName: 'ownIconFont',
-      path: 'app/icons/own-icons-template.css',
-      targetPath: '../styles/own-icons.css',
-      fontPath: '../fonts/'
-    }))
-    .pipe(plugins.iconfont({
-      fontName: 'ownIconFont'
-    }))
-    .pipe(gulp.dest(path.join(targetDir, 'fonts')))
-    .on('error', errorHandler);
-  });
 
   // copy images
   gulp.task('images', function () {
@@ -325,100 +238,143 @@ var colorCSS = '<%= appColor%>';
     gutil.log(gutil.colors.white.bold('Goodbye.'));
   });
 
-  // ionic emulate wrapper
-  gulp.task('ionic:emulate', plugins.shell.task([
-    'ionic emulate ' + emulate + ' --livereload --consolelogs'
-  ]));
 
-  // ionic run wrapper
-  gulp.task('ionic:run', plugins.shell.task([
-    'ionic run ' + run
-  ]));
+  // avionic CLI scripts
 
-  // ionic resources wrapper
-  gulp.task('icon', plugins.shell.task([
-    'ionic resources --icon'
-  ]));
-  gulp.task('splash', plugins.shell.task([
-    'ionic resources --splash'
-  ]));
-  gulp.task('resources', plugins.shell.task([
-    'ionic resources'
-  ]));
+  /*
+  // avionic CLI scripts
+  gulp.task('av:android', plugins.shell.task([
+  'cordova platform add android'
+]));
 
-  // select emulator device
-  gulp.task('select', plugins.shell.task([
-    './helpers/emulateios'
-  ]));
+gulp.task('av:ios', plugins.shell.task([
+'cordova platform add ios'
+]));
 
-  // ripple emulator
-  gulp.task('ripple', ['scripts', 'styles', 'watchers'], function () {
+gulp.task('av:emulate', plugins.shell.task([
+'cordova run --emulator'
+]));
 
-    var options = {
-      keepAlive: false,
-      open: true,
-      port: 4400
-    };
+gulp.task('av:build', plugins.shell.task([
+'gulp --build'
+]));
 
-    // Start the ripple server
-    ripple.emulate.start(options);
+gulp.task('av:serve', plugins.shell.task([
+'gulp'
+]));
 
-    open('http://localhost:' + options.port + '?enableripple=true');
+gulp.task('av:resources', plugins.shell.task([
+'ionic resources'
+]));
+
+gulp.task('av:icon', plugins.shell.task([
+'ionic resources --icon'
+]));
+
+gulp.task('av:splash', plugins.shell.task([
+'ionic resources --splash'
+]));
+
+gulp.task('av:run', plugins.shell.task([
+'cordova run --device'
+]));
+
+*/
+
+// ionic emulate wrapper
+gulp.task('ionic:emulate', plugins.shell.task([
+  'ionic emulate ' + emulate + ' --livereload --consolelogs'
+]));
+
+// ionic run wrapper
+gulp.task('ionic:run', plugins.shell.task([
+  'ionic run ' + run
+]));
+
+// ionic resources wrapper
+gulp.task('icon', plugins.shell.task([
+  'ionic resources --icon'
+]));
+gulp.task('splash', plugins.shell.task([
+  'ionic resources --splash'
+]));
+gulp.task('resources', plugins.shell.task([
+  'ionic resources'
+]));
+
+// select emulator device
+gulp.task('select', plugins.shell.task([
+  './helpers/emulateios'
+]));
+
+// ripple emulator
+gulp.task('ripple', ['scripts', 'styles', 'watchers'], function () {
+
+  var options = {
+    keepAlive: false,
+    open: true,
+    port: 4400
+  };
+
+  // Start the ripple server
+  ripple.emulate.start(options);
+
+  open('http://localhost:' + options.port + '?enableripple=true');
+});
+
+
+// start watchers
+gulp.task('watchers', function () {
+  plugins.livereload.listen();
+  gulp.watch('app/styles/**/*.scss', ['styles']);
+  gulp.watch('app/fonts/**', ['fonts']);
+  gulp.watch('app/icons/**', ['iconfont']);
+  gulp.watch('app/images/**', ['images']);
+  gulp.watch('app/favicon.ico', ['favicon']);
+  gulp.watch('app/scripts/**/*.js', ['index']);
+  gulp.watch('./vendor.json', ['vendor']);
+  gulp.watch('app/languages/*.json', ['languages']);
+  gulp.watch('app/LICENSE', ['licenses']);
+  gulp.watch('app/*.md', ['licenses']);
+  gulp.watch('app/templates/**/*.html', ['index']);
+  gulp.watch('app/index.html', ['index']);
+  gulp.watch(targetDir + '/**')
+  .on('change', plugins.livereload.changed)
+  .on('error', errorHandler);
+});
+
+// no-op = empty function
+gulp.task('noop', function () {});
+
+// our main sequence, with some conditional jobs depending on params
+gulp.task('default', function(done) {
+  ascii.captain();
+  gutil.log(gutil.colors.white('\nCabin crew, doors on automatic, cross-check & report. Thank you.\n'));
+  ascii.crew();
+  gutil.log(gutil.colors.white('\nIn a few moments, we will be passing around the cabin to\noffer you hot or cold drinks.\nPlease, sit back, relax, and enjoy the flight.\n'));
+  ascii.captain();
+  gutil.log(gutil.colors.white('\nStarting initializing the Gulp sequence, local time is:\n'));
+
+  runSequence(
+    'clean',
+    'iconfont',
+    [
+      'licenses',
+      'fonts',
+      'templates',
+      'styles',
+      'favicon',
+      'images',
+      'vendor',
+      'languages'
+    ],
+    'index',
+    build ? 'noop' : 'watchers',
+    build ? 'noop' : 'serve',
+    emulate ? ['ionic:emulate', 'watchers'] : 'noop',
+    run ? 'ionic:run' : 'noop',
+    done);
   });
-
-
-  // start watchers
-  gulp.task('watchers', function () {
-    plugins.livereload.listen();
-    gulp.watch('app/styles/**/*.scss', ['styles']);
-    gulp.watch('app/fonts/**', ['fonts']);
-    gulp.watch('app/icons/**', ['iconfont']);
-    gulp.watch('app/images/**', ['images']);
-    gulp.watch('app/favicon.ico', ['favicon']);
-    gulp.watch('app/scripts/**/*.js', ['index']);
-    gulp.watch('./vendor.json', ['vendor']);
-    gulp.watch('app/languages/*.json', ['languages']);
-    gulp.watch('app/LICENSE', ['licenses']);
-    gulp.watch('app/*.md', ['licenses']);
-    gulp.watch('app/templates/**/*.html', ['index']);
-    gulp.watch('app/index.html', ['index']);
-    gulp.watch(targetDir + '/**')
-    .on('change', plugins.livereload.changed)
-    .on('error', errorHandler);
-  });
-
-  // no-op = empty function
-  gulp.task('noop', function () {});
-
-  // our main sequence, with some conditional jobs depending on params
-  gulp.task('default', function(done) {
-    ascii.captain();
-    gutil.log(gutil.colors.white('\nCabin crew, doors on automatic, cross-check & report. Thank you.\n'));
-    ascii.crew();
-    gutil.log(gutil.colors.white('\nIn a few moments, we will be passing around the cabin to\noffer you hot or cold drinks.\nPlease, sit back, relax, and enjoy the flight.\n'));
-    ascii.captain();
-    gutil.log(gutil.colors.white('\nStarting initializing the Gulp sequence, local time is:\n'));
-
-    runSequence(
-      'clean',
-      'iconfont',
-      [
-        'licenses',
-        'fonts',
-        'templates',
-        'styles',
-        'favicon',
-        'images',
-        'vendor',
-        'languages'
-      ],
-      'index',
-      build ? 'noop' : 'watchers',
-      build ? 'noop' : 'serve',
-      emulate ? ['ionic:emulate', 'watchers'] : 'noop',
-      run ? 'ionic:run' : 'noop',
-      done);
-    });
-    ascii.plane();
-    gutil.log(gutil.colors.white('Flight \"<%= appName %>\" is ready for takeoff.'));
-  })();
+  ascii.plane();
+  gutil.log(gutil.colors.white('Flight \"<%= appName %>\" is ready for takeoff.'));
+})();

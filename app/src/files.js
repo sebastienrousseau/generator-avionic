@@ -33,6 +33,8 @@
   var chalk = require('chalk');
   var yosay = require('yosay');
   var path = require('path');
+  // var fontName = 'avionic'; // set name of your symbol font
+
   // var options = require('../options.json');
 
   module.exports = function(AvionicGenerator) {
@@ -201,6 +203,53 @@
         }
       );
 
+      // gulp tasks
+      this.fs.copyTpl(
+        this.templatePath('gulp/tasks/help.js'),
+        this.destinationPath('gulp/tasks/help.js')
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/tasks/scripts.js'),
+        this.destinationPath('gulp/tasks/scripts.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/tasks/clean.js'),
+        this.destinationPath('gulp/tasks/clean.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/tasks/fonts.js'),
+        this.destinationPath('gulp/tasks/fonts.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/tasks/licenses.js'),
+        this.destinationPath('gulp/tasks/licenses.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/tasks/templates.js'),
+        this.destinationPath('gulp/tasks/templates.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/tasks/iconfont.js'),
+        this.destinationPath('gulp/tasks/iconfont.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
 
       // utils
       this.fs.copyTpl(
@@ -224,6 +273,14 @@
         this.templatePath('server'),
         this.destinationPath('server')
       );
+
+      // this.fs.copy(
+      //   this.templatePath('_avionic.css'),
+      //   this.destinationPath('app/styles/icons/avionic.css'),
+      //   {
+      //     fontName: this._.classify(this.fontName)
+      //   }
+      // );
 
       this.fs.copy(
         this.templatePath('_vendor.json'),

@@ -93,6 +93,8 @@ By running just `gulp`, we start our development build process, consisting of:
 - compiling, concatenating, auto-prefixing of all `.scss` files required by `app/styles/main.scss`
 - creating `vendor.js` file from external sources defined in `./vendor.json`
 - linting all `*.js` files `app/scripts`, see `.jshintrc` for ruleset
+- minifying all images files located within the `app/images/` directory
+- automatically generate licenses, readme and all necessary documents
 - automatically inject sources into `index.html` so we don't have to add / remove sources manually
 - build everything into `.tmp` folder (also gitignored)
 - start local development server and serve from `.tmp`
