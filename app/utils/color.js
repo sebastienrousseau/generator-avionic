@@ -26,11 +26,11 @@ module.exports = {
         }, {
             value: '#1976D2',
             name: 'Blue',
-            checked: false
+            checked: true
         }, {
             value: '#0288D1',
             name: 'Light Blue',
-            checked: true
+            checked: false
         }, {
             value: '#0097A7',
             name: 'Cyan',

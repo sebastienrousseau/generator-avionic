@@ -7,7 +7,6 @@
 @include grid-overlay(blue, 2);
 
 body {
-  color: $colorgray;
   cursor: url('http://ionicframework.com/img/finger.png'), auto;
 }
 
@@ -39,7 +38,11 @@ ul.article li{background-color:transparent;text-align:center;}
   margin: 0px 0px 0px 0px;
 }
 
-
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+}
 
 body,.left,.pane, .view,
 .content, .modal,.side-menu, .menu, .menu-left,
@@ -49,18 +52,13 @@ body,.left,.pane, .view,
 .modal, .pane, .scroll,  .side-menu, .view
 {
   font-family: $font-family-sans-serif;
-  // font-style: normal !important;
-  // font-weight: 400 !important;
   font-size:$font-size-base;
   line-height: $line-height-base;
-  background: transparent !important;
   color:$color-50 !important;
-  border-color: $color-50;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: 'liga', 'kern';
-
 }
 
 

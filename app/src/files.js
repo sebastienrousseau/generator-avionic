@@ -47,7 +47,6 @@
       this.directory('hooks', 'hooks');
 
       this.mkdir('server');
-      this.mkdir('app/icons');
       this.mkdir('app/images');
       this.mkdir('resources');
 
