@@ -47,7 +47,7 @@
 
 
 .radial {
-	@include radial-gradient(#fff, #F0F5F7);
+	@include radial-gradient(#fff, $color-50);
 	width: 100%;
 	height: 100%;
 	position: absolute;
