@@ -30,7 +30,7 @@
   var requireDir = require('require-dir');
 
   // Require all tasks in gulp/tasks, including subfolders
-  requireDir('./gulp/tasks', { recurse: true });
+  requireDir('./gulp/', { recurse: true });
 
   /*jslint nomen: true*/
   /*jslint vars: true*/
@@ -42,30 +42,30 @@
   var plugins = require('gulp-load-plugins')({lazy: true});
   var gutil = require('gulp-util');
   // var clean = require('gulp-clean');
-  var sass = require('gulp-sass');
-  var minifyHTML = require('gulp-minify-html');
-  var rename = require('gulp-rename');
-  var filesize = require('gulp-filesize');
-  var sourcemaps = require('gulp-sourcemaps');
-  var del = require('del');
+  /*var sass = require('gulp-sass');*/
+  /*var minifyHTML = require('gulp-minify-html');*/
+  /*var rename = require('gulp-rename');*/
+  /*var filesize = require('gulp-filesize');*/
+  /*var sourcemaps = require('gulp-sourcemaps');*/
+  /*var del = require('del');*/
   var beep = require('beepbeep');
-  var express = require('express');
+  /*var express = require('express');*/
   var path = require('path');
   var open = require('open');
-  var stylish = require('jshint-stylish');
+  //var stylish = require('jshint-stylish');
   var livereload = require('connect-livereload');
-  var streamqueue = require('streamqueue');
+  /*var streamqueue = require('streamqueue');*/
   var runSequence = require('run-sequence');
   var merge = require('merge-stream');
   var ripple = require('ripple-emulator');
-  var minifyCss = require('gulp-minify-css');
-  var replace = require('gulp-replace');
+  /*var minifyCss = require('gulp-minify-css');*/
+  /*var replace = require('gulp-replace');*/
   var exec = require('child_process').exec;
 
-  var imagemin = require('gulp-imagemin');
-  var pngquant = require('imagemin-pngquant');
+  /*var imagemin = require('gulp-imagemin');
+  var pngquant = require('imagemin-pngquant');*/
   var ascii = require('./ascii.js');
-
+  var colorCSS = '<%= appColor%>';
   /**
   * Parse arguments
   */
@@ -107,64 +107,11 @@
   };
 
 
-  // precompile .scss and concat with ionic.css
-  gulp.task('styles', function () {
-    var colorCSS = '<%= appColor%>';
-    var options = build ? { style: 'compressed' } : { style: 'expanded' };
-    var sassStream = plugins.rubySass('app/styles/main.scss', options)
-    .pipe(plugins.autoprefixer('last 1 Chrome version', 'last 3 iOS versions', 'last 3 Android versions'));
-
-    var cssStream = gulp.src(targetDir+'/styles/avionic.css');
-    // console.log(targetDir+'/styles/avionic.css');
-    return streamqueue({ objectMode: true }, cssStream, sassStream)
-    .pipe(plugins.concat('main.css'))
-    .pipe(replace('/*!', '/*'))
-    .pipe(plugins.if(build, plugins.stripCssComments()))
-    .pipe(plugins.if(build, minifyCss()))
-    .pipe(plugins.if(build && !emulate, plugins.rev()))
-    .pipe(gulp.dest(path.join(targetDir, 'styles')))
-    .on('error', errorHandler);
-  });
 
 
-  // copy images
-  gulp.task('images', function () {
-    return gulp.src('app/images/**/*.*')
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant()]
-    }))
-    .pipe(gulp.dest(path.join(targetDir, 'images')))
-    .on('error', errorHandler);
-  });
 
-  // copy favicon
-  gulp.task('favicon', function () {
-    return gulp.src('app/favicon.ico')
-    .pipe(gulp.dest(path.join(targetDir)))
-    .on('error', errorHandler);
-  });
 
-  // lint js sources based on .jshintrc ruleset
-  gulp.task('jsHint', function () {
-    return gulp
-    .src('app/scripts/**/*.js')
-    .pipe(plugins.jshint())
-    .pipe(plugins.jshint.reporter(stylish))
-    .on('error', errorHandler);
-  });
 
-  // concatenate and minify vendor sources
-  gulp.task('vendor', function () {
-    var vendorFiles = require('./vendor.json');
-    return gulp.src(vendorFiles)
-    .pipe(plugins.concat('vendor.js'))
-    .pipe(plugins.if(build, plugins.uglify()))
-    .pipe(plugins.if(build, plugins.rev()))
-    .pipe(gulp.dest(targetDir))
-    .on('error', errorHandler);
-  });
 
   gulp.task('cordova-plugin-install', function() {
     require('./plugins.json').forEach(function(plugin) {
@@ -174,69 +121,10 @@
     });
   });
 
-  // languages sources
-  gulp.task('languages', function () {
-    return gulp.src('app/languages/*.*')
-    .pipe(gulp.dest(path.join(targetDir, 'languages')))
-    // .pipe(plugins.if(build, plugins.uglify()))
-    // .pipe(plugins.if(build, plugins.rev()))
-    .on('error', errorHandler);
-  });
 
 
-  // inject the files in index.html
-  gulp.task('index', ['jsHint', 'scripts'], function () {
-    // build has a '-versionnumber' suffix
-    var cssNaming = 'styles/main*';
-    // injects 'src' into index.html at position 'tag'
-    var _inject = function (src, tag) {
-      return plugins.inject(src, {
-        starttag: '<!-- inject:' + tag + ':{{ext}} -->',
-        read: false,
-        addRootSlash: false
-      });
-    };
 
-    // get all our javascript sources
-    // in development mode, it's better to add each file seperately.
-    // it makes debugging easier.
-    var _getAllScriptSources = function () {
-      var scriptStream = gulp.src(['scripts/app.js', 'scripts/**/*.js'], { cwd: targetDir });
-      return streamqueue({ objectMode: true }, scriptStream);
-    };
 
-    return gulp.src('app/index.html')
-    // inject css
-    .pipe(_inject(gulp.src(cssNaming, { cwd: targetDir }), 'app-styles'))
-    // inject vendor.js
-    .pipe(_inject(gulp.src('vendor*.js', { cwd: targetDir }), 'vendor'))
-    // inject app.js (build) or all js files indivually (dev)
-    .pipe(plugins.if(build,
-      _inject(gulp.src('scripts/app*.js', { cwd: targetDir }), 'app'),
-      _inject(_getAllScriptSources(), 'app')
-    ))
-    // Minifying html at build
-    .pipe(plugins.if(build, minifyHTML()))
-    // Print html filesize
-    .pipe(filesize())
-    .pipe(gulp.dest(targetDir))
-    .on('error', errorHandler);
-  });
-
-  // start local express server
-  gulp.task('serve', function () {
-    express()
-    .use(!build ? livereload() : function () {})
-    .use(express.static(targetDir))
-    .listen(port);
-    open('http://localhost:' + port + '/');
-    ascii.captain();
-    gutil.log(gutil.colors.white.bold('<%= appName %> is cleared to takeoff!\n'));
-    ascii.crew();
-    gutil.log(gutil.colors.white.bold('\nAll right, it\’s time for final cabin check. For additional safety\ninformation, check out our website http://avionic.io.\nEnjoy your flight, and as always thank you for flying Avionic.\n'));
-    ascii.plane();
-    gutil.log(gutil.colors.white.bold('Goodbye.'));
-  });
 
 
   // avionic CLI scripts

@@ -28,13 +28,13 @@ ul.article li{background-color:transparent;text-align:center;}
 
 
 .bar-header, .bar.bar-dark .title, .bar.bar-light,.bar, .tab-nav{
-  background-color:$colorred !important;
+  background-color:$color-500 !important;
 }
 
 .bar, .bar-header, .bar .title,.bar.bar-transparent .title {
   // font-size:$font-size-base*1.25 !important;
-  background-color: $colordarkred !important;
-  color:$colorwhite !important;
+  background-color: $color-500 !important;
+  color:$color-50 !important;
   text-transform: uppercase !important;
   margin: 0px 0px 0px 0px;
 }
@@ -53,9 +53,9 @@ body,.left,.pane, .view,
   // font-weight: 400 !important;
   font-size:$font-size-base;
   line-height: $line-height-base;
-  background: $colorwhite;
-  color:$colorgray !important;
-  border-color: $colorwhite;
+  background: transparent !important;
+  color:$color-50 !important;
+  border-color: $color-50;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -67,17 +67,21 @@ body,.left,.pane, .view,
 
 .bar-header,.bar,  .bar .title,.bar.bar-dark .title,
 .bar, .bar .title, .bar-header, .bar.bar-transparent .title,.button{
-  background-color: $colordarkred !important;
+  background-color: $color-500 !important;
   line-height:none;
-  color:$colorwhite !important;
+  color:$color-50 !important;
   text-transform:uppercase;
 }
 
+.button-clear.button-clear
+{
+  background-color: $color-700 !important;
+}
  .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar .button.button-icon:before,
 .bar.bar-light .title,.bar-light .button.button-icon, .bar.bar-light .title, .bar-light .button.button-clear,
 .button-clear.button-clear
  {
-  color: $colorwhite !important;
+  color:$color-50 !important;
 
   // color: $coloryellow !important;
   font-size:  $font-size-base*1.25;
@@ -139,7 +143,7 @@ span,.button,.item{
   bottom:0px !important;
   font-size:$font-size-base*.75;
   line-height:$line-height-base*.75;
-  color:$colorwhite !important;
+  color:$color-50 !important;
 
 }
 
@@ -158,20 +162,20 @@ span,.button,.item{
 }
 
 .item, .item-complex .item-content, iframe{
-  background-color:$colorwhite !important;
-  color: $colorblack !important;
+/*   background-color:transparent !important; */
+  color: $color-900 !important;
   border:none;
 }
 
 .item-content span {
-  @include theme-colors(1);
+  /* @include theme-colors(1); */
 }
 
 
 .item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content, .item .item-content.active, .item .item-content.activated
 {
   background-color:$color-300 !important;
-  color:$colorwhite !important;
+  color:$color-50 !important;
 }
 
 .button.button-positive.button-clear {

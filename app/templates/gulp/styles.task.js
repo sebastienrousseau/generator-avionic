@@ -28,11 +28,11 @@
   'use strict';
 
   var gulp = require('gulp');
-  var iconfont    = require('gulp-iconfont');
-  var consolidate = require('gulp-consolidate');
   var plugins = require('gulp-load-plugins')({lazy: true});
+  var streamqueue = require('streamqueue');
+  var minifyCss = require('gulp-minify-css');
+  var replace = require('gulp-replace');
   var path = require('path');
-  var rename = require('gulp-rename');
   /**
   * Parse arguments
   */
@@ -57,33 +57,31 @@
   var errorHandler = function (error) {
     if (build) {
       throw error;
-    } else {
-      beep(2, 170);
-      plugins.util.log(error);
-    }
-  };
+      } else {
+        beep(2, 170);
+        plugins.util.log(error);
+      }
+    };
 
-  var fontName = 'avionic'; // set name of your symbol font
-  var fontPath = '../fonts/';
 
-  // generate iconfont
-  gulp.task('iconfont', function () {
-    return gulp.src('app/icons/*.svg', {
-      buffer: false
-    })
-    .pipe(plugins.iconfontCss({
-      fontName: fontName,
-      path: 'app/styles/'+fontName+'.css',
-      targetPath: '../styles/'+fontName+'.css',
-      fontPath: '../fonts/'
-    }))
-    .pipe(plugins.iconfont({
-      fontName: fontName,
-      centerHorizontally: true,
-      normalize: true
-    }))
-    .pipe(gulp.dest(path.join(targetDir, 'fonts')))
-    .on('error', errorHandler);
-  });
+    // precompile .scss and concat with ionic.css
+    gulp.task('styles', function () {
 
-}());
+      var options = build ? { style: 'compressed' } : { style: 'expanded' };
+      var sassStream = plugins.rubySass('app/styles/main.scss', options)
+      .pipe(plugins.autoprefixer('last 1 Chrome version', 'last 3 iOS versions', 'last 3 Android versions'));
+
+      var cssStream = gulp.src(targetDir+'/styles/avionic.css');
+      // console.log(targetDir+'/styles/avionic.css');
+      return streamqueue({ objectMode: true }, cssStream, sassStream)
+      .pipe(plugins.concat('main.css'))
+      .pipe(replace('/*!', '/*'))
+      .pipe(plugins.if(build, plugins.stripCssComments()))
+      .pipe(plugins.if(build, minifyCss()))
+      .pipe(plugins.if(build && !emulate, plugins.rev()))
+      .pipe(gulp.dest(path.join(targetDir, 'styles')))
+      .on('error', errorHandler);
+      });
+
+
+      }());

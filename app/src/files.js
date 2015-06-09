@@ -205,52 +205,107 @@
 
       // gulp tasks
       this.fs.copyTpl(
-        this.templatePath('gulp/tasks/help.js'),
-        this.destinationPath('gulp/tasks/help.js')
+        this.templatePath('gulp/help.task.js'),
+        this.destinationPath('gulp/help.task.js')
       );
       this.fs.copyTpl(
-        this.templatePath('gulp/tasks/scripts.js'),
-        this.destinationPath('gulp/tasks/scripts.js'),
+        this.templatePath('gulp/scripts.task.js'),
+        this.destinationPath('gulp/scripts.task.js'),
         {
           ngModulName: this._.classify(this.appName)
         }
       );
       this.fs.copyTpl(
-        this.templatePath('gulp/tasks/clean.js'),
-        this.destinationPath('gulp/tasks/clean.js'),
+        this.templatePath('gulp/clean.task.js'),
+        this.destinationPath('gulp/clean.task.js'),
         {
           ngModulName: this._.classify(this.appName)
         }
       );
       this.fs.copyTpl(
-        this.templatePath('gulp/tasks/fonts.js'),
-        this.destinationPath('gulp/tasks/fonts.js'),
+        this.templatePath('gulp/fonts.task.js'),
+        this.destinationPath('gulp/fonts.task.js'),
         {
           ngModulName: this._.classify(this.appName)
         }
       );
       this.fs.copyTpl(
-        this.templatePath('gulp/tasks/licenses.js'),
-        this.destinationPath('gulp/tasks/licenses.js'),
+        this.templatePath('gulp/licenses.task.js'),
+        this.destinationPath('gulp/licenses.task.js'),
         {
           ngModulName: this._.classify(this.appName)
         }
       );
       this.fs.copyTpl(
-        this.templatePath('gulp/tasks/templates.js'),
-        this.destinationPath('gulp/tasks/templates.js'),
+        this.templatePath('gulp/templates.task.js'),
+        this.destinationPath('gulp/templates.task.js'),
         {
           ngModulName: this._.classify(this.appName)
         }
       );
       this.fs.copyTpl(
-        this.templatePath('gulp/tasks/iconfont.js'),
-        this.destinationPath('gulp/tasks/iconfont.js'),
+        this.templatePath('gulp/iconfont.task.js'),
+        this.destinationPath('gulp/iconfont.task.js'),
         {
           ngModulName: this._.classify(this.appName)
         }
       );
-
+      this.fs.copyTpl(
+        this.templatePath('gulp/styles.task.js'),
+        this.destinationPath('gulp/styles.task.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/images.task.js'),
+        this.destinationPath('gulp/images.task.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/favicon.task.js'),
+        this.destinationPath('gulp/favicon.task.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/jshint.task.js'),
+        this.destinationPath('gulp/jshint.task.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/vendor.task.js'),
+        this.destinationPath('gulp/vendor.task.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/languages.task.js'),
+        this.destinationPath('gulp/languages.task.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/index.task.js'),
+        this.destinationPath('gulp/index.task.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/serve.task.js'),
+        this.destinationPath('gulp/serve.task.js'),
+        {
+          appName: this._.classify(this.appName)
+        }
+      );
       // utils
       this.fs.copyTpl(
         this.templatePath('scripts/utils/lodash.js'),
