@@ -3,10 +3,12 @@
     <ion-side-menu-content>
       <ion-nav-bar align-title="center">
         <ion-nav-back-button class="button button-icon icon ion-android-arrow-back flat"></ion-nav-back-button>
-        <ion-nav-buttons side="right">
-          <button menu-toggle="right" class="button button-icon icon ion-android-menu flat"></button>
+        <ion-nav-buttons side="left">
+          <button menu-toggle="left" class="button button-icon icon ion-android-menu flat"></button>
         </ion-nav-buttons>
-
+        <ion-nav-buttons side="right">
+          <button  class="button button-icon icon ion-android-more-vertical flat"></button>
+        </ion-nav-buttons>
       </ion-nav-bar>
         <ion-nav-view name="viewContent">
 
@@ -14,7 +16,7 @@
     </ion-side-menu-content>
 
     <!-- Left menu -->
-    <ion-side-menu expose-aside-when="large" side="right" class="side-menu">
+    <ion-side-menu expose-aside-when="large" side="left" class="side-menu">
 
         <ion-header-bar align-title="center" class="bar-positive">
             <h1 class="title">Side Menu</h1>
