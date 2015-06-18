@@ -40,10 +40,6 @@ module.exports = {
             name: 'cordova-plugin-network-information',
             checked: false
         }, {
-            value: 'cordova-plugin-splashscreen',
-            name: 'cordova-plugin-splashscreen',
-            checked: true
-        }, {
             value: 'cordova-plugin-battery-status',
             name: 'cordova-plugin-battery-status',
             checked: false

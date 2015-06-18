@@ -33,14 +33,6 @@
   * @description
   * # ExampleService
   */
-  angular
-  .module('<%= ngModulName %>')
-  .factory('ExampleService', ExampleService);
-
-  var apiUrl = 'https://api.parse.com/1/classes/Avionic';
-
-  ExampleService.$inject = ['$localstorage', '$cordovaOauth', '$location', '$http','API_CREDENTIALS'];
-
   function ExampleService($localstorage, $cordovaOauth, $location, $http, API_CREDENTIALS) {
     console.log(API_CREDENTIALS);
     return {
@@ -91,4 +83,13 @@
       }
     };
   }
+
+  var <%= ngModulName %> = angular.module('<%= ngModulName %>')
+  <%= ngModulName %>.factory('ExampleService', ExampleService);
+
+  var apiUrl = 'https://api.parse.com/1/classes/Avionic';
+
+  ExampleService.$inject = ['$localstorage', '$cordovaOauth', '$location', '$http','API_CREDENTIALS'];
+
+
 })();

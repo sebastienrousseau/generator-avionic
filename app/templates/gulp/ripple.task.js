@@ -24,42 +24,48 @@
 *  THE SOFTWARE.
 *
 */
-(function() {
+(function () {
   'use strict';
+
+  var gulp = require('gulp');
+  var plugins = require('gulp-load-plugins')({lazy: true});
+  var path = require('path');
+  var beep = require('beepbeep');
+  var ripple = require('ripple-emulator');
   /**
-  * @ngdoc function
-  * @name <%= ngModulName %>.controller:LoginController
-  * @description
-  * # LoginController
+  * Parse arguments
   */
-  function LoginController($ionicPlatform, $scope, $location, $cordovaOauth, $localstorage, AuthService) {
+  var args = require('yargs')
+  .alias('e', 'emulate')
+  .alias('b', 'build')
+  .alias('r', 'run')
+  // remove all debug messages (console.logs, alerts etc) from release build
+  .alias('release', 'strip-debug')
+  .default('build', false)
+  .default('port', 9000)
+  .default('strip-debug', false)
+  .argv;
+  var build = !!(args.build || args.emulate || args.run);
+  var emulate = args.emulate;
+  var run = args.run;
+  var port = args.port;
+  var stripDebug = !!args.stripDebug;
+  var targetDir = path.resolve(build ? 'www' : '.tmp');
 
-    $scope.user = {
-      username: '',
-      password: ''
+
+  // ripple emulator
+  gulp.task('ripple', ['scripts', 'styles', 'watchers'], function () {
+
+    var options = {
+      keepAlive: false,
+      open: true,
+      port: 4400
     };
 
-    $scope.loginUser = function(){
-      AuthService.loginUser($scope.user);
-    };
+    // Start the ripple server
+    ripple.emulate.start(options);
 
-    $scope.loginFacebook = function() {
-      AuthService.loginFacebook();
-    };
+    open('http://localhost:' + options.port + '?enableripple=true');
+  });
 
-    $scope.loginGoogle = function() {
-      AuthService.loginGoogle();
-    };
-
-    $scope.loginTwitter = function() {
-      AuthService.loginTwitter();
-    };
-  }
-  
-  var <%= ngModulName %> = angular.module('<%= ngModulName %>');
-
-  <%= ngModulName %>.controller('LoginController', LoginController);
-
-  LoginController.$inject = ['$ionicPlatform', '$scope', '$location', '$cordovaOauth', '$localstorage', 'AuthService'];
-
-})();
+}());

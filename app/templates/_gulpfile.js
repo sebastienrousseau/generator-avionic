@@ -35,12 +35,20 @@
   /*jslint nomen: true*/
   /*jslint vars: true*/
   /*global require,process,module*/
-  var appName = '<%= appName %>';
+  /*var appName = '<%= appName %>';*/
+  /*var colorCSS = '<%= appColor%>';*/
   var chalk = require('chalk');
   var gulp = require('gulp');
-  var wiredep = require('wiredep').stream;
+  var beep = require('beepbeep');
   var plugins = require('gulp-load-plugins')({lazy: true});
-  var gutil = require('gulp-util');
+  var path = require('path');
+
+
+
+
+
+  /*var wiredep = require('wiredep').stream;*/
+  /*var gutil = require('gulp-util');*/
   // var clean = require('gulp-clean');
   /*var sass = require('gulp-sass');*/
   /*var minifyHTML = require('gulp-minify-html');*/
@@ -48,24 +56,24 @@
   /*var filesize = require('gulp-filesize');*/
   /*var sourcemaps = require('gulp-sourcemaps');*/
   /*var del = require('del');*/
-  var beep = require('beepbeep');
+
   /*var express = require('express');*/
-  var path = require('path');
-  var open = require('open');
+
+  /*var open = require('open');*/
   //var stylish = require('jshint-stylish');
-  var livereload = require('connect-livereload');
+  /*var livereload = require('connect-livereload');*/
   /*var streamqueue = require('streamqueue');*/
-  var runSequence = require('run-sequence');
-  var merge = require('merge-stream');
-  var ripple = require('ripple-emulator');
+  /*var runSequence = require('run-sequence');*/
+  /*var merge = require('merge-stream');*/
+  /*var ripple = require('ripple-emulator');*/
   /*var minifyCss = require('gulp-minify-css');*/
   /*var replace = require('gulp-replace');*/
-  var exec = require('child_process').exec;
+  /*var exec = require('child_process').exec;*/
 
   /*var imagemin = require('gulp-imagemin');
   var pngquant = require('imagemin-pngquant');*/
-  var ascii = require('./ascii.js');
-  var colorCSS = '<%= appColor%>';
+  /*var ascii = require('./ascii.js');*/
+
   /**
   * Parse arguments
   */
@@ -113,13 +121,6 @@
 
 
 
-  gulp.task('cordova-plugin-install', function() {
-    require('./plugins.json').forEach(function(plugin) {
-      exec('cordova plugin add ' + plugin, {async: false}, function(code, output) {
-        console.log(output);
-      });
-    });
-  });
 
 
 
@@ -190,79 +191,10 @@ gulp.task('resources', plugins.shell.task([
   'ionic resources'
 ]));
 
-// select emulator device
-gulp.task('select', plugins.shell.task([
-  './helpers/emulateios'
-]));
-
-// ripple emulator
-gulp.task('ripple', ['scripts', 'styles', 'watchers'], function () {
-
-  var options = {
-    keepAlive: false,
-    open: true,
-    port: 4400
-  };
-
-  // Start the ripple server
-  ripple.emulate.start(options);
-
-  open('http://localhost:' + options.port + '?enableripple=true');
-});
 
 
-// start watchers
-gulp.task('watchers', function () {
-  plugins.livereload.listen();
-  gulp.watch('app/styles/**/*.scss', ['styles']);
-  gulp.watch('app/fonts/**', ['fonts']);
-  gulp.watch('app/icons/**', ['iconfont']);
-  gulp.watch('app/images/**', ['images']);
-  gulp.watch('app/favicon.ico', ['favicon']);
-  gulp.watch('app/scripts/**/*.js', ['index']);
-  gulp.watch('./vendor.json', ['vendor']);
-  gulp.watch('app/languages/*.json', ['languages']);
-  gulp.watch('app/LICENSE', ['licenses']);
-  gulp.watch('app/*.md', ['licenses']);
-  gulp.watch('app/templates/**/*.html', ['index']);
-  gulp.watch('app/index.html', ['index']);
-  gulp.watch(targetDir + '/**')
-  .on('change', plugins.livereload.changed)
-  .on('error', errorHandler);
-});
 
-// no-op = empty function
-gulp.task('noop', function () {});
 
-// our main sequence, with some conditional jobs depending on params
-gulp.task('default', function(done) {
-  ascii.captain();
-  gutil.log(gutil.colors.white('\nCabin crew, doors on automatic, cross-check & report. Thank you.\n'));
-  ascii.crew();
-  gutil.log(gutil.colors.white('\nIn a few moments, we will be passing around the cabin to\noffer you hot or cold drinks.\nPlease, sit back, relax, and enjoy the flight.\n'));
-  ascii.captain();
-  gutil.log(gutil.colors.white('\nStarting initializing the Gulp sequence, local time is:\n'));
 
-  runSequence(
-    'clean',
-    'iconfont',
-    [
-      'licenses',
-      'fonts',
-      'templates',
-      'styles',
-      'favicon',
-      'images',
-      'vendor',
-      'languages'
-    ],
-    'index',
-    build ? 'noop' : 'watchers',
-    build ? 'noop' : 'serve',
-    emulate ? ['ionic:emulate', 'watchers'] : 'noop',
-    run ? 'ionic:run' : 'noop',
-    done);
-  });
-  ascii.plane();
-  gutil.log(gutil.colors.white('Flight \"<%= appName %>\" is ready for takeoff.'));
+
 })();

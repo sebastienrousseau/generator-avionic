@@ -33,6 +33,7 @@
   var chalk = require('chalk');
   var yosay = require('yosay');
   var path = require('path');
+  var appName = '<%= appName %>';
   // var fontName = 'avionic'; // set name of your symbol font
 
   // var options = require('../options.json');
@@ -301,6 +302,48 @@
       this.fs.copyTpl(
         this.templatePath('gulp/serve.task.js'),
         this.destinationPath('gulp/serve.task.js'),
+        {
+          appName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/select.task.js'),
+        this.destinationPath('gulp/select.task.js'),
+        {
+          appName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/ripple.task.js'),
+        this.destinationPath('gulp/ripple.task.js'),
+        {
+          appName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/watchers.task.js'),
+        this.destinationPath('gulp/watchers.task.js'),
+        {
+          appName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/noop.task.js'),
+        this.destinationPath('gulp/noop.task.js'),
+        {
+          appName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/default.task.js'),
+        this.destinationPath('gulp/default.task.js'),
+        {
+          appName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('gulp/plugins.task.js'),
+        this.destinationPath('gulp/plugins.task.js'),
         {
           appName: this._.classify(this.appName)
         }

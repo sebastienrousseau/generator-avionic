@@ -24,42 +24,12 @@
 *  THE SOFTWARE.
 *
 */
-(function() {
+(function () {
   'use strict';
-  /**
-  * @ngdoc function
-  * @name <%= ngModulName %>.controller:LoginController
-  * @description
-  * # LoginController
-  */
-  function LoginController($ionicPlatform, $scope, $location, $cordovaOauth, $localstorage, AuthService) {
 
-    $scope.user = {
-      username: '',
-      password: ''
-    };
+  var gulp = require('gulp');
 
-    $scope.loginUser = function(){
-      AuthService.loginUser($scope.user);
-    };
+  // no-op = empty function
+  gulp.task('noop', function () {});
 
-    $scope.loginFacebook = function() {
-      AuthService.loginFacebook();
-    };
-
-    $scope.loginGoogle = function() {
-      AuthService.loginGoogle();
-    };
-
-    $scope.loginTwitter = function() {
-      AuthService.loginTwitter();
-    };
-  }
-  
-  var <%= ngModulName %> = angular.module('<%= ngModulName %>');
-
-  <%= ngModulName %>.controller('LoginController', LoginController);
-
-  LoginController.$inject = ['$ionicPlatform', '$scope', '$location', '$cordovaOauth', '$localstorage', 'AuthService'];
-
-})();
+}());

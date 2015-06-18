@@ -36,26 +36,27 @@
   * Uses settings from CONFIG defined in /config/<%= ngModulName %>.config.js
   *
   * Usage example: $http({
-  *                      url: ApiService.getEndPoint() + '/things',
-  *                      method: 'GET'
-  *                 })
-  *
-  */
-  angular.module('<%= ngModulName %>')
-  .factory('ApiService', function($window, $http, CONFIG) {
+    *                      url: ApiService.getEndPoint() + '/things',
+    *                      method: 'GET'
+    *                 })
+    *
+    */
+    var <%= ngModulName %> = angular.module('<%= ngModulName %>')
 
-    var _api = CONFIG;
-    var endpoint = _api.port ? (_api.host + ':' + _api.port + _api.path) : (_api.host + _api.path);
+    <%= ngModulName %>.factory('ApiService', function($window, $http, CONFIG) {
 
-    // activate for basic auth
-    if (_api.needsAuth) {
-      $http.defaults.headers.common.Authorization = 'Basic ' + $window.btoa(_api.username + ':' + _api.password);
-    }
+      var _api = CONFIG;
+      var endpoint = _api.port ? (_api.host + ':' + _api.port + _api.path) : (_api.host + _api.path);
 
-    // public api
-    return {
-      getEndpoint: function() { return endpoint; }
-    };
+      // activate for basic auth
+      if (_api.needsAuth) {
+        $http.defaults.headers.common.Authorization = 'Basic ' + $window.btoa(_api.username + ':' + _api.password);
+      }
 
-  });
+      // public api
+      return {
+        getEndpoint: function() { return endpoint; }
+      };
+
+    });
 })();

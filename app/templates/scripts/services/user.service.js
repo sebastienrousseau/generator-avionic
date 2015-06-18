@@ -33,9 +33,8 @@
   * @description
   * # UserService
   */
-  angular
-  .module('<%= ngModulName %>')
-  .factory('UserService',['$http','API_CREDENTIALS',function($http,API_CREDENTIALS) {
+  var <%= ngModulName %> = angular.module('<%= ngModulName %>')
+  <%= ngModulName %>.factory('UserService',['$http','API_CREDENTIALS',function($http,API_CREDENTIALS) {
 
     var apiUrl = 'https://api.parse.com/1/users';
 

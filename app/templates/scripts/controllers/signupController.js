@@ -32,13 +32,6 @@
   * @description
   * # SignUpController
   */
-  var <%= ngModulName %> = angular.module('<%= ngModulName %>');
-
-  <%= ngModulName %>.controller('SignUpController', SignUpController);
-
-  SignUpController.$inject = ['$ionicPlatform', '$scope', '$location', '$cordovaOauth', '$localstorage', 'AuthService'];
-
-
   function SignUpController($ionicPlatform, $scope, $location, $cordovaOauth, $localstorage, AuthService) {
 
     $scope.user = {
@@ -59,4 +52,11 @@
       });
     };
   }
+
+  var <%= ngModulName %> = angular.module('<%= ngModulName %>');
+
+  <%= ngModulName %>.controller('SignUpController', SignUpController);
+
+  SignUpController.$inject = ['$ionicPlatform', '$scope', '$location', '$cordovaOauth', '$localstorage', 'AuthService'];
+
 })();

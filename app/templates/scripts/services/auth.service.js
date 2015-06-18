@@ -24,6 +24,7 @@
 *  THE SOFTWARE.
 *
 */
+/*jshint camelcase: false */
 (function () {
   'use strict';
 
@@ -33,15 +34,6 @@
   * @description
   * # AuthService  - Basic authentication service. This class presents a basic authentication service, which offers authentication functionality.
   */
-  angular
-  .module('<%= ngModulName %>')
-  .factory('AuthService', AuthService);
-
-  var apiUrl = 'https://api.parse.com/1/users';
-  var loginUrl = 'https://api.parse.com/1/login';
-
-  AuthService.$inject = ['$localstorage', '$cordovaOauth', '$location', '$http','API_CREDENTIALS', 'facebookConfig', 'googleConfig', 'twitterConfig'];
-
   function AuthService($localstorage, $cordovaOauth, $location, $http, API_CREDENTIALS, facebookConfig, googleConfig, twitterConfig) {
     return {
 
@@ -165,4 +157,14 @@
         }
       };
     }
+
+  var <%= ngModulName %> = angular.module('<%= ngModulName %>')
+  <%= ngModulName %>.factory('AuthService', AuthService);
+
+  var apiUrl = 'https://api.parse.com/1/users';
+  var loginUrl = 'https://api.parse.com/1/login';
+
+  AuthService.$inject = ['$localstorage', '$cordovaOauth', '$location', '$http','API_CREDENTIALS', 'facebookConfig', 'googleConfig', 'twitterConfig'];
+
+
   })();
