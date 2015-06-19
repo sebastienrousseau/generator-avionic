@@ -1,0 +1,190 @@
+@charset "UTF-8";
+.slider-bg {
+  background-color: $color-500;
+}
+
+figcaption.intro-headings {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0vw;
+  top: 5em;
+  width: 100vw;
+  font-size: $font-size-base;
+  color:#fff;
+  line-height: $line-height-base;
+  text-transform:uppercase;
+  text-align: center;
+}
+
+button.intro-footer{
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight:normal;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0vw;
+  bottom: 0;
+  width: 100vw;
+  z-index: -1;
+  text-align: center;
+  @include transition;
+  background-color: $color-900;
+}
+
+.intro-btn {
+  position:relative;
+  margin-top:40vh;
+}
+
+.slider-pager {
+  z-index:1 !important;
+  height: $line-height-base;
+  bottom:3.75em;
+}
+.slider-pager .slider-pager-page
+{
+  width:2rem !important;
+  font-size:$font-size-base;
+  position: relative;
+  color:#fff !important;
+}
+.slider {
+  height: 100%;
+}
+
+.slider-slide {
+  font-family: $font-family-base;
+  font-style: bold !important;
+  font-weight: 400 !important;
+  font-size:$font-size-base;
+  color:#fff;
+  background-color: $color-500;
+  /* transition: all .2s ease-in-out;
+  @include transition;
+  @include fadeIn(3s);
+  @include theme-background-colors(1); */
+  text-align: center;
+}
+.right {float:right;right:5px;height:17px;font-size:1.5em;}
+
+.col1{
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+    background:transparent url('../images/icon.png');
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 15em;
+    height: 15em;
+    border-radius: 10em;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+  }
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
+
+.col2 {
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background:transparent url('../images/icon.png');
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 15em;
+    height: 15em;
+    border-radius: 10em;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+  }
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
+
+.col3 {
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background:transparent url('../images/icon.png');
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 15em;
+    height: 15em;
+    border-radius: 10em;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+  }
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
+
+.col4 {
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background:transparent url('../images/icon.png');
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 15em;
+    height: 15em;
+    border-radius: 10em;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+  }
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
+.button-intro-fb {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight:normal;
+  box-sizing: border-box;
+  width: 10em !important;
+  height: 2em !important;
+  margin:auto;
+  position: absolute;
+  top: 21.5em; left: 0; bottom: 0; right: 0;
+	@include transition;
+  @include theme-background-colors(1);
+}

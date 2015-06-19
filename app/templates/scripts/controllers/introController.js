@@ -24,39 +24,51 @@
 *  THE SOFTWARE.
 *
 */
-(function () {
+(function() {
   'use strict';
-
   /**
-  * @ngdoc service
-  * @name <%= ngModulName %>.ApiService
+  * @ngdoc function
+  * @name <%= ngModulName %>.controller:IntroController
   * @description
-  * # ApiService
-  * Retrieves correct api to make requests against.
-  * Uses settings from CONFIG defined in /config/<%= ngModulName %>.config.js
-  *
-  * Usage example: $http({
-    *                      url: ApiService.getEndPoint() + '/things',
-    *                      method: 'GET'
-    *                 })
-    *
-    */
-    var <%= ngModulName %> = angular.module('<%= ngModulName %>');
+  * # IntroController
+  */
+  function IntroController($ionicPlatform, $scope, $state, $localstorage, $ionicSlideBoxDelegate, IntroSlideService) {
 
-    <%= ngModulName %>.factory('ApiService', function($window, $http, CONFIG) {
+    // Called to navigate to the main app
+    $scope.startApp = function () {
+      $state.go('app.home');
+      $localstorage.set('firstTime', 'true');
+    };
 
-      var _api = CONFIG;
-      var endpoint = _api.port ? (_api.host + ':' + _api.port + _api.path) : (_api.host + _api.path);
+    $scope.next = function () {
+      $ionicSlideBoxDelegate.next();
+    };
 
-      // activate for basic auth
-      if (_api.needsAuth) {
-        $http.defaults.headers.common.Authorization = 'Basic ' + $window.btoa(_api.username + ':' + _api.password);
-      }
+    $scope.previous = function () {
+      $ionicSlideBoxDelegate.previous();
+    };
 
-      // public api
-      return {
-        getEndpoint: function() { return endpoint; }
-      };
+    // Called each time the slide changes
+    $scope.slideChanged = function (index) {
+      $scope.slideIndex = index;
+    };
 
-    });
+    $scope.currentSlide = IntroSlideService.index;
+
+  }
+
+
+
+  var <%= ngModulName %> = angular.module('<%= ngModulName %>');
+  <%= ngModulName %>.factory('IntroSlideService', function () {
+    var service = {};
+    service.index = 0;
+    return service;
+  });
+  <%= ngModulName %>.controller('IntroController', IntroController);
+
+  IntroController.$inject = ['$ionicPlatform', '$scope', '$state', '$localstorage', '$ionicSlideBoxDelegate', 'IntroSlideService'];
+
+
+
 })();

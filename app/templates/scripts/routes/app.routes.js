@@ -27,6 +27,20 @@
       templateUrl: 'templates/main.html',
       controller: 'MainController'
     })
+    .state('intro', {
+      url: '/',
+      templateUrl: 'templates/views/intro.html',
+      controller: 'IntroController'
+    })
+    .state('app.intro', {
+      url: '/intro',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/views/intro.html',
+          controller: 'IntroController'
+        }
+      }
+    })
     .state('app.home', {
       url: '/home',
       cache: true,
@@ -111,8 +125,13 @@
     });
 
 
-    // redirects to default route for undefined routes
-    $urlRouterProvider.otherwise('/app/home');
+    // if none of the above states are matched, use this as the fallback
+    if (window.localStorage.firstTime === 'true') {
+      // redirects to default route for undefined routes
+      $urlRouterProvider.otherwise('/app/home');
+    } else {
+      $urlRouterProvider.otherwise('/');
+    }
   });
 
 

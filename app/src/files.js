@@ -104,6 +104,13 @@
 
       // controllers
       this.fs.copyTpl(
+        this.templatePath('scripts/controllers/introController.js'),
+        this.destinationPath('app/scripts/controllers/introController.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
         this.templatePath('scripts/controllers/translateController.js'),
         this.destinationPath('app/scripts/controllers/translateController.js'),
         {

@@ -84,7 +84,7 @@
     };
   }
 
-  var <%= ngModulName %> = angular.module('<%= ngModulName %>')
+  var <%= ngModulName %> = angular.module('<%= ngModulName %>');
   <%= ngModulName %>.factory('ExampleService', ExampleService);
 
   var apiUrl = 'https://api.parse.com/1/classes/Avionic';

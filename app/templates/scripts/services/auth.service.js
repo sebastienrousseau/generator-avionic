@@ -158,7 +158,7 @@
       };
     }
 
-  var <%= ngModulName %> = angular.module('<%= ngModulName %>')
+  var <%= ngModulName %> = angular.module('<%= ngModulName %>');
   <%= ngModulName %>.factory('AuthService', AuthService);
 
   var apiUrl = 'https://api.parse.com/1/users';
