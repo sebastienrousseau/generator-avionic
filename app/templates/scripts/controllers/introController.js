@@ -48,6 +48,10 @@
       $ionicSlideBoxDelegate.previous();
     };
 
+    $scope.disableSwipe = function() {
+      $ionicSlideBoxDelegate.enableSlide(false);
+    };
+
     // Called each time the slide changes
     $scope.slideChanged = function (index) {
       $scope.slideIndex = index;

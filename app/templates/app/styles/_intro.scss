@@ -9,15 +9,14 @@ figcaption.intro-headings {
   left: 0vw;
   top: 5em;
   width: 100vw;
-  font-size: $font-size-base;
+  font-size: $font-size-base*1.25;
   color:#fff;
   line-height: $line-height-base;
-  text-transform:uppercase;
   text-align: center;
 }
 
 button.intro-footer{
-  font-size: $font-size-base;
+  font-size: $font-size-base*1.25;
   line-height: $line-height-base;
   font-weight:normal;
   box-sizing: border-box;
@@ -27,7 +26,6 @@ button.intro-footer{
   width: 100vw;
   z-index: -1;
   text-align: center;
-  @include transition;
   background-color: $color-900;
 }
 
@@ -39,14 +37,13 @@ button.intro-footer{
 .slider-pager {
   z-index:1 !important;
   height: $line-height-base;
-  bottom:3.75em;
+  bottom:9em;
 }
 .slider-pager .slider-pager-page
 {
-  width:2rem !important;
   font-size:$font-size-base;
   position: relative;
-  color:#fff !important;
+  color:$color-300 !important;
 }
 .slider {
   height: 100%;

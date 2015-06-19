@@ -1,7 +1,7 @@
-<ion-view view-title="{{ 'APP_NAME' | translate }}" hide-back-button="true">
-  <ion-nav-bar align-title="center" class="boxercise-bar"></ion-nav-bar>
-  <ion-slide-box on-slide-changed="slideChanged(index)">
-    <ion-slide class="intro col1  slider-bg">
+<ion-view view-title="" hide-back-button="true">
+  <ion-nav-bar></ion-nav-bar>
+  <ion-slide-box ng-init="disableSwipe()" on-slide-changed="slideChanged(index)" show-pager="true">
+    <ion-slide class="intro col1 slider-bg">
       <figure>
         <figcaption class="intro-headings">{{ 'APP_INTRO_HEADER_SLIDE_1' | translate }}</figcaption>
       </figure>
