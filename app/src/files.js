@@ -212,6 +212,10 @@
 
       // gulp tasks
       this.fs.copyTpl(
+        this.templatePath('gulp/plato.task.js'),
+        this.destinationPath('gulp/plato.task.js')
+      );
+      this.fs.copyTpl(
         this.templatePath('gulp/help.task.js'),
         this.destinationPath('gulp/help.task.js')
       );

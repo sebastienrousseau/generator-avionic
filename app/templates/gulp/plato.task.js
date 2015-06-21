@@ -31,6 +31,9 @@
   var path = require('path');
   var imagemin = require('gulp-imagemin');
   var pngquant = require('imagemin-pngquant');
+  var plato = require('plato');
+  var glob = require('glob');
+
   /**
   * Parse arguments
   */
@@ -61,18 +64,35 @@
     }
   };
 
-  // copy images
-  gulp.task('images', function () {
-    return gulp.src('app/images/**/*.*')
-    .pipe(imagemin({
-      optimizationLevel: 4,
-      progressive: true,
-      multipass: true,
-      svgoPlugins: [{ removeViewBox: false, removeUselessStrokeAndFill: false, removeEmptyAttrs: false }],
-      use: [pngquant()]
-    }))
-    .pipe(gulp.dest(path.join(targetDir, 'images')))
-    .on('error', errorHandler);
-  });
+  /**
+  * Create a visualizer report
+  */
+   gulp.task('plato', function(done) {
+     console.log('Analyzing source with Plato');
+     console.log('Browse to /report/plato/index.html to see Plato results');
+
+     startPlatoVisualizer(done);
+   });
+
+   function startPlatoVisualizer(done) {
+     var files = glob.sync('app/scripts/**/*.js');
+     var excludeFiles = /.*\.test\.js/;
+
+     var options = {
+       title: 'Avionic ✈ Plato Inspections Report',
+       exclude: excludeFiles
+     };
+
+     var outputDir = 'report/plato';
+
+     plato.inspect(files, outputDir, options, platoCompleted);
+
+     function platoCompleted(report) {
+       plato.getOverviewReport(report);
+        if (done) {
+          done();
+        }
+      }
+    }
 
 }());
