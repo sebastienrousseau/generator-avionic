@@ -95,22 +95,21 @@ button.intro-footer{
 .col2 {
 
   &:before {
-    content: '';
+    content: "\E007";
+    font-family: 'avionic';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
     position: absolute;
-    left: 50%;
+    font-size: 300px;
+    color: $color-900;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background:transparent url('../images/icon.png');
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size: cover;
-    width: 15em;
-    height: 15em;
-    border-radius: 10em;
-    -webkit-border-radius: 10em;
-    -moz-border-radius: 10em;
   }
 
   background-position:center center;
@@ -122,22 +121,21 @@ button.intro-footer{
 .col3 {
 
   &:before {
-    content: '';
+    content: "\E003";
+    font-family: 'avionic';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
     position: absolute;
-    left: 50%;
+    font-size: 300px;
+    color: $color-900;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background:transparent url('../images/icon.png');
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size: cover;
-    width: 15em;
-    height: 15em;
-    border-radius: 10em;
-    -webkit-border-radius: 10em;
-    -moz-border-radius: 10em;
   }
 
   background-position:center center;
@@ -149,23 +147,23 @@ button.intro-footer{
 .col4 {
 
   &:before {
-    content: '';
+    content: "\E001";
+    font-family: 'avionic';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
     position: absolute;
-    left: 50%;
+    font-size: 300px;
+    color: $color-900;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background:transparent url('../images/icon.png');
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size: cover;
-    width: 15em;
-    height: 15em;
-    border-radius: 10em;
-    -webkit-border-radius: 10em;
-    -moz-border-radius: 10em;
   }
+
 
   background-position:center center;
   background-repeat:no-repeat;

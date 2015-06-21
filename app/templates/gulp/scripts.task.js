@@ -32,6 +32,9 @@
   var plugins = require('gulp-load-plugins')({lazy: true});
   var streamqueue = require('streamqueue');
   var path = require('path');
+  var plumber = require('gulp-plumber');
+  var compressor = require('gulp-compressor');
+
   /**
   * Parse arguments
   */
@@ -97,12 +100,20 @@
 
     var scriptStream = gulp
     .src(['templates.js', 'app.js', '**/*.js'], { cwd: 'app/scripts' })
-    .pipe(plugins.if(!build, plugins.changed(dest)));
+    .pipe(plugins.if(!build, plugins.plumber()))
+    .pipe(plugins.if(!build, plugins.changed(dest)))
     return streamqueue({ objectMode: true }, scriptStream, templateStream)
     .pipe(plugins.if(build, plugins.ngAnnotate({add: true, single_quotes: true})))
     .pipe(plugins.if(stripDebug, plugins.stripDebug()))
     .pipe(plugins.if(build, plugins.concat('app.js')))
-    .pipe(plugins.if(build, plugins.uglify({mangle: true, compress: true})))
+    /*.pipe(plugins.if(build, plugins.obfuscate({exclude: ['CalcCtrl', 'left', 'right', 'result', 'name', 'operators', 'operator'], replaceMethod: obfuscate.ZALGO})))*/
+    .pipe(plugins.if(build, plugins.uglify({mangle: true, preserveComments: false, compress: true})))
+    .pipe(plugins.if(build && !emulate, plugins.compressor({
+            'remove-intertag-spaces': true,
+            'simple-bool-attr': true,
+            'compress-js': true,
+            'compress-css': true
+        })))
     .pipe(plugins.if(build && !emulate, plugins.rev()))
     .pipe(gulp.dest(dest))
     .on('error', errorHandler);
