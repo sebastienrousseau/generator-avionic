@@ -24,7 +24,7 @@
 A [Yeoman](http://yeoman.io) generator using [AngularJS](https://angularjs.org/), [Express](http://expressjs.com/), [ngCordova](http://ngcordova.com/), [Gulp](http://gulpjs.com/) and [Bower](http://bower.io/) that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects to evolve and upgrade every aspect of your development to the next moonshot.
 
 ## Say Whaaat
-[AVIONIC ✈](http://avionic.io) is a simple mobile app creation tool for Android and iOS.
+[AVIONIC ✈](http://avionic.io) is an incredibly simple mobile app creation tool for Android and iOS.
 
 ## Getting Started
 

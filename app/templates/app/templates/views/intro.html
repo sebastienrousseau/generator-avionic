@@ -1,29 +1,29 @@
 <ion-view view-title="" hide-back-button="true">
   <ion-nav-bar></ion-nav-bar>
-  <ion-slide-box ng-init="disableSwipe()" on-slide-changed="slideChanged(index)" show-pager="true">
+  <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true">
     <ion-slide class="intro col1 slider-bg">
       <figure>
-        <figcaption class="intro-headings">{{ 'APP_INTRO_HEADER_SLIDE_1' | translate }}</figcaption>
+        <figcaption class="intro-headings"><h2>{{ 'APP_INTRO_HEADER_SLIDE_1' | translate }}</h2>{{ 'APP_INTRO_CONTENT_SLIDE_1' | translate }}</figcaption>
       </figure>
       <button class="button button-clear intro-footer" ng-click="next()">{{ 'APP_INTRO_CTA_BTN_SLIDE_1' | translate }}</button>
     </ion-slide>
 
     <ion-slide class="intro col2 slider-bg">
       <figure>
-        <figcaption class="intro-headings">{{ 'APP_INTRO_HEADER_SLIDE_2' | translate }}</figcaption>
+        <figcaption class="intro-headings"><h2>{{ 'APP_INTRO_HEADER_SLIDE_2' | translate }}</h2>{{ 'APP_INTRO_CONTENT_SLIDE_2' | translate }}</figcaption>
       </figure>
       <button class="button button-clear intro-footer" ng-click="next()">{{ 'APP_INTRO_CTA_BTN_SLIDE_2' | translate }}</button>
     </ion-slide>
 
     <ion-slide class="intro col3 slider-bg">
       <figure>
-        <figcaption class="intro-headings">{{ 'APP_INTRO_HEADER_SLIDE_3' | translate }}</figcaption>
+        <figcaption class="intro-headings"><h2>{{ 'APP_INTRO_HEADER_SLIDE_3' | translate }}</h2>{{ 'APP_INTRO_CONTENT_SLIDE_3' | translate }}</figcaption>
       </figure>
       <button class="button button-clear intro-footer" ng-click="next()">{{ 'APP_INTRO_CTA_BTN_SLIDE_3' | translate }}</button>
     </ion-slide>
     <ion-slide class="intro col4 slider-bg">
       <figure>
-        <figcaption class="intro-headings">{{ 'APP_INTRO_HEADER_SLIDE_4' | translate }}</figcaption>
+        <figcaption class="intro-headings"><h2>{{ 'APP_INTRO_HEADER_SLIDE_4' | translate }}</h2>{{ 'APP_INTRO_CONTENT_SLIDE_4' | translate }}</figcaption>
       </figure>
       <!-- <button class="button button-large button-positive button-intro-fb" ng-click="fbLoginCheck()">
         <span class="icon_height boxercise_facebook white"></span>

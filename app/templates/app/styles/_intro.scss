@@ -10,7 +10,7 @@ figcaption.intro-headings {
   top: 5em;
   width: 100vw;
   font-size: $font-size-base*1.25;
-  color:#fff;
+  color:$color-50;
   line-height: $line-height-base;
   text-align: center;
 }
@@ -54,7 +54,7 @@ button.intro-footer{
   font-style: bold !important;
   font-weight: 400 !important;
   font-size:$font-size-base;
-  color:#fff;
+  color:$color-50;
   background-color: $color-500;
   /* transition: all .2s ease-in-out;
   @include transition;
