@@ -34,8 +34,6 @@
   var path = require('path');
   var plumber = require('gulp-plumber');
   var compressor = require('gulp-compressor');
-  var complexity = require('gulp-complexity');
-
   /**
   * Parse arguments
   */
@@ -102,7 +100,6 @@
     var scriptStream = gulp
     .src(['templates.js', 'app.js', '**/*.js'], { cwd: 'app/scripts' })
     .pipe(plugins.if(!build, plugins.plumber()))
-    .pipe(plugins.if(!build, plugins.complexity()))
     .pipe(plugins.if(!build, plugins.changed(dest)))
     return streamqueue({ objectMode: true }, scriptStream, templateStream)
     .pipe(plugins.if(build, plugins.ngAnnotate({add: true, single_quotes: true})))

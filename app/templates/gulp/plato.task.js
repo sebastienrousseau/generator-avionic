@@ -31,8 +31,31 @@
   var path = require('path');
   var imagemin = require('gulp-imagemin');
   var pngquant = require('imagemin-pngquant');
-  var plato = require('plato');
+  var complexity = require('gulp-complexity');
+  var complexityOpts = {
+      errorsOnly: false,
+      cyclomatic: 3,
+      halstead: 10,
+      maintainability : 90,
+      trycatch: true
+  };
   var glob = require('glob');
+  var jshint = require('gulp-jshint');
+  var jshintOpts = {
+  	options : {
+  		strict : true
+  	}
+  };
+  var plato = require('plato');
+  var files = glob.sync('app/scripts/**/*.js');
+  var excludeFiles = /.*\.test\.js/;
+
+  var platoOpts = {
+    title: 'Avionic ✈ Plato Inspections Report',
+    exclude: excludeFiles,
+	  jshint     : jshintOpts,
+	  complexity : complexityOpts
+};
 
   /**
   * Parse arguments
@@ -68,24 +91,21 @@
   * Create a visualizer report
   */
    gulp.task('plato', function(done) {
+     'use strict';
      console.log('Analyzing source with Plato');
      console.log('Browse to /report/plato/index.html to see Plato results');
-
      startPlatoVisualizer(done);
    });
 
    function startPlatoVisualizer(done) {
-     var files = glob.sync('app/scripts/**/*.js');
-     var excludeFiles = /.*\.test\.js/;
+     complexity();
 
-     var options = {
-       title: 'Avionic ✈ Plato Inspections Report',
-       exclude: excludeFiles
-     };
+
+
 
      var outputDir = 'report/plato';
 
-     plato.inspect(files, outputDir, options, platoCompleted);
+     plato.inspect(files, outputDir, platoOpts, platoCompleted);
 
      function platoCompleted(report) {
        plato.getOverviewReport(report);
