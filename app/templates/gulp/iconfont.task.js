@@ -63,7 +63,7 @@
     }
   };
 
-  var fontName = 'avionic'; // set name of your symbol font
+  var fontName = '<%= ngModulName %>'; // set name of your symbol font
   var fontPath = '../fonts/';
 
   // generate iconfont
@@ -73,8 +73,8 @@
     })
     .pipe(plugins.iconfontCss({
       fontName: fontName,
-      path: 'app/styles/'+fontName+'.css',
-      targetPath: '../styles/'+fontName+'.css',
+      path: 'app/styles/_'+fontName+'.scss',
+      targetPath: '../styles/_'+fontName+'.scss',
       fontPath: '../fonts/'
     }))
     .pipe(plugins.iconfont({

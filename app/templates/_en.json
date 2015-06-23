@@ -10,8 +10,10 @@
   "APP_SETTINGS": "Settings",
   "APP_SESSION": "Session",
   "APP_REFRESH_TEXT": "Pull to refresh...",
-  "APP_SIGNUP_HEADER": "Create an Account",
-  "APP_SIGNUP_CTA": "Sign Up",
+  "APP_SIGNUP_HEADER": "Sign Up",
+  "APP_SIGNUP_CTA": "Create Account",
+  "APP_SIGNUP_CONTENT_SIGNIN": "Already have an account?",
+  "APP_SIGNUP_CTA_SIGNIN": "Sign In",
   "APP_SIGNUP_FIRST_NAME": "First Name",
   "APP_SIGNUP_LAST_NAME": "Last Name",
   "APP_SIGNUP_EMAIL": "Email",
@@ -27,6 +29,6 @@
   "APP_INTRO_CTA_BTN_SLIDE_3": "Explore new features",
   "APP_INTRO_HEADER_SLIDE_4": "Now everyone can build amazing apps.",
   "APP_INTRO_CONTENT_SLIDE_4": "We challenged ourselves to create tools that make it faster and easier to get the perfect app.",
-  "APP_INTRO_CTA_BTN_SLIDE_4": "Connect",
-  "APP_INTRO_CTA_BTN_FB_SLIDE_4": "Continue"
+  "APP_INTRO_CTA_BTN_SLIDE_4": "Got it!",
+  "APP_INTRO_CTA_BTN_FB_SLIDE_4": "Sign Up with Facebook"
 }

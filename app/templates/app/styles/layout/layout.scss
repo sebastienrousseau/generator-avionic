@@ -64,17 +64,14 @@ body,.left,.pane, .view,
 
 
 .bar-header,.bar,  .bar .title,.bar.bar-dark .title,
-.bar, .bar .title, .bar-header, .bar.bar-transparent .title,.button{
-  background-color: $color-500 !important;
+.bar, .bar .title, .bar-header, .bar.bar-transparent .title, .button{
+  background-color: $color-700 !important;
   line-height:none;
   color:$color-50 !important;
 /*   text-transform:uppercase; */
 }
 
-.button-clear.button-clear
-{
-  background-color: $color-700 !important;
-}
+
  .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar .button.button-icon:before,
 .bar.bar-light .title,.bar-light .button.button-icon, .bar.bar-light .title, .bar-light .button.button-clear,
 .button-clear.button-clear

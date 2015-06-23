@@ -71,7 +71,7 @@
       var sassStream = plugins.rubySass('app/styles/main.scss', options)
       .pipe(plugins.autoprefixer('last 1 Chrome version', 'last 3 iOS versions', 'last 3 Android versions'));
 
-      var cssStream = gulp.src(targetDir+'/styles/avionic.css');
+      var cssStream = gulp.src(targetDir+'/styles/_avionic.scss');
       // console.log(targetDir+'/styles/avionic.css');
       return streamqueue({ objectMode: true }, cssStream, sassStream)
       .pipe(plugins.concat('main.css'))

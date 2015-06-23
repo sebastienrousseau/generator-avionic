@@ -1,25 +1,29 @@
 <ion-view view-title="" hide-back-button="true">
-  <ion-nav-bar></ion-nav-bar>
+  <ion-nav-bar class="bar-stable">
+	  <ion-nav-buttons side="right">
+	    <button class="button button-positive button-clear no-animation" ng-click="startApp()">Skip</button>
+	  </ion-nav-buttons>
+  </ion-nav-bar>
   <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true">
     <ion-slide class="intro col1 slider-bg">
       <figure>
         <figcaption class="intro-headings"><h2>{{ 'APP_INTRO_HEADER_SLIDE_1' | translate }}</h2>{{ 'APP_INTRO_CONTENT_SLIDE_1' | translate }}</figcaption>
       </figure>
-      <button class="button button-clear intro-footer" ng-click="next()">{{ 'APP_INTRO_CTA_BTN_SLIDE_1' | translate }}</button>
+      <button class="button button-clear button-block intro-footer" ng-click="next()">{{ 'APP_INTRO_CTA_BTN_SLIDE_1' | translate }}</button>
     </ion-slide>
 
     <ion-slide class="intro col2 slider-bg">
       <figure>
         <figcaption class="intro-headings"><h2>{{ 'APP_INTRO_HEADER_SLIDE_2' | translate }}</h2>{{ 'APP_INTRO_CONTENT_SLIDE_2' | translate }}</figcaption>
       </figure>
-      <button class="button button-clear intro-footer" ng-click="next()">{{ 'APP_INTRO_CTA_BTN_SLIDE_2' | translate }}</button>
+      <button class="button button-clear button-block intro-footer" ng-click="next()">{{ 'APP_INTRO_CTA_BTN_SLIDE_2' | translate }}</button>
     </ion-slide>
 
     <ion-slide class="intro col3 slider-bg">
       <figure>
         <figcaption class="intro-headings"><h2>{{ 'APP_INTRO_HEADER_SLIDE_3' | translate }}</h2>{{ 'APP_INTRO_CONTENT_SLIDE_3' | translate }}</figcaption>
       </figure>
-      <button class="button button-clear intro-footer" ng-click="next()">{{ 'APP_INTRO_CTA_BTN_SLIDE_3' | translate }}</button>
+      <button class="button button-clear button-block intro-footer" ng-click="next()">{{ 'APP_INTRO_CTA_BTN_SLIDE_3' | translate }}</button>
     </ion-slide>
     <ion-slide class="intro col4 slider-bg">
       <figure>
@@ -29,7 +33,7 @@
         <span class="icon_height boxercise_facebook white"></span>
         <span class="icon_padding ">{{ 'APP_INTRO_CTA_BTN_FB_SLIDE_4' | translate }}</span>
       </button> -->
-      <button class="button button-clear intro-footer" ng-click="startApp()">{{ 'APP_INTRO_CTA_BTN_SLIDE_4' | translate }}</button>
+      <button class="button button-clear button-block intro-footer" ng-click="startApp()">{{ 'APP_INTRO_CTA_BTN_SLIDE_4' | translate }}</button>
     </ion-slide>
   </ion-slide-box>
 </ion-view>

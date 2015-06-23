@@ -4,79 +4,79 @@ module.exports = {
         name: 'color',
         message: 'Enter the color scheme you\'d like to use:\n\n',
         choices: [{
-            value: '#D32F2F',
+            value: '#b71c1c',
             name: 'Red',
             checked: false
         }, {
-            value: '#C2185B',
+            value: '#880e4f',
             name: 'Pink',
             checked: false
         }, {
-            value: '#7B1FA2',
+            value: '#4a148c',
             name: 'Purple',
             checked: false
         }, {
-            value: '#512DA8',
+            value: '#311b92',
             name: 'Deep Purple',
             checked: false
         }, {
-            value: '#303F9F',
+            value: '#1a237e',
             name: 'Indigo',
             checked: false
         }, {
-            value: '#1976D2',
+            value: '#0d47a1',
             name: 'Blue',
             checked: false
         }, {
-            value: '#0288D1',
+            value: '#01579b',
             name: 'Light Blue',
             checked: true
         }, {
-            value: '#0097A7',
+            value: '#006064',
             name: 'Cyan',
             checked: false
         }, {
-            value: '#00796B',
+            value: '#004d40',
             name: 'Teal',
             checked: false
         }, {
-            value: '#388E3C',
+            value: '#1b5e20',
             name: 'Green',
             checked: false
         }, {
-            value: '#689F38',
+            value: '#33691e',
             name: 'Light Green',
             checked: false
         }, {
-            value: '#AFB42B',
+            value: '#827717',
             name: 'Lime',
             checked: false
         }, {
-            value: '#FBC02D',
+            value: '#f57f17',
             name: 'Yellow',
             checked: false
         }, {
-            value: '#FFA000',
+            value: '#ff6f00',
             name: 'Amber',
             checked: false
         }, {
-            value: '#F57C00',
+            value: '#e65100',
             name: 'Orange',
             checked: false
         }, {
-            value: '#E64A19',
+            value: '#bf360c',
             name: 'Deep Orange',
             checked: false
         }, {
-            value: '#5D4037',
+            value: '#3e2723',
             name: 'Brown',
             checked: false
         }, {
-            value: '#616161',
+            value: '#212121',
             name: 'Grey',
             checked: false
         }, {
-            value: '#455A64',
+            value: '#263238',
             name: 'Blue Grey',
             checked: false
         }]

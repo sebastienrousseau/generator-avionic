@@ -37,25 +37,25 @@ $theme-color:<%=appColor %>;
 // Color palette
 // ------------------------------------
 $colors: (
-  #D32F2F :  red ,
-  #C2185B :  pink ,
-  #7B1FA2 :  purple ,
-  #512DA8 :  deepPurple ,
-  #303F9F :  indigo ,
-  #1976D2 :  blue ,
-  #0288D1 :  lightBlue ,
-  #0097A7 :  cyan ,
-  #00796B :  teal ,
-  #388E3C :  green ,
-  #689F38 :  lightGreen ,
-  #AFB42B :  lime ,
-  #FBC02D :  yellow ,
-  #FFA000 :  amber ,
-  #F57C00 :  orange ,
-  #E64A19 :  deepOrange ,
-  #5D4037 :  brown ,
-  #616161 :  grey ,
-  #455A64 :  blueGrey
+  #b71c1c :  red ,
+  #880e4f :  pink ,
+  #4a148c :  purple ,
+  #311b92 :  deepPurple ,
+  #1a237e :  indigo ,
+  #0d47a1 :  blue ,
+  #01579b :  lightBlue ,
+  #006064 :  cyan ,
+  #004d40 :  teal ,
+  #1b5e20 :  green ,
+  #33691e :  lightGreen ,
+  #827717 :  lime ,
+  #f57f17 :  yellow ,
+  #ff6f00 :  amber ,
+  #e65100 :  orange ,
+  #bf360c :  deepOrange ,
+  #3e2723 :  brown ,
+  #212121 :  grey ,
+  #263238 :  blueGrey
   );
 
   // Getting color mapping value based on hex value declared during installation
@@ -77,7 +77,7 @@ $colors: (
   $color-400:  '';
   $color-500:  '';
   $color-600:  '';
-  $color-700:  $theme-color;
+  $color-700:  '';
   $color-800:  '';
   $color-900:  '';
 
@@ -101,6 +101,7 @@ $colors: (
     $color-400: #ec407a;
     $color-500: #e91e63;
     $color-600: #d81b60;
+    $color-700: #c2185b;
     $color-800: #ad1457;
     $color-900: #880e4f;
   }
@@ -112,6 +113,7 @@ $colors: (
     $color-400: #ab47bc;
     $color-500: #9c27b0;
     $color-600: #8e24aa;
+    $color-700: #7b1fa2;
     $color-800: #6a1b9a;
     $color-900: #4a148c;
   }
@@ -123,6 +125,7 @@ $colors: (
     $color-400: #7e57c2;
     $color-500: #673ab7;
     $color-600: #5e35b1;
+    $color-700: #512da8;
     $color-800: #4527a0;
     $color-900: #311b92;
   }
@@ -134,6 +137,7 @@ $colors: (
     $color-400: #5c6bc0;
     $color-500: #3f51b5;
     $color-600: #3949ab;
+    $color-700: #303f9f;
     $color-800: #283593;
     $color-900: #1a237e;
   }
@@ -145,6 +149,7 @@ $colors: (
     $color-400: #738ffe;
     $color-500: #5677fc;
     $color-600: #4e6cef;
+    $color-700: #1976d2;
     $color-800: #3b50ce;
     $color-900: #2a36b1;
   }
@@ -156,6 +161,7 @@ $colors: (
     $color-400: #29b6f6;
     $color-500: #03a9f4;
     $color-600: #039be5;
+    $color-700: #0288d1;
     $color-800: #0277bd;
     $color-900: #01579b;
   }
@@ -167,6 +173,7 @@ $colors: (
     $color-400: #26c6da;
     $color-500: #00bcd4;
     $color-600: #00acc1;
+    $color-700: #0097a7;
     $color-800: #00838f;
     $color-900: #006064;
   }
@@ -178,6 +185,7 @@ $colors: (
     $color-400: #26a69a;
     $color-500: #009688;
     $color-600: #00897b;
+    $color-700: #00796b;
     $color-800: #00695c;
     $color-900: #004d40;
   }
@@ -189,6 +197,7 @@ $colors: (
     $color-400: #2baf2b;
     $color-500: #259b24;
     $color-600: #0a8f08;
+    $color-700: #388e3c;
     $color-800: #056f00;
     $color-900: #0d5302;
   }
@@ -200,6 +209,7 @@ $colors: (
     $color-400: #9ccc65;
     $color-500: #8bc34a;
     $color-600: #7cb342;
+    $color-700: #689f38;
     $color-800: #558b2f;
     $color-900: #33691e;
   }
@@ -211,6 +221,7 @@ $colors: (
     $color-400: #d4e157;
     $color-500: #cddc39;
     $color-600: #c0ca33;
+    $color-700: #afb42b;
     $color-800: #9e9d24;
     $color-900: #827717;
   }
@@ -222,6 +233,7 @@ $colors: (
     $color-400: #ffee58;
     $color-500: #ffeb3b;
     $color-600: #fdd835;
+    $color-700: #fbc02d;
     $color-800: #f9a825;
     $color-900: #f57f17;
   }
@@ -233,6 +245,7 @@ $colors: (
     $color-400: #ffca28;
     $color-500: #ffc107;
     $color-600: #ffb300;
+    $color-700: #ffa000;
     $color-800: #ff8f00;
     $color-900: #ff6f00;
   }
@@ -244,6 +257,7 @@ $colors: (
     $color-400: #ffa726;
     $color-500: #ff9800;
     $color-600: #fb8c00;
+    $color-700: #f57c00;
     $color-800: #ef6c00;
     $color-900: #e65100;
   }
@@ -255,6 +269,7 @@ $colors: (
     $color-400: #ff7043;
     $color-500: #ff5722;
     $color-600: #f4511e;
+    $color-700: #e64a19;
     $color-800: #d84315;
     $color-900: #bf360c;
   }
@@ -266,6 +281,7 @@ $colors: (
     $color-400: #8d6e63;
     $color-500: #795548;
     $color-600: #6d4c41;
+    $color-700: #5d4037;
     $color-800: #4e342e;
     $color-900: #3e2723;
   }
@@ -277,6 +293,7 @@ $colors: (
     $color-400: #bdbdbd;
     $color-500: #9e9e9e;
     $color-600: #757575;
+    $color-700: #616161;
     $color-800: #424242;
     $color-900: #212121;
   }
@@ -288,6 +305,7 @@ $colors: (
     $color-400: #78909c;
     $color-500: #607d8b;
     $color-600: #546e7a;
+    $color-700: #455a64;
     $color-800: #37474f;
     $color-900: #263238;
   }
@@ -300,16 +318,16 @@ $colors: (
     $color-400: #29b6f6;
     $color-500: #03a9f4;
     $color-600: #039be5;
+    $color-700: #0288d1;
     $color-800: #0277bd;
     $color-900: #01579b;
   }
 
   // color stacks
-  $colorblack:$color-500;
-  $colorgray:#666;
+  $colorblack:#000;
   $colorwhite:#fff;
   $colorred:#F44336;
-  $colordarkred:$color-500;
+  $colorgray:#666;
   $colorpink:#ff4081;
   $colororange:#ff9800;
   $coloryellow:#ffeb3b;
@@ -317,14 +335,14 @@ $colors: (
   $colorgreen:#259b24;
   $colorpurple:#9c27b0;
   $colorlightgreen:#42c5a5;
-  $colorIcons: #000006;
+
 
   .coloroured {
     color:$color-900;
   }
 
   .active .coloroured {
-    color:$color-50;
+    color:$color-100;
   }
 
 
