@@ -48,6 +48,7 @@
       this.directory('hooks', 'hooks');
 
       this.mkdir('server');
+      this.mkdir('test');
       this.mkdir('app/images');
       this.mkdir('resources');
 
@@ -101,6 +102,16 @@
           ngModulName: this._.classify(this.appName)
         }
       );
+
+      // Configuration files
+      this.fs.copyTpl(
+        this.templatePath('karma.conf.js'),
+        this.destinationPath('karma.conf.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+
 
       // controllers
       this.fs.copyTpl(
@@ -211,6 +222,10 @@
       );
 
       // gulp tasks
+      this.fs.copyTpl(
+        this.templatePath('gulp/karma.task.js'),
+        this.destinationPath('gulp/karma.task.js')
+      );
       this.fs.copyTpl(
         this.templatePath('gulp/plato.task.js'),
         this.destinationPath('gulp/plato.task.js')
@@ -382,6 +397,13 @@
         this.destinationPath('server')
       );
 
+      this.fs.copy(
+        this.templatePath('test'),
+        this.destinationPath('test'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
       // this.fs.copy(
       //   this.templatePath('_avionic.css'),
       //   this.destinationPath('app/styles/icons/avionic.css'),
