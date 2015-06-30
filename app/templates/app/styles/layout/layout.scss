@@ -1,7 +1,7 @@
 .loader {
+  padding: 20px 0;
   text-align: center;
   width: 100%;
-  padding: 20px 0;
 }
 
 @include grid-overlay(blue, 2);
@@ -31,8 +31,8 @@ ul.article li{background-color:transparent;text-align:center;}
 }
 
 .bar, .bar-header, .bar .title,.bar.bar-transparent .title {
-  // font-size:$font-size-base*1.25 !important;
   background-color: $color-500 !important;
+  // font-size:$font-size-base*1.25 !important;
   color:$color-50 !important;
   text-transform: uppercase !important;
   margin: 0px 0px 0px 0px;
@@ -144,8 +144,8 @@ span,.button,.item{
 
 
 .bar,.bar.bar-dark, .bar-header, .menu {
-  border: none;
   background-image: none !important;
+  border: none;
 }
 
 .bar-dark,.bar-dark .button.button-clear,.bar-dark .button,
@@ -174,8 +174,8 @@ span,.button,.item{
 }
 
 .button.button-positive.button-clear {
-  color: $colorwhite !important;
   font-size: 0.85em;
+  color: $colorwhite !important;
   line-height: 0.42em;
   font-weight:normal;
   text-transform:uppercase;

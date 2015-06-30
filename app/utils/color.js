@@ -30,7 +30,7 @@ module.exports = {
         }, {
             value: '#01579b',
             name: 'Light Blue',
-            checked: true
+            checked: false
         }, {
             value: '#006064',
             name: 'Cyan',
