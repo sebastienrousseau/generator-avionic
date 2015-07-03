@@ -345,19 +345,6 @@ $colors: (
     $color-900: #000000;
   }
 
-  @else {
-    $color-50:  #F0EEF5;
-    $color-100: #D6D5DB;
-    $color-200: #BCBBC1;
-    $color-300: #A2A1A7;
-    $color-400: #89888E;
-    $color-500: #706F75;
-    $color-600: #56555B;
-    $color-700: #3D3C42;
-    $color-800: #232228;
-    $color-900: #01579b;
-  }
-
   // color stacks
   $colorblack:#000;
   $colorwhite:#fff;
@@ -373,7 +360,7 @@ $colors: (
 
 
   .coloroured {
-    color:$color-900;
+    color:#ffffff;
   }
 
   .active .coloroured {

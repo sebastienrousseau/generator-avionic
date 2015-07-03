@@ -33,6 +33,40 @@
 @import '_fonts';
 @import '_intro';
 
+.dark {
+  background-color: $color-500 !important;
+  color: #ffffff;
+  .scroll-content {
+    background-color: $color-500 !important;
+  }
+  .item {
+    background-color: $color-500;
+    border: none;
+    border-top: 1px solid $color-700;
+    border-bottom: 2px solid $color-400;
+    color:#fff !important;
+    &:last-child {
+      border-bottom: 1px solid $color-500;
+    }
+    &.current{ background-color:darken( $dark, 10% )   !important;
+       border-top: 1px solid $color-700 !important;
+       border-bottom: 2px solid $color-400 !important;
+       p,h3{opacity: .7;}
+            }
+  }
+  h2,
+  h3,
+  p,
+  a{
+    color: #F0F1F1;
+  }
+}
+.dark-head {
+  text-decoration: none;
+}
+
+
+
 .colorTest
 {
     color: $color-0;
