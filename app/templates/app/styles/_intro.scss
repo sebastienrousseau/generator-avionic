@@ -10,7 +10,7 @@ figcaption.intro-headings {
   top: 5em;
   width: 100vw;
   font-size: $font-size-base*1.25;
-  color:$color-50;
+  color:$color-500;
   line-height: $line-height-base;
   text-align: center;
 }
@@ -54,12 +54,12 @@ button.intro-footer{
   font-style: bold !important;
   font-weight: 400 !important;
   font-size:$font-size-base;
-  color:$color-50;
-  background-color: $color-500;
-  /* transition: all .2s ease-in-out;
+  color:$color-500;
+  background-color: #ffffff;
+  transition: all .2s ease-in-out;
   @include transition;
   @include fadeIn(3s);
-  @include theme-background-colors(1); */
+  /* @include theme-background-colors(1); */
   text-align: center;
 }
 .right {float:right;right:5px;height:17px;font-size:1.5em;}

@@ -79,6 +79,10 @@ module.exports = {
             value: '#263238',
             name: 'Blue Grey',
             checked: false
+        }, {
+            value: '#000000',
+            name: 'Avionic',
+            checked: false
         }]
     }]
 };

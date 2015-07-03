@@ -46,14 +46,17 @@ module.exports = function(AvionicGenerator) {
   AvionicGenerator.prototype.askForColor = function askForColor() {
     var done = this.async();
       this.prompt(color.prompts, function (props) {
-        if (this.appColor !== undefined) {
+        this.appColor = props.color;
+        done();
+console.log(this.appColor);
+        if (typeof this.appColor  !== 'undefined' && this.appColor.length > 0) {
           this.appColor = props.color;
         }
         else {
-          this.appColor = '#263238';
+          this.appColor = '#000000';
           console.log(chalk.cyan('No color scheme selected. Defaulting to the Avionic theme'));
         }
-        done();
+
       }.bind(this));
   };
 };

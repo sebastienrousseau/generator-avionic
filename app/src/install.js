@@ -54,7 +54,7 @@
               this.log(chalk.green('Added plugins: ' + this.plugins));
           } catch (e) {
               console.log(e);
-              this.log.error(chalk.red('Please run `yo icnh-ionic` in an empty directory, or in that of an already existing cordova project.'));
+              this.log.error(chalk.red('Please run `yo avionic` in an empty directory, or in that of an already existing cordova project.'));
               process.exit(1);
           }
       }

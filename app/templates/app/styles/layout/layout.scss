@@ -33,7 +33,7 @@ ul.article li{background-color:transparent;text-align:center;}
 .bar, .bar-header, .bar .title,.bar.bar-transparent .title {
   background-color: $color-500 !important;
   // font-size:$font-size-base*1.25 !important;
-  color:$color-50 !important;
+  color:#ffffff !important;
   text-transform: uppercase !important;
   margin: 0px 0px 0px 0px;
 }
@@ -67,7 +67,7 @@ body,.left,.pane, .view,
 .bar, .bar .title, .bar-header, .bar.bar-transparent .title, .button{
   background-color: $color-700 !important;
   line-height:none;
-  color:$color-50 !important;
+  color:#ffffff !important;
 /*   text-transform:uppercase; */
 }
 
@@ -76,7 +76,7 @@ body,.left,.pane, .view,
 .bar.bar-light .title,.bar-light .button.button-icon, .bar.bar-light .title, .bar-light .button.button-clear,
 .button-clear.button-clear
  {
-  color:$color-50 !important;
+  color:#ffffff !important;
 
   // color: $coloryellow !important;
   font-size:  $font-size-base*1.25;
@@ -170,7 +170,7 @@ span,.button,.item{
 .item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content, .item .item-content.active, .item .item-content.activated
 {
   background-color:$color-300 !important;
-  color:$color-50 !important;
+  color:#ffffff !important;
 }
 
 .button.button-positive.button-clear {
