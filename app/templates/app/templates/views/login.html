@@ -20,26 +20,33 @@
     <div class="padding">
       <a class="item item-icon-left social-btn-avionic" ui-sref-active="active" ng-click="loginUser()">
         <i class="icon icon-avionic coloroured"></i>
-        Avionic
+        {{ 'APP_LOGIN_CTA_AVIONIC' | translate }}
       </a>
     </div>
+
+    <div class="padding" style="text-align: center">
+      <span style="background-color: white; position: relative; top: -0.25em;">
+        OR
+      </span>
+    </div>
+
     <div class="padding">
       <a class="item item-icon-left social-btn-facebook" ui-sref-active="active" ng-click="loginFacebook()">
         <i class="icon ion-social-facebook coloroured"></i>
-        Facebook
+        {{ 'APP_LOGIN_CTA_FACEBOOK' | translate }}
       </a>
     </div>
     <div class="padding">
       <a class="item item-icon-left social-btn-googleplus" ui-sref-active="active" ng-click="loginGoogle()">
         <i class="icon ion-social-googleplus coloroured"></i>
-        Google+
+        {{ 'APP_LOGIN_CTA_GOOGLE' | translate }}
       </a>
     </div>
       <div class="padding">
 
       <a class="item item-icon-left social-btn-twitter" ui-sref-active="active" ng-click="loginTwitter()">
         <i class="icon ion-social-twitter coloroured"></i>
-        Twitter
+        {{ 'APP_LOGIN_CTA_TWITTER' | translate }}
       </a>
     </div>
   </form>
