@@ -80,6 +80,7 @@ body,.left,.pane, .view,
 
   // color: $coloryellow !important;
   font-size:  $font-size-base*1.25;
+  /* min-height: 60px; */
   @include theme-colors(1);
   // text-shadow: transparent 0px 0px 0px, rgba(0,0,0, 0.25) 1px 2px 1px;
 
@@ -158,8 +159,11 @@ span,.button,.item{
 
 .item, .item-complex .item-content, iframe{
 /*   background-color:transparent !important; */
-  color: $color-900 !important;
+  /* color: #fff !important; */
   border:none;
+  border-radius:2px;
+  font-size:20px;
+  vertical-align:middle;
 }
 
 .item-content span {

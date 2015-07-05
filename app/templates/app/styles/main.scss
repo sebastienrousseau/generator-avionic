@@ -32,6 +32,87 @@
 @import '_mixin';
 @import '_fonts';
 @import '_intro';
+@import 'social/_buttons';
+
+/* input[type='text'], input[type='password'], input[type='email'] {
+  letter-spacing: 0.825px;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: $color-50;
+  @include border-radius(4px);
+  padding: 16px 20px;
+  width: 100%;
+  min-height: 60px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 1px solid $color-300;
+  outline: none;
+}
+ */
+
+
+ input[type="email"],
+ input[type="number"],
+ input[type="search"],
+ input[type="text"],
+ input[type="tel"],
+ input[type="url"],
+ input[type="password"],
+ textarea,
+ select {
+   letter-spacing: 0.825px;
+   width: 100% !important;
+   min-height: 60px !important;
+   height: 38px;
+   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+   background-color: #fff;
+   @include border-radius(4px);
+   border: 1px solid $color-50;
+   box-shadow: none;
+   box-sizing: border-box; }
+ /* Removes awkward default styles on some inputs for iOS */
+ input[type="email"],
+ input[type="number"],
+ input[type="search"],
+ input[type="text"],
+ input[type="tel"],
+ input[type="url"],
+ input[type="password"],
+ textarea {
+   -webkit-appearance: none;
+      -moz-appearance: none;
+           appearance: none; }
+ textarea {
+   min-height: 65px;
+   padding-top: 6px;
+   padding-bottom: 6px; }
+ input[type="email"]:focus,
+ input[type="number"]:focus,
+ input[type="search"]:focus,
+ input[type="text"]:focus,
+ input[type="tel"]:focus,
+ input[type="url"]:focus,
+ input[type="password"]:focus,
+ textarea:focus,
+ select:focus {
+   border: 1px solid $color-900;
+   outline: 0; }
+ label,
+ legend {
+   display: block;
+   margin-bottom: .5rem;
+   font-weight: 600; }
+ fieldset {
+   padding: 0;
+   border-width: 0; }
+ input[type="checkbox"],
+ input[type="radio"] {
+   display: inline; }
+ label > .label-body {
+   display: inline-block;
+   margin-left: .5rem;
+   font-weight: normal; }
+
 
 .dark {
   background-color: $color-500 !important;
@@ -242,6 +323,7 @@
 .error,
 .validation
 {
+    color:$color-50;
     font-size: 12px;
 }
 .info

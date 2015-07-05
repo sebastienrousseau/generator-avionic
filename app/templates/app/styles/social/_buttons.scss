@@ -1,21 +1,22 @@
 .social-btn {
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    border-radius: 4px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none
+      min-height: 60px;
+      display: inline-block;
+      margin-bottom: 0;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-image: none;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      @include border-radius(4px);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
 }
 .social-btn.active:focus,
 .social-btn:active:focus,
@@ -53,63 +54,76 @@ a .social-btn:active,
 a .social-btn:hover {
     text-decoration: none
 }
+.social-btn-avionic {
+    background: #333333;
+    border-radius: 0;
+    color: #fff !important;
+}
+.social-btn-avionic:link, .social-btn-avionic:visited {
+    color: #fff
+}
+.social-btn-avionic:active, .social-btn-avionic:hover {
+    background: #000000;
+    color: #fff !important;
+}
+
 .social-btn-twitter {
     background: #00aced;
     border-radius: 0;
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-twitter:link, .social-btn-twitter:visited {
     color: #fff
 }
 .social-btn-twitter:active, .social-btn-twitter:hover {
     background: #0087bd;
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-facebook {
     background: #3b5998;
     border-radius: 0;
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-facebook:link, .social-btn-facebook:visited {
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-facebook:active, .social-btn-facebook:hover {
     background: #30477a;
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-googleplus {
     background: #cd201f;
     border-radius: 0;
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-googleplus:link, .social-btn-googleplus:visited {
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-googleplus:active, .social-btn-googleplus:hover {
     background: #ba3225;
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-linkedin {
     background: #0e76a8;
     border-radius: 0;
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-linkedin:link, .social-btn-linkedin:visited {
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-linkedin:active, .social-btn-linkedin:hover {
     background: #0b6087;
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-email {
     background: #111;
     border-radius: 0;
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-email:link, .social-btn-email:visited {
-    color: #fff
+    color: #fff !important;
 }
 .social-btn-email:active, .social-btn-email:hover {
     background: #000;
-    color: #fff
+    color: #fff !important;
 }

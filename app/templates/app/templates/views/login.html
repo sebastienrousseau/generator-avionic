@@ -1,42 +1,47 @@
 <ion-view hide-back-button="true" title="{{ 'APP_NAME' | translate }}">
   <ion-content scroll="false" class="has-header">
     <form name="loginUserForm" novalidate="novalidate">
-    <div class="padding">
-      <label class="item item-input">
-        <input id="username" name="username" type="email" placeholder="Email" ng-model="user.username" ng-minlength="5" ng-maxlength="64" required="required">
-        <input type="text" placeholder="" ng-model="username">
-      </label>
-      <div ng-messages="loginUserForm.username.$error">
-        <div class="info" ng-message="required">Your Email.</div>
-      </div>
-      <label class="item item-input">
+      <div class="padding">
+        <label>
+          <input id="username" name="username" type="email" placeholder="Email" ng-model="user.username" ng-minlength="5" ng-maxlength="64" required="required">
+        </label>
+        <div ng-messages="loginUserForm.username.$error">
+          <div class="padding info" ng-message="required">Your Email.</div>
+        </div>
+
+      <label>
         <input id="password" name="password" type="password" placeholder="Password" ng-model="user.password" ng-minlength="5" ng-maxlength="30" required="required">
       </label>
       <div ng-messages="loginUserForm.password.$error">
-        <div class="info" ng-message="required">Your Password.</div>
+        <div class="padding info" ng-message="required">Your Password.</div>
       </div>
+
     </div>
     <div class="padding">
-      <button class="button button-clear button-block" ng-click="loginUser()">Login</button>
+      <a class="item item-icon-left social-btn-avionic" ui-sref-active="active" ng-click="loginUser()">
+        <i class="icon icon-avionic coloroured"></i>
+        Avionic
+      </a>
     </div>
     <div class="padding">
-      <a class="item item-icon-left" ui-sref-active="active" ng-click="loginFacebook()">
+      <a class="item item-icon-left social-btn-facebook" ui-sref-active="active" ng-click="loginFacebook()">
         <i class="icon ion-social-facebook coloroured"></i>
         Facebook
       </a>
     </div>
     <div class="padding">
-      <a class="item item-icon-left" ui-sref-active="active" ng-click="loginGoogle()">
+      <a class="item item-icon-left social-btn-googleplus" ui-sref-active="active" ng-click="loginGoogle()">
         <i class="icon ion-social-googleplus coloroured"></i>
         Google+
       </a>
-      <div class="padding">
     </div>
-      <a class="item item-icon-left" ui-sref-active="active" ng-click="loginTwitter()">
+      <div class="padding">
+
+      <a class="item item-icon-left social-btn-twitter" ui-sref-active="active" ng-click="loginTwitter()">
         <i class="icon ion-social-twitter coloroured"></i>
         Twitter
       </a>
     </div>
   </form>
   </ion-content>
-</ion-view>
+  </ion-view>
