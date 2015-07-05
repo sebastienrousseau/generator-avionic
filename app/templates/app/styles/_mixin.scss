@@ -409,11 +409,11 @@ $prefix:'-moz-', '-webkit-', '-o-', '-ms-', '';
   transform:         skew($skew +deg);
 }
 @mixin translate($left: 0, $top: 0) {
-  -webkit-transform: translate($left +px, $top +px);
-  -moz-transform:    translate($left +px, $top +px);
-  -ms-transform:     translate($left +px, $top +px);
-  -o-transform:      translate($left +px, $top +px);
-  transform:         translate($left +px, $top +px);
+  -webkit-transform: translate($left, $top);
+  -moz-transform:    translate($left, $top);
+  -ms-transform:     translate($left, $top);
+  -o-transform:      translate($left, $top);
+  transform:         translate($left, $top);
 }
 // @include rotate(15);          rotates object 15 degrees
 // @include scale(1.5);          scales object 50% up

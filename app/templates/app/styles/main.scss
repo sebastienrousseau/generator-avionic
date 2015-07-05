@@ -34,21 +34,19 @@
 @import '_intro';
 @import 'social/_buttons';
 
-/* input[type='text'], input[type='password'], input[type='email'] {
-  letter-spacing: 0.825px;
-  line-height: 1.6;
-  background-color: #ffffff;
-  color: $color-50;
-  @include border-radius(4px);
-  padding: 16px 20px;
+.product-hero {
+  background-size: cover;
+  position: relative;
   width: 100%;
-  min-height: 60px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  border: 1px solid $color-300;
-  outline: none;
+  height: 100%;
+  margin: 0px;
 }
- */
+
+.product-hero img {
+  width: 50%;
+  height: 50%;
+  float: left;
+}
 
 
  input[type="email"],
@@ -60,6 +58,7 @@
  input[type="password"],
  textarea,
  select {
+   position: relative;
    letter-spacing: 0.825px;
    width: 100% !important;
    min-height: 60px !important;
@@ -113,6 +112,9 @@
    margin-left: .5rem;
    font-weight: normal; }
 
+.avionic-intro{
+    margin-top: 230px;
+}
 
 .dark {
   background-color: $color-500 !important;
@@ -325,6 +327,7 @@
 {
     color:$color-50;
     font-size: 12px;
+    position: relative;
 }
 .info
 {

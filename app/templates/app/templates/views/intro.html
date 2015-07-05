@@ -33,7 +33,30 @@
         <span class="icon_height boxercise_facebook white"></span>
         <span class="icon_padding ">{{ 'APP_INTRO_CTA_BTN_FB_SLIDE_4' | translate }}</span>
       </button> -->
-      <button class="button button-clear button-block intro-footer" ng-click="startApp()">{{ 'APP_INTRO_CTA_BTN_SLIDE_4' | translate }}</button>
+      <button class="button button-clear button-block intro-footer" ng-click="next()">{{ 'APP_INTRO_CTA_BTN_SLIDE_4' | translate }}</button>
+    </ion-slide>
+    <ion-slide class="intro col5 slider-bg">
+      <figure>
+        <figcaption class="intro-headings-5"><h2>{{ 'APP_INTRO_HEADER_SLIDE_5' | translate }}</h2>{{ 'APP_INTRO_CONTENT_SLIDE_5' | translate }}</figcaption>
+      </figure>
+      <form name="signupUserForm" class="avionic-intro" novalidate="novalidate">
+
+        <div class="padding">
+          <label>
+            <input id="text" type="email" name="email" placeholder="{{'APP_SIGNUP_EMAIL' | translate }}" ng-model="user.username" ng-minlength="5" ng-maxlength="64" required="required">
+          </label>
+
+          <label>
+              <input id="password" name="password" type="password" placeholder="{{ 'APP_SIGNUP_PASSWORD' | translate }}" ng-model="user.password" ng-minlength="5" ng-maxlength="30" required="required">
+          </label>
+
+          <div class="padding info">
+            {{ 'APP_INTRO_CTA_TERMS_INTRO_SLIDE_5' | translate }} <a href="#">{{ 'APP_INTRO_CTA_TERMSCONDITIONS_SLIDE_5' | translate }}</a> {{ 'APP_INTRO_CTA_AND_SLIDE_5' | translate }} <a href="#">{{ 'APP_INTRO_CTA_PRIVACY_SLIDE_5' | translate }}</a>                        
+          </div>
+        </div>
+      </form>
+
+      <button class="button button-clear button-block intro-footer" ng-click="signupUser()">{{ 'APP_INTRO_CTA_BTN_SLIDE_5' | translate }}</button>
     </ion-slide>
   </ion-slide-box>
 </ion-view>

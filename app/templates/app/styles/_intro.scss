@@ -15,6 +15,18 @@ figcaption.intro-headings {
   text-align: center;
 }
 
+figcaption.intro-headings-5 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0vw;
+  top: 5em;
+  width: 100vw;
+  font-size: $font-size-base*1.25;
+  color:#fff;
+  line-height: $line-height-base;
+  text-align: center;
+}
+
 button.intro-footer{
   font-size: $font-size-base*1.25;
   line-height: $line-height-base;
@@ -24,7 +36,7 @@ button.intro-footer{
   left: 0vw;
   bottom: 0;
   width: 100vw;
-  z-index: -1;
+  z-index: 0;
   text-align: center;
   background-color: $color-900;
 }
@@ -170,6 +182,29 @@ button.intro-footer{
   background-size: cover;
   z-index:0 !important;
 }
+
+.col5 {
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include translate(-50%, -50%);
+    background:transparent url('../images/background.jpg');
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
+
 .button-intro-fb {
   font-size: $font-size-base;
   line-height: $line-height-base;

@@ -13,6 +13,11 @@
  * http://cssreset.com
  */
 
+ html, html a {
+     -webkit-font-smoothing: antialiased !important;
+     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);     
+ }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

@@ -22,8 +22,11 @@
   "APP_LOGIN_CTA_FACEBOOK": "Log in with Facebook",
   "APP_LOGIN_CTA_GOOGLE": "Log in with Google+",
   "APP_LOGIN_CTA_TWITTER": "Log in with Twitter",
+  "APP_PRODUCT_LIKE": "Like",
+  "APP_PRODUCT_SHARE": "Share",
+  "APP_PRODUCT_BUY": "Buy Now",
   "APP_INTRO_HEADER_SLIDE_1": "Welcome to <%= appName %>",
-  "APP_INTRO_CONTENT_SLIDE_1": "A whole new way to fly.",
+  "APP_INTRO_CONTENT_SLIDE_1": "A whole new way to build apps.",
   "APP_INTRO_CTA_BTN_SLIDE_1": "Get Started",
   "APP_INTRO_HEADER_SLIDE_2": "Powered by Avionic ✈",
   "APP_INTRO_CONTENT_SLIDE_2": "An incredibly simple mobile app creation tool for Android and iOS.",
@@ -34,5 +37,12 @@
   "APP_INTRO_HEADER_SLIDE_4": "Now everyone can build amazing apps.",
   "APP_INTRO_CONTENT_SLIDE_4": "We challenged ourselves to create tools that make it faster and easier to get the perfect app.",
   "APP_INTRO_CTA_BTN_SLIDE_4": "Got it!",
-  "APP_INTRO_CTA_BTN_FB_SLIDE_4": "Sign Up with Facebook"
+  "APP_INTRO_CTA_BTN_FB_SLIDE_4": "Sign Up with Facebook",
+  "APP_INTRO_HEADER_SLIDE_5": "Avionic ✈",
+  "APP_INTRO_CONTENT_SLIDE_5": "Experience First Class Mobile Application Development.",
+  "APP_INTRO_CTA_TERMS_INTRO_SLIDE_5": "By signing up, you agree to Reedia's",
+  "APP_INTRO_CTA_TERMSCONDITIONS_SLIDE_5": "terms & conditions",
+  "APP_INTRO_CTA_AND_SLIDE_5": "and",
+  "APP_INTRO_CTA_PRIVACY_SLIDE_5": "privacy policy",
+  "APP_INTRO_CTA_BTN_SLIDE_5": "Sign Me Up"
 }
