@@ -27,53 +27,10 @@
 (function () {
   'use strict';
 
-  var requireDir = require('require-dir');
-
-  // Require all tasks in gulp/tasks, including subfolders
-  requireDir('./gulp/', { recurse: true });
-
-  /*jslint nomen: true*/
-  /*jslint vars: true*/
-  /*global require,process,module*/
-  /*var appName = '<%= appName %>';*/
-  /*var colorCSS = '<%= appColor%>';*/
-  var chalk = require('chalk');
   var gulp = require('gulp');
   var beep = require('beepbeep');
   var plugins = require('gulp-load-plugins')({lazy: true});
   var path = require('path');
-
-
-
-
-
-  /*var wiredep = require('wiredep').stream;*/
-  /*var gutil = require('gulp-util');*/
-  // var clean = require('gulp-clean');
-  /*var sass = require('gulp-sass');*/
-  /*var minifyHTML = require('gulp-minify-html');*/
-  /*var rename = require('gulp-rename');*/
-  /*var filesize = require('gulp-filesize');*/
-  /*var sourcemaps = require('gulp-sourcemaps');*/
-  /*var del = require('del');*/
-
-  /*var express = require('express');*/
-
-  /*var open = require('open');*/
-  //var stylish = require('jshint-stylish');
-  /*var livereload = require('connect-livereload');*/
-  /*var streamqueue = require('streamqueue');*/
-  /*var runSequence = require('run-sequence');*/
-  /*var merge = require('merge-stream');*/
-  /*var ripple = require('ripple-emulator');*/
-  /*var minifyCss = require('gulp-minify-css');*/
-  /*var replace = require('gulp-replace');*/
-  /*var exec = require('child_process').exec;*/
-
-  /*var imagemin = require('gulp-imagemin');
-  var pngquant = require('imagemin-pngquant');*/
-  /*var ascii = require('./ascii.js');*/
-
   /**
   * Parse arguments
   */
@@ -113,5 +70,63 @@
       plugins.util.log(error);
     }
   };
+  // avionic CLI scripts
+
+gulp.task('av:android', plugins.shell.task([
+  'cordova platform add android'
+]));
+
+gulp.task('av:ios', plugins.shell.task([
+'cordova platform add ios'
+]));
+
+gulp.task('av:emulate', plugins.shell.task([
+'cordova run --emulator'
+]));
+
+gulp.task('av:build', plugins.shell.task([
+'gulp --build'
+]));
+
+gulp.task('av:serve', plugins.shell.task([
+'gulp'
+]));
+
+gulp.task('av:resources', plugins.shell.task([
+'ionic resources'
+]));
+
+gulp.task('av:icon', plugins.shell.task([
+'ionic resources --icon'
+]));
+
+gulp.task('av:splash', plugins.shell.task([
+'ionic resources --splash'
+]));
+
+gulp.task('av:run', plugins.shell.task([
+'cordova run --device'
+]));
+
+// ionic emulate wrapper
+gulp.task('ionic:emulate', plugins.shell.task([
+  'ionic emulate ' + emulate + ' --livereload --consolelogs'
+]));
+
+// ionic run wrapper
+gulp.task('ionic:run', plugins.shell.task([
+  'ionic run ' + run
+]));
+
+// ionic resources wrapper
+gulp.task('icon', plugins.shell.task([
+  'ionic resources --icon'
+]));
+gulp.task('splash', plugins.shell.task([
+  'ionic resources --splash'
+]));
+gulp.task('resources', plugins.shell.task([
+  'ionic resources'
+]));
 
 })();

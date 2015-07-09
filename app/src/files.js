@@ -242,6 +242,13 @@
         }
       );
       this.fs.copyTpl(
+        this.templatePath('gulp/cli.task.js'),
+        this.destinationPath('gulp/cli.task.js'),
+        {
+          ngModulName: this._.classify(this.appName)
+        }
+      );
+      this.fs.copyTpl(
         this.templatePath('gulp/clean.task.js'),
         this.destinationPath('gulp/clean.task.js'),
         {

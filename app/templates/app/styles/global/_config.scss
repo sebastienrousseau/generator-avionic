@@ -1,4 +1,3 @@
-@charset 'UTF-8';
 /**
 *
 *  AVIONIC
@@ -25,6 +24,7 @@
 *  THE SOFTWARE.
 *
 */
+@charset 'UTF-8';
 
 // Golden ratio
 // ------------------------------------
@@ -71,7 +71,6 @@ $colors: (
 
   // Color palette
   // ------------------------------------
-  $color-0: '';
   $color-50: '';
   $color-100:  '';
   $color-200:  '';
@@ -84,7 +83,6 @@ $colors: (
   $color-900:  '';
 
   @if $theme == red {
-    $color-0: '#ffffff';
     $color-50: #FFEBEE;
     $color-100: #FFCDD2;
     $color-200: #EF9A9A;
@@ -97,7 +95,7 @@ $colors: (
     $color-900: #B71C1C;
   }
   @else if $theme == pink {
-    $color-0: '#ffffff';
+
     $color-50: #fce4ec;
     $color-100: #f8bbd0;
     $color-200: #f48fb1;
@@ -110,7 +108,7 @@ $colors: (
     $color-900: #880e4f;
   }
   @else if $theme == purple	   {
-    $color-0: '#ffffff';
+
     $color-50: #f3e5f5;
     $color-100: #e1bee7;
     $color-200: #ce93d8;
@@ -123,7 +121,7 @@ $colors: (
     $color-900: #4a148c;
   }
   @else if $theme == deepPurple {
-    $color-0: '#ffffff';
+
     $color-50: #ede7f6;
     $color-100: #d1c4e9;
     $color-200: #b39ddb;
@@ -136,7 +134,7 @@ $colors: (
     $color-900: #311b92;
   }
   @else if $theme == indigo	   {
-    $color-0: '#ffffff';
+
     $color-50: #e8eaf6;
     $color-100: #c5cae9;
     $color-200: #9fa8da;
@@ -149,7 +147,7 @@ $colors: (
     $color-900: #1a237e;
   }
   @else if $theme == blue	     {
-    $color-0: '#ffffff';
+
     $color-50: #e7e9fd;
     $color-100: #d0d9ff;
     $color-200: #afbfff;
@@ -162,7 +160,7 @@ $colors: (
     $color-900: #2a36b1;
   }
   @else if $theme == lightBlue	 {
-    $color-0: '#ffffff';
+
     $color-50: #e1f5fe;
     $color-100: #b3e5fc;
     $color-200: #81d4fa;
@@ -175,7 +173,7 @@ $colors: (
     $color-900: #01579b;
   }
   @else if $theme == cyan	     {
-    $color-0: '#ffffff';
+
     $color-50: #e0f7fa;
     $color-100: #b2ebf2;
     $color-200: #80deea;
@@ -188,7 +186,7 @@ $colors: (
     $color-900: #006064;
   }
   @else if $theme == teal	     {
-    $color-0: '#ffffff';
+
     $color-50: #e0f2f1;
     $color-100: #b2dfdb;
     $color-200: #80cbc4;
@@ -201,7 +199,7 @@ $colors: (
     $color-900: #004d40;
   }
   @else if $theme == green	     {
-    $color-0: '#ffffff';
+
     $color-50: #d0f8ce;
     $color-100: #a3e9a4;
     $color-200: #72d572;
@@ -214,7 +212,7 @@ $colors: (
     $color-900: #0d5302;
   }
   @else if $theme == lightGreen {
-    $color-0: '#ffffff';
+
     $color-50: #f1f8e9;
     $color-100: #dcedc8;
     $color-200: #c5e1a5;
@@ -227,7 +225,7 @@ $colors: (
     $color-900: #33691e;
   }
   @else if $theme == lime	     {
-    $color-0: '#ffffff';
+
     $color-50: #f9fbe7;
     $color-100: #f0f4c3;
     $color-200: #e6ee9c;
@@ -240,7 +238,7 @@ $colors: (
     $color-900: #827717;
   }
   @else if $theme == yellow	   {
-    $color-0: '#ffffff';
+
     $color-50: #fffde7;
     $color-100: #fff9c4;
     $color-200: #fff59d;
@@ -253,7 +251,7 @@ $colors: (
     $color-900: #f57f17;
   }
   @else if $theme == amber	     {
-    $color-0: '#ffffff';
+
     $color-50: #fff8e1;
     $color-100: #ffecb3;
     $color-200: #ffe082;
@@ -266,7 +264,7 @@ $colors: (
     $color-900: #ff6f00;
   }
   @else if $theme == orange	   {
-    $color-0: '#ffffff';
+
     $color-50: #fff3e0;
     $color-100: #ffe0b2;
     $color-200: #ffcc80;
@@ -279,7 +277,7 @@ $colors: (
     $color-900: #e65100;
   }
   @else if $theme == deepOrange {
-    $color-0: '#ffffff';
+
     $color-50: #fbe9e7;
     $color-100: #ffccbc;
     $color-200: #ffab91;
@@ -292,7 +290,7 @@ $colors: (
     $color-900: #bf360c;
   }
   @else if $theme == brown	     {
-    $color-0: '#ffffff';
+
     $color-50: #efebe9;
     $color-100: #d7ccc8;
     $color-200: #bcaaa4;
@@ -305,7 +303,7 @@ $colors: (
     $color-900: #3e2723;
   }
   @else if $theme == grey	     {
-    $color-0: '#ffffff';
+
     $color-50: #fafafa;
     $color-100: #f5f5f5;
     $color-200: #eeeeee;
@@ -318,7 +316,7 @@ $colors: (
     $color-900: #212121;
   }
   @else if $theme == blueGrey	 {
-    $color-0: '#ffffff';
+
     $color-50: #eceff1;
     $color-100: #cfd8dc;
     $color-200: #b0bec5;
@@ -332,7 +330,7 @@ $colors: (
   }
 
   @else if $theme == avionic	 {
-    $color-0: '#ffffff';
+
     $color-50:  #737373;
     $color-100: #666666;
     $color-200: #595959;

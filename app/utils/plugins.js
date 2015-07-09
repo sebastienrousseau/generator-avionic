@@ -32,6 +32,10 @@ module.exports = {
             name: 'cordova-plugin-statusbar',
             checked: true
         }, {
+            value: 'nl.x-services.plugins.socialsharing',
+            name: 'cordova-plugin-socialsharing',
+            checked: true
+        }, {
             value: 'cordova-plugin-apple-watch',
             name: 'cordova-plugin-apple-watch',
             checked: false

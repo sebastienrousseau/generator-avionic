@@ -26,133 +26,90 @@
 */
 @charset 'UTF-8';
 
-// Include custom elements
 @import 'ionic/ionic';
-@import '_config';
-@import '_mixin';
-@import '_fonts';
-@import '_intro';
-@import 'social/_buttons';
+@import 'global/_config';
+@import 'global/_mixin';
+@import 'global/_fonts';
+@import 'global/_forms';
+@import 'global/_buttons';
+@import 'layout/_layout';
+@import 'views/_intro';
 
-.product-hero {
-  background-size: cover;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
+
+
+
+.product-hero
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-size: cover;
 }
 
-.product-hero img {
-  width: 50%;
-  height: 50%;
-  float: left;
+.product-hero img
+{
+    float: left;
+    width: 50%;
+    height: 50%;
 }
 
 
- input[type="email"],
- input[type="number"],
- input[type="search"],
- input[type="text"],
- input[type="tel"],
- input[type="url"],
- input[type="password"],
- textarea,
- select {
-   position: relative;
-   letter-spacing: 0.825px;
-   width: 100% !important;
-   min-height: 60px !important;
-   height: 38px;
-   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
-   background-color: #fff;
-   @include border-radius(4px);
-   border: 1px solid $color-50;
-   box-shadow: none;
-   box-sizing: border-box; }
- /* Removes awkward default styles on some inputs for iOS */
- input[type="email"],
- input[type="number"],
- input[type="search"],
- input[type="text"],
- input[type="tel"],
- input[type="url"],
- input[type="password"],
- textarea {
-   -webkit-appearance: none;
-      -moz-appearance: none;
-           appearance: none; }
- textarea {
-   min-height: 65px;
-   padding-top: 6px;
-   padding-bottom: 6px; }
- input[type="email"]:focus,
- input[type="number"]:focus,
- input[type="search"]:focus,
- input[type="text"]:focus,
- input[type="tel"]:focus,
- input[type="url"]:focus,
- input[type="password"]:focus,
- textarea:focus,
- select:focus {
-   border: 1px solid $color-900;
-   outline: 0; }
- label,
- legend {
-   display: block;
-   margin-bottom: .5rem;
-   font-weight: 600; }
- fieldset {
-   padding: 0;
-   border-width: 0; }
- input[type="checkbox"],
- input[type="radio"] {
-   display: inline; }
- label > .label-body {
-   display: inline-block;
-   margin-left: .5rem;
-   font-weight: normal; }
 
-.avionic-intro{
+
+.avionic-intro
+{
     margin-top: 230px;
 }
 
-.dark {
-  background-color: $color-500 !important;
-  color: #ffffff;
-  .scroll-content {
+.dark
+{
+    color: #fff;
     background-color: $color-500 !important;
-  }
-  .item {
-    background-color: $color-500;
-    border: none;
-    border-top: 1px solid $color-700;
-    border-bottom: 2px solid $color-400;
-    color:#fff !important;
-    &:last-child {
-      border-bottom: 1px solid $color-500;
+    .scroll-content
+    {
+        background-color: $color-500 !important;
     }
-    &.current{ background-color:darken( $dark, 10% )   !important;
-       border-top: 1px solid $color-700 !important;
-       border-bottom: 2px solid $color-400 !important;
-       p,h3{opacity: .7;}
+    .item
+    {
+        color: #fff !important;
+        border: none;
+        border-top: 1px solid $color-700;
+        border-bottom: 2px solid $color-400;
+        background-color: $color-500;
+        &:last-child
+        {
+            border-bottom: 1px solid $color-500;
+        }
+        &.current
+        {
+            border-top: 1px solid $color-700 !important;
+            border-bottom: 2px solid $color-400 !important;
+            background-color: darken( $dark, 10% )   !important;
+            p,
+            h3
+            {
+                opacity: .7;
             }
-  }
-  h2,
-  h3,
-  p,
-  a{
-    color: #F0F1F1;
-  }
+        }
+    }
+    h2,
+    h3,
+    p,
+    a
+    {
+        color: #f0f1f1;
+    }
 }
-.dark-head {
-  text-decoration: none;
+.dark-head
+{
+    text-decoration: none;
 }
 
 
 
 .colorTest
 {
-    color: $color-0;
     color: $color-50;
     color: $color-100;
     color: $color-200;
@@ -176,24 +133,6 @@
     @include radial-gradient($color-50, $color-200);
 }
 
-/**
- * LAYOUT
- */
-
-@import 'layout/layout';
-
-
-/**
- * MENU
- */
-
-@import 'menu/menu';
-
-/**
- * VIEWS
- */
-
-@import 'views/home';
 
 
 
@@ -201,12 +140,11 @@
 ==================================*/
 .background
 {
-  background: $color-700 url('../images/icon.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 45% auto;
-
+    background: $color-700 url('../images/icon.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 45% auto;
 }
 
 .glass:before
@@ -325,13 +263,11 @@
 .error,
 .validation
 {
-    color:$color-50;
-    font-size: 12px;
     position: relative;
 }
 .info
 {
-    color: $color-50 !important;
+    color: $color-300 !important;
 }
 .success
 {

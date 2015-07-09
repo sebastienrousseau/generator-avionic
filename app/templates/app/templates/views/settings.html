@@ -1,21 +1,41 @@
 <ion-view hide-back-button="true" title="{{ 'APP_SETTINGS' | translate }}">
   <ion-content class="has-header">
     <div class="list">
+      <a class="item " ui-sref="app.intro" nav-transition="none">
+          About
+      </a>
+      <a class="item " ui-click="window.plugins.socialsharing.share('Message, subject, image and link', 'The subject', 'https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl')" nav-transition="none">
+          Tell your friends
+      </a>
+      <a class="item " ui-sref="app.intro" nav-transition="none">
+          Get in touch
+      </a>
+      <a class="item " ui-sref="app.intro" nav-transition="none">
+          Get in touch
+      </a>
+      <a class="item " ui-sref="app.intro" nav-transition="none">
+          Rate in App Store
+      </a>
+      <a class="item " ui-sref="app.intro" nav-transition="none">
+          Replay Introduction
+      </a>
 
-      <!-- connect toggles to controller using ng-model -->
-
-      <ion-toggle>
-        <span class="settings-item__text">
-          Allow Push Notifications
-        </span>
-      </ion-toggle>
-
-      <ion-toggle>
-        <span class="settings-item__text">
-          Allow cookies
-        </span>
-      </ion-toggle>
-
-    </div>
+        <a class="item item-icon-left social-btn-facebook" ng-click="loginFacebook()">
+          <i class="icon ion-social-facebook "></i>
+          {{ 'APP_LOGIN_CTA_FACEBOOK' | translate }}
+        </a>
+  </div>
+  <div class="list">
+        <a class="item item-icon-left social-btn-googleplus" ng-click="loginGoogle()">
+          <i class="icon ion-social-googleplus "></i>
+          {{ 'APP_LOGIN_CTA_GOOGLE' | translate }}
+        </a>
+  </div>
+  <div class="list">
+        <a class="item item-icon-left social-btn-twitter" ng-click="loginTwitter()">
+          <i class="icon ion-social-twitter "></i>
+          {{ 'APP_LOGIN_CTA_TWITTER' | translate }}
+        </a>
+  </div>
   </ion-content>
 </ion-view>
