@@ -4,7 +4,8 @@
  */
 
 .item {
-  @include item-style($item-default-bg, $item-default-border, $item-default-text);
+  color: #fff !important;
+
 
   position: relative;
   z-index: $z-index-item; // Make sure the borders and stuff don't get hidden by children
@@ -17,7 +18,7 @@
   border-style: solid;
   font-size: $item-font-size;
 
-  
+
   // Align badges within items
   .badge {
     @include display-flex();
@@ -138,7 +139,7 @@
 
 // Linked list items
 a.item {
-  color: inherit;
+  color: $dark;
   text-decoration: none;
 
   &:hover,

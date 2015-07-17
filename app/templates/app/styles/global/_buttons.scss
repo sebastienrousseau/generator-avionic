@@ -83,7 +83,7 @@ a .social-btn:hover {
     text-decoration: none
 }
 .social-btn-avionic {
-    background: #333333;
+    background: $color-900;
     border-radius: 0;
     color: #fff !important;
 }
@@ -91,12 +91,12 @@ a .social-btn:hover {
     color: #fff
 }
 .social-btn-avionic:active, .social-btn-avionic:hover {
-    background: #000000;
+    background: $color-700;
     color: #fff !important;
 }
 
 .social-btn-twitter {
-    background: #00aced;
+    background: #0087bd;
     border-radius: 0;
     color: #fff !important;
 }
@@ -104,11 +104,11 @@ a .social-btn:hover {
     color: #fff
 }
 .social-btn-twitter:active, .social-btn-twitter:hover {
-    background: #0087bd;
+    background: #00aced;
     color: #fff !important;
 }
 .social-btn-facebook {
-    background: #3b5998;
+    background: #30477a;
     border-radius: 0;
     color: #fff !important;
 }
@@ -116,11 +116,11 @@ a .social-btn:hover {
     color: #fff !important;
 }
 .social-btn-facebook:active, .social-btn-facebook:hover {
-    background: #30477a;
+    background: #3b5998;
     color: #fff !important;
 }
 .social-btn-googleplus {
-    background: #cd201f;
+    background: #ba3225;
     border-radius: 0;
     color: #fff !important;
 }
@@ -128,11 +128,11 @@ a .social-btn:hover {
     color: #fff !important;
 }
 .social-btn-googleplus:active, .social-btn-googleplus:hover {
-    background: #ba3225;
+    background: #cd201f;
     color: #fff !important;
 }
 .social-btn-linkedin {
-    background: #0e76a8;
+    background: #0b6087;
     border-radius: 0;
     color: #fff !important;
 }
@@ -140,11 +140,11 @@ a .social-btn:hover {
     color: #fff !important;
 }
 .social-btn-linkedin:active, .social-btn-linkedin:hover {
-    background: #0b6087;
+    background: #0e76a8;
     color: #fff !important;
 }
 .social-btn-email {
-    background: #111;
+    background: #000;
     border-radius: 0;
     color: #fff !important;
 }
@@ -152,6 +152,6 @@ a .social-btn:hover {
     color: #fff !important;
 }
 .social-btn-email:active, .social-btn-email:hover {
-    background: #000;
+    background: #111;
     color: #fff !important;
 }

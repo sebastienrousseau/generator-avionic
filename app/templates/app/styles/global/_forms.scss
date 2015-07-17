@@ -81,12 +81,12 @@ input[type='file'],
 input[type='email'],
 textarea {
     &:hover, &:focus, &:active {
-        background: #f3f3f3;
+        background: #f8f8f8;
     }
 }
 select {
     &:hover, &:focus, &:active {
-        background: #f3f3f3;
+        background: $color-50;
     }
 }
 label,

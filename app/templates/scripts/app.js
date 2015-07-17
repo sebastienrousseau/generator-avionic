@@ -43,7 +43,7 @@
     'ngCordova',               // AngularJS Cordova wrappers for common Cordova plugins.
     'ngResource',              // ngResource module provides interaction support with RESTful services via the $resource service.
     'ngCookies',               // ngCookies module provides a convenient wrapper for reading and writing browser cookies.
-    'ngMessages',              // ngMessages is a directive that is designed to show and hide messages based on the state of a key/value object that it listens on. 
+    'ngMessages',              // ngMessages is a directive that is designed to show and hide messages based on the state of a key/value object that it listens on.
     'pascalprecht.translate'   // angular-translate module for i18n and l10n lazy loading and pluralization
   ]);
 

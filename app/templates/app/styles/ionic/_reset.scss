@@ -15,7 +15,7 @@
 
  html, html a {
      -webkit-font-smoothing: antialiased !important;
-     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);     
+     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
  }
 
 html, body, div, span, applet, object, iframe,
@@ -120,6 +120,7 @@ a:hover {
  */
 
 a {
+    color: inherit;
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;

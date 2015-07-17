@@ -82,7 +82,8 @@ body,.left,.pane, .view,
   font-family: $font-family-sans-serif;
   font-size:$font-size-base;
   line-height: $line-height-base;
-  color:$color-50 !important;
+  color:$color-900 !important;
+  background-color: #fff !important;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -93,7 +94,7 @@ body,.left,.pane, .view,
 
 .bar-header,.bar,  .bar .title,.bar.bar-dark .title,
 .bar, .bar .title, .bar-header, .bar.bar-transparent .title, .button{
-  background-color: $color-700 !important;
+  background-color: $color-900 !important;
   line-height:none;
   color:#ffffff !important;
 /*   text-transform:uppercase; */
@@ -183,6 +184,9 @@ span,.button,.item{
   background-color: $colorwhite !important;
   color: $coloryellow !important;
   border:none;
+}
+a.item-content {
+  color: #000 !important;
 }
 
 .item, .item-complex .item-content, iframe{

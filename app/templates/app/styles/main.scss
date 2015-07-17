@@ -35,8 +35,36 @@
 @import 'layout/_layout';
 @import 'views/_intro';
 
+// Menu header style
+.top-menu {
+  margin-top: 200px;
+}
 
+.top-menu-bg {
 
+  &:before {
+    content: "\E003";
+    font-family: 'avionic-iconfont';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    position: absolute;
+    font-size: 200px;
+    color: #ffffff;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+  }
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
 
 .product-hero
 {
@@ -51,7 +79,6 @@
 {
     float: left;
     width: 50%;
-    height: 50%;
 }
 
 
@@ -267,7 +294,7 @@
 }
 .info
 {
-    color: $color-300 !important;
+    color: $color-900 !important;
 }
 .success
 {
