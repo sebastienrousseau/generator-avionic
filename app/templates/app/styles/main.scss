@@ -77,9 +77,17 @@
 
 .product-hero img
 {
-    float: left;
     width: 50%;
+    height: 50%;
+    @include translate(50%, 0%);
+
 }
+
+.product-hero h2, .product-hero p
+{
+  color:$color-900 !important;
+}
+
 
 
 

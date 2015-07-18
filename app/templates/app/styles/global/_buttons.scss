@@ -82,6 +82,23 @@ a .social-btn:active,
 a .social-btn:hover {
     text-decoration: none
 }
+
+.social-btn-avionic-light {
+    background: #ffffff;
+    border:1px solid $color-900 !important;
+    border-radius: 0;
+    color: $color-900 !important;
+    text-align: center;
+}
+.social-btn-avionic-light:link, .social-btn-avionic-light:visited {
+    color: $color-900 !important;
+}
+.social-btn-avionic-light:active, .social-btn-avionic-light:hover {
+    background: $color-300;
+    color: #fff !important;
+}
+
+
 .social-btn-avionic {
     background: $color-900;
     border-radius: 0;

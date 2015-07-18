@@ -1,12 +1,19 @@
 <ion-view view-title="{{ 'APP_CATALOGUE' | translate }}">
   <ion-content class="has-header">
-      <div class="product-hero " ng-repeat="item in items | filter:id">
-        <img src="/images/icons/luggages.svg">
-        <h2><a href="#/app/product/edit/{{item.objectId}}">{{item.title}}</a></h2>
-        <p>Product ID is #{{item.objectId}}</p>
-        <p>Description of the product with the identifier of #{{item.objectId}}</p>        
-      </div>
+      <div class="list card" ng-repeat="item in items | filter:id">
+        <div class="product-hero">
+          <img src="/images/icons/luggages.svg">
+        </div>
+        <div class="padding">
+          <h2><a href="#/app/product/edit/{{item.objectId}}">{{item.title}}</a></h2>
+          <p>Product ID is #{{item.objectId}}</p>
+          <p>Description of the product with the identifier of #{{item.objectId}}</p>
+          <a class="item social-btn-avionic" ui-sref-active="active" ng-click="loginUser()">
+            {{ 'APP_PRODUCT_BUY' | translate }}
+          </a>
+        </div>
 
+      </div>
 
   </ion-content>
 </ion-view>
