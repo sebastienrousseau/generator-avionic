@@ -1,18 +1,29 @@
 <ion-view view-title="{{ 'APP_CATALOGUE' | translate }}">
   <ion-content class="has-header">
-      <div class="list card" ng-repeat="item in items | filter:id">
-        <div class="product-hero">
-          <img src="/images/icons/luggages.svg">
+      <div id="product" class="list card" ng-repeat="item in items | filter:id">
+          <ion-slide-box show-pager="true" on-slide-changed="slideChanged()">
+           <ion-slide class="slider-slide">
+             <img src="images/icon.png" />
+             <div class="box1" ng-if="data.currSlide === 0 || !data.currSlide"></div>
+           </ion-slide>
+
+           <ion-slide>
+             <img src="images/icon.png" />
+             <div class="box2" ng-if="data.currSlide === 1"></div>
+           </ion-slide>
+
+           <ion-slide>
+             <img src="images/icon.png" />
+             <div class="box3" ng-if="data.currSlide === 2"></div>
+           </ion-slide>
+         </ion-slide-box>
         </div>
         <div class="padding">
           <h2><a href="#/app/product/edit/{{item.objectId}}">{{item.title}}</a></h2>
           <p>Product ID is #{{item.objectId}}</p>
           <p>Description of the product with the identifier of #{{item.objectId}}</p>
-          <a class="item social-btn-avionic" ui-sref-active="active" ng-click="loginUser()">
-            {{ 'APP_PRODUCT_BUY' | translate }}
-          </a>
+          <button class="button button-clear button-block" ng-click="loginUser()">{{ 'APP_PRODUCT_BUY' | translate }}</button>
         </div>
-
       </div>
 
   </ion-content>
