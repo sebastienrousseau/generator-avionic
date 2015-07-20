@@ -10,8 +10,8 @@
     <ion-item class="item item-thumbnail-left" ng-repeat="item in items | orderBy: 'title'" item="item" href="#/app/product/{{item.objectId}}">
       <img src="images/icon.png" />
       <h2>{{item.title}}</h2>
-      <h3>Product ID is #{{item.title}}</h3>
-      <p>Description of the product with the identifier of  #{{item.title}}</p>
+      <h3>Product ID is {{item.objectId}}</h3>
+      <p>{{item.content}}</p>
       <ion-option-button class="button-info"
  ng-click="edit(item)">
       Edit
