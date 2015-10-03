@@ -2,7 +2,7 @@
 ###### Propelling World-class Cross-platform Hybrid Applications ✈
 
 ## Table of Contents
----
+
 * [Elevator Pitch](#elevator-pitch)
 * [Say Whaaat](#say-whaaat)
 * [Our Values](#our-values)
@@ -21,15 +21,15 @@
 * [License](#license)
 
 ##  Elevator Pitch
----
+
 A [Yeoman](http://yeoman.io) generator using [AngularJS](https://angularjs.org/), [Express](http://expressjs.com/), [ngCordova](http://ngcordova.com/), [Gulp](http://gulpjs.com/) and [Bower](http://bower.io/) that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects to evolve and upgrade every aspect of your development to the next moonshot.
 
 ## Say Whaaat
----
+
 [AVIONIC ✈](http://avionic.io) is an incredibly simple mobile app creation tool for Android and iOS.
 
 ## Getting Started
----
+
 ### Features
 As firm believers in the highest levels of best practice and well thought out build processes [AVIONIC ✈](http://avionic.io) takes care of providing everything needed to get started.
 
@@ -44,7 +44,7 @@ As firm believers in the highest levels of best practice and well thought out bu
 
 
 ## Project setup, installation, and configuration
----
+
 ### Installation
 
 Export the repo to your local computer
@@ -84,7 +84,7 @@ to start up the build job and file watchers.
 In order to compile Sass, you need to have ruby and the sass ruby gem installed: `gem install sass`.
 
 ## Workflow
----
+
 This doc assumes you have `gulp` globally installed (`npm install -g gulp`).
 If you do not have / want gulp globally installed, you can run `npm run gulp` instead.
 
@@ -104,7 +104,7 @@ By running just `gulp`, we start our development build process, consisting of:
 
 
 ## What has been generated?
----
+
 The folder includes an [AVIONIC ✈](http://avionic.io) basic application and backend server as a starting point.
 
 ```
@@ -178,11 +178,11 @@ By running `gulp -r <platform>`, we can run our app on a connected device
 Replace `splash.png` and `icon.png` inside `/resources`. Then run `ionic resources`. If you only want to regenerate icons or splashs, you can run `gulp icon` or `gulp splash` shorthand.
 
 ## Our fleet
----
+
 [AVIONIC ✈](http://avionic.io) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/reedia/generator-avionic/graphs/contributors)
 
 [![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](http://sebastienrousseau.com) | [![David Tuplin](http://www.davetuplin.co.uk/images/dave_yahoo_messenger.jpg)](http://www.davetuplin.co.uk)
-|:---:|:---:
+|::|::
 [Sebastien Rousseau](https://github.com/sebastienrousseau) | [David Tuplin](https://github.com/tuplind)
 
 Credit also to [Thomas Maximini](http://thomasmaximini.com) for the work and inspiration surrounding the [generator-ionic-gulp](https://github.com/tmaximini/generator-ionic-gulp).
@@ -193,17 +193,17 @@ Credit also to [Thomas Maximini](http://thomasmaximini.com) for the work and ins
 * Please fill out either the individual or corporate [Contributor License Agreement (CLA)](CONTRIBUTING.md)
 
 ## Our Values
----
+
 1. We believe perfection must consider everything.
 2. We take our passion beyond Code into our daily practices.
 3. We are just obsessed about creating and delivering exceptional solutions.
 
 ## History
----
+
 * See [Avionic ✈ Release](https://github.com/reedia/generator-avionic/releases) list.
 
 ## License
----
+
 
 + Generator-Avionic is Copyright © Reedia Limited 2015.
 
@@ -212,7 +212,7 @@ Credit also to [Thomas Maximini](http://thomasmaximini.com) for the work and ins
 + It is free software, and may be redistributed under the terms specified in the [LICENSE](https://github.com/reedia/generator-avionic/blob/master/LICENSE) file.
 
 ## About Reedia
----
+
 ![Reedia](http://www.reedia.com/images/reedia.png)
 
 Generator-Avionic is maintained and funded by Reedia Limited.
