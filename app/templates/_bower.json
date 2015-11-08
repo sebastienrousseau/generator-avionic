@@ -7,7 +7,7 @@
   "description": "<%= appDescription %>",
   "license": "MIT",
   "private": "true",
-  "devDependencies": {"ionic": "driftyco/ionic-bower#v1.0.0"},
+  "devDependencies": {"ionic": "driftyco/ionic-bower#v1.1.0"},
   "resolutions": {"angular": "^<%= ngVer %>"},
   "dependencies": {
     "ngCordova": "latest",

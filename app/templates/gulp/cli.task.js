@@ -70,63 +70,74 @@
       plugins.util.log(error);
     }
   };
-  // avionic CLI scripts
 
-gulp.task('av:android', plugins.shell.task([
-  'cordova platform add android'
-]));
+  // Avionic Temporary CLI scripts
 
-gulp.task('av:ios', plugins.shell.task([
-'cordova platform add ios'
-]));
+  // Run application in an iOS device
+  gulp.task('avionic:ios', plugins.shell.task([
+    'av:build' && 'av:ios' && 'av:resources' && 'av:run'
+  ]));
 
-gulp.task('av:emulate', plugins.shell.task([
-'cordova run --emulator'
-]));
+  // Run application in an Android device
+  gulp.task('avionic:android', plugins.shell.task([
+    'av:build' && 'av:android' && 'av:resources' && 'av:run'
+  ]));
 
-gulp.task('av:build', plugins.shell.task([
-'gulp --build'
-]));
+  gulp.task('av:android', plugins.shell.task([
+    'cordova platform add android'
+  ]));
 
-gulp.task('av:serve', plugins.shell.task([
-'gulp'
-]));
+  gulp.task('av:ios', plugins.shell.task([
+  'cordova platform add ios'
+  ]));
 
-gulp.task('av:resources', plugins.shell.task([
-'ionic resources'
-]));
+  gulp.task('av:emulate', plugins.shell.task([
+  'cordova run --emulator'
+  ]));
 
-gulp.task('av:icon', plugins.shell.task([
-'ionic resources --icon'
-]));
+  gulp.task('av:build', plugins.shell.task([
+  'gulp --build'
+  ]));
 
-gulp.task('av:splash', plugins.shell.task([
-'ionic resources --splash'
-]));
+  gulp.task('av:serve', plugins.shell.task([
+  'gulp'
+  ]));
 
-gulp.task('av:run', plugins.shell.task([
-'cordova run --device'
-]));
-
-// ionic emulate wrapper
-gulp.task('ionic:emulate', plugins.shell.task([
-  'ionic emulate ' + emulate + ' --livereload --consolelogs'
-]));
-
-// ionic run wrapper
-gulp.task('ionic:run', plugins.shell.task([
-  'ionic run ' + run
-]));
-
-// ionic resources wrapper
-gulp.task('icon', plugins.shell.task([
-  'ionic resources --icon'
-]));
-gulp.task('splash', plugins.shell.task([
-  'ionic resources --splash'
-]));
-gulp.task('resources', plugins.shell.task([
+  gulp.task('av:resources', plugins.shell.task([
   'ionic resources'
-]));
+  ]));
+
+  gulp.task('av:icon', plugins.shell.task([
+  'ionic resources --icon'
+  ]));
+
+  gulp.task('av:splash', plugins.shell.task([
+  'ionic resources --splash'
+  ]));
+
+  gulp.task('av:run', plugins.shell.task([
+  'cordova run --device'
+  ]));
+
+  // ionic emulate wrapper
+  gulp.task('ionic:emulate', plugins.shell.task([
+    'ionic emulate ' + emulate + ' --livereload --consolelogs'
+  ]));
+
+  // ionic run wrapper
+  gulp.task('ionic:run', plugins.shell.task([
+    'ionic run ' + run
+  ]));
+
+  // ionic resources wrapper
+  gulp.task('icon', plugins.shell.task([
+    'ionic resources --icon'
+  ]));
+  gulp.task('splash', plugins.shell.task([
+    'ionic resources --splash'
+  ]));
+  gulp.task('resources', plugins.shell.task([
+    'ionic resources'
+  ]));
 
 })();

@@ -60,7 +60,7 @@
     ascii.captain();
     gutil.log(gutil.colors.white('\nCabin crew, doors on automatic, cross-check & report. Thank you.\n'));
     ascii.crew();
-    gutil.log(gutil.colors.white('\nIn a few moments, we will be passing around the cabin to\noffer you hot or cold drinks.\nPlease, sit back, relax, and enjoy the flight.\n'));
+    gutil.log(gutil.colors.white('\nIn a few moments, we will be passing around the cabin to\noffer you hot or cold drinks. Please, sit back, relax, and\nenjoy the flight.\n'));
     ascii.captain();
     gutil.log(gutil.colors.white('\nStarting initializing the Gulp sequence, local time is:\n'));
 

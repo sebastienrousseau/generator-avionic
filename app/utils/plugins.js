@@ -36,6 +36,10 @@ module.exports = {
             name: 'cordova-plugin-socialsharing',
             checked: true
         }, {
+            value: 'com.paypal.cordova.mobilesdk',
+            name: 'com.paypal.cordova.mobilesdk',
+            checked: true
+        }, {
             value: 'cordova-plugin-apple-watch',
             name: 'cordova-plugin-apple-watch',
             checked: false
