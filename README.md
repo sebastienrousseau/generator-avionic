@@ -21,17 +21,16 @@
 * [License](#license)
 
 ##  Elevator Pitch
-
 A [Yeoman](http://yeoman.io) generator using [AngularJS](https://angularjs.org/), [Express](http://expressjs.com/), [ngCordova](http://ngcordova.com/), [Gulp](http://gulpjs.com/) and [Bower](http://bower.io/) that helps you kickstart highly sophisticated [Ionic](http://ionicframework.com/) projects to evolve and upgrade every aspect of your development to the next moonshot.
 
 ## Say Whaaat
-
 [AVIONIC ✈](http://avionic.io) is an incredibly simple mobile app creation tool for Android and iOS.
 
 ## Getting Started
 
 ### Features
-As firm believers in the highest levels of best practice and well thought out build processes [AVIONIC ✈](http://avionic.io) takes care of providing everything needed to get started.
+
+[AVIONIC ✈](http://avionic.io) takes care of providing everything needed to get started.
 
 * Gulp jobs for development, building, emulating and running your app
 * Compiles and concatenates your Sass
@@ -45,7 +44,27 @@ As firm believers in the highest levels of best practice and well thought out bu
 
 ## Project setup, installation, and configuration
 
+### Project setup
+
+#### Using Parse to provide a backend for the app
+
++ To start, you should first create an account on parse.com. 
+
++ Once logged in, access the Dashboard where you should be able to create a new app.
+
++ Create a brand new app called ```Avionic```.
+
++ After creating the app, you will see in ```settings/keys``` your app IDs and keys. These will be used later in the Avionic app configuration.
+
++ Go to ```Core\Data```
+
++ Import the ```Avionic.json``` file
+
++ That's it!
+
 ### Installation
+
+#### Installing the generator-avionic
 
 Export the repo to your local computer
 
@@ -181,9 +200,9 @@ Replace `splash.png` and `icon.png` inside `/resources`. Then run `ionic resourc
 
 [AVIONIC ✈](http://avionic.io) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/reedia/generator-avionic/graphs/contributors)
 
-[![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](http://sebastienrousseau.com) | [![David Tuplin](http://www.davetuplin.co.uk/images/dave_yahoo_messenger.jpg)](http://www.davetuplin.co.uk)
-|::|::
-[Sebastien Rousseau](https://github.com/sebastienrousseau) | [David Tuplin](https://github.com/tuplind)
+[![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](http://sebastienrousseau.com) |
+|:---:
+[Sebastien Rousseau](https://github.com/sebastienrousseau) |
 
 Credit also to [Thomas Maximini](http://thomasmaximini.com) for the work and inspiration surrounding the [generator-ionic-gulp](https://github.com/tmaximini/generator-ionic-gulp).
 
@@ -193,7 +212,6 @@ Credit also to [Thomas Maximini](http://thomasmaximini.com) for the work and ins
 * Please fill out either the individual or corporate [Contributor License Agreement (CLA)](CONTRIBUTING.md)
 
 ## Our Values
-
 1. We believe perfection must consider everything.
 2. We take our passion beyond Code into our daily practices.
 3. We are just obsessed about creating and delivering exceptional solutions.
@@ -204,27 +222,4 @@ Credit also to [Thomas Maximini](http://thomasmaximini.com) for the work and ins
 
 ## License
 
-
-+ Generator-Avionic is Copyright © Reedia Limited 2015.
-
-+ [MIT License](http://reedia.mit-license.org/) Copyright © Reedia Limited 2015. All rights reserved.
-
-+ It is free software, and may be redistributed under the terms specified in the [LICENSE](https://github.com/reedia/generator-avionic/blob/master/LICENSE) file.
-
-## About Reedia
-
-![Reedia](http://www.reedia.com/images/reedia.png)
-
-Generator-Avionic is maintained and funded by Reedia Limited.
-The names and logos for avionic are trademarks of Reedia Limited.
-
-### Wildly innovative Digital Development.
-
-See [our other projects][community].
-
-We are [available for hire][hire].
-I
-[community]: https://reedia.com/community
-[hire]: https://reedia.com/hire
-
-
+* [MIT License](http://reedia.mit-license.org/) Copyright © Reedia Limited 2015. All rights reserved.
