@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "Propelling World-class Cross-platform Hybrid Applications ✈\nA Yeoman generator using AngularJS, Express, ngCordova, Gulp and Bower that helps you kickstart highly sophisticated Ionic projects to evolve and upgrade every aspect of your development to the next moonshot.",
   "main": "app/index.js",
-  "repository": "reedia/generator-avionic",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:reedia/generator-avionic.git"
+  },
   "author": {
     "name": "Reedia Limited",
     "email": "hello@reedia.com",
@@ -26,6 +29,7 @@
   ],
   "keywords": [
     "yeoman-generator",
+    "generator-avionic",
     "ionic",
     "gulp",
     "ionic framework"
