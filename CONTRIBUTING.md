@@ -7,14 +7,7 @@ process easy and effective for everyone involved.
 
 The [issue tracker](https://github.com/reedia/generator-avionic/issues) is
 the preferred channel for [bug reports](#bugs), [features requests](#features)
-and [submitting pull requests](#pull-requests), but please respect the following
-restrictions:
-
-* Please **do not** use the issue tracker for personal support requests (use
-  [Stack Overflow](http://stackoverflow.com)).
-
-* Please **do not** derail or troll issues. Keep the discussion on topic and
-  respect the opinions of others.
+and [submitting pull requests](#pull-requests).
 
 <a name="bugs"></a>
 ## Bug reports
@@ -30,18 +23,12 @@ Guidelines for bug reports:
 2. **Check if the issue has been fixed** &mdash; try to reproduce it using the
    latest `master` or development branch in the repository.
 
-3. **Isolate the problem** &mdash; ideally create a [reduced test
-   case](http://css-tricks.com/6263-reduced-test-cases/) and a live example.
-
-A good bug report shouldn't leave others needing to chase you up for more
-information. Please try to be as detailed as possible in your report. What is
-your environment? What steps will reproduce the issue?  
-What would you expect to be the outcome? All these details will help people to 
-fix any potential bugs.
+3. **Isolate the problem** &mdash; ideally create a reduced test
+   case -  a demo/example you create which reproduces the problem.
 
 Example:
 
-> Short and descriptive example bug report title
+> **Short and descriptive example bug report title**
 >
 > A summary of the issue and server version / OS / browser environment in which
 > it occurs. If suitable, include the steps required to reproduce the bug.
