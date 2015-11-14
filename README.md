@@ -1,7 +1,7 @@
 # ![ScreenShot](https://github.com/reedia/generator-avionic/raw/master/Masthead.png)
 ###### Propelling World-class Cross-platform Hybrid Applications ✈
 
-[![Build Status](https://magnum.travis-ci.com/reedia/generator-avionic.svg?token=82eNqMtfqycsWqJkAfMg&branch=master)](https://magnum.travis-ci.com/reedia/generator-avionic) [![npm version](https://badge.fury.io/js/generator-avionic.svg)](https://badge.fury.io/js/generator-avionic) [![Gitter](https://badges.gitter.im/reedia/generator-avionic.svg)](https://gitter.im/reedia/generator-avionic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Build Status](https://travis-ci.org/reedia/generator-avionic.svg?token=82eNqMtfqycsWqJkAfMg&branch=master)](https://travis-ci.org/reedia/generator-avionic) [![npm version](https://badge.fury.io/js/generator-avionic.svg)](https://badge.fury.io/js/generator-avionic) [![Gitter](https://badges.gitter.im/reedia/generator-avionic.svg)](https://gitter.im/reedia/generator-avionic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Table of Contents
 
@@ -50,7 +50,7 @@ A [Yeoman](http://yeoman.io) generator using [AngularJS](https://angularjs.org/)
 
 #### Using Parse to provide a backend for the app
 
-+ To start, you should first create an account on parse.com. 
++ To start, you should first create an account on parse.com.
 
 + Once logged in, access the Dashboard where you should be able to create a new app.
 
