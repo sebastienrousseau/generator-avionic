@@ -1,4 +1,4 @@
-# ![ScreenShot](Masthead.png)
+# ![ScreenShot](https://github.com/reedia/generator-avionic/raw/master/Masthead.png)
 ###### Propelling World-class Cross-platform Hybrid Applications ✈
 
 [![Build Status](https://magnum.travis-ci.com/reedia/generator-avionic.svg?token=82eNqMtfqycsWqJkAfMg&branch=master)](https://magnum.travis-ci.com/reedia/generator-avionic)
