@@ -79,15 +79,7 @@ npm install -g yo
 To install generator-avionic from npm, run:
 
 ```bash
-npm link
-```
-
-
-NOT WORKING AT THE MOMENT FOR LIVE
-To install generator-avionic from npm, run:
-
-```bash
-npm install -g generator-avionic
+npm i generator-avionic
 ```
 
 Finally, initiate the generator:
