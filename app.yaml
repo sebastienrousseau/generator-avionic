@@ -1,0 +1,43 @@
+application: avionic-site
+version: 1
+api_version: 1
+runtime: python27
+threadsafe: true
+
+handlers:
+- url: (.*)/
+  static_files: static\1/index.html
+  upload: static/index.html
+
+- url: (.*)/
+  static_files: static\1/google1a782dc66bbc2f73.html
+  upload: static/google1a782dc66bbc2f73.html
+
+- url: /stylesheets
+  static_dir: static/stylesheets
+  expiration: "7d"
+  http_headers:
+    Vary: Accept-Encoding
+
+- url: /images
+  static_dir: static/images
+  expiration: "7d"
+  http_headers:
+    Vary: Accept-Encoding
+
+- url: /javascripts
+  static_dir: static/javascripts
+  expiration: "7d"
+  http_headers:
+    Vary: Accept-Encoding
+
+- url: /
+  static_files: static/index.html
+  upload: static/index.html
+  mime_type: text/html; charset=UTF-8
+
+- url: /
+  static_dir: static
+  expiration: "0d 10m"
+  http_headers:
+    Vary: Accept-Encoding
