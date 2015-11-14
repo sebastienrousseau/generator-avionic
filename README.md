@@ -1,7 +1,7 @@
 # ![ScreenShot](https://github.com/reedia/generator-avionic/raw/master/Masthead.png)
 ###### Propelling World-class Cross-platform Hybrid Applications ✈
 
-[![Build Status](https://magnum.travis-ci.com/reedia/generator-avionic.svg?token=82eNqMtfqycsWqJkAfMg&branch=master)](https://magnum.travis-ci.com/reedia/generator-avionic)
+[![Build Status](https://magnum.travis-ci.com/reedia/generator-avionic.svg?token=82eNqMtfqycsWqJkAfMg&branch=master)](https://magnum.travis-ci.com/reedia/generator-avionic) [![npm version](https://badge.fury.io/js/generator-avionic.svg)](https://badge.fury.io/js/generator-avionic) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/reedia/generator-avionic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Table of Contents
 
@@ -211,7 +211,7 @@ Credit also to [Thomas Maximini](http://thomasmaximini.com) for the work and ins
 
 ### How to become a contributor?
 
-* Please fill out either the individual or corporate [Contributor License Agreement (CLA)](CONTRIBUTING.md)
+* Please fill read carefully our [Contributor License Agreement (CLA)](CONTRIBUTING.md)
 
 ## Our Values
 1. We believe perfection must consider everything.
