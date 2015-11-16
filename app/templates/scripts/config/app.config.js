@@ -46,17 +46,17 @@
   });
 
   <%= ngModulName %>.constant('facebookConfig', {
-    'FACEBOOK_ID': '889753241083286'
+    'FACEBOOK_ID': 'YOUR_FACEBOOK_ID'
   });
 
 
   <%= ngModulName %>.constant('googleConfig', {
-    'GOOGLE_ID': '931284429036-cdc36fmdkk8qach6a86s5ag4llgcove9.apps.googleusercontent.com'
+    'GOOGLE_ID': 'YOUR_GOOGLE_ID'
   });
 
   <%= ngModulName %>.constant('twitterConfig', {
-    'TWITTER_ID': 'NPdS21200O14f3K3VS3Zw6CFP',
-    'TWITTER_SECRET': 'kAKBzcKw2T8Ekr7l8F1O1PWpUlOO6EuvK1ZlbKrzXSpByWFgv'
+    'TWITTER_ID': 'YOUR_TWITTER_ID',
+    'TWITTER_SECRET': 'YOUR_TWITTER_SECRET'
   });
 
 
@@ -64,8 +64,8 @@
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers':'Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With',
-    'APP_ID': 'yqd4SRU8wu8a2fgaLEl3pZklSXlPtLMyHWxyjCUM',
-    'REST_API_KEY':'vF5EUcOIdkr8c9P7dSqOvhWcexJ1d11Mv0HNz4DV'
+    'APP_ID': 'YOUR_APP_ID',
+    'REST_API_KEY':'YOUR_REST_API_KEY'
   });
 
 
