@@ -88,7 +88,12 @@ Finally, initiate the generator:
 yo avionic
 ```
 
-after installation, just run:
+after installation, edit:
+```bash
+Edit app/templates/scripts/config/app.config.js to set your application API keys. (FACEBOOK_ID,GOOGLE_ID,TWITTER_ID,TWITTER_SECRET and Parse APP_ID and REST_API_KEY)
+```
+
+Then, just run:
 ```bash
 gulp
 ```
