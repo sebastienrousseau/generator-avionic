@@ -30,6 +30,8 @@ A [Yeoman](http://yeoman.io) generator using [AngularJS](https://angularjs.org/)
 
 ## Getting Started
 
+[![asciicast](https://asciinema.org/a/30440.png)](https://asciinema.org/a/30440)
+
 ### Features
 
 [AVIONIC ✈](http://avionic.io) takes care of providing everything needed to get started.
