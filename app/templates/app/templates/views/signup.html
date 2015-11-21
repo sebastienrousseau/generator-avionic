@@ -1,0 +1,47 @@
+<ion-view hide-back-button="true" title="{{ 'APP_SIGNUP_HEADER' | translate }}">
+<ion-content scroll="false" class="has-header">
+  <form name="signupUserForm" novalidate="novalidate">
+    <div class="padding">
+      <label>
+        <input id="text" type="email" name="email" placeholder="{{'APP_SIGNUP_EMAIL' | translate }}" ng-model="user.username" ng-minlength="5" ng-maxlength="64" required="required">
+      </label>
+      <div ng-messages="signupUserForm.email.$error">
+        <div class="padding info" ng-message="required">Your email address will be your username.</div>
+        <div class="padding error" ng-message="minlength">Your email address is too short...</div>
+        <div class="padding error" ng-message="maxlength">Your email address is too long...</div>
+        <div class="padding error" ng-message="email">You did not enter your email address correctly...</div>
+      </div>
+
+      <label>
+          <input id="password" name="password" type="password" placeholder="{{ 'APP_SIGNUP_PASSWORD' | translate }}" ng-model="user.password" ng-minlength="5" ng-maxlength="30" required="required">
+      </label>
+      <div ng-messages="signupUserForm.password.$error">
+        <div class="padding info"  ng-message="required">Please enter your password.</div>
+        <div class="padding error" ng-message="minlength">Your password is too short...</div>
+        <div class="padding error" ng-message="maxlength">Your password is too long...</div>
+        <div class="padding error" ng-message="password">You did not enter your password correctly...</div>
+      </div>
+
+      <label>
+        <input id="text" name="first_name"  type="text" placeholder="{{ 'APP_SIGNUP_FIRST_NAME' | translate }}" ng-model="user.first_name" required="required">
+      </label>
+      <div ng-messages="signupUserForm.first_name.$error">
+        <div class="padding info"  ng-message="required">Please enter your first name.</div>
+      </div>
+
+      <label>
+        <input id="text" name="last_name"  type="text" placeholder="{{ 'APP_SIGNUP_LAST_NAME' | translate }}" ng-model="user.last_name" required="required">
+      </label>
+      <div ng-messages="signupUserForm.last_name.$error">
+        <div class="padding info"  ng-message="required">Please enter your last name.</div>
+      </div>
+    </div>
+    <div class="padding">
+      <button class="button button-clear button-block" ng-click="signupUser()">{{ 'APP_SIGNUP_CTA' | translate }}</button>
+    </div>
+    <div class="padding info">
+      <p>{{ 'APP_SIGNUP_CONTENT_SIGNIN' | translate }} <a href="#/app/login">{{ 'APP_SIGNUP_CTA_SIGNIN' | translate }}</a></p>
+    </div>
+  </form>
+</ion-content>
+</ion-view>

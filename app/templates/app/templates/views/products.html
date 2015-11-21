@@ -1,0 +1,23 @@
+<ion-view hide-back-button="false" title="{{ 'APP_CATALOGUE' | translate }}">
+  <ion-content class="has-header" ng-controller="ProductsController">
+    <button ng-click="create()"  class="button button-fab button-fab-top-right icon ion-android-add"></button>
+    <ion-refresher pulling-text="{{ 'APP_REFRESH_TEXT' | translate }}" on-refresh="doRefresh()"></ion-refresher>
+
+    <!-- <div class="loader" ng-if="!items">
+      <ion-spinner icon="ripple" class="spinner-assertive spinner spinner-ripple"></ion-spinner>
+    </div> -->
+  <ion-list show-delete="data.showDelete" can-swipe="listCanSwipe">
+    <ion-item class="item item-thumbnail-left" ng-repeat="item in items | orderBy: 'title'" item="item" href="#/app/product/{{item.objectId}}">
+      <img src="images/icon.png" />
+      <h2>{{item.title}}</h2>
+      <h3>Product ID is {{item.objectId}}</h3>
+      <p>{{item.content}}</p>
+      <ion-option-button class="button-info"
+ ng-click="edit(item)">
+      Edit
+    </ion-option-button>
+      <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)"></ion-delete-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+</ion-view>

@@ -1,0 +1,247 @@
+/**
+*
+*  AVIONIC
+*  Propelling World-class Cross-platform Hybrid Applications ✈
+*
+*  Copyright 2015 Reedia Limited. All rights reserved.
+*
+*  Permission is hereby granted, free of charge, to any person obtaining a copy
+*  of this software and associated documentation files (the "Software"), to deal
+*  in the Software without restriction, including without limitation the rights
+*  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+*  copies of the Software, and to permit persons to whom the Software is
+*  furnished to do so, subject to the following conditions:
+*
+*  The above copyright notice and this permission notice shall be included in
+*  all copies or substantial portions of the Software.
+
+*  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+*  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+*  THE SOFTWARE.
+*
+*/
+@charset 'UTF-8';
+
+.slider-bg {
+  background-color: $color-500;
+}
+
+figcaption.intro-headings {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0vw;
+  top: 5em;
+  width: 100vw;
+  font-size: $font-size-base*1.25;
+  color:$color-500;
+  line-height: $line-height-base;
+  text-align: center;
+}
+
+figcaption.intro-headings-5 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0vw;
+  top: 5em;
+  width: 100vw;
+  font-size: $font-size-base*1.25;
+  color:#fff;
+  line-height: $line-height-base;
+  text-align: center;
+}
+
+button.intro-footer{
+  font-size: $font-size-base*1.25;
+  line-height: $line-height-base;
+  font-weight:normal;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0vw;
+  bottom: 0;
+  width: 100vw;
+  z-index: 0;
+  text-align: center;
+  background-color: $color-900;
+}
+
+.intro-btn {
+  position:relative;
+  margin-top:40vh;
+}
+
+.slider-pager {
+  z-index:1 !important;
+  height: $line-height-base;
+  bottom:9em;
+}
+.slider-pager .slider-pager-page
+{
+  font-size:$font-size-base;
+  position: relative;
+  color:$color-300 !important;
+}
+.slider {
+  height: 100%;
+}
+
+.slider-slide {
+  font-family: $font-family-base;
+  font-style: bold !important;
+  font-weight: 400 !important;
+  font-size:$font-size-base;
+  color:$color-500;
+  background-color: #ffffff;
+  transition: all .2s ease-in-out;
+  @include transition;
+  @include fadeIn(3s);
+  /* @include theme-background-colors(1); */
+  text-align: center;
+}
+.right {float:right;right:5px;height:17px;font-size:1.5em;}
+
+.col1{
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+    background:transparent url('../images/icon.png');
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 15em;
+    height: 15em;
+    border-radius: 10em;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+  }
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
+
+.col2 {
+
+  &:before {
+    content: "\E007";
+    font-family: 'avionic-iconfont';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    position: absolute;
+    font-size: 300px;
+    color: $color-900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
+
+.col3 {
+
+  &:before {
+    content: "\E003";
+    font-family: 'avionic-iconfont';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    position: absolute;
+    font-size: 300px;
+    color: $color-900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
+
+.col4 {
+
+  &:before {
+    content: "\E001";
+    font-family: 'avionic-iconfont';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    position: absolute;
+    font-size: 300px;
+    color: $color-900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
+
+.col5 {
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include translate(-50%, -50%);
+    background:transparent url('../images/background.jpg');
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  z-index:0 !important;
+}
+
+.button-intro-fb {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight:normal;
+  box-sizing: border-box;
+  width: 10em !important;
+  height: 2em !important;
+  margin:auto;
+  position: absolute;
+  top: 21.5em; left: 0; bottom: 0; right: 0;
+	@include transition;
+  @include theme-background-colors(1);
+}
