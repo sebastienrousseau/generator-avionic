@@ -212,7 +212,7 @@ Credit also to [Thomas Maximini](http://thomasmaximini.com) for the work and ins
 
 ### How to become a contributor?
 
-* Please fill read carefully our [Contributor License Agreement (CLA)](CONTRIBUTING.md)
+* Please read carefully our [Contributor License Agreement (CLA)](CONTRIBUTING.md)
 
 ## Our Values
 1. We believe perfection must consider everything.
