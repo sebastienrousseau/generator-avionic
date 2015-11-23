@@ -3,6 +3,8 @@
 
 [![Build Status](https://travis-ci.org/reedia/generator-avionic.svg?branch=master)](https://travis-ci.org/reedia/generator-avionic) [![npm version](https://badge.fury.io/js/generator-avionic.svg)](https://badge.fury.io/js/generator-avionic) [![Gitter](https://badges.gitter.im/reedia/generator-avionic.svg)](https://gitter.im/reedia/generator-avionic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+[![NPM](https://nodei.co/npm/generator-avionic.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/generator-avionic/)
+
 ## Table of Contents
 
 * [Elevator Pitch](#elevator-pitch)
