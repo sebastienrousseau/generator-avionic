@@ -7,7 +7,6 @@ node_js:
   - "0.12"
 git:
   submodules: false
-  
 addons:
     code_climate:
         repo_token: 6cd58f101cfcf6016c0270065d65d01ca254524664f59e95e7a84e7c7db26789
