@@ -12,18 +12,9 @@ cache:
 before_script:
 - npm install -g gulp
 
-after_success:
-- CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN codeclimate-test-reporter < ./coverage/mocha/lcov.info
-
-deploy:
-  provider: npm
-  email: hello@avionic.io
-  api_key: $NPM_API_KEY
-  on:
-    tags: true
-    repo: reedia/generator-avionic
-    node: '0.12' # this should be quoted; otherwise, 0.10 would not work
-    
 addons:
     code_climate:
         repo_token: 6cd58f101cfcf6016c0270065d65d01ca254524664f59e95e7a84e7c7db26789
+
+after_script:
+  - codeclimate-test-reporter < lcov.info
