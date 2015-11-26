@@ -5,6 +5,22 @@ node_js:
 - 4
 - 5
 
+before_script:
+- npm config set spin=false
+- npm install -g codeclimate-test-reporter
+
+after_script:
+- codeclimate < test/coverage/aqa/lcov.info
+
+notifications:
+# publish status to gitter chat room: https://gitter.im/reedia/generator-avionic
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/449e9c5af147ca23c74e
+    on_success: always
+    on_failure: always
+    on_start: false
+    
 addons:
     code_climate:
        repo_token: 6cd58f101cfcf6016c0270065d65d01ca254524664f59e95e7a84e7c7db26789
