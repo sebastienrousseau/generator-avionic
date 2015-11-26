@@ -20,7 +20,5 @@ notifications:
     on_success: always
     on_failure: always
     on_start: false
-    
-addons:
-    code_climate:
-       repo_token: 6cd58f101cfcf6016c0270065d65d01ca254524664f59e95e7a84e7c7db26789
+env:
+  - CODECLIMATE_REPO_TOKEN=6cd58f101cfcf6016c0270065d65d01ca254524664f59e95e7a84e7c7db26789
