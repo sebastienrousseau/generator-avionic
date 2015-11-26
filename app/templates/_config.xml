@@ -17,7 +17,7 @@
   <preference name="SplashScreenDelay" value="5000"/>
   <preference name="ShowSplashScreenSpinner" value="false" />
   <preference name="AutoHideSplashScreen" value="false" />
-  <preference name="StatusBarOverlaysWebView" value="false"/>
+  <preference name="StatusBarOverlaysWebView" value="true" />
   <preference name="StatusBarBackgroundColor" value="<%= appColor %>"/>
   <preference name="StatusBarStyle" value="blacktranslucent"/>
   <feature name="StatusBar">

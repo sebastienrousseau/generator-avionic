@@ -75,13 +75,20 @@
 
   // Run application in an iOS device
   gulp.task('avionic:ios', plugins.shell.task([
-    'av:build' && 'av:ios' && 'av:resources' && 'av:run'
+    'gulp --build',
+    'cordova platform add ios',
+    'ionic resources',
+    'cordova run --device'
   ]));
 
   // Run application in an Android device
   gulp.task('avionic:android', plugins.shell.task([
-    'av:build' && 'av:android' && 'av:resources' && 'av:run'
+    'gulp --build',
+    'cordova platform add android',
+    'ionic resources',
+    'cordova run --device'
   ]));
+
 
   gulp.task('av:android', plugins.shell.task([
     'cordova platform add android'

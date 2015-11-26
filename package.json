@@ -40,6 +40,10 @@
   },
   "devDependencies": {
     "cordova": "^5.0.0",
+    "karma": "^0.13",
+    "karma-jasmine": "^0.1",
+    "jasmine-core": "^2.3.4",
+    "phantomjs": "^1.9.18",
     "chalk": "^0.5.0",
     "lodash": "^3.8.0",
     "mocha": "*",
