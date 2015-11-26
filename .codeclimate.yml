@@ -1,7 +1,2 @@
 languages:
   JavaScript: true
-engines:
-  csslint:
-    enabled: true
-  scss-lint:
-    enabled: true
