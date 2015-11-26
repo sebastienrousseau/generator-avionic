@@ -1,7 +1,9 @@
 # ![ScreenShot](https://github.com/reedia/generator-avionic/raw/master/Masthead.png)
 ###### Propelling World-class Cross-platform Hybrid Applications ✈
 
-[![Build Status](https://travis-ci.org/reedia/generator-avionic.svg?branch=master)](https://travis-ci.org/reedia/generator-avionic) [![npm version](https://badge.fury.io/js/generator-avionic.svg)](https://badge.fury.io/js/generator-avionic) [![Gitter](https://badges.gitter.im/reedia/generator-avionic.svg)](https://gitter.im/reedia/generator-avionic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Build Status](https://travis-ci.org/reedia/generator-avionic.svg?branch=master)](https://travis-ci.org/reedia/generator-avionic) [![npm version](https://badge.fury.io/js/generator-avionic.svg)](https://badge.fury.io/js/generator-avionic) 
+[![Stories in Ready](https://badge.waffle.io/reedia/generator-avionic.svg?label=ready&title=Ready)](http://waffle.io/reedia/generator-avionic)
+[![Gitter](https://badges.gitter.im/reedia/generator-avionic.svg)](https://gitter.im/reedia/generator-avionic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Code Climate](https://codeclimate.com/github/reedia/generator-avionic/badges/gpa.svg)](https://codeclimate.com/github/reedia/generator-avionic)
 [![Test Coverage](https://codeclimate.com/github/reedia/generator-avionic/badges/coverage.svg)](https://codeclimate.com/github/reedia/generator-avionic/coverage)
 [![Issue Count](https://codeclimate.com/github/reedia/generator-avionic/badges/issue_count.svg)](https://codeclimate.com/github/reedia/generator-avionic)
