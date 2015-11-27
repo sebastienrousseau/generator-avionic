@@ -14,7 +14,7 @@
 *
 *  The above copyright notice and this permission notice shall be included in
 *  all copies or substantial portions of the Software.
-
+*
 *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,24 +25,17 @@
 *
 */
 (function () {
-  'use strict';
-  /*jslint nomen: true*/
-  /*jslint vars: true*/
-  /*global require,process,module*/
-  var yeoman = require('yeoman-generator');
-  var chalk = require('chalk');
-  var yosay = require('yosay');
-  var path = require('path');
-  // var options = require('../options.json');
-
-  module.exports = function(AvionicGenerator) {
+  'use strict'
+  /*  jslint nomen: true  */
+  /*  jslint vars: true */
+  /*  global require,process,module */
+  module.exports = function (AvionicGenerator) {
     /**
     * Declares options in the generator (only used for the help messages)
     */
-    AvionicGenerator.prototype.setup = function setup() {
-
+    AvionicGenerator.prototype.setup = function setup () {
       var appArguments = {
-        appName:this._.titleize(this.appName),
+        appName: this._.titleize(this.appName),
         appDescription: this._.titleize(this.appDescription),
         appKeywords: this._.humanize(this.appKeywords).toLowerCase(),
         appUserName: this._.titleize(this.appUserName),
@@ -52,87 +45,87 @@
         appVersion: this.appVersion,
         appColor: this.appColor,
         widgetId: this.appId.toLowerCase()
-      };
+      }
 
       var appPlugins = {
-        appPlugins: '\"'+this.plugins.sort().join('\",\n\"')+'\"'
-      };
+        appPlugins: '"' + this.plugins.sort().join('",\n"') + '"'
+      }
 
       this.fs.copyTpl(
         this.templatePath('_plugins.json'),
         this.destinationPath('plugins.json'),
         appPlugins
-      );
+      )
 
       this.fs.copyTpl(
         this.templatePath('../src/ascii.js'),
         this.destinationPath('ascii.js')
-      );
+      )
 
       this.fs.copyTpl(
         this.templatePath('_package.json'),
         this.destinationPath('package.json'),
         appArguments
-      );
+      )
       this.fs.copyTpl(
         this.templatePath('_bower.json'),
         this.destinationPath('bower.json'),
         appArguments
-      );
+      )
       this.fs.copyTpl(
         this.templatePath('_en.json'),
         this.destinationPath('app/languages/en.json'),
         appArguments
-      );
+      )
       this.fs.copyTpl(
         this.templatePath('_config.xml'),
         this.destinationPath('config.xml'),
         appArguments
-      );
+      )
       this.fs.copyTpl(
         this.templatePath('_gulpfile.js'),
         this.destinationPath('gulpfile.js'),
         appArguments
-      );
+      )
       this.fs.copyTpl(
         this.templatePath('./_README.md'),
         this.destinationPath('README.md'),
         appArguments
-      );
+      )
       this.fs.copyTpl(
         this.templatePath('./_CONTRIBUTING.md'),
         this.destinationPath('CONTRIBUTING.md'),
         appArguments
-      );
+      )
       this.fs.copyTpl(
         this.templatePath('./_LICENSE'),
         this.destinationPath('LICENSE'),
         appArguments
-      );
+      )
       this.fs.copy(
         this.templatePath('editorconfig'),
         this.destinationPath('.editorconfig')
-      );
+      )
       this.fs.copy(
         this.templatePath('gitignore'),
         this.destinationPath('.gitignore')
-      );
+      )
       this.fs.copy(
         this.templatePath('jshintrc'),
         this.destinationPath('.jshintrc')
-      );
-      this.mkdir('helpers');
-      this.mkdir('www');
+      )
+      this.mkdir('helpers')
+      this.mkdir('www')
       this.fs.copy(
         this.templatePath('helpers/emulateios'),
         this.destinationPath('helpers/emulateios')
-      );
-    };
+      )
+    }
 
-    AvionicGenerator.prototype.install = function install() {
+    AvionicGenerator.prototype.install = function install () {
       this.installDependencies({
         skipInstall: this.options['skip-install']
-      });
-    };
-  };
-}());
+      })
+    }
+  }
+}())

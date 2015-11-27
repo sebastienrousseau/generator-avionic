@@ -25,30 +25,24 @@
 *
 */
 (function () {
-  'use strict';
-  /*jslint nomen: true*/
-  /*jslint vars: true*/
-  /*global require,process,module*/
-  var yeoman = require('yeoman-generator');
-  var yosay = require('yosay');
-  var chalk = require('chalk');
-  var path = require('path');
-  var prompts = require('../prompts.json');
-  var ionicUtils = require('../utils/');
+  'use strict'
+  /*  jslint nomen: true  */
+  /*  jslint vars: true */
+  /*  global require,process,module */
 
+  var ionicUtils = require('../utils/')
 
-module.exports = function(AvionicGenerator) {
-
-  /**
-   * Ask all questions from prompts.json
-   * Complete responses with templated answers
-   */
-  AvionicGenerator.prototype.askForPlugins = function askForPlugins() {
-    var done = this.async();
-    this.prompt(ionicUtils.plugins.prompts, function (props) {
-      this.plugins = props.plugins;
-      done();
-    }.bind(this));
-  };
-};
-}());
+  module.exports = function (AvionicGenerator) {
+    /**
+     * Ask all questions from prompts.json
+     * Complete responses with templated answers
+     */
+    AvionicGenerator.prototype.askForPlugins = function askForPlugins () {
+      var done = this.async()
+      this.prompt(ionicUtils.plugins.prompts, function (props) {
+        this.plugins = props.plugins
+        done()
+      }.bind(this))
+    }
+  }
+}())

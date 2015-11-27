@@ -14,7 +14,7 @@
 *
 *  The above copyright notice and this permission notice shall be included in
 *  all copies or substantial portions of the Software.
-
+*
 *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,37 +25,31 @@
 *
 */
 (function () {
-  'use strict';
-  /*jslint nomen: true*/
-  /*jslint vars: true*/
-  /*global require,process,module*/
-  var yeoman = require('yeoman-generator');
-  var yosay = require('yosay');
-  var chalk = require('chalk');
-  var path = require('path');
-  var prompts = require('../prompts.json');
+  'use strict'
+  /*  jslint nomen: true  */
+  /*  jslint vars: true */
+  /*  global require,process,module */
 
+  var prompts = require('../prompts.json')
 
-
-module.exports = function(AvionicGenerator) {
-
-  /**
-   * Ask all questions from prompts.json
-   * Complete responses with templated answers
-   */
-  AvionicGenerator.prototype.askQuestions = function askQuestions() {
-    var done = this.async();
-    this.prompt(prompts, function (props) {
-      // this.appName = this.appName || path.basename(process.cwd());
-      // this.appName = this._.titleize(this.appName);
-      this.appName = props.appName;
-      this.appDescription = props.appDescription;
-      this.appKeywords = props.appKeywords;
-      this.appUserName = props.appUserName;
-      this.appUserEmail = props.appUserEmail;
-      this.appId = props.appId;
-      done();
-    }.bind(this));
-  };
-};
-}());
+  module.exports = function (AvionicGenerator) {
+    /**
+     * Ask all questions from prompts.json
+     * Complete responses with templated answers
+     */
+    AvionicGenerator.prototype.askQuestions = function askQuestions () {
+      var done = this.async()
+      this.prompt(prompts, function (props) {
+        // this.appName = this.appName || path.basename(process.cwd())
+        // this.appName = this._.titleize(this.appName)
+        this.appName = props.appName
+        this.appDescription = props.appDescription
+        this.appKeywords = props.appKeywords
+        this.appUserName = props.appUserName
+        this.appUserEmail = props.appUserEmail
+        this.appId = props.appId
+        done()
+      }.bind(this))
+    }
+  }
+}())

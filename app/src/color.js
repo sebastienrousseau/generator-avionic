@@ -25,39 +25,31 @@
 *
 */
 (function () {
-  'use strict';
-  /*jslint nomen: true*/
-  /*jslint vars: true*/
-  /*global require,process,module*/
-  var yeoman = require('yeoman-generator');
-  var yosay = require('yosay');
-  var chalk = require('chalk');
-  var path = require('path');
-  var prompts = require('../prompts.json');
-  var color = require('../utils/color.js');
+  'use strict'
+  /*  jslint nomen: true  */
+  /*  jslint vars: true */
+  /*  global require,process,module */
+  var chalk = require('chalk')
+  var color = require('../utils/color.js')
 
-
-module.exports = function(AvionicGenerator) {
-
-  /**
-   * Ask all questions from prompts.json
-   * Complete responses with templated answers
-   */
-  AvionicGenerator.prototype.askForColor = function askForColor() {
-    var done = this.async();
+  module.exports = function (AvionicGenerator) {
+    /**
+     * Ask all questions from prompts.json
+     * Complete responses with templated answers
+     */
+    AvionicGenerator.prototype.askForColor = function askForColor () {
+      var done = this.async()
       this.prompt(color.prompts, function (props) {
-        this.appColor = props.color;
-        done();
-console.log(this.appColor);
-        if (typeof this.appColor  !== 'undefined' && this.appColor.length > 0) {
-          this.appColor = props.color;
+        this.appColor = props.color
+        done()
+        console.log(this.appColor)
+        if (typeof this.appColor !== 'undefined' && this.appColor.length > 0) {
+          this.appColor = props.color
+        } else {
+          this.appColor = '#000000'
+          console.log(chalk.cyan('No color scheme selected. Defaulting to the Avionic theme'))
         }
-        else {
-          this.appColor = '#000000';
-          console.log(chalk.cyan('No color scheme selected. Defaulting to the Avionic theme'));
-        }
-
-      }.bind(this));
-  };
-};
-}());
+      }.bind(this))
+    }
+  }
+}())

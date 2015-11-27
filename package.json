@@ -1,23 +1,13 @@
 {
   "name": "generator-avionic",
-  "version": "0.0.6",
   "description": "Propelling World-class Cross-platform Hybrid Applications ✈\nA Yeoman generator using AngularJS, Express, ngCordova, Gulp and Bower that helps you kickstart highly sophisticated Ionic projects to evolve and upgrade every aspect of your development to the next moonshot.",
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:reedia/generator-avionic.git"
+    "url": "https://github.com/reedia/generator-avionic.git"
   },
-  "author": {
-    "name": "Reedia Limited",
-    "email": "hello@reedia.com",
-    "url": "https://github.com/reedia"
-  },
-  "license": [
-    {
-      "type": "MIT",
-      "url": "http://reedia.mit-license.org/"
-    }
-  ],
+  "author": "Reedia Limited <hello@reedia.com> (https://github.com/reedia)",
+  "license": "MIT",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -50,6 +40,15 @@
     "wiredep": "^2.2.2",
     "yeoman-generator": "^0.18.0",
     "yo": ">=1.0.0",
-    "yosay": "^0.3.0"
+    "yosay": "^0.3.0",
+    "semantic-release": "^4.3.5"
+  },
+  "bugs": {
+    "url": "https://github.com/reedia/generator-avionic/issues"
+  },
+  "homepage": "https://github.com/reedia/generator-avionic#readme",
+  "scripts": {
+    "test": "mocha",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }

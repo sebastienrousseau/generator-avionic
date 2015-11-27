@@ -25,39 +25,36 @@
 *
 */
 (function () {
-  'use strict';
-  /*jslint nomen: true*/
-  /*jslint vars: true*/
-  /*global require,process,module*/
-  var yeoman = require('yeoman-generator');
-  var chalk = require('chalk');
-
-  var prompts = require('./prompts.json');
-  var AvionicGenerator = yeoman.generators.Base.extend ({
+  'use strict'
+  /* jslint nomen: true */
+  /* jslint vars: true */
+  /* global require,process,module */
+  var yeoman = require('yeoman-generator')
+  var chalk = require('chalk')
+  var AvionicGenerator = yeoman.generators.Base.extend({
     constructor: function () {
-    yeoman.generators.Base.apply(this, arguments);
+      yeoman.generators.Base.apply(this, arguments)
 
-    this.appYear = (new Date()).getFullYear();
-    this.appVersion = require('../package.json').version;
-
+      this.appYear = (new Date()).getFullYear()
+      this.appVersion = require('../package.json').version
     },
 
     info: function () {
       if (!this.options['skip-welcome-message']) {
-        ascii.logo();
-        ascii.captain();
-        console.log(chalk.white.bold('\nThis is your Captain John Doe, welcoming you aboard to Avionic. \nAt this time, we request your full attention as your inflight \nteam will guide you through the safety features.\n'));
-        ascii.crew();
-        console.log(chalk.white.bold('\nLadies and gentlemen, this is Jane Smith and I’m your chief \nflight attendant. I\'d like to direct your attention to the \nterminal in front of you. We will be showing our safety \ndemonstration and would like the next few minutes of your \ncomplete attention.\n'));
+        ascii.logo()
+        ascii.captain()
+        console.log(chalk.white.bold('\nThis is your Captain John Doe, welcoming you aboard to Avionic. \nAt this time, we request your full attention as your inflight \nteam will guide you through the safety features.\n'))
+        ascii.crew()
+        console.log(chalk.white.bold("\nLadies and gentlemen, this is Jane Smith and I’m your chief \nflight attendant. I'd like to direct your attention to the \nterminal in front of you. We will be showing our safety \ndemonstration and would like the next few minutes of your \ncomplete attention.\n"))
       }
     }
-  });
-  var ascii = require('./src/ascii.js');
-  require('./src/prompts')(AvionicGenerator);
-  require('./src/color')(AvionicGenerator);
-  require('./src/plugins')(AvionicGenerator);
-  require('./src/write')(AvionicGenerator);
-  require('./src/files')(AvionicGenerator);
-  require('./src/install')(AvionicGenerator);
-  module.exports = AvionicGenerator;
-}());
+  })
+  var ascii = require('./src/ascii.js')
+  require('./src/prompts')(AvionicGenerator)
+  require('./src/color')(AvionicGenerator)
+  require('./src/plugins')(AvionicGenerator)
+  require('./src/write')(AvionicGenerator)
+  require('./src/files')(AvionicGenerator)
+  require('./src/install')(AvionicGenerator)
+  module.exports = AvionicGenerator
+}())

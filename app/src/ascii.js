@@ -25,61 +25,60 @@
 *
 */
 (function () {
-  'use strict';
+  'use strict'
 
-  var chalk = require('chalk');
+  var chalk = require('chalk')
 
-  exports.logo = function() {
-    return console.log (
+  exports.logo = function () {
+    return console.log(
       // Avionic ASCII Text Logo
-      chalk.cyan.bold("\n               ___ _    __________  _   ____________") +
-      chalk.cyan.bold("\n              /   | |  / /  _/ __ \\/ | / /  _/ ____/") +
-      chalk.cyan.bold("\n             / /| | | / // // / / /  |/ // // /     ") +
-      chalk.cyan.bold("\n            / ___ | |/ // // /_/ / /|  // // /___   ") +
-      chalk.cyan.bold("\n           /_/  |_|___/___/\\____/_/ |_/___/\\____/ ") +
-      "\n"+
-      chalk.cyan.bold("\n-- ") + chalk.yellow.bold("Propelling World-class Cross-platform Hybrid Applications") + chalk.cyan.bold(" -- ✈")
-    );
-  };
+      chalk.cyan.bold('\n               ___ _    __________  _   ____________') +
+      chalk.cyan.bold('\n              /   | |  / /  _/ __ \\/ | / /  _/ ____/') +
+      chalk.cyan.bold('\n             / /| | | / // // / / /  |/ // // /     ') +
+      chalk.cyan.bold('\n            / ___ | |/ // // /_/ / /|  // // /___   ') +
+      chalk.cyan.bold('\n           /_/  |_|___/___/\\____/_/ |_/___/\\____/ ') +
+      '\n' +
+      chalk.cyan.bold('\n-- ') + chalk.yellow.bold('Propelling World-class Cross-platform Hybrid Applications') + chalk.cyan.bold(' -- ✈')
+    )
+  }
 
-  exports.captain = function() {
-    return console.log (
+  exports.captain = function () {
+    return console.log(
       // Avionic ✈ Captain John Doe ASCII art
-      "\n" +
-      chalk.red.bold("\n                             .---. ") +
-      chalk.red.bold("\n                            /_ ") + chalk.cyan.bold("✈") + chalk.red.bold(" _\\") +
+      '\n' +
+      chalk.red.bold('\n                             .---. ') +
+      chalk.red.bold('\n                            /_ ') + chalk.cyan.bold('✈') + chalk.red.bold(' _\\') +
       chalk.white.bold("\n                            ( '_' )") +
-      chalk.white.bold("\n                             \\_-_/") +
-      chalk.red.bold("\n                       >>>___  ~  ___<<<")
-    );
-  };
+      chalk.white.bold('\n                             \\_-_/') +
+      chalk.red.bold('\n                       >>>___  ~  ___<<<')
+    )
+  }
 
-  exports.crew = function() {
-    return console.log (
+  exports.crew = function () {
+    return console.log(
       // Avionic ✈ Chief flight attendant Jane Smith ASCII art
-      chalk.yellow.bold("\n                             .-- ") + chalk.cyan.bold("✈") + chalk.yellow.bold("") +
-      chalk.yellow.bold("\n                            / /\"\\ \\") +
-      chalk.yellow.bold("\n                            )/") + chalk.cyan.bold("• •") + chalk.yellow.bold("\\(") +
-      chalk.yellow.bold("\n                           ( ") + chalk.white.bold("( - )") + chalk.yellow.bold(" )") +
-      chalk.yellow.bold("\n                            )") + chalk.red.bold("_") + chalk.yellow.bold("") + chalk.white.bold(") (") + chalk.yellow.bold("") + chalk.red.bold("_") + chalk.yellow.bold("(") +
-      chalk.white.bold("\n                           /'") + chalk.red.bold("\\") + chalk.red.bold("   /") + chalk.white.bold("'\\") +
-      chalk.white.bold("\n                          /,") + chalk.red.bold("(_\\_/_)") + chalk.white.bold(",\\") +
-      chalk.white.bold("\n                          \\\\ ") + chalk.red.bold("\\ ") + chalk.cyan.bold("✈") + chalk.red.bold(" /") + chalk.white.bold(" //")
-    );
-  };
+      chalk.yellow.bold('\n                             .-- ') + chalk.cyan.bold('✈') + chalk.yellow.bold('') +
+      chalk.yellow.bold('\n                            / /"\\ \\') +
+      chalk.yellow.bold('\n                            )/') + chalk.cyan.bold('• •') + chalk.yellow.bold('\\(') +
+      chalk.yellow.bold('\n                           ( ') + chalk.white.bold('( - )') + chalk.yellow.bold(' )') +
+      chalk.yellow.bold('\n                            )') + chalk.red.bold('_') + chalk.yellow.bold('') + chalk.white.bold(') (') + chalk.yellow.bold('') + chalk.red.bold('_') + chalk.yellow.bold('(') +
+      chalk.white.bold("\n                           /'") + chalk.red.bold('\\') + chalk.red.bold('   /') + chalk.white.bold("'\\") +
+      chalk.white.bold('\n                          /,') + chalk.red.bold('(_\\_/_)') + chalk.white.bold(',\\') +
+      chalk.white.bold('\n                          \\\\ ') + chalk.red.bold('\\ ') + chalk.cyan.bold('✈') + chalk.red.bold(' /') + chalk.white.bold(' //')
+    )
+  }
 
-  exports.plane = function() {
-    return console.log (
+  exports.plane = function () {
+    return console.log(
       // Avionic ✈ Aircraft ASCII art
-      chalk.red.bold("\n                         ___________") +
-      chalk.red.bold("\n                              |") +
-      chalk.red.bold("\n                         _   _|_   _") +
-      chalk.red.bold("\n                        (_)-/ ") + chalk.cyan.bold("✈") + chalk.red.bold(" \\-(_)") +
-      chalk.red.bold("\n _                         /\\___/\\                         _") +
-      chalk.red.bold("\n(_)_______________________( ( ") + chalk.white.bold("•") + chalk.red.bold(" ) )_______________________(_)") +
-      chalk.red.bold("\n                           \\_____/\n") +
-      "\n"
-    );
-  };
-
-}());
+      chalk.red.bold('\n                         ___________') +
+      chalk.red.bold('\n                              |') +
+      chalk.red.bold('\n                         _   _|_   _') +
+      chalk.red.bold('\n                        (_)-/ ') + chalk.cyan.bold('✈') + chalk.red.bold(' \\-(_)') +
+      chalk.red.bold('\n _                         /\\___/\\                         _') +
+      chalk.red.bold('\n(_)_______________________( ( ') + chalk.white.bold('•') + chalk.red.bold(' ) )_______________________(_)') +
+      chalk.red.bold('\n                           \\_____/\n') +
+      '\n'
+    )
+  }
+}())
