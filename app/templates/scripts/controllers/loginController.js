@@ -55,7 +55,7 @@
       AuthService.loginTwitter();
     };
   }
-  
+
   var <%= ngModulName %> = angular.module('<%= ngModulName %>');
 
   <%= ngModulName %>.controller('LoginController', LoginController);
