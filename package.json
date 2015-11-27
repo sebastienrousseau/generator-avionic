@@ -48,7 +48,6 @@
   },
   "homepage": "https://github.com/reedia/generator-avionic#readme",
   "scripts": {
-    "test": "mocha",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
