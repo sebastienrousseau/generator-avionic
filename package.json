@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/reedia/generator-avionic#readme",
   "scripts": {
-    "test": "karma start ./app/templates/karma.conf.js",
+    "test": "",
     "semantic-release": "semantic-release pre && npm run build && npm publish && publish-latest && semantic-release post"
   }
 }
