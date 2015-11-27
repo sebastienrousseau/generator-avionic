@@ -49,6 +49,6 @@
   "homepage": "https://github.com/reedia/generator-avionic#readme",
   "scripts": {
     "test": "",
-    "semantic-release": "npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
