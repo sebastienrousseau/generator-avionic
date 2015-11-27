@@ -16,9 +16,6 @@ before_install:
 before_script:
   - npm prune
   - npm config set spin=false
-  - npm install -g codeclimate-test-reporter
-after_script:
-// codeclimate < test/coverage/aqa/lcov.info
 after_success:
   - npm run semantic-release
 branches:
