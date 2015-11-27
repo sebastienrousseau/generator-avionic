@@ -1,5 +1,9 @@
 sudo: false
 language: node_js
+node_js:
+- 0.12
+- 0.11
+- 0.10
 cache:
   directories:
     - node_modules
@@ -13,6 +17,14 @@ before_script:
   - npm prune
 after_success:
   - npm run semantic-release
+notifications:
+# publish status to gitter chat room: https://gitter.im/reedia/generator-avionic
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/449e9c5af147ca23c74e
+    on_success: always
+    on_failure: always
+    on_start: false  
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
