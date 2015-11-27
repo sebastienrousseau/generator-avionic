@@ -60,9 +60,10 @@ ul.article li{background-color:transparent;text-align:center;}
 
 .bar, .bar-header, .bar .title,.bar.bar-transparent .title {
   background-color: $color-500 !important;
+  padding-top: 10px;
   // font-size:$font-size-base*1.25 !important;
   color:#ffffff !important;
-  text-transform: uppercase !important;
+  // text-transform: uppercase !important;
   margin: 0px 0px 0px 0px;
 }
 
