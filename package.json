@@ -40,7 +40,7 @@
     "mocha": "^2.3.4",
     "wiredep": "^2.2.2",
     "yo": "^1.5.0",
-    "semantic-release": "^4.1.1"
+    "semantic-release": "^4.0.0"
   },
   "bugs": {
     "url": "https://github.com/reedia/generator-avionic/issues"
@@ -48,6 +48,6 @@
   "homepage": "https://github.com/reedia/generator-avionic#readme",
   "scripts": {
     "test": "",
-    "semantic-release": "npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
