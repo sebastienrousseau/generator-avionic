@@ -16,5 +16,8 @@ before_install:
   - npm i -g npm@^2.0.0
 before_script:
   - npm prune
+  - npm install -g gulp
+  - npm install -g codeclimate-test-reporter  
 after_success:
+  - CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN codeclimate-test-reporter < ./coverage/mocha/lcov.info
   - npm run semantic-release

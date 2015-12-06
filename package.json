@@ -15,8 +15,9 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator",
+    "avionic",
     "generator-avionic",
+    "yeoman-generator",
     "ionic",
     "gulp",
     "ionic framework"
@@ -35,11 +36,11 @@
     "karma-jasmine": "^0.3.6",
     "jasmine-core": "^2.4.1",
     "phantomjs": "^1.9.19",
-    "chalk": "^1.1.1",
     "lodash": "^3.10.1",
     "mocha": "^2.3.4",
     "wiredep": "^2.2.2",
     "yo": "^1.5.0",
+    "mocha": "latest",
     "semantic-release": "^4.0.0"
   },
   "bugs": {
@@ -47,7 +48,8 @@
   },
   "homepage": "https://github.com/reedia/generator-avionic#readme",
   "scripts": {
-    "test": "",
+    "lint": "jshint **.js",
+    "test": "mocha",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
