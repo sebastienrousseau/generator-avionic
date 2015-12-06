@@ -1,5 +1,4 @@
 sudo: false
-env: CI=true
 node_js:
   - 'stable'
   - '4'
