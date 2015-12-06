@@ -49,7 +49,7 @@
   "homepage": "https://github.com/reedia/generator-avionic#readme",
   "scripts": {
     "lint": "jshint **.js",
-    "test": "mocha",
+    "test": "",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
