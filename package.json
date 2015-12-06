@@ -9,7 +9,7 @@
   "author": "Reedia Limited <hello@reedia.com> (https://github.com/reedia)",
   "license": "MIT",
   "engines": {
-    "node": ">=0.10.0"
+    "node": "^0.10.0"
   },
   "files": [
     "app"
