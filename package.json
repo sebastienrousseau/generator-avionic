@@ -30,7 +30,6 @@
     "yosay": "^1.1.0"
   },
   "devDependencies": {
-    "cordova": "^5.4.1",
     "coveralls": "^2.11.4",
     "karma": "^0.13.15",
     "karma-jasmine": "^0.3.6",
@@ -49,7 +48,8 @@
   "homepage": "https://github.com/reedia/generator-avionic#readme",
   "scripts": {
     "lint": "jshint **.js",
-    "test": "",
+    "coveralls": "gulp test && cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "gulp test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
