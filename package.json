@@ -37,9 +37,9 @@
     "phantomjs": "^1.9.19",
     "lodash": "^3.10.1",
     "mocha": "^2.3.4",
+    "mocha-lcov-reporter": "^1.0.0",
     "wiredep": "^2.2.2",
     "yo": "^1.5.0",
-    "mocha": "latest",
     "semantic-release": "^4.0.0"
   },
   "bugs": {
@@ -48,8 +48,9 @@
   "homepage": "https://github.com/reedia/generator-avionic#readme",
   "scripts": {
     "lint": "jshint **.js",
-    "coveralls": "gulp test && cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "test": "gulp test",
+    "test": "mocha",
+    "coverage": "istanbul cover _mocha -- -R spec",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
