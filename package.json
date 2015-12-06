@@ -50,7 +50,7 @@
     "lint": "jshint **.js",
     "test": "mocha",
     "coverage": "istanbul cover _mocha -- -R spec",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
