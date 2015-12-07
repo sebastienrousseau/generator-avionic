@@ -177,16 +177,17 @@ The [AVIONIC ✈](http://avionic.io) command lines scripts make it easy to start
 
 #### 1) Step by Step Scripts
 
-+ For iOS
+##### For iOS
   + [x] Execute build - **gulp av:build**
   + [x] Add iOS platform to Cordova - **gulp av:ios**
   + [x] Prepare resources (app icon and splash screen) - **gulp av:resources** 
   + [x] Prepare app icon - **gulp av:icon**
   + [x] Prepare splash screen - **gulp av:splash**  
   + [x] Serve app to default system browser - **gulp av:serve**
-  + [x] Emulate app - **gulp av:emulate**  
+  + [x] Emulate app - **gulp av:emulate**    
 
-+ For Android
+
+##### For Android
   + [x] Execute build - **gulp av:build**
   + [x] Add Android platform to Cordova - **gulp av:android**
   + [x] Prepare resources (app icon and splash screen) - **gulp av:resources** 
@@ -197,63 +198,26 @@ The [AVIONIC ✈](http://avionic.io) command lines scripts make it easy to start
 
 #### 2) All-In-One Scripts
 
-```gulp avionic:ios```
-
-- Run application in an iOS device attached
- - Execute build
- - Add iOS platform to Cordova
- - Prepare resources (app icon and splash screen)
- - Run app on attached iOS device
-
-```gulp avionic:android```
-
-- Run application in an Android device attached
- - Execute build
- - Add Android platform to Cordova
- - Prepare resources (app icon and splash screen)
- - Run app on attached Android device
+##### gulp avionic:ios
+Run application in an iOS device attached
  
+ + Execute build
+ + Add iOS platform to Cordova
+ + Prepare resources (app icon and splash screen)
+ + Run app on attached iOS device
 
-#### Build mode
+#### gulp avionic:android
 
-By running just `gulp av:build`, we start gulp in build mode
+Run application in an Android device attached
 
-- concat all `.js` sources into single `app.js` file
-- version `main.css` and `app.js`
-- build everything into `www`
-- remove debugs messages such as `console.log` or `alert` with passing `--release`
+ + Execute build
+ + Add Android platform to Cordova
+ + Prepare resources (app icon and splash screen)
+ + Run app on attached Android device
+  
+#### Splash screens and Icons
 
-
-#### Emulate
-
-By running `gulp -e <platform>`, we can run our app in the simulator
-
-- <platform> can be either `ios` or `android`, defaults to `ios`
-- make sure to have iOS Simulator installed in XCode, as well as `ios-sim` package globally installed (`npm install -g ios-sim`)
-- for Android, [Ripple](http://ripple.incubator.apache.org/) or [Genymotion](https://www.genymotion.com/) seem to be the emulators of choice
-- It will run the `gulp --build` before, so we have a fresh version to test
-- In iOS, it will livereload any code changes in iOS simulator
-
-#### Emulate a specific iOS device
-
-By running `gulp select` you will se a prompt where you can choose which ios device to emulate. This works only when you have the `gulp -e` task running in one terminal window and run `gulp select` in another terminal window.
-
-
-#### Ripple Emulator
-
-Run `gulp ripple` to open your app in a browser using ripple. This is useful for emuating a bunch of different Android devices and settings, such as geolocation, battery status, globalization and more. Note that ripple is still in beta and will show weird debug messages from time to time.
-
-
-#### Run
-
-By running `gulp -r <platform>`, we can run our app on a connected device
-
-- <platform> can be either `ios` or `android`, defaults to `ios`
-- It will run the `gulp --build` before, so we have a fresh version to test
-
-### splash screens and icons
-
-Replace `splash.png` and `icon.png` inside `/resources`. Then run `ionic resources`. If you only want to regenerate icons or splashs, you can run `gulp icon` or `gulp splash` shorthand.
+Replace `splash.png` and `icon.png` inside `/resources`. Then run **gulp av:resources** . If you only want to regenerate icons or splashs, you can run **gulp av:icon** or **gulp av:splash** shorthand.
 
 ## Talk to us
 
