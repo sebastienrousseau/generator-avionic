@@ -48,9 +48,7 @@
   "homepage": "https://github.com/reedia/generator-avionic#readme",
   "scripts": {
     "lint": "jshint **.js",
-    "test": "mocha",
-    "coverage": "istanbul cover _mocha -- -R spec",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "test": "",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   }
 }
