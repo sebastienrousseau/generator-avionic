@@ -171,10 +171,52 @@ AVIONIC/
 
 ```
 
+### AVIONIC ✈ CLI scripts
+
+The [AVIONIC ✈](http://avionic.io) command lines scripts make it easy to start, build, run, and emulate your AVIONIC ✈ app. In addition, it comes with a complete set of scripts to execute all the necessary scripts to build your app on iOS or Android.
+
+#### 1) Step by Step Scripts
+
++ For iOS
+  + [x] Execute build - **gulp av:build**
+  + [x] Add iOS platform to Cordova - **gulp av:ios**
+  + [x] Prepare resources (app icon and splash screen) - **gulp av:resources** 
+  + [x] Prepare app icon - **gulp av:icon**
+  + [x] Prepare splash screen - **gulp av:splash**  
+  + [x] Serve app to default system browser - **gulp av:serve**
+  + [x] Emulate app - **gulp av:emulate**  
+
++ For Android
+  + [x] Execute build - **gulp av:build**
+  + [x] Add Android platform to Cordova - **gulp av:android**
+  + [x] Prepare resources (app icon and splash screen) - **gulp av:resources** 
+  + [x] Prepare app icon - **gulp av:icon**
+  + [x] Prepare splash screen - **gulp av:splash**    
+  + [x] Serve app to default system browser - **gulp av:serve**
+  + [x] Emulate app - **gulp av:emulate**
+
+#### 2) All-In-One Scripts
+
+```gulp avionic:ios```
+
+- Run application in an iOS device attached
+ - Execute build
+ - Add iOS platform to Cordova
+ - Prepare resources (app icon and splash screen)
+ - Run app on attached iOS device
+
+```gulp avionic:android```
+
+- Run application in an Android device attached
+ - Execute build
+ - Add Android platform to Cordova
+ - Prepare resources (app icon and splash screen)
+ - Run app on attached Android device
+ 
 
 #### Build mode
 
-By running just `gulp --build` or short `gulp -b`, we start gulp in build mode
+By running just `gulp av:build`, we start gulp in build mode
 
 - concat all `.js` sources into single `app.js` file
 - version `main.css` and `app.js`
