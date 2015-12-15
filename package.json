@@ -9,7 +9,7 @@
   "author": "Reedia Limited <hello@reedia.com> (https://github.com/reedia)",
   "license": "MIT",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">= 0.9"
   },
   "files": [
     "app"
@@ -23,26 +23,27 @@
     "ionic framework"
   ],
   "dependencies": {
-      "chalk": "^0.5.0",
-      "require-dir": "*",
-      "cordova": "^5.0.0",
-      "yeoman-generator": "^0.18.0",
-      "yosay": "^0.3.0"
-    },
-    "devDependencies": {
-      "cordova": "^5.0.0",
-      "karma": "^0.13",
-      "karma-jasmine": "^0.1",
-      "jasmine-core": "^2.3.4",
-      "phantomjs": "^1.9.18",
-      "chalk": "^0.5.0",
-      "lodash": "^3.8.0",
-      "mocha": "*",
-      "wiredep": "^2.2.2",
-      "yeoman-generator": "^0.18.0",
-      "yo": ">=1.0.0",
-      "yosay": "^0.3.0",
-      "semantic-release": "^4.0.0"
+    "chalk": "^0.5.0",
+    "require-dir": "*",
+    "cordova": "^5.0.0",
+    "yeoman-generator": "^0.18.0",
+    "yosay": "^0.3.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "cordova": "^5.0.0",
+    "karma": "^0.13",
+    "karma-jasmine": "^0.1",
+    "jasmine-core": "^2.3.4",
+    "phantomjs": "^1.9.18",
+    "chalk": "^0.5.0",
+    "lodash": "^3.8.0",
+    "mocha": "*",
+    "wiredep": "^2.2.2",
+    "yeoman-generator": "^0.18.0",
+    "yo": ">=1.0.0",
+    "yosay": "^0.3.0",
+    "semantic-release": "^4.0.0"
   },
   "bugs": {
     "url": "https://github.com/reedia/generator-avionic/issues"
