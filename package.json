@@ -30,20 +30,20 @@
     "yosay": "^0.3.0"
   },
   "devDependencies": {
-    "coveralls": "^2.11.4",
+    "chalk": "^0.5.0",
     "cordova": "^5.0.0",
+    "coveralls": "^2.11.4",
+    "jasmine-core": "^2.3.4",
     "karma": "^0.13",
     "karma-jasmine": "^0.1",
-    "jasmine-core": "^2.3.4",
-    "phantomjs": "^1.9.18",
-    "chalk": "^0.5.0",
     "lodash": "^3.8.0",
     "mocha": "*",
+    "phantomjs": "^1.9.18",
+    "semantic-release": "^4.3.5",
     "wiredep": "^2.2.2",
     "yeoman-generator": "^0.18.0",
     "yo": ">=1.0.0",
-    "yosay": "^0.3.0",
-    "semantic-release": "^4.0.0"
+    "yosay": "^0.3.0"
   },
   "bugs": {
     "url": "https://github.com/reedia/generator-avionic/issues"
