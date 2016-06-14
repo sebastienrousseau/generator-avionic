@@ -1,5 +1,6 @@
 {
   "name": "generator-avionic",
+  "version": "0.0.23",
   "description": "Propelling World-class Cross-platform Hybrid Applications ✈\nA Yeoman generator using AngularJS, Express, ngCordova, Gulp and Bower that helps you kickstart highly sophisticated Ionic projects to evolve and upgrade every aspect of your development to the next moonshot.",
   "main": "app/index.js",
   "repository": {
