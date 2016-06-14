@@ -66,7 +66,7 @@
   /*var runSequence = require('run-sequence');*/
   /*var merge = require('merge-stream');*/
   /*var ripple = require('ripple-emulator');*/
-  /*var minifyCss = require('gulp-minify-css');*/
+  /*var minifyCss = require('gulp-clean-css');*/
   /*var replace = require('gulp-replace');*/
   /*var exec = require('child_process').exec;*/
 

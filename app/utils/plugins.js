@@ -16,8 +16,8 @@ module.exports = {
             name: 'org.apache.cordova.inappbrowser',
             checked: true
         }, {
-            value: 'com.ionic.keyboard',
-            name: 'com.ionic.keyboard',
+            value: 'ionic-plugin-keyboard',
+            name: 'ionic-plugin-keyboard',
             checked: true
         }, {
             value: 'cordova-plugin-device',

@@ -30,7 +30,7 @@
   var gulp = require('gulp');
   var plugins = require('gulp-load-plugins')({lazy: true});
   var streamqueue = require('streamqueue');
-  var minifyCss = require('gulp-minify-css');
+  var minifyCss = require('gulp-clean-css');
   var replace = require('gulp-replace');
   var path = require('path');
   /**
@@ -77,7 +77,7 @@
       .pipe(plugins.concat('main.css'))
       .pipe(replace('/*!', '/*'))
       .pipe(plugins.if(build, plugins.stripCssComments()))
-      .pipe(plugins.if(build, minifyCss({processImport:true})))
+      .pipe(plugins.if(build, minifyCss()))
       .pipe(plugins.if(build && !emulate, plugins.rev()))
       .pipe(gulp.dest(path.join(targetDir, 'styles')))
       .on('error', errorHandler);
